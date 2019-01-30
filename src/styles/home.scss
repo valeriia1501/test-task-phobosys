@@ -1,0 +1,182 @@
+
+.home{
+        color: #ffffff;
+        background-color: black;
+        margin: 0px;
+        padding: 0px;
+        overflow: hidden;
+    
+    .title{
+        padding-left: 273px;
+       
+        >p{
+            width: 760px;
+            font-size: 80px;
+            font-weight: bold;
+            margin: 200px 0 182px 0;
+            position: relative;
+            
+            &::before{
+                content: "";
+                width: 28px;
+                height: 28px;
+                border-radius: 50%;
+                background-color: $lightblue;
+                position: absolute;
+                left: -77px;
+                top: 38px;
+                box-shadow: 0px 0px 0px 20px rgba(41, 120, 255, 0.54);
+                
+            }
+        }
+    }
+}
+
+.none{
+    display: none !important;
+}
+@media only screen and (max-width: 1440px){
+    .home{
+        .scroll-section{
+            .cards{
+                .end-margin{
+                    margin-left: 180px;
+                }
+            }
+        }
+    }
+}
+@media only screen and (max-width: 1024px){
+    .home{
+        .header{
+            padding: 0;
+            div{
+                .logo{
+                    margin-left: 120px;
+                }
+            }
+        }
+        .title{
+            padding: 0;
+            margin-left: 120px;
+        }
+        .scroll-section{
+            .cards{
+                .start-margin{
+                    margin-right: 120px;
+                }
+                .end-margin{
+                    margin-left: 100px;
+                }
+            }
+        }
+    }
+}
+@media only screen and (max-width: 768px){
+    .home{
+        .header{
+            div{
+                .logo{
+                    margin-left: 20px;
+                }
+            }
+        }
+        .title{
+            margin-left: 20px;
+            p{
+                width: auto;
+            }
+        }
+        .scroll-section{
+            .cards{
+                .start-margin{
+                    margin-right: 50px;
+                }
+                .end-margin{
+                    margin-left: 0px;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 630px){
+    .home{
+        .header{
+            div{
+                nav{
+                    display: none;
+                }
+                nav.mobile{
+                    display: flex;
+                }
+            }
+            img{
+                display: inline-block;
+                margin-right: 15px;
+            }
+            button{
+                display: none;
+            }
+        }
+        .title{
+            p{
+                font-size: 60px;
+                margin: 120px 0 182px 0;
+            }
+        }
+        .scroll-section{
+            display: flex;
+            justify-content: center;
+
+            .cards{
+                margin-bottom: 50px;
+                overflow: visible;
+                flex-direction: column;
+               
+                .start-margin{display: none;}
+                .end-margin{display: none;}
+               
+                .card{
+                    flex-direction: column;
+                    margin: 0;
+                   
+                    &+.card{
+                        margin-top: 100px;
+                    }
+                   
+                    img{
+                        margin: 0;
+                    }
+                   
+                    div{
+                        margin: 50px 0 0px 0;
+                    }
+                }
+                
+                .borvo{
+                    display: flex;
+                    flex-direction: column;
+                    margin: 170px 0 0 0;
+                    
+                    span{
+                        font-size: 123px;
+                        line-height: .7;
+                    }
+                    
+                    .circle{
+                        width: 90px;
+                        height: 90px;
+                        margin: 15px 0 0 0;
+                    }
+                    
+                    .rvo{
+                        width: 80px;
+                        text-align: center;
+                        word-break: break-all;
+                    }
+                }
+            }
+        }
+    }
+}

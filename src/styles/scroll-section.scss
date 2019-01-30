@@ -1,0 +1,107 @@
+.home{
+    .scroll-section{
+        .scroll-horizontal{
+            >div{
+                position: static !important;
+            }
+        }
+        >.cards{
+            display: flex;
+            overflow: scroll;
+            margin: 0 0 311px 0;
+            &::-webkit-scrollbar {
+                width: 0px;
+            }
+            
+            /* Track */
+            &::-webkit-scrollbar-track {
+                background: transparent;
+            }
+            
+            /* Handle */
+            &::-webkit-scrollbar-thumb {
+                background: transparent;
+            }
+            
+            /* Handle on hover */
+            &::-webkit-scrollbar-thumb:hover {
+                background: transparent; 
+            }
+            .start-margin{
+                margin-right:273px;
+            }
+            .cardHome{
+                display: flex;
+                align-items: center;
+                margin-right: 80px;
+                >img{
+                    margin-right: 40px;
+                }
+                >div{
+                    width: 280px;
+                    span{
+                        font-size: 15px;
+                        opacity: .3;
+                    }
+                    p{
+                        font-size: 24px;
+                        font-weight: bold;
+                        margin: 8px 0 0 0;
+                    }
+                    small{
+                        display: inline-block;
+                        margin: 24px 0 74px 0;
+                    }
+                    .arrow{
+                        width: 32px;
+                        height: 32px;
+                        background: $lightblue;
+                        border-radius: 50%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        img{
+                            width: 17px;
+                        }
+                    }
+                }
+            }
+            .borvo{
+                display: flex;
+                align-items: center;
+                position: relative;
+                line-height: 1.4;
+                >span{
+                    font-weight: bold;
+                    font-size: 304px;
+                }
+                .circle{
+                    width: 160px;
+                    height: 160px;
+                    border-radius: 50%;
+                    margin-top: 35px;
+                    overflow: hidden;
+                    &::before{
+                        content: '';
+                        width: 275px;
+                        height: 275px;
+                        border-radius: 50%;
+                        background-color: rgba(41, 120, 255, 0.16);
+                        position: absolute;
+                        z-index: -999;
+                        transform: translate(-60px, -60px);
+                        box-shadow:  0px 0px 0px 52px rgba(41, 120, 255, 0.08);
+                    }
+                    
+                }
+            }
+            .end-margin{
+                margin-left:430px;
+                border: 1px solid black
+            }
+        }
+    }
+}
+// .position{
+//     position: static;
+// }
