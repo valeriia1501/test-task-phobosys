@@ -2,6 +2,7 @@ const path = require('path');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
+const projectRoot = path.resolve(__dirname)
 
 module.exports = {
   mode: 'development',
@@ -13,6 +14,14 @@ module.exports = {
   devServer: {
     contentBase: path.resolve(__dirname, 'dist')
   },
+  resolve: {
+		alias: {
+			'@': projectRoot + '/src',
+			'@components': projectRoot + '/src/components',
+      '@styles': projectRoot + '/src/styles',
+			'@assets': projectRoot + '/assets'
+		}
+	},
   module: {
     rules: [
       {

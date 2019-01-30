@@ -10,7 +10,6 @@
         .networks-continer{
             margin-top: 100px;
             text-align: center;
-            
             h1{
                 margin: 0;
                 font-size: 64px;
@@ -96,7 +95,7 @@
 
             p{
                 font-size: 18px;
-                margin: 28px 0 63px 0;  
+                margin: 28px 0 63px 0;
             }
         }
         .cards{
@@ -130,11 +129,11 @@
     footer{
         display: flex;
         justify-content: center;
-        
+
         .container{
             width: 1385px;
             display: flex;
-           
+
             .software{
                 width: 100%;
 
@@ -214,13 +213,13 @@
     .neural{
 
         footer{
-  
+
             .container{
               width: 445px;
               flex-direction: column;
 
               .software{
-                  
+
                 ul{
                     height: 160px;
                 }
@@ -235,7 +234,7 @@
         .header{
 
             div{
-                
+
                 nav{
                     display: none;
                 }
@@ -252,7 +251,7 @@
                 display: none;
            }
        }
-        
+
         .networks{
 
             .networks-continer{
@@ -280,20 +279,20 @@
     .neural{
 
         footer{
-  
+
             .container{
               width: 235px;
               flex-direction: column;
 
               .software{
-                  
+
                 ul{
                     height: 300px;
                 }
               }
-              
+
               .ua-ux{
-                  
+
                 ul{
                     height: 160px;
                 }
