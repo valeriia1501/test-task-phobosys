@@ -69,6 +69,7 @@
         width: 160px;
         height: 160px;
         margin-top: 35px;
+        transition: clip-path 0.2s;
 
         &::before{
           content: '';
@@ -82,18 +83,29 @@
           box-shadow:  0px 0px 0px 52px rgba(41, 120, 255, 0.08);
         }
 
-        .neural{
+        .neural {
           position: fixed;
           top: 0;
           left: 0;
 					right: 0;
 					height: 100vh;
-          overflow-y: auto;
-          overflow-x: hidden;
+          overflow: hidden;
+
+          &.scroll-x {
+            overflow-y: auto;
+          }
         }
       }
     }
   }
+}
+
+.scroll-x {
+  overflow-y: auto;
+}
+
+.scroll-hidden {
+  overflow: hidden;
 }
 
 @media only screen and (max-width: 630px){

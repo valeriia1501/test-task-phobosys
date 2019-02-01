@@ -1,21 +1,21 @@
 import * as React from 'react';
 
-import menuBlack from '../../../assets/menu-black.svg'
-import blackArrow from '../../../assets/right-arrow-black.svg'
-import kubernetes from '../../../assets/kubernetes.svg'
-import javascript from '../../../assets/javascript.svg'
-import angular from '../../../assets/angular.svg'
-import blockchain from '../../../assets/blockchain.svg'
-import node from '../../../assets/node-js.svg'
-import react from '../../../assets/react.svg'
-import tensorflow from '../../../assets/tensorflow.svg'
-import imgVideo from '../../../assets/temp.png'
+import menuBlack from '@assets/menu-black.svg'
+import blackArrow from '@assets/right-arrow-black.svg'
+import kubernetes from '@assets/kubernetes.svg'
+import javascript from '@assets/javascript.svg'
+import angular from '@assets/angular.svg'
+import blockchain from '@assets/blockchain.svg'
+import node from '@assets/node-js.svg'
+import react from '@assets/react.svg'
+import tensorflow from '@assets/tensorflow.svg'
+import imgVideo from '@assets/temp.png'
 
-
+import classnames from 'classnames'
 
 export class Neural extends React.Component {
     render(){
-        return <div className="neural">
+        return <div className={classnames(this.props.className, "neural")}>
             <header className="white-page header" >
                     <div>
                         <span>borvo</span>

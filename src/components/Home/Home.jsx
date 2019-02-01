@@ -1,4 +1,5 @@
 import React from 'react'
+import classnames from 'classnames'
 
 import { Neural } from '@components/Neural/Neural.jsx'
 
@@ -30,12 +31,12 @@ export class Home extends React.Component{
   }
 
   wheelHandler = (e) => {
-    if (this.state.neuralPageLock) {
+    if (this.state.innerPageLock) {
       const html = document.getElementsByTagName('html')[0]
-      html.style.overflow = 'hidden'
+      html.classList.add('scroll-hidden')
     }
 
-    if (this.state.horizontalScrolling && !this.state.neuralPageLock) {
+    if (this.state.horizontalScrolling && !this.state.innerPageLock) {
       e.preventDefault()
     }
 
@@ -53,11 +54,11 @@ export class Home extends React.Component{
       })
     }
 
-    if (this.state.circlZooming && !this.state.neuralPageLock) {
+    if (this.state.circlZooming && !this.state.innerPageLock) {
       const cs = this.state.circlSize - (e.wheelDeltaY / 120)
       this.setState({
         circlSize: Math.min(14, Math.max(cs, 1)),
-        neuralPageLock: cs >= 14
+        innerPageLock: cs >= 14
       })
     }
   }
@@ -144,7 +145,7 @@ export class Home extends React.Component{
             <div className="borvo" ref={ domel => this.borvo = domel }  >
             <span>b</span>
             <div className="circle" style={{ clipPath: `circle(${(this.state.circlSize / 2 * 100)}% at 50% 50%)` }}>
-              <Neural />
+              <Neural className={classnames({ "scroll-x": this.state.innerPageLock })}/>
             </div>
             <span className="rvo">rvo</span>
           </div>
