@@ -1,0 +1,305 @@
+
+.neural{
+    font-family: 'Proxima Nova Rg';
+    background: white;
+    overflow: hidden;
+    color: #212121;
+    margin-bottom: 350px;
+    margin-right: -15px;
+    
+    >.networks{
+
+        .networks-continer{
+            margin-top: 100px;
+            text-align: center;
+            h1{
+                margin: 0;
+                font-size: 64px;
+                font-weight: bold;
+            }
+
+            p{
+
+                font-size: 20px;
+                line-height: 1.5;
+                color: #212121;
+                margin: 0 auto;
+                margin-top: 34px;
+                margin-bottom: 25px;
+            }
+
+            div{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin: 0 0 59px 0;
+
+                span{
+                    font-size: 20px;
+                    color: #212121;
+                }
+
+                a{
+                    display: flex;
+                    justify-content: center;
+                    @include resetStyleLink();
+                    color: #212121;
+
+                    &:hover{
+                        text-decoration: underline;
+                    }
+
+                    span{
+                        width: 20px;
+                        height: 20px;
+                        border:  1px solid #212121;
+                        border-radius: 50%;
+                        margin-left: 10px;
+                        .arrow{
+                            width: 15px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .video-section{
+        display: flex;
+        margin-bottom: 120px;
+        justify-content: center;
+            .container{
+                display: flex;
+                transform: translateX(27%);
+                .video{
+                        img{
+                            width: 100%;
+                        }
+                    &+.video{
+                        margin-left: 120px;
+                    }
+                }
+            }
+    }
+    // .temp-section{
+    //     height: 888px;
+    //     background-color: #171717;
+    // }
+    .skills{
+
+        div{
+            text-align: center;
+
+            h1{
+                font-size: 40px;
+                font-weight: bold;
+            }
+
+            p{
+                font-size: 18px;
+                margin: 28px 0 63px 0;
+            }
+        }
+        .cards{
+            display: flex;
+            justify-content: center;
+
+            .card{
+                width: 174px;
+                height: 174px;
+                border-radius: 8px;
+                border: 1px solid #f5f5f5;
+                margin-bottom: 62px;
+                overflow: hidden;
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+
+                &+.card{
+                    margin-left: 24px;
+                }
+
+                img{
+                    width: 56px;
+                    height: 56px;
+                    margin: 0 auto;
+                    margin-bottom: 19px;
+                }
+            }
+        }
+    }
+    footer{
+        display: flex;
+        justify-content: center;
+
+        .container{
+            width: 1385px;
+            display: flex;
+
+            .software{
+                width: 100%;
+
+                span{
+                    display: inline-block;
+                    margin-bottom: 21px;
+                    font-size: 16px;
+                    font-weight: bold;
+                }
+
+                ul{
+                    display: flex;
+                    height: 85px;
+                    flex-direction: column;
+                    flex-wrap: wrap;
+                    @include footerUl();
+
+                    li{
+
+                        &+li{
+                            margin-top: 8px;
+                        }
+                    }
+                }
+            }
+            .ua-ux{
+                width: 450px;
+
+                span{
+                    display: inline-block;
+                    margin-bottom: 21px;
+                    font-size: 16px;
+                    font-weight: bold;
+                }
+
+                ul{
+                    width: 510px;
+                    height: 85px;
+                    display: flex;
+                    flex-direction: column;
+                    flex-wrap: wrap;
+                    @include footerUl();
+
+                    li{
+
+                        &+li{
+                            margin-top: 8px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.none{
+    display: none;
+}
+@media only screen and (max-width: 1100px){
+    .neural{
+
+      footer{
+
+          .container{
+            width: 720px;
+            flex-direction: column;
+
+            .software{
+                margin-bottom: 40px;
+
+            }
+        }
+      }
+    }
+}
+@media only screen and (max-width: 620px){
+    .neural{
+
+        footer{
+
+            .container{
+              width: 445px;
+              flex-direction: column;
+
+              .software{
+
+                ul{
+                    height: 160px;
+                }
+              }
+            }
+        }
+    }
+}
+@media only screen and (max-width: 680px) {
+    .neural{
+        margin-bottom: 100px;
+        .header{
+
+            div{
+
+                nav{
+                    display: none;
+                }
+                nav.mobile{
+                    display: flex;
+                }
+            }
+            img{
+                display: inline-block;
+                margin-right: 15px;
+            }
+
+            button{
+                display: none;
+           }
+       }
+
+        .networks{
+
+            .networks-continer{
+                margin-top: 135px;
+            }
+        }
+
+        .skills{
+
+            .cards{
+                flex-wrap: wrap;
+
+                .card{
+
+                    &+.card{
+                        margin-left: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 460px){
+    .neural{
+
+        footer{
+
+            .container{
+              width: 235px;
+              flex-direction: column;
+
+              .software{
+
+                ul{
+                    height: 300px;
+                }
+              }
+
+              .ua-ux{
+
+                ul{
+                    height: 160px;
+                }
+              }
+            }
+        }
+    }
+}

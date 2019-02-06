@@ -1,0 +1,167 @@
+.scroll-section{
+  display: flex;
+  overflow-x: auto;
+  overflow-y: hidden;
+  height: calc(100vh + 15px);
+  margin-bottom: -15px;
+
+  >.cards{
+    display: flex;
+
+    & > div:first-child {
+      margin-left: 200px;
+    }
+
+    & > div:last-child {
+      padding-right: calc(50vw - 439.89px - 80px);
+    }
+
+    .card-home {
+      display: flex;
+      align-items: center;
+      margin-right: 80px;
+
+      > img {
+        margin-right: 40px;
+      }
+
+      > div {
+        width: 280px;
+        span{
+          font-size: 15px;
+          opacity: .3;
+        }
+        p{
+          font-size: 24px;
+          font-weight: bold;
+          margin: 8px 0 0 0;
+        }
+        small{
+          display: inline-block;
+          margin: 24px 0 74px 0;
+        }
+        .arrow{
+          width: 32px;
+          height: 32px;
+          background: $lightblue;
+          border-radius: 50%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          img{
+            width: 17px;
+          }
+        }
+      }
+    }
+    .borvo {
+      display: flex;
+      align-items: center;
+      position: relative;
+      line-height: 1.4;
+
+      
+
+      > span {
+        font-weight: bold;
+        font-size: 304px;
+        z-index: 1;
+        &:first-child::before{
+          content: '';
+          width: 275px;
+          height: 275px;
+          border-radius: 50%;
+          background-color: rgba(41, 120, 255, 0.16);
+          box-shadow: 0px 0px 0px 52px rgba(41, 120, 255, 0.08);
+          position: absolute;
+          left: 10%;
+          top: 37%;
+          z-index: -999;
+        }
+      }
+
+      .circle {
+        width: 160px;
+        height: 160px;
+        margin-top: 35px;
+        transition: clip-path 0.2s;
+        z-index: 5;
+        
+
+        .neural {
+          position: fixed;
+          top: 0;
+          left: 0;
+					right: 0;
+					height: 100vh;
+          overflow: hidden;
+          z-index: 999;
+          &.scroll-x {
+            overflow-y: auto;
+          }
+        }
+      }
+    }
+  }
+}
+
+.scroll-x {
+  overflow-y: auto;
+}
+
+.scroll-hidden {
+  overflow: hidden;
+}
+
+@media only screen and (max-width: 630px){
+  .scroll-section{
+    display: flex;
+    justify-content: center;
+
+    .cards{
+      margin-bottom: 50px;
+      overflow: visible;
+      flex-direction: column;
+
+      .card{
+        flex-direction: column;
+        margin: 0;
+
+        &+.card{
+          margin-top: 100px;
+        }
+
+        img{
+          margin: 0;
+        }
+
+        div{
+          margin: 50px 0 0px 0;
+        }
+      }
+
+      .borvo{
+        display: flex;
+        flex-direction: column;
+        margin: 170px 0 0 0;
+
+        span{
+          font-size: 123px;
+          line-height: .7;
+        }
+
+        .circle{
+          width: 90px;
+          height: 90px;
+          margin: 15px 0 0 0;
+        }
+
+        .rvo{
+          width: 80px;
+          text-align: center;
+          word-break: break-all;
+        }
+      }
+    }
+  }
+}
