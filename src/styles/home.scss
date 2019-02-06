@@ -32,67 +32,16 @@
     }
 }
 
-.none{
-    display: none !important;
-}
-@media only screen and (max-width: 1024px){
+@media only screen and (max-width: 1200px){
     .home{
-        .header{
-            padding: 0;
-            div{
-                .logo{
-                    margin-left: 120px;
-                }
-            }
-        }
+
         .title{
             padding: 0;
-            margin-left: 120px;
-        }
-    }
-}
-@media only screen and (max-width: 768px){
-    .home{
-        .header{
-            div{
-                .logo{
-                    margin-left: 20px;
-                }
-            }
-        }
-        .title{
-            margin-left: 20px;
+
             p{
                 width: auto;
+                text-align: center;
             }
         }
     }
-}
-
-@media only screen and (max-width: 630px){
-    .home{
-        .header{
-            div{
-                nav{
-                    display: none;
-                }
-                nav.mobile{
-                    display: flex;
-                }
-            }
-            img{
-                display: inline-block;
-                margin-right: 15px;
-            }
-            button{
-                display: none;
-            }
-        }
-        .title{
-            p{
-                font-size: 60px;
-                margin: 120px 0 182px 0;
-            }
-        }
-    }
-}
+} 

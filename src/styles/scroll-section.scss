@@ -7,10 +7,7 @@
 
   >.cards{
     display: flex;
-
-    & > div:first-child {
-      margin-left: 200px;
-    }
+    padding-left: 273px;
 
     & > div:last-child {
       padding-right: calc(50vw - 439.89px - 80px);
@@ -60,7 +57,7 @@
       position: relative;
       line-height: 1.4;
 
-      
+
 
       > span {
         font-weight: bold;
@@ -86,7 +83,6 @@
         margin-top: 35px;
         transition: clip-path 0.2s;
         z-index: 5;
-        
 
         .neural {
           position: fixed;
@@ -105,12 +101,16 @@
   }
 }
 
-.scroll-x {
-  overflow-y: auto;
-}
-
 .scroll-hidden {
   overflow: hidden;
+}
+
+@media only screen and (max-width: 1200px){
+  .scroll-section{
+    > .cards{
+      padding-left: 25px;
+    }
+  }
 }
 
 @media only screen and (max-width: 630px){

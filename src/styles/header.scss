@@ -4,13 +4,18 @@
   align-items: center;
   margin-top: 20px;
   padding-left: 273px;
+  
   div{
     display: flex;
     align-items: center;
-    span{
-      font-size: 32px;
-      font-weight: bold;
+    > a{
+      text-decoration: none;
+      color: white;
       margin-right: 54px;
+      span{
+        font-size: 32px;
+        font-weight: bold;
+      }
     }
     nav{
       ul{
@@ -39,6 +44,7 @@
       top: 50px;
       border-radius: 25px;
       z-index: 999;
+      display: none;
       ul{
         width: 100%;
         flex-direction: column;
@@ -60,11 +66,14 @@
       }
     }
   }
-  img{
-    width: 25px;
-    height: 25px;
+  .burger-icon {
+    width: 30px;
+    margin-right: 25px;
     display: none;
-  }
+    .layer{
+      fill: white;
+    }
+  } 
   button{
     width: 134px;
     height: 40px;
@@ -80,6 +89,8 @@
   padding: 0;
 
   div{
+   a{
+     color: black;
     span{
       display: flex;
       margin-left: 55px;
@@ -98,6 +109,7 @@
         top: 12px;
       }
     }
+   }
     nav{
       ul{
         li{
@@ -117,6 +129,45 @@
             color: white;;
           }
         }
+      }
+    }
+  }
+  .burger-icon {
+    .layer{
+      fill: black;
+    }
+  } 
+}
+
+
+@media only screen and (max-width: 1200px){
+  .header{
+    padding-left: 25px;
+  }
+}
+@media only screen and (max-width: 768px){
+  .header{
+    div{
+      nav{
+        display: none;
+      }
+      nav.mobile{
+
+      }
+    }
+    .burger-icon{
+      display: flex;
+    } 
+    button{
+      display: none;
+    }
+  }
+}
+@media only screen and (min-width: 769px){
+  .header{
+    div{
+      nav.mobile{
+        display: none !important;
       }
     }
   }

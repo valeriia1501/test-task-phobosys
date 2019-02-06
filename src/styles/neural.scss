@@ -1,12 +1,11 @@
-
 .neural{
     font-family: 'Proxima Nova Rg';
     background: white;
-    overflow: hidden;
+    overflow-x: hidden;
     color: #212121;
     margin-bottom: 350px;
-    margin-right: -15px;
-    
+    // margin-right: -15px;
+
     >.networks{
 
         .networks-continer{
@@ -65,17 +64,15 @@
     }
 
     .video-section{
-        display: flex;
+
         margin-bottom: 120px;
-        justify-content: center;
+
             .container{
                 display: flex;
-                transform: translateX(27%);
+                justify-content: center;
                 .video{
-                        img{
-                            width: 100%;
-                        }
-                    &+.video{
+
+                    &:not(:first-of-type){
                         margin-left: 120px;
                     }
                 }

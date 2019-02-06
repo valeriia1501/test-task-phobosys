@@ -7,21 +7,19 @@
         margin-bottom: 105px;
     }
     .section-services{
-        padding-left: 273px;
-        padding-right: 272px;
+        padding-left: calc(275px - 65px);
         margin-bottom: 145px;
-
-       .cards-services{
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
-            grid-column-gap: 65px;
-            grid-row-gap: 90px;
+        
+        .cards-services{
+            display: flex;
+            flex-wrap: wrap;
             
            .card-services{
-                text-align: center;
-                
+               display: flex;
+               flex-direction: column;
+               margin-left: 65px;
+                margin-bottom: 50px;
                 > span{
-                    display: block;
                     margin-top: 50px;
                 }
            }
@@ -29,16 +27,7 @@
     }
 }
 
-@media only screen and (max-width: 870px){
-    .services{
-        .section-services{
-            padding-left: 0;
-            padding-right: 0;
-        }
-    }
-}
-
-@media only screen and (max-width: 924px){
+@media only screen and (max-width: 1200px){
     .services{
         .title{
             padding-left: 0;
@@ -47,6 +36,13 @@
             
             p{
                 width: auto;
+            }
+        }
+        .section-services{
+            padding: 0;
+            .cards-services{
+                justify-content: center;
+                margin-left: -65px;
             }
         }
     }

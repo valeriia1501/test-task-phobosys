@@ -1,13 +1,12 @@
-import * as React from 'react';
 import ReactDOM from 'react-dom'
-import { Master } from '@components/master.jsx'
-import { BrowserRouter as Router } from 'react-router-dom'
+import routing from '@/routing'
 
+routing.init({
+  render: (component) => {
+    ReactDOM.render(
+      component,
+      document.getElementById('root')
+    )
+  }
+})
 
-ReactDOM.render(
-    <Router>
-        <Master />
-    </Router>
-    ,
-    document.getElementById('root')
-)
