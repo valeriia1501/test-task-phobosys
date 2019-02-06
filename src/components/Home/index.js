@@ -40,7 +40,7 @@ export default class Home extends React.PureComponent {
       router.page('/neural')
     }
 
-    if (this.state.horizontalScrolling && !this.state.innerPageLock) {
+    if (this.state.horizontalScrolling) {
       this.html.scrollTop = this.html.scrollHeight
       e.preventDefault()
     }
@@ -65,7 +65,7 @@ export default class Home extends React.PureComponent {
       })
     }
 
-    if (this.state.circlZooming && !this.state.innerPageLock) {
+    if (this.state.circlZooming) {
       const cs = this.state.circlSize - (e.wheelDeltaY / 120)
       this.setState({
         circlSize: Math.min(14, Math.max(cs, 1)),
@@ -91,7 +91,7 @@ export default class Home extends React.PureComponent {
 
     const circlZooming = (scrollRight === 0)
 
-    if (this.state.circlZooming !== circlZooming) {
+    if (!this.state.circlZooming && circlZooming) {
       this.setState({ circlZooming })
     }
   }

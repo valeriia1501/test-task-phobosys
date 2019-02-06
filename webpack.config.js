@@ -14,11 +14,11 @@ module.exports = {
   },
   entry: './src/index.js',
   output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.js'
+    path: path.resolve(__dirname, 'docs'),
+    filename: 'js/app.js'
   },
   devServer: {
-    contentBase: path.resolve(__dirname, 'dist')
+    contentBase: path.resolve(__dirname, 'docs')
   },
   resolve: {
 		alias: {
@@ -74,7 +74,7 @@ module.exports = {
   plugins: [
     new ExtractTextPlugin('style.css'),
     new HtmlWebpackPlugin({
-      template: './home.html',
+      template: './index.html',
       inject: true
     }),
   ]

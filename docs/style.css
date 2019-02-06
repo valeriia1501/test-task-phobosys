@@ -464,6 +464,12 @@
   padding: 0;
   margin: 0; }
 
+.hide {
+  opacity: 0; }
+
+.show {
+  display: flex !important; }
+
 .header {
   display: flex;
   justify-content: space-between;
@@ -473,10 +479,13 @@
   .header div {
     display: flex;
     align-items: center; }
-    .header div span {
-      font-size: 32px;
-      font-weight: bold;
+    .header div > a {
+      text-decoration: none;
+      color: white;
       margin-right: 54px; }
+      .header div > a span {
+        font-size: 32px;
+        font-weight: bold; }
     .header div nav ul {
       display: flex;
       font-size: 16px;
@@ -496,7 +505,8 @@
       right: 50px;
       top: 50px;
       border-radius: 25px;
-      z-index: 999; }
+      z-index: 999;
+      display: none; }
       .header div nav.mobile ul {
         width: 100%;
         flex-direction: column;
@@ -509,10 +519,12 @@
           display: flex;
           justify-content: center;
           color: black; }
-  .header img {
-    width: 25px;
-    height: 25px;
+  .header .burger-icon {
+    width: 30px;
+    margin-right: 25px;
     display: none; }
+    .header .burger-icon .layer {
+      fill: white; }
   .header button {
     width: 134px;
     height: 40px;
@@ -525,21 +537,23 @@
 
 .white-page {
   padding: 0; }
-  .white-page div span {
-    display: flex;
-    margin-left: 55px;
-    position: relative; }
-    .white-page div span::before {
-      content: "";
-      width: 12px;
-      height: 12px;
-      background: #2979ff;
-      border-radius: 50%;
-      opacity: 0.9;
-      box-shadow: 0 0 0 10px rgba(41, 120, 255, 0.3);
-      position: absolute;
-      left: -35px;
-      top: 12px; }
+  .white-page div a {
+    color: black; }
+    .white-page div a span {
+      display: flex;
+      margin-left: 55px;
+      position: relative; }
+      .white-page div a span::before {
+        content: "";
+        width: 12px;
+        height: 12px;
+        background: #2979ff;
+        border-radius: 50%;
+        opacity: 0.9;
+        box-shadow: 0 0 0 10px rgba(41, 120, 255, 0.3);
+        position: absolute;
+        left: -35px;
+        top: 12px; }
   .white-page div nav ul li a {
     color: white;
     text-decoration: none;
@@ -548,6 +562,24 @@
     background: rgba(0, 0, 0, 0.623); }
     .white-page div nav.mobile ul li a {
       color: white; }
+  .white-page .burger-icon .layer {
+    fill: black; }
+
+@media only screen and (max-width: 1200px) {
+  .header {
+    padding-left: 25px; } }
+
+@media only screen and (max-width: 768px) {
+  .header div nav {
+    display: none; }
+  .header .burger-icon {
+    display: flex; }
+  .header button {
+    display: none; } }
+
+@media only screen and (min-width: 769px) {
+  .header div nav.mobile {
+    display: none !important; } }
 
 .scroll-section {
   display: flex;
@@ -556,9 +588,8 @@
   height: calc(100vh + 15px);
   margin-bottom: -15px; }
   .scroll-section > .cards {
-    display: flex; }
-    .scroll-section > .cards > div:first-child {
-      margin-left: 200px; }
+    display: flex;
+    padding-left: 273px; }
     .scroll-section > .cards > div:last-child {
       padding-right: calc(50vw - 439.89px - 80px); }
     .scroll-section > .cards .card-home {
@@ -626,11 +657,12 @@
           .scroll-section > .cards .borvo .circle .neural.scroll-x {
             overflow-y: auto; }
 
-.scroll-x {
-  overflow-y: auto; }
-
 .scroll-hidden {
   overflow: hidden; }
+
+@media only screen and (max-width: 1200px) {
+  .scroll-section > .cards {
+    padding-left: 25px; } }
 
 @media only screen and (max-width: 630px) {
   .scroll-section {
@@ -690,47 +722,19 @@
         top: 38px;
         box-shadow: 0px 0px 0px 20px rgba(41, 120, 255, 0.54); }
 
-.none {
-  display: none !important; }
-
-@media only screen and (max-width: 1024px) {
-  .home .header {
+@media only screen and (max-width: 1200px) {
+  .home .title {
     padding: 0; }
-    .home .header div .logo {
-      margin-left: 120px; }
-  .home .title {
-    padding: 0;
-    margin-left: 120px; } }
-
-@media only screen and (max-width: 768px) {
-  .home .header div .logo {
-    margin-left: 20px; }
-  .home .title {
-    margin-left: 20px; }
     .home .title p {
-      width: auto; } }
-
-@media only screen and (max-width: 630px) {
-  .home .header div nav {
-    display: none; }
-  .home .header div nav.mobile {
-    display: flex; }
-  .home .header img {
-    display: inline-block;
-    margin-right: 15px; }
-  .home .header button {
-    display: none; }
-  .home .title p {
-    font-size: 60px;
-    margin: 120px 0 182px 0; } }
+      width: auto;
+      text-align: center; } }
 
 .neural {
   font-family: 'Proxima Nova Rg';
   background: white;
-  overflow: hidden;
+  overflow-x: hidden;
   color: #212121;
-  margin-bottom: 350px;
-  margin-right: -15px; }
+  margin-bottom: 350px; }
   .neural > .networks .networks-continer {
     margin-top: 100px;
     text-align: center; }
@@ -770,15 +774,11 @@
           .neural > .networks .networks-continer div a span .arrow {
             width: 15px; }
   .neural .video-section {
-    display: flex;
-    margin-bottom: 120px;
-    justify-content: center; }
+    margin-bottom: 120px; }
     .neural .video-section .container {
       display: flex;
-      transform: translateX(27%); }
-      .neural .video-section .container .video img {
-        width: 100%; }
-      .neural .video-section .container .video + .video {
+      justify-content: center; }
+      .neural .video-section .container .video:not(:first-of-type) {
         margin-left: 120px; }
   .neural .skills div {
     text-align: center; }
@@ -902,29 +902,28 @@
     font-size: 64px; }
 
 .services .section-services {
-  padding-left: 273px;
-  padding-right: 272px;
+  padding-left: calc(275px - 65px);
   margin-bottom: 145px; }
   .services .section-services .cards-services {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
-    grid-column-gap: 65px;
-    grid-row-gap: 90px; }
+    display: flex;
+    flex-wrap: wrap; }
     .services .section-services .cards-services .card-services {
-      text-align: center; }
+      display: flex;
+      flex-direction: column;
+      margin-left: 65px;
+      margin-bottom: 50px; }
       .services .section-services .cards-services .card-services > span {
-        display: block;
         margin-top: 50px; }
 
-@media only screen and (max-width: 870px) {
-  .services .section-services {
-    padding-left: 0;
-    padding-right: 0; } }
-
-@media only screen and (max-width: 924px) {
+@media only screen and (max-width: 1200px) {
   .services .title {
     padding-left: 0;
     margin-left: 0;
     text-align: center; }
     .services .title p {
-      width: auto; } }
+      width: auto; }
+  .services .section-services {
+    padding: 0; }
+    .services .section-services .cards-services {
+      justify-content: center;
+      margin-left: -65px; } }
