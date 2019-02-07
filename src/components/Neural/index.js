@@ -3,32 +3,32 @@ import React from 'react';
 import classnames from 'classnames'
 
 import {
-  blackArrow,
-  kubernetes,
-  javascriptImg,
-  angular,
-  blockchain,
-  nodeImg,
-  reactImg,
-  tensorflow,
-  imgVideo
+    blackArrow,
+    kubernetes,
+    javascriptImg,
+    angular,
+    blockchain,
+    nodeImg,
+    reactImg,
+    tensorflow,
+    imgVideo
 } from '@/images'
 
 import Header from '@/components/Header'
 
 export default class Neural extends React.PureComponent {
-  constructor(props) {
-    super(props)
-    this.html = document.getElementsByTagName('html')[0]
-  }
+    constructor(props) {
+        super(props)
+        this.html = document.getElementsByTagName('html')[0]
+    }
 
-  componentDidMount() {
-    this.html.scrollTop = 0
-  }
+    componentDidMount() {
+        this.html.scrollTop = 0;
+    }
 
     render() {
         return <div className={classnames(this.props.className, "neural")}>
-            <Header className="white-page"/>
+            <Header className="white-page" />
             <section className="networks" >
                 <div className="networks-continer">
                     <h1>Neural networks <br /> working with Twitter </h1>

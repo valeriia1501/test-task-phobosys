@@ -1,4 +1,4 @@
-.scroll-section{
+.scroll-section {
   display: flex;
   overflow-x: auto;
   overflow-y: hidden;
@@ -71,12 +71,10 @@
           background-color: rgba(41, 120, 255, 0.16);
           box-shadow: 0px 0px 0px 52px rgba(41, 120, 255, 0.08);
           position: absolute;
-          left: 10%;
-          top: 37%;
           z-index: -999;
+          transform: translate(42%, 34%);
         }
       }
-
       .circle {
         width: 160px;
         height: 160px;
@@ -113,21 +111,49 @@
   }
 }
 
+@media only screen and (max-width: 1040px){
+  .scroll-section{
+    .cards{
+      >.borvo{
+        &:last-child{
+          padding-right: calc(50vw - 296px - 60px);
+        }
+
+        .circle{
+          width: 120px;
+          height: 120px;
+        }
+        
+        >span{
+          font-size: 205px;
+
+          &:first-child::before{
+            width: 182px;
+            height: 182px;
+            transform: translate(48%, 37%);
+          }  
+        }
+      }
+    }
+  }
+}
+
 @media only screen and (max-width: 630px){
   .scroll-section{
     display: flex;
     justify-content: center;
 
     .cards{
-      margin-bottom: 50px;
+      height: auto;
       overflow: visible;
+      margin-bottom: 50px;
       flex-direction: column;
 
-      .card{
+      .card-home{
         flex-direction: column;
         margin: 0;
 
-        &+.card{
+        &+.card-home{
           margin-top: 100px;
         }
 
