@@ -6,9 +6,32 @@
     padding: 0px;
     overflow: hidden;
 
+    .home-route-enter {
+        // position: absolute;
+        float: right;
+        opacity: 0;
+
+        &.home-route-enter-active {
+            opacity: 1;
+            transition: opacity 1s;
+            transition-delay: .5s;
+        }
+    }
+    .home-route-exit {
+        position: absolute;
+        opacity: 1;
+        
+        &.home-route-exit-active {
+            opacity: 0;
+            transition: opacity .5s;
+        }
+    }
+
     .title{
+        height: calc(50vh - 60px);
+        display: flex;
+        align-items: flex-end;
         padding-left: 273px;
-        margin-top: 200px;
 
         >p{
             width: 760px;

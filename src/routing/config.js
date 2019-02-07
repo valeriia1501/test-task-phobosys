@@ -3,6 +3,8 @@ import Services from '@components/Services'
 import Neural from '@components/Neural'
 import Home from '@components/Home'
 
+import ExpertiesCarousel from '@components/ExpertiesCarousel'
+
 export default [
   {
     path: '/',
@@ -13,19 +15,22 @@ export default [
         path: '/',
         name: 'Home',
         tile: '',
-        component: Home
-      },
-      {
-        path: '/index.html',
-        name: 'Home',
-        tile: '',
-        component: Home
-      },
-      {
-        path: '/services',
-        name: 'Services',
-        tile: '',
-        component: Services
+        transition: { timeout: 1000, classNames: 'home-route' },
+        component: Home,
+        children: [
+          {
+            path: '/',
+            name: 'Experties',
+            tile: '',
+            component: ExpertiesCarousel
+          },
+          {
+            path: '/services',
+            name: 'Services',
+            tile: '',
+            component: Services
+          }
+        ]
       },
       {
         path: '/neural',
