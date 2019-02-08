@@ -1,36 +1,24 @@
-.AI {
-    height: calc(50vh - 60px);
-    display: flex;
-    align-items: flex-end;
-    padding-left: 273px;
-
-    >p{
-        width: 760px;
-        font-size: 80px;
-        font-weight: bold;
-        position: relative;
-
-        &::before{
-            content: "";
-            width: 28px;
-            height: 28px;
-            border-radius: 50%;
-            background-color: $lightblue;
-            position: absolute;
-            left: -77px;
-            top: 38px;
-            box-shadow: 0px 0px 0px 20px rgba(41, 120, 255, 0.54);
-
-        }
-    }
-}
-
 .home{
     color: #ffffff;
     background-color: black;
     margin: 0px;
     padding: 0px;
     overflow: hidden;
+
+    .web-gl{
+        position: absolute;
+        height: 100vh;
+        width: 100%;
+        overflow: hidden;
+        top: 0;
+
+        #vanta-net{
+            position: relative;
+            min-height: 100%;
+            top: -150px;
+            right: -250px;
+        }
+    }
 
     >div:first-of-type {
         position: relative;
@@ -56,16 +44,3 @@
     }
 }
 
-@media only screen and (max-width: 1200px){
-    .home {
-
-        .title {
-            padding: 0;
-
-            p {
-                width: auto;
-                text-align: center;
-            }
-        }
-    }
-} 

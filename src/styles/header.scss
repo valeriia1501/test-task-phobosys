@@ -5,62 +5,67 @@
   margin-top: 20px;
   padding-left: 273px;
   
-  div{
+  & > * {
+    z-index: 1;
+  }
+
+  div {
     display: flex;
     align-items: center;
-    > a{
+
+    > a {
       text-decoration: none;
       color: white;
       margin-right: 54px;
-      span{
+      span {
         font-size: 32px;
         font-weight: bold;
       }
     }
-    nav{
-      ul{
+    nav {
+      ul {
         display: flex;
         font-size: 16px;
         margin: 0px;
         padding: 0px;
         list-style: none;
 
-        li{
-          &+li{
+        li {
+          &+li {
             margin-left: 48px;
           }
-          a{
+          a {
             @include resetStyleLink();
           }
         }
       }
-    }
-    nav.mobile{
-      width: 140px;
-      display: flex;
-      background: rgba(255, 255, 255, 0.623);
-      position: absolute;
-      right: 50px;
-      top: 50px;
-      border-radius: 25px;
-      z-index: 999;
-      display: none;
-      ul{
-        width: 100%;
-        flex-direction: column;
-        font-size: 24px;
+      &.mobile{
+        width: 140px;
+        display: flex;
+        background: rgba(255, 255, 255, 0.623);
+        position: absolute;
+        right: 50px;
+        top: 50px;
+        border-radius: 25px;
+        z-index: 999;
+        display: none;
+        ul{
+          width: 100%;
+          flex-direction: column;
+          font-size: 24px;
 
-        li{
+          li{
 
-          &+li{
-            margin: 0;
-          }
-          a{
-            height: 50px;
-            line-height: 50px;
-            display: flex;
-            justify-content: center;
-            color: black;
+            &+li{
+              margin: 0;
+            }
+            a{
+              height: 50px;
+              line-height: 50px;
+              display: flex;
+              justify-content: center;
+              color: black;
+            }
           }
         }
       }
@@ -150,9 +155,6 @@
     div{
       nav{
         display: none;
-      }
-      nav.mobile{
-
       }
     }
     .burger-icon{
