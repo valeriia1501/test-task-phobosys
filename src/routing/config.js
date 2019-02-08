@@ -15,7 +15,7 @@ export default [
         path: '/',
         name: 'Home',
         tile: '',
-        transition: { timeout: 1000, classNames: 'home-route' },
+        transition: { timeout: 500, classNames: 'home-route' },
         component: Home,
         children: [
           {
