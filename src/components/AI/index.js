@@ -3,7 +3,7 @@ import React from 'react'
 export default class AI extends React.PureComponent {
   constructor (props) {
     super(props)
-    this.state = { phrase: props.phrase, typeSpeed: 50, deleteSpeed: 10 }
+    this.state = { phrase: props.phrase || 'Hi', typeSpeed: 50, deleteSpeed: 10 }
   }
 
   typing = (phrase) => {
