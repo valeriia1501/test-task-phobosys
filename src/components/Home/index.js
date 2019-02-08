@@ -3,6 +3,9 @@ import React from 'react'
 import Header from '@/components/Header'
 import AI from '@/components/AI'
 
+// import '../../animate/three.r92.min.js'
+// import '../../animate/vanta.net.min.js'
+
 export default class Home extends React.Component {
   constructor (props) {
     super(props)
@@ -22,11 +25,24 @@ export default class Home extends React.Component {
     const AIPhrase = this.getAIPhrase()
     if (state.AIPhrase !== AIPhrase) this.setState({ AIPhrase })
   }
+  componentDidMount(){
+    VANTA.NET({
+      el: "#vanta-net",
+      color: 0x2979ff,
+      backgroundColor: 0x0,
+      points: 6.00,
+      maxDistance: 21.00,
+      spacing: 12.00
+    })
+  }
 
   render() {
     return (
-      <div className="home" >
+      <div className="home">
         <Header />
+        <section className='web-gl' >
+          <div id='vanta-net'></div>
+        </section>
         <AI phrase={this.state.AIPhrase} />
         {this.props.children}
       </div>

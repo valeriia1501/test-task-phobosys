@@ -25,7 +25,7 @@ module.exports = {
 			'@': projectRoot + '/src',
 			'@components': projectRoot + '/src/components',
       '@styles': projectRoot + '/src/styles',
-			'@assets': projectRoot + '/assets'
+      '@assets': projectRoot + '/assets',
 		}
 	},
   module: {

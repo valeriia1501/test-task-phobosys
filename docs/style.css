@@ -476,6 +476,8 @@
   align-items: center;
   margin-top: 20px;
   padding-left: 273px; }
+  .header > * {
+    z-index: 1; }
   .header div {
     display: flex;
     align-items: center; }
@@ -580,6 +582,39 @@
 @media only screen and (min-width: 769px) {
   .header div nav.mobile {
     display: none !important; } }
+
+.AI {
+  height: calc(50vh - 60px);
+  display: flex;
+  align-items: flex-start;
+  padding-left: 273px;
+  transform: translateY(100px); }
+  .AI > p {
+    width: 760px;
+    font-size: 80px;
+    font-weight: bold;
+    position: relative; }
+    .AI > p::before {
+      content: "";
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background-color: #2979ff;
+      position: absolute;
+      box-shadow: 0px 0px 0px 20px rgba(41, 120, 255, 0.54);
+      transform: translate(-64px, 32px); }
+
+@media only screen and (max-width: 1200px) {
+  .AI {
+    padding-left: 70px; }
+    .AI p {
+      width: auto;
+      text-align: center; } }
+
+@media only screen and (max-width: 807px) {
+  .AI {
+    height: auto;
+    margin-top: 100px; } }
 
 .scroll-section {
   display: flex;
@@ -709,33 +744,23 @@
           text-align: center;
           word-break: break-all; } }
 
-.AI {
-  height: calc(50vh - 60px);
-  display: flex;
-  align-items: flex-end;
-  padding-left: 273px; }
-  .AI > p {
-    width: 760px;
-    font-size: 80px;
-    font-weight: bold;
-    position: relative; }
-    .AI > p::before {
-      content: "";
-      width: 28px;
-      height: 28px;
-      border-radius: 50%;
-      background-color: #2979ff;
-      position: absolute;
-      left: -77px;
-      top: 38px;
-      box-shadow: 0px 0px 0px 20px rgba(41, 120, 255, 0.54); }
-
 .home {
   color: #ffffff;
   background-color: black;
   margin: 0px;
   padding: 0px;
   overflow: hidden; }
+  .home .web-gl {
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    top: 0; }
+    .home .web-gl #vanta-net {
+      position: relative;
+      min-height: 100%;
+      top: -150px;
+      right: -250px; }
   .home > div:first-of-type {
     position: relative; }
   .home .home-route-enter {
@@ -750,13 +775,6 @@
     .home .home-route-exit.home-route-exit-active {
       opacity: 0;
       transition: opacity .25s; }
-
-@media only screen and (max-width: 1200px) {
-  .home .title {
-    padding: 0; }
-    .home .title p {
-      width: auto;
-      text-align: center; } }
 
 .neural {
   font-family: 'Proxima Nova Rg';
