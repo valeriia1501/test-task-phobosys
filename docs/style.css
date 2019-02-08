@@ -583,13 +583,12 @@
 
 .scroll-section {
   display: flex;
-  overflow-x: auto;
-  overflow-y: hidden;
-  height: calc(100vh + 15px);
-  margin-bottom: -15px; }
+  overflow: hidden;
+  height: 100vh; }
   .scroll-section > .cards {
     display: flex;
-    padding-left: 273px; }
+    padding-left: 273px;
+    margin-bottom: -15px; }
     .scroll-section > .cards > div:last-child {
       padding-right: calc(50vw - 439.89px - 80px); }
     .scroll-section > .cards .card-home {
@@ -710,45 +709,47 @@
           text-align: center;
           word-break: break-all; } }
 
+.AI {
+  height: calc(50vh - 60px);
+  display: flex;
+  align-items: flex-end;
+  padding-left: 273px; }
+  .AI > p {
+    width: 760px;
+    font-size: 80px;
+    font-weight: bold;
+    position: relative; }
+    .AI > p::before {
+      content: "";
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background-color: #2979ff;
+      position: absolute;
+      left: -77px;
+      top: 38px;
+      box-shadow: 0px 0px 0px 20px rgba(41, 120, 255, 0.54); }
+
 .home {
   color: #ffffff;
   background-color: black;
   margin: 0px;
   padding: 0px;
   overflow: hidden; }
+  .home > div:first-of-type {
+    position: relative; }
   .home .home-route-enter {
-    float: right;
+    position: absolute;
     opacity: 0; }
     .home .home-route-enter.home-route-enter-active {
       opacity: 1;
-      transition: opacity 1s;
-      transition-delay: .5s; }
+      transition: opacity .5s;
+      transition-delay: .25s; }
   .home .home-route-exit {
-    position: absolute;
     opacity: 1; }
     .home .home-route-exit.home-route-exit-active {
       opacity: 0;
-      transition: opacity .5s; }
-  .home .title {
-    height: calc(50vh - 60px);
-    display: flex;
-    align-items: flex-end;
-    padding-left: 273px; }
-    .home .title > p {
-      width: 760px;
-      font-size: 80px;
-      font-weight: bold;
-      position: relative; }
-      .home .title > p::before {
-        content: "";
-        width: 28px;
-        height: 28px;
-        border-radius: 50%;
-        background-color: #2979ff;
-        position: absolute;
-        left: -77px;
-        top: 38px;
-        box-shadow: 0px 0px 0px 20px rgba(41, 120, 255, 0.54); }
+      transition: opacity .25s; }
 
 @media only screen and (max-width: 1200px) {
   .home .title {
@@ -925,8 +926,8 @@
 
 .section-services {
   padding-left: calc(275px - 65px);
-  margin-bottom: 145px;
-  margin-top: 15vh; }
+  padding-bottom: 145px;
+  padding-top: 15vh; }
   .section-services .cards-services {
     display: flex;
     flex-wrap: wrap; }
