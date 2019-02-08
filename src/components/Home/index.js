@@ -13,7 +13,7 @@ export default class Home extends React.Component {
     if (window.location.hash === '#!/services') {
       return 'We offer our services - long, expensive, very cool'
     }
-    if (window.location.hash === '#!/') {
+    if (window.location.hash === '#!/' || window.location.hash === '#!') {
       return 'Inspiring businesses to bring innovative ideas to life'
     }
   }
