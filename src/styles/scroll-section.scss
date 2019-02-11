@@ -146,6 +146,8 @@
     height: auto;
     display: flex;
     justify-content: center;
+    margin-top: 120px;
+    margin-bottom: 150px;
     
     .cards{
       flex-direction: column;
@@ -176,6 +178,12 @@
         span{
           font-size: 123px;
           line-height: .7;
+          
+          &:first-of-type::before{
+            width: 140px;
+            height: 140px;
+            transform: translate(-25.5%, 54%);
+          }
         }
 
         .circle{
