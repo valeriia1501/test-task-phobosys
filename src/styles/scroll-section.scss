@@ -23,16 +23,16 @@
 
       > div {
         width: 280px;
-        span{
+        > span{
           font-size: 15px;
           opacity: .3;
         }
-        p{
+        > p{
           font-size: 24px;
           font-weight: bold;
           margin: 8px 0 0 0;
         }
-        small{
+        > small{
           display: inline-block;
           margin: 24px 0 74px 0;
         }
@@ -87,8 +87,14 @@
 					height: 100vh;
           overflow: hidden;
           z-index: 999;
+          margin-bottom: 350px;
           &.scroll-x {
             overflow-y: auto;
+          }
+          .networks{
+            .networks-container{
+              line-height: 1;
+            }
           }
         }
       }

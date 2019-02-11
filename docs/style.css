@@ -782,43 +782,43 @@
   overflow-x: hidden;
   color: #212121;
   margin-bottom: 350px; }
-  .neural > .networks .networks-continer {
+  .neural > .networks .networks-container {
     margin-top: 100px;
     text-align: center; }
-    .neural > .networks .networks-continer h1 {
+    .neural > .networks .networks-container h1 {
       margin: 0;
       font-size: 64px;
       font-weight: bold; }
-    .neural > .networks .networks-continer p {
+    .neural > .networks .networks-container p {
       font-size: 20px;
       line-height: 1.5;
       color: #212121;
       margin: 0 auto;
       margin-top: 34px;
       margin-bottom: 25px; }
-    .neural > .networks .networks-continer div {
+    .neural > .networks .networks-container div {
       display: flex;
       justify-content: center;
       align-items: center;
       margin: 0 0 59px 0; }
-      .neural > .networks .networks-continer div span {
+      .neural > .networks .networks-container div span {
         font-size: 20px;
         color: #212121; }
-      .neural > .networks .networks-continer div a {
+      .neural > .networks .networks-container div a {
         display: flex;
         justify-content: center;
         color: white;
         text-decoration: none;
         color: #212121; }
-        .neural > .networks .networks-continer div a:hover {
+        .neural > .networks .networks-container div a:hover {
           text-decoration: underline; }
-        .neural > .networks .networks-continer div a span {
+        .neural > .networks .networks-container div a span {
           width: 20px;
           height: 20px;
           border: 1px solid #212121;
           border-radius: 50%;
           margin-left: 10px; }
-          .neural > .networks .networks-continer div a span .arrow {
+          .neural > .networks .networks-container div a span .arrow {
             width: 15px; }
   .neural .video-section {
     margin-bottom: 120px; }
@@ -926,7 +926,7 @@
       margin-right: 15px; }
     .neural .header button {
       display: none; }
-    .neural .networks .networks-continer {
+    .neural .networks .networks-container {
       margin-top: 135px; }
     .neural .skills .cards {
       flex-wrap: wrap; }
