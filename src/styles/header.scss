@@ -1,101 +1,105 @@
 .header{
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   margin-top: 20px;
-  padding-left: 273px;
   
-  & > * {
-    z-index: 1;
-  }
-
-  div {
+  &-container{
+    width: 1360px;
     display: flex;
-    align-items: center;
+    justify-content: space-between;
 
-    > a {
-      text-decoration: none;
+    & > * {
+      z-index: 1;
+    }
+  
+    div {
+      display: flex;
+      align-items: center;
+  
+      > a {
+        text-decoration: none;
+        color: white;
+        margin-right: 54px;
+        span {
+          font-size: 32px;
+          font-weight: bold;
+        }
+      }
+      nav {
+        ul {
+          display: flex;
+          font-size: 16px;
+          margin: 0px;
+          padding: 0px;
+          list-style: none;
+  
+          li {
+            &+li {
+              margin-left: 48px;
+            }
+            a {
+              @include resetStyleLink();
+            }
+          }
+        }
+        &.mobile{
+          width: 140px;
+          display: flex;
+          background: rgba(255, 255, 255, 0.623);
+          position: absolute;
+          right: 50px;
+          top: 50px;
+          border-radius: 25px;
+          z-index: 999;
+          display: none;
+          ul{
+            width: 100%;
+            flex-direction: column;
+            font-size: 24px;
+  
+            li{
+  
+              &+li{
+                margin: 0;
+              }
+              a{
+                height: 50px;
+                line-height: 50px;
+                display: flex;
+                justify-content: center;
+                color: black;
+              }
+            }
+          }
+        }
+      }
+    }
+    .burger-icon {
+      width: 30px;
+      margin-right: 25px;
+      display: none;
+      .layer{
+        fill: white;
+      }
+    } 
+    button{
+      width: 134px;
+      height: 40px;
       color: white;
-      margin-right: 54px;
-      span {
-        font-size: 32px;
-        font-weight: bold;
-      }
+      border-radius: 20px;
+      background-color: $lightblue;
+      outline: none;
+      border: none;
     }
-    nav {
-      ul {
-        display: flex;
-        font-size: 16px;
-        margin: 0px;
-        padding: 0px;
-        list-style: none;
-
-        li {
-          &+li {
-            margin-left: 48px;
-          }
-          a {
-            @include resetStyleLink();
-          }
-        }
-      }
-      &.mobile{
-        width: 140px;
-        display: flex;
-        background: rgba(255, 255, 255, 0.623);
-        position: absolute;
-        right: 50px;
-        top: 50px;
-        border-radius: 25px;
-        z-index: 999;
-        display: none;
-        ul{
-          width: 100%;
-          flex-direction: column;
-          font-size: 24px;
-
-          li{
-
-            &+li{
-              margin: 0;
-            }
-            a{
-              height: 50px;
-              line-height: 50px;
-              display: flex;
-              justify-content: center;
-              color: black;
-            }
-          }
-        }
-      }
-    }
-  }
-  .burger-icon {
-    width: 30px;
-    margin-right: 25px;
-    display: none;
-    .layer{
-      fill: white;
-    }
-  } 
-  button{
-    width: 134px;
-    height: 40px;
-    color: white;
-    margin-right: 25px;
-    border-radius: 20px;
-    background-color: $lightblue;
-    outline: none;
-    border: none;
   }
 }
 .white-page{
   padding: 0;
 
   div{
-   a{
-     color: black;
+    a{
+      color: black;
     span{
       display: flex;
       margin-left: 55px;
@@ -114,7 +118,7 @@
         top: 12px;
       }
     }
-   }
+    }
     nav{
       ul{
         li{
@@ -148,28 +152,24 @@
 @media only screen and (max-width: 1200px){
   .header{
     padding-left: 25px;
+    padding-right: 25px;
   }
 }
 @media only screen and (max-width: 768px){
   .header{
-    div{
-      nav{
-        display: none;
+    &-container{
+      height: 30px;
+      div{
+        nav{
+          display: none;
+        }
       }
-    }
-    .burger-icon{
-      display: flex;
-    } 
-    button{
-      display: none;
-    }
-  }
-}
-@media only screen and (min-width: 769px){
-  .header{
-    div{
-      nav.mobile{
-        display: none !important;
+      .burger-icon{
+        display: flex;
+        margin: 0;
+      } 
+      button{
+        display: none;
       }
     }
   }

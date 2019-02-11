@@ -3,9 +3,6 @@ import React from 'react'
 import Header from '@/components/Header'
 import AI from '@/components/AI'
 
-// import '../../animate/three.r92.min.js'
-// import '../../animate/vanta.net.min.js'
-
 export default class Home extends React.Component {
   constructor (props) {
     super(props)

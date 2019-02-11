@@ -56,6 +56,7 @@ export default class ExpertiesCarousel extends React.PureComponent {
       (e.wheelDeltaY > 0)
     ) {
       this.setState({ verticalScrollLock: false })
+      console.log("verticalScrollLock", verticalScrollLock)
     }
 
     if (this.state.verticalScrollLock && !this.state.circlZooming) {
