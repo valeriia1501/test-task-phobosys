@@ -643,8 +643,7 @@
     height: 24px;
     border: 3px solid rgba(41, 120, 255, 0.54);
     margin: -15px 0 0 -15px;
-    animation: 2000ms pulseIn 500ms ease-in-out infinite;
-    -webkit-animation: 2000ms pulseIn 500ms ease-in-out infinite; }
+    animation: 2000ms pulseIn 500ms ease-in-out infinite; }
   .AI > p {
     width: 760px;
     font-size: 80px;
@@ -729,7 +728,7 @@
           box-shadow: 0px 0px 0px 52px rgba(41, 120, 255, 0.08);
           position: absolute;
           z-index: -999;
-          transform: translate(42%, 34%); }
+          transform: translate(44%, 33.5%); }
       .scroll-section > .cards .borvo .circle {
         width: 160px;
         height: 160px;
