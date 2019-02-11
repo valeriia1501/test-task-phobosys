@@ -588,26 +588,71 @@
   display: flex;
   align-items: flex-start;
   padding-left: 273px;
-  pointer-events: none;
-  transform: translateY(100px); }
+  transform: translateY(100px);
+  position: relative; }
+  .AI .pulsatingCircle {
+    width: 25px;
+    height: 25px;
+    display: block;
+    position: relative;
+    transform: scale(5, 5) translate(-12px, 6px); }
+  .AI .firstCircle,
+  .AI .secondCircle,
+  .AI .thirdCircle {
+    top: 50%;
+    left: 50%;
+    display: block;
+    border-radius: 50%;
+    position: absolute;
+    vertical-align: middle; }
+  .AI .firstCircle {
+    width: 10px;
+    height: 10px;
+    margin: -5px 0 0 -5px;
+    background-color: #2979ff; }
+  .AI .secondCircle {
+    width: 16px;
+    height: 16px;
+    margin: -11px 0 0 -11px;
+    border: 3px solid rgba(41, 120, 255, 0.54);
+    animation: 2000ms pulseIn ease-in-out infinite; }
+
+@keyframes pulseIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.2, 0.2); }
+  50% {
+    opacity: 1;
+    transform: scale(1, 1); }
+  100% {
+    opacity: 0;
+    transform: scale(0.2, 0.2); } }
+
+@-webkit-keyframes pulseIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.2, 0.2); }
+  50% {
+    opacity: 1;
+    transform: scale(1, 1); }
+  100% {
+    opacity: 0;
+    transform: scale(0.2, 0.2); } }
+  .AI .thirdCircle {
+    width: 24px;
+    height: 24px;
+    border: 3px solid rgba(41, 120, 255, 0.54);
+    margin: -15px 0 0 -15px;
+    animation: 2000ms pulseIn 500ms ease-in-out infinite; }
   .AI > p {
     width: 760px;
     font-size: 80px;
     font-weight: bold;
     position: relative; }
-    .AI > p::before {
-      content: "";
-      width: 28px;
-      height: 28px;
-      border-radius: 50%;
-      background-color: #2979ff;
-      position: absolute;
-      box-shadow: 0px 0px 0px 20px rgba(41, 120, 255, 0.54);
-      transform: translate(-64px, 32px); }
 
 @media only screen and (max-width: 1200px) {
   .AI {
-    padding-left: 70px; }
+    padding-left: 100px; }
     .AI p {
       width: auto;
       text-align: center; } }
@@ -615,7 +660,17 @@
 @media only screen and (max-width: 807px) {
   .AI {
     height: auto;
-    margin-top: 100px; } }
+    margin-top: 100px;
+    transform: none;
+    padding-left: 0; } }
+
+@media only screen and (max-width: 425px) {
+  .AI {
+    margin-top: 120px;
+    margin-bottom: 120px;
+    padding-left: 0; }
+    .AI p {
+      font-size: 60px; } }
 
 .scroll-section {
   display: flex;
@@ -635,14 +690,14 @@
         margin-right: 40px; }
       .scroll-section > .cards .card-home > div {
         width: 280px; }
-        .scroll-section > .cards .card-home > div span {
+        .scroll-section > .cards .card-home > div > span {
           font-size: 15px;
           opacity: .3; }
-        .scroll-section > .cards .card-home > div p {
+        .scroll-section > .cards .card-home > div > p {
           font-size: 24px;
           font-weight: bold;
           margin: 8px 0 0 0; }
-        .scroll-section > .cards .card-home > div small {
+        .scroll-section > .cards .card-home > div > small {
           display: inline-block;
           margin: 24px 0 74px 0; }
         .scroll-section > .cards .card-home > div .arrow {
@@ -673,7 +728,7 @@
           box-shadow: 0px 0px 0px 52px rgba(41, 120, 255, 0.08);
           position: absolute;
           z-index: -999;
-          transform: translate(42%, 34%); }
+          transform: translate(44%, 33.5%); }
       .scroll-section > .cards .borvo .circle {
         width: 160px;
         height: 160px;
@@ -687,9 +742,12 @@
           right: 0;
           height: 100vh;
           overflow: hidden;
-          z-index: 999; }
+          z-index: 999;
+          margin-bottom: 350px; }
           .scroll-section > .cards .borvo .circle .neural.scroll-x {
             overflow-y: auto; }
+          .scroll-section > .cards .borvo .circle .neural .networks .networks-container {
+            line-height: 1; }
 
 .scroll-hidden {
   overflow: hidden; }
@@ -713,13 +771,13 @@
 
 @media only screen and (max-width: 630px) {
   .scroll-section {
+    height: auto;
     display: flex;
     justify-content: center; }
     .scroll-section .cards {
-      height: auto;
-      overflow: visible;
-      margin-bottom: 50px;
-      flex-direction: column; }
+      flex-direction: column;
+      padding: 0;
+      margin: 0; }
       .scroll-section .cards .card-home {
         flex-direction: column;
         margin: 0; }
@@ -783,43 +841,45 @@
   overflow-x: hidden;
   color: #212121;
   margin-bottom: 350px; }
-  .neural > .networks .networks-continer {
+  .neural > .networks .networks-container {
     margin-top: 100px;
-    text-align: center; }
-    .neural > .networks .networks-continer h1 {
+    text-align: center;
+    line-height: 1; }
+    .neural > .networks .networks-container h1 {
       margin: 0;
       font-size: 64px;
       font-weight: bold; }
-    .neural > .networks .networks-continer p {
+    .neural > .networks .networks-container p {
       font-size: 20px;
       line-height: 1.5;
       color: #212121;
       margin: 0 auto;
       margin-top: 34px;
       margin-bottom: 25px; }
-    .neural > .networks .networks-continer div {
+    .neural > .networks .networks-container div {
       display: flex;
       justify-content: center;
       align-items: center;
       margin: 0 0 59px 0; }
-      .neural > .networks .networks-continer div span {
+      .neural > .networks .networks-container div span {
         font-size: 20px;
         color: #212121; }
-      .neural > .networks .networks-continer div a {
+      .neural > .networks .networks-container div a {
         display: flex;
-        justify-content: center;
         color: white;
         text-decoration: none;
         color: #212121; }
-        .neural > .networks .networks-continer div a:hover {
+        .neural > .networks .networks-container div a:hover {
           text-decoration: underline; }
-        .neural > .networks .networks-continer div a span {
+        .neural > .networks .networks-container div a span {
           width: 20px;
           height: 20px;
           border: 1px solid #212121;
           border-radius: 50%;
-          margin-left: 10px; }
-          .neural > .networks .networks-continer div a span .arrow {
+          margin-left: 10px;
+          display: flex;
+          justify-content: center; }
+          .neural > .networks .networks-container div a span .arrow {
             width: 15px; }
   .neural .video-section {
     margin-bottom: 120px; }
@@ -902,6 +962,8 @@
   display: none; }
 
 @media only screen and (max-width: 1100px) {
+  .neural .skills {
+    flex-wrap: wrap; }
   .neural footer .container {
     width: 720px;
     flex-direction: column; }
@@ -927,7 +989,7 @@
       margin-right: 15px; }
     .neural .header button {
       display: none; }
-    .neural .networks .networks-continer {
+    .neural .networks .networks-container {
       margin-top: 135px; }
     .neural .skills .cards {
       flex-wrap: wrap; }

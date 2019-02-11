@@ -1,16 +1,18 @@
+
+
 .neural{
     font-family: 'Proxima Nova Rg';
     background: white;
     overflow-x: hidden;
     color: #212121;
     margin-bottom: 350px;
-    // margin-right: -15px;
 
     >.networks{
 
-        .networks-continer{
+        .networks-container{
             margin-top: 100px;
             text-align: center;
+            line-height: 1;
             h1{
                 margin: 0;
                 font-size: 64px;
@@ -40,7 +42,6 @@
 
                 a{
                     display: flex;
-                    justify-content: center;
                     @include resetStyleLink();
                     color: #212121;
 
@@ -54,6 +55,8 @@
                         border:  1px solid #212121;
                         border-radius: 50%;
                         margin-left: 10px;
+                        display: flex;
+                        justify-content: center;
                         .arrow{
                             width: 15px;
                         }
@@ -193,9 +196,11 @@
 }
 @media only screen and (max-width: 1100px){
     .neural{
+        .skills{
+            flex-wrap: wrap;
+        }
 
-      footer{
-
+        footer{
           .container{
             width: 720px;
             flex-direction: column;
@@ -253,7 +258,7 @@
 
         .networks{
 
-            .networks-continer{
+            .networks-container{
                 margin-top: 135px;
             }
         }

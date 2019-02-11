@@ -42,7 +42,12 @@ export default class AI extends React.PureComponent {
 
   render() {
     return (
-      <section className="AI">
+      <section className='AI'>
+      <div className="pulsatingCircle">    
+        <span className="firstCircle"></span>
+        <span className="secondCircle"></span>
+        <span className="thirdCircle"></span>
+      </div>
         <p>
           {this.state.phrase}
         </p>

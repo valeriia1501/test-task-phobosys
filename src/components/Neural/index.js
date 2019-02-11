@@ -30,7 +30,7 @@ export default class Neural extends React.PureComponent {
         return <div className={classnames(this.props.className, "neural")}>
             <Header className="white-page" />
             <section className="networks" >
-                <div className="networks-continer">
+                <div className="networks-container">
                     <h1>Neural networks <br /> working with Twitter </h1>
                     <p>It is a long established facte that a reader will be distracted by the readable <br /> content of a page when looking at its layout.
                         </p>
