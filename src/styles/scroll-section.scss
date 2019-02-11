@@ -143,17 +143,16 @@
 
 @media only screen and (max-width: 630px){
   .scroll-section{
+    height: auto;
     display: flex;
     justify-content: center;
-
+    
     .cards{
-      height: auto;
-      overflow: visible;
-      margin-bottom: 50px;
       flex-direction: column;
-
+      padding: 0;
+      margin: 0;
       .card-home{
-        flex-direction: column;
+        flex-direction: column;        
         margin: 0;
 
         &+.card-home{
