@@ -1,15 +1,14 @@
 {
-  "name": "git",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "borvo-co",
+  "version": "0.0.1",
+  "description": "borvo.co font site",
+  "private": true,
   "scripts": {
     "start": "webpack-dev-server --open --mode development --info-verbosity verbose",
     "build": "webpack --mode production",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Phobosys",
   "devDependencies": {
     "@babel/core": "^7.2.2",
     "@babel/preset-env": "^7.3.1",
