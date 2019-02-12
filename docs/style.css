@@ -872,6 +872,7 @@
         color: #212121; }
       .neural > .networks .networks-container div a {
         display: flex;
+        align-items: center;
         color: white;
         text-decoration: none;
         color: #212121; }
