@@ -535,8 +535,8 @@
       height: 40px;
       font-size: 15px;
       color: white;
-      background-color: transparent;
       border: 1px solid #2979ff;
+      background-color: transparent;
       border-radius: 20px;
       outline: none; }
 
@@ -569,6 +569,8 @@
       color: white; }
   .white-page .burger-icon .layer {
     fill: black; }
+  .white-page button {
+    color: black; }
 
 @media only screen and (max-width: 1200px) {
   .header {
@@ -578,7 +580,7 @@
 @media only screen and (max-width: 768px) {
   .header-container {
     height: 30px; }
-    .header-container div nav {
+    .header-container div > nav {
       display: none; }
     .header-container .burger-icon {
       display: flex;
@@ -597,10 +599,10 @@
   .AI-container {
     width: 1360px; }
     .AI-container .pulsatingCircle {
-      width: 25px;
-      height: 25px;
+      width: 0px;
+      height: 0px;
       display: block;
-      transform: scale(4, 4) translate(-13px, 16px); }
+      transform: scale(4, 4) translate(-13px, 13px); }
     .AI-container .firstCircle,
     .AI-container .secondCircle,
     .AI-container .thirdCircle {
@@ -650,7 +652,8 @@
 
 @media only screen and (max-width: 768px) {
   .AI {
-    padding: 0;
+    padding-left: 25px;
+    padding-right: 25px;
     height: 100vh; }
     .AI p {
       width: auto; } }
@@ -659,15 +662,15 @@
   .AI .pulsatingCircle {
     display: none; }
   .AI p {
-    font-size: 80px; } }
+    font-size: 75px; } }
 
 @media only screen and (max-width: 375px) {
   .AI p {
-    font-size: 70px; } }
+    font-size: 65px; } }
 
 @media only screen and (max-width: 320px) {
   .AI p {
-    font-size: 60px; } }
+    font-size: 55px; } }
 
 .scroll-section {
   display: flex;
@@ -808,7 +811,7 @@
 
 .home {
   color: #ffffff;
-  background-color: black;
+  background-color: #0d0f1c;
   margin: 0px;
   padding: 0px;
   overflow: hidden; }
@@ -988,15 +991,6 @@
 @media only screen and (max-width: 680px) {
   .neural {
     margin-bottom: 100px; }
-    .neural .header div nav {
-      display: none; }
-    .neural .header div nav.mobile {
-      display: flex; }
-    .neural .header img {
-      display: inline-block;
-      margin-right: 15px; }
-    .neural .header button {
-      display: none; }
     .neural .networks .networks-container {
       margin-top: 135px; }
     .neural .skills .cards {
