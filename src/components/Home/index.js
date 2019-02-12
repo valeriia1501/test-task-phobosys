@@ -26,7 +26,7 @@ export default class Home extends React.Component {
     VANTA.NET({
       el: "#vanta-net",
       color: 0x2979ff,
-      backgroundColor: 0x0,
+      backgroundColor: 0x0d0f1c,
       points: 6.00,
       maxDistance: 21.00,
       spacing: 12.00

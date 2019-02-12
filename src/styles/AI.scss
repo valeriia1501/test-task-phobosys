@@ -11,10 +11,10 @@
        width: 1360px;
 
         .pulsatingCircle{
-            width:25px;
-            height:25px;
+            width:0px;
+            height:0px;
             display:block;
-            transform:scale(4,4) translate(-13px, 16px) ;
+            transform:scale(4,4) translate(-13px, 13px) ;
         }
 
         .firstCircle,
@@ -81,7 +81,8 @@
 }
 @media only screen and (max-width: 768px){
     .AI{
-        padding: 0;
+        padding-left: 25px;
+        padding-right: 25px;
         height: 100vh;
         p{
             width: auto;
@@ -94,21 +95,21 @@
             display: none;
         }
         p{
-            font-size: 80px;
+            font-size: 75px;
         }
     }
 }
 @media only screen and (max-width: 375px){
     .AI{
         p{
-            font-size: 70px;
+            font-size: 65px;
         }
     }
 }
 @media only screen and (max-width: 320px){
     .AI{
         p{
-            font-size: 60px;
+            font-size: 55px;
         }
     }
 }
