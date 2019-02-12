@@ -54,7 +54,6 @@ export default class ExpertiesCarousel extends React.PureComponent {
       this.html.classList.remove('scroll-hidden')
       return
     }
-    console.log(e.deltaY)
     if (this.state.verticalScrollLock) {
       if (!this.html.classList.contains('scroll-hidden')) {
         this.html.scrollTop = this.html.scrollHeight
