@@ -34,13 +34,27 @@ export default class ExpertiesCarousel extends React.PureComponent {
     this.scrollSection.removeEventListener('scroll', this.horizontalScrollHandler)
   }
 
+  normalizeDelta (e) {
+    const FireFoxWheelMod = 3
+    const ChromeOperaWheelMod = 53
+
+    let normDeltaY = 0
+    if (!(e.deltaY % FireFoxWheelMod)) {
+      normDeltaY = e.deltaY / FireFoxWheelMod
+    } else if (!(e.deltaY % ChromeOperaWheelMod)) {
+      normDeltaY = e.deltaY / ChromeOperaWheelMod
+    }
+    const direction = e.deltaY / Math.abs(e.deltaY);
+    return Math.min(3, Math.max(Math.abs(normDeltaY), 1)) * direction
+  }
+
   wheelHandler = (e) => {
     if (this.state.innerPageLock) {
       router.page('/neural')
       this.html.classList.remove('scroll-hidden')
       return
     }
-
+    console.log(e.deltaY)
     if (this.state.verticalScrollLock) {
       if (!this.html.classList.contains('scroll-hidden')) {
         this.html.scrollTop = this.html.scrollHeight
@@ -53,24 +67,24 @@ export default class ExpertiesCarousel extends React.PureComponent {
     if (
       this.state.verticalScrollLock &&
       this.scrollSection.scrollLeft === 0 &&
-      (e.wheelDeltaY > 0)
+      (e.deltaY < 0)
     ) {
       this.setState({ verticalScrollLock: false })
-      console.log("verticalScrollLock", verticalScrollLock)
     }
 
     if (this.state.verticalScrollLock && !this.state.circlZooming) {
-      this.scrollSection.scrollLeft -= e.wheelDeltaY
-    }
-
-    if (this.state.circlSize === 1 && (e.wheelDeltaY > 0)) {
-      this.setState({
-        circlZooming: false
-      })
+      const scrollingStep = this.scrollSection.scrollWidth / 30
+      this.scrollSection.scrollLeft += this.normalizeDelta(e) * scrollingStep
     }
 
     if (this.state.circlZooming) {
-      const cs = this.state.circlSize - (e.wheelDeltaY / 120)
+      if (this.state.circlSize === 1 && (e.deltaY < 0)) {
+        this.setState({
+          circlZooming: false
+        })
+      }
+
+      const cs = this.state.circlSize + this.normalizeDelta(e)
       this.setState({
         circlSize: Math.min(14, Math.max(cs, 1)),
         innerPageLock: cs >= 14
@@ -133,7 +147,11 @@ export default class ExpertiesCarousel extends React.PureComponent {
           </div>
           <div className="borvo" ref={domel => this.borvo = domel}  >
             <span>b</span>
-            <div className="circle" style={{ clipPath: `circle(${(this.state.circlSize / 2 * 100)}% at 50% 50%)` }}>
+            <div className="circle" style={{ 
+                clipPath: `circle(${(this.state.circlSize / 2 * 100)}% at 50% 50%)`,
+                WebkitClipPath: `circle(${(this.state.circlSize / 2 * 100)}% at 50% 50%)`
+              }}
+            >
               <Neural className={classnames({ "scroll-hidden": !this.state.innerPageLock })} />
             </div>
             <span className="rvo">rvo</span>

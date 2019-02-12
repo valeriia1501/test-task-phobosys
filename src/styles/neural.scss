@@ -42,6 +42,7 @@
 
                 a{
                     display: flex;
+                    align-items: center;
                     @include resetStyleLink();
                     color: #212121;
 
