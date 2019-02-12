@@ -86,11 +86,12 @@
     button{
       width: 134px;
       height: 40px;
+      font-size: 15px;
       color: white;
+      background-color: transparent;
+      border: 1px solid $lightblue;
       border-radius: 20px;
-      background-color: $lightblue;
       outline: none;
-      border: none;
     }
   }
 }

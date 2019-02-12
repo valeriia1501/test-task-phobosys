@@ -62,7 +62,6 @@ export default class ExpertiesCarousel extends React.PureComponent {
     } else {
       this.html.classList.remove('scroll-hidden')
     }
-
     if (
       this.state.verticalScrollLock &&
       this.scrollSection.scrollLeft === 0 &&
@@ -93,8 +92,9 @@ export default class ExpertiesCarousel extends React.PureComponent {
 
   scrollHandler = (e) => {
     const el = e.target.scrollingElement;
+    
     const scrollBottom = el.scrollHeight - el.clientHeight - el.scrollTop;
-
+    
     const verticalScrollLock = (scrollBottom === 0)
 
     if (!this.state.verticalScrollLock && verticalScrollLock) {
