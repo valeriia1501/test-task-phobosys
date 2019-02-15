@@ -79,11 +79,12 @@
         padding-left: 100px;
     }
 }
-@media only screen and (max-width: 768px){
+@media only screen and (max-width: 855px){
     .AI{
         padding-left: 25px;
         padding-right: 25px;
-        height: 100vh;
+        padding-bottom: 200px;
+        height: 100%;
         p{
             width: auto;
         }
