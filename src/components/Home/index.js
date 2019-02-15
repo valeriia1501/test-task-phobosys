@@ -23,6 +23,7 @@ export default class Home extends React.Component {
     if (state.AIPhrase !== AIPhrase) this.setState({ AIPhrase })
   }
   componentDidMount(){
+   try{
     VANTA.NET({
       el: "#vanta-net",
       color: 0x2979ff,
@@ -30,7 +31,10 @@ export default class Home extends React.Component {
       points: 6.00,
       maxDistance: 21.00,
       spacing: 12.00
-    })
+    }) 
+   } catch(e){
+     console.log(e)
+   }
   }
 
   render() {

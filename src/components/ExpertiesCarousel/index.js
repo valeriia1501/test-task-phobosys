@@ -17,6 +17,7 @@ export default class ExpertiesCarousel extends React.PureComponent {
   constructor(props) {
     super(props)
     this.html = document.getElementsByTagName('html')[0]
+    this.previousScroll = 0;
     this.state = {
       circlSize: 1
     }
@@ -40,13 +41,16 @@ export default class ExpertiesCarousel extends React.PureComponent {
 
     let normDeltaY = 0
     if (!(e.deltaY % FireFoxWheelMod)) {
-      normDeltaY = e.deltaY / FireFoxWheelMod
+      normDeltaY = e.deltaY / FireFoxWheelMod * 2
     } else if (!(e.deltaY % ChromeOperaWheelMod)) {
-      normDeltaY = e.deltaY / ChromeOperaWheelMod
+      normDeltaY = e.deltaY / ChromeOperaWheelMod * 2
     }
     const direction = e.deltaY / Math.abs(e.deltaY);
-    return Math.min(3, Math.max(Math.abs(normDeltaY), 1)) * direction
+    return (Math.min(3, Math.max(Math.abs(normDeltaY), 1)) * direction) || e.deltaY
   }
+
+  scrollBottom = el => el.scrollHeight - el.clientHeight - el.scrollTop
+  scrollLeft = el => el.scrollWidth - el.clientWidth - el.scrollLeft
 
   wheelHandler = (e) => {
     if (this.state.innerPageLock) {
@@ -54,32 +58,34 @@ export default class ExpertiesCarousel extends React.PureComponent {
       this.html.classList.remove('scroll-hidden')
       return
     }
-    if (this.state.verticalScrollLock) {
-      if (!this.html.classList.contains('scroll-hidden')) {
-        this.html.scrollTop = this.html.scrollHeight
-        this.html.classList.add('scroll-hidden')
-      }      
-    } else {
-      this.html.classList.remove('scroll-hidden')
-    }
+    
     if (
       this.state.verticalScrollLock &&
       this.scrollSection.scrollLeft === 0 &&
       (e.deltaY < 0)
     ) {
+      this.html.classList.remove('scroll-hidden')
       this.setState({ verticalScrollLock: false })
+    } 
+
+    if (
+      !this.state.verticalScrollLock &&
+      this.scrollBottom(this.html) === 0 &&
+      this.scrollSection.scrollLeft === 0 &&
+      (e.deltaY > 0)
+    ) {
+      this.html.classList.add('scroll-hidden')
+      this.setState({ verticalScrollLock: true })    
     }
 
     if (this.state.verticalScrollLock && !this.state.circlZooming) {
-      const scrollingStep = this.scrollSection.scrollWidth / 30
+      const scrollingStep = (this.scrollSection.scrollWidth - this.scrollSection.clientWidth) / 30
       this.scrollSection.scrollLeft += this.normalizeDelta(e) * scrollingStep
     }
 
     if (this.state.circlZooming) {
       if (this.state.circlSize === 1 && (e.deltaY < 0)) {
-        this.setState({
-          circlZooming: false
-        })
+        this.setState({ circlZooming: false })
       }
 
       const cs = this.state.circlSize + this.normalizeDelta(e)
@@ -88,16 +94,24 @@ export default class ExpertiesCarousel extends React.PureComponent {
         innerPageLock: cs >= 14
       })
     }
+
+    if (
+      !this.state.circlZooming &&
+      this.scrollLeft(this.scrollSection) === 0 &&
+      this.state.circlSize === 1 &&
+      (e.deltaY > 0)
+    ) {
+      this.setState({ circlZooming: true })    
+    }
   }
 
   scrollHandler = (e) => {
     const el = e.target.scrollingElement;
     
-    const scrollBottom = el.scrollHeight - el.clientHeight - el.scrollTop;
-    
-    const verticalScrollLock = (scrollBottom === 0)
+    const verticalScrollLock = (this.scrollBottom(el) === 0)
 
     if (!this.state.verticalScrollLock && verticalScrollLock) {
+      this.html.classList.add('scroll-hidden')
       this.setState({ verticalScrollLock })
     }
   }
