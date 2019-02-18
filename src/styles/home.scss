@@ -23,10 +23,12 @@
     >div:first-of-type {
         position: relative;
     }
-    $route-animation-speed: .6s;
+    $route-animation-speed: .5s;
     .scroll-section {
         &.home-route-enter {
             position: absolute;
+            left: 0;
+            right: 0;
             opacity: 0;
             
             &.home-route-enter-active {
@@ -44,17 +46,29 @@
             }
         }
     }
-
     .section-services {
         $tile-animation-speed: ($route-animation-speed / 2) / 5;
         &.home-route-enter {
-            position: absolute;
-            opacity: 0;
-            
+            .card-services {
+                opacity: 0;
+            }
             &.home-route-enter-active {
-                opacity: 1;
-                transition: opacity $route-animation-speed / 2;
-                transition-delay: $route-animation-speed / 2;
+                .card-services {
+                    opacity: 1;
+                    transition: opacity $route-animation-speed / 2;
+                    &:nth-child(2) {
+                        transition-delay: $tile-animation-speed * 1;
+                    }
+                    &:nth-child(3) {
+                        transition-delay: $tile-animation-speed * 2;
+                    }
+                    &:nth-child(4) {
+                        transition-delay: $tile-animation-speed * 3;
+                    }
+                    &:nth-child(5) {
+                        transition-delay: $tile-animation-speed * 4;
+                    }
+                }
             }
         }
         &.home-route-exit {
@@ -64,8 +78,7 @@
             &.home-route-exit-active {
                 .card-services {
                     opacity: 0;
-                    transition: opacity $tile-animation-speed;
-
+                    transition: opacity $route-animation-speed / 2;
                     &:nth-child(2) {
                         transition-delay: $tile-animation-speed * 1;
                     }

@@ -1,12 +1,16 @@
 .section-services {
-    padding-left: calc(275px - 65px);
     padding-bottom: 145px;
     padding-top: 15vh;
-    
+    display: flex;
+    justify-content: center;
     .cards-services {
+        width: 1540px;
+        padding-left: 25px;
+        padding-right: 25px;
         display: flex;
         flex-wrap: wrap;
-        
+        justify-content: center;
+        margin-left: 65px;
         .card-services {
             display: flex;
             flex-direction: column;
@@ -20,7 +24,7 @@
     }
 }
 
-@media only screen and (max-width: 1200px){
+@media only screen and (max-width: 1654px){
     .section-services{
         padding: 0;
         .cards-services{

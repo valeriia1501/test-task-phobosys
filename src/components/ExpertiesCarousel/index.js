@@ -17,6 +17,7 @@ export default class ExpertiesCarousel extends React.PureComponent {
   constructor(props) {
     super(props)
     this.html = document.getElementsByTagName('html')[0]
+    this.clientWidth = document.body.clientWidth;
     this.previousScroll = 0;
     this.state = {
       circlSize: 1
@@ -53,6 +54,7 @@ export default class ExpertiesCarousel extends React.PureComponent {
   scrollLeft = el => el.scrollWidth - el.clientWidth - el.scrollLeft
 
   wheelHandler = (e) => {
+    if(this.clientWidth <= 768) return
     if (this.state.innerPageLock) {
       router.page('/neural')
       this.html.classList.remove('scroll-hidden')
@@ -106,9 +108,11 @@ export default class ExpertiesCarousel extends React.PureComponent {
   }
 
   scrollHandler = (e) => {
-    const el = e.target.scrollingElement;
-    
+    if(this.clientWidth <= 768) return;
+    const el = e.target.scrollingElement;    
     const verticalScrollLock = (this.scrollBottom(el) === 0)
+
+    
 
     if (!this.state.verticalScrollLock && verticalScrollLock) {
       this.html.classList.add('scroll-hidden')
@@ -117,10 +121,9 @@ export default class ExpertiesCarousel extends React.PureComponent {
   }
 
   horizontalScrollHandler = (e) => {
+    if(this.clientWidth <= 768) return;
     const el = e.target;
-    const scrollRight = el.scrollWidth - el.clientWidth - el.scrollLeft;
-
-    const circlZooming = (scrollRight === 0)
+    const circlZooming = (this.scrollLeft(el) === 0)
 
     if (!this.state.circlZooming && circlZooming) {
       this.setState({ circlZooming })
