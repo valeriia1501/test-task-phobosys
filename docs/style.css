@@ -574,7 +574,7 @@
   .white-page button {
     color: black; }
 
-@media only screen and (max-width: 1400px) {
+@media only screen and (max-width: 1550px) {
   .header {
     padding-left: 100px;
     padding-right: 25px; } }
@@ -750,7 +750,8 @@
           height: 100vh;
           overflow: hidden;
           z-index: 999;
-          margin-bottom: 350px; }
+          margin-bottom: 350px;
+          pointer-events: none; }
           .scroll-section > .cards .borvo .circle .neural.scroll-x {
             overflow-y: auto; }
           .scroll-section > .cards .borvo .circle .neural .networks .networks-container {
@@ -761,7 +762,7 @@
 
 @media only screen and (max-width: 1200px) {
   .scroll-section > .cards {
-    padding-left: 25px; } }
+    padding-left: 100px; } }
 
 @media only screen and (max-width: 1040px) {
   .scroll-section .cards > .borvo:last-child {
@@ -837,36 +838,44 @@
     position: relative; }
   .home .scroll-section.home-route-enter {
     position: absolute;
+    left: 0;
+    right: 0;
     opacity: 0; }
     .home .scroll-section.home-route-enter.home-route-enter-active {
       opacity: 1;
-      transition: opacity 0.3s;
-      transition-delay: 0.3s; }
+      transition: opacity 0.25s;
+      transition-delay: 0.25s; }
   .home .scroll-section.home-route-exit {
     opacity: 1; }
     .home .scroll-section.home-route-exit.home-route-exit-active {
       opacity: 0;
-      transition: opacity 0.3s; }
-  .home .section-services.home-route-enter {
-    position: absolute;
+      transition: opacity 0.25s; }
+  .home .section-services.home-route-enter .card-services {
     opacity: 0; }
-    .home .section-services.home-route-enter.home-route-enter-active {
-      opacity: 1;
-      transition: opacity 0.3s;
-      transition-delay: 0.3s; }
+  .home .section-services.home-route-enter.home-route-enter-active .card-services {
+    opacity: 1;
+    transition: opacity 0.25s; }
+    .home .section-services.home-route-enter.home-route-enter-active .card-services:nth-child(2) {
+      transition-delay: 0.05s; }
+    .home .section-services.home-route-enter.home-route-enter-active .card-services:nth-child(3) {
+      transition-delay: 0.1s; }
+    .home .section-services.home-route-enter.home-route-enter-active .card-services:nth-child(4) {
+      transition-delay: 0.15s; }
+    .home .section-services.home-route-enter.home-route-enter-active .card-services:nth-child(5) {
+      transition-delay: 0.2s; }
   .home .section-services.home-route-exit .card-services {
     opacity: 1; }
   .home .section-services.home-route-exit.home-route-exit-active .card-services {
     opacity: 0;
-    transition: opacity 0.06s; }
+    transition: opacity 0.25s; }
     .home .section-services.home-route-exit.home-route-exit-active .card-services:nth-child(2) {
-      transition-delay: 0.06s; }
+      transition-delay: 0.05s; }
     .home .section-services.home-route-exit.home-route-exit-active .card-services:nth-child(3) {
-      transition-delay: 0.12s; }
+      transition-delay: 0.1s; }
     .home .section-services.home-route-exit.home-route-exit-active .card-services:nth-child(4) {
-      transition-delay: 0.18s; }
+      transition-delay: 0.15s; }
     .home .section-services.home-route-exit.home-route-exit-active .card-services:nth-child(5) {
-      transition-delay: 0.24s; }
+      transition-delay: 0.2s; }
 
 @media only screen and (max-width: 630px) {
   .home .web-gl #vanta-net {
@@ -924,39 +933,49 @@
     .neural .video-section .container {
       display: flex;
       justify-content: center; }
-      .neural .video-section .container .video:not(:first-of-type) {
+      .neural .video-section .container .video {
+        width: 100%;
+        height: 100%;
         margin-left: 120px; }
-  .neural .skills div {
-    text-align: center; }
-    .neural .skills div h1 {
-      font-size: 40px;
-      font-weight: bold; }
-    .neural .skills div p {
-      font-size: 18px;
-      margin: 28px 0 63px 0; }
-  .neural .skills .cards {
-    display: flex;
-    justify-content: center; }
-    .neural .skills .cards .card {
-      width: 174px;
-      height: 174px;
-      border-radius: 8px;
-      border: 1px solid #f5f5f5;
-      margin-bottom: 62px;
-      overflow: hidden;
+        .neural .video-section .container .video:first-of-type {
+          margin-left: 0px; }
+  .neural .skills {
+    padding-left: 25px;
+    padding-right: 25px; }
+    .neural .skills div {
+      text-align: center; }
+      .neural .skills div h1 {
+        font-size: 40px;
+        font-weight: bold; }
+      .neural .skills div p {
+        font-size: 18px;
+        margin: 28px 0 63px 0; }
+    .neural .skills .cards {
       display: flex;
+      flex-wrap: wrap;
       justify-content: center;
-      flex-direction: column; }
-      .neural .skills .cards .card + .card {
-        margin-left: 24px; }
-      .neural .skills .cards .card img {
-        width: 56px;
-        height: 56px;
-        margin: 0 auto;
-        margin-bottom: 19px; }
+      margin-left: -25px; }
+      .neural .skills .cards .card {
+        width: 174px;
+        height: 174px;
+        border-radius: 8px;
+        border: 1px solid #f5f5f5;
+        margin-bottom: 62px;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        margin-left: 25px; }
+        .neural .skills .cards .card img {
+          width: 56px;
+          height: 56px;
+          margin: 0 auto;
+          margin-bottom: 19px; }
   .neural footer {
     display: flex;
-    justify-content: center; }
+    justify-content: center;
+    padding-left: 25px;
+    padding-right: 25px; }
     .neural footer .container {
       width: 1385px;
       display: flex; }
@@ -1000,8 +1019,6 @@
   display: none; }
 
 @media only screen and (max-width: 1100px) {
-  .neural .skills {
-    flex-wrap: wrap; }
   .neural footer .container {
     width: 720px;
     flex-direction: column; }
@@ -1015,15 +1032,13 @@
     .neural footer .container .software ul {
       height: 160px; } }
 
-@media only screen and (max-width: 680px) {
+@media only screen and (max-width: 768px) {
   .neural {
     margin-bottom: 100px; }
     .neural .networks .networks-container {
       margin-top: 135px; }
     .neural .skills .cards {
-      flex-wrap: wrap; }
-      .neural .skills .cards .card + .card {
-        margin-left: 0; } }
+      flex-wrap: wrap; } }
 
 @media only screen and (max-width: 460px) {
   .neural footer .container {
@@ -1035,12 +1050,18 @@
       height: 160px; } }
 
 .section-services {
-  padding-left: calc(275px - 65px);
   padding-bottom: 145px;
-  padding-top: 15vh; }
+  padding-top: 15vh;
+  display: flex;
+  justify-content: center; }
   .section-services .cards-services {
+    width: 1540px;
+    padding-left: 25px;
+    padding-right: 25px;
     display: flex;
-    flex-wrap: wrap; }
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-left: 65px; }
     .section-services .cards-services .card-services {
       display: flex;
       flex-direction: column;
@@ -1050,7 +1071,7 @@
       .section-services .cards-services .card-services > span {
         margin-top: 50px; }
 
-@media only screen and (max-width: 1200px) {
+@media only screen and (max-width: 1654px) {
   .section-services {
     padding: 0; }
     .section-services .cards-services {

@@ -44,15 +44,9 @@ export default class Neural extends React.PureComponent {
             </section>
             <section className="video-section">
                 <div className="container">
-                    <div className="video hide">
-                        <img src={imgVideo} alt="" />
-                    </div>
-                    <div className="video">
-                        <img src={imgVideo} alt="" />
-                    </div>
-                    <div className="video">
-                        <img src={imgVideo} alt="" />
-                    </div>
+                        <img src={imgVideo} className="video hide" />
+                        <img src={imgVideo} className="video" />
+                        <img src={imgVideo} className="video" />
                 </div>
             </section>
             {/* <section className="temp-section">
