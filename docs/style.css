@@ -686,9 +686,8 @@
   .scroll-section > .cards {
     display: flex;
     padding-left: 273px;
-    margin-bottom: -15px; }
-    .scroll-section > .cards > div:last-child {
-      padding-right: calc(50vw - 439.89px - 80px); }
+    margin-bottom: -15px;
+    padding-right: calc(50vw - 300px); }
     .scroll-section > .cards .card-home {
       display: flex;
       align-items: center;
@@ -717,44 +716,35 @@
           align-items: center; }
           .scroll-section > .cards .card-home > div .arrow img {
             width: 17px; }
+      .scroll-section > .cards .card-home + .card-home + .card-home {
+        margin-right: 55vh; }
     .scroll-section > .cards .borvo {
       display: flex;
       align-items: center;
       position: relative;
       line-height: 1.4; }
-      .scroll-section > .cards .borvo > span {
-        font-weight: bold;
-        font-size: 304px;
-        z-index: 1; }
-        .scroll-section > .cards .borvo > span:first-child::before {
-          content: '';
-          width: 275px;
-          height: 275px;
-          border-radius: 50%;
-          background-color: rgba(41, 120, 255, 0.16);
-          box-shadow: 0px 0px 0px 52px rgba(41, 120, 255, 0.08);
-          position: absolute;
-          z-index: -999;
-          transform: translate(44%, 33.5%); }
-      .scroll-section > .cards .borvo .circle {
-        width: 160px;
+      .scroll-section > .cards .borvo > svg {
+        width: 0;
+        height: 0; }
+        .scroll-section > .cards .borvo > svg defs clipPath {
+          transform-origin: 48.5% 50%; }
+      .scroll-section > .cards .borvo .clip {
+        width: 600px;
         height: 160px;
-        margin-top: 35px;
-        transition: clip-path 0.2s;
-        z-index: 5; }
-        .scroll-section > .cards .borvo .circle .neural {
+        clip-path: url(#text-borvo);
+        -webkit-clip-path: url(#text-borvo); }
+        .scroll-section > .cards .borvo .clip .neural {
           position: fixed;
           top: 0;
           left: 0;
           right: 0;
           height: 100vh;
           overflow: hidden;
-          z-index: 999;
           margin-bottom: 350px;
           pointer-events: none; }
-          .scroll-section > .cards .borvo .circle .neural.scroll-x {
+          .scroll-section > .cards .borvo .clip .neural.scroll-x {
             overflow-y: auto; }
-          .scroll-section > .cards .borvo .circle .neural .networks .networks-container {
+          .scroll-section > .cards .borvo .clip .neural .networks .networks-container {
             line-height: 1; }
 
 .scroll-hidden {
@@ -763,19 +753,6 @@
 @media only screen and (max-width: 1200px) {
   .scroll-section > .cards {
     padding-left: 100px; } }
-
-@media only screen and (max-width: 1040px) {
-  .scroll-section .cards > .borvo:last-child {
-    padding-right: calc(50vw - 296px - 60px); }
-  .scroll-section .cards > .borvo .circle {
-    width: 120px;
-    height: 120px; }
-  .scroll-section .cards > .borvo > span {
-    font-size: 205px; }
-    .scroll-section .cards > .borvo > span:first-child::before {
-      width: 182px;
-      height: 182px;
-      transform: translate(48%, 37%); } }
 
 @media only screen and (max-width: 768px) {
   .scroll-section {
@@ -796,26 +773,7 @@
         .scroll-section .cards .card-home img {
           margin: 0; }
         .scroll-section .cards .card-home div {
-          margin: 50px 0 0px 0; }
-      .scroll-section .cards .borvo {
-        display: flex;
-        flex-direction: column;
-        margin: 170px 0 0 0; }
-        .scroll-section .cards .borvo span {
-          font-size: 123px;
-          line-height: .7; }
-          .scroll-section .cards .borvo span:first-of-type::before {
-            width: 140px;
-            height: 140px;
-            transform: translate(-25.5%, 54%); }
-        .scroll-section .cards .borvo .circle {
-          width: 90px;
-          height: 90px;
-          margin: 15px 0 0 0; }
-        .scroll-section .cards .borvo .rvo {
-          width: 80px;
-          text-align: center;
-          word-break: break-all; } }
+          margin: 50px 0 0px 0; } }
 
 .home {
   color: #ffffff;
