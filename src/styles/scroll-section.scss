@@ -7,9 +7,9 @@
     display: flex;
     padding-left: 273px;
     margin-bottom: -15px;
+    padding-right: calc(50vw - 300px);
 
     & > div:last-child {
-      padding-right: calc(50vw - 439.89px - 80px);
     }
 
     .card-home {
@@ -49,6 +49,9 @@
           }
         }
       }
+      &+.card-home + .card-home {
+        margin-right: 55vh;
+      }
     }
     .borvo {
       display: flex;
@@ -56,49 +59,43 @@
       position: relative;
       line-height: 1.4;
 
-      > span {
-        font-weight: bold;
-        font-size: 304px;
-        z-index: 1;
-        &:first-child::before{
-          content: '';
-          width: 275px;
-          height: 275px;
-          border-radius: 50%;
-          background-color: rgba(41, 120, 255, 0.16);
-          box-shadow: 0px 0px 0px 52px rgba(41, 120, 255, 0.08);
-          position: absolute;
-          z-index: -999;
-          transform: translate(44%, 33.5%);
+      > svg {
+        width: 0;
+        height: 0;
+
+        defs {
+          clipPath {
+            transform-origin: 48.5% 50%;
+          }
         }
       }
-      .circle {
-        width: 160px;
+      .clip {
+        width: 600px;
         height: 160px;
-        margin-top: 35px;
-        transition: clip-path 0.2s;
-        z-index: 5;
-
+        clip-path: url(#text-borvo);
+        -webkit-clip-path: url(#text-borvo);
+        
         .neural {
           position: fixed;
           top: 0;
           left: 0;
-					right: 0;
-					height: 100vh;
+          right: 0;
+          height: 100vh;
           overflow: hidden;
-          z-index: 999;
           margin-bottom: 350px;
           pointer-events: none;
+  
           &.scroll-x {
             overflow-y: auto;
           }
-          .networks{
-            .networks-container{
+          .networks {
+            .networks-container {
               line-height: 1;
             }
           }
         }
       }
+
     }
   }
 }
@@ -111,33 +108,6 @@
   .scroll-section{
     > .cards{
       padding-left: 100px;
-    }
-  }
-}
-
-@media only screen and (max-width: 1040px){
-  .scroll-section{
-    .cards{
-      >.borvo{
-        &:last-child{
-          padding-right: calc(50vw - 296px - 60px);
-        }
-
-        .circle{
-          width: 120px;
-          height: 120px;
-        }
-        
-        >span{
-          font-size: 205px;
-
-          &:first-child::before{
-            width: 182px;
-            height: 182px;
-            transform: translate(48%, 37%);
-          }  
-        }
-      }
     }
   }
 }
@@ -168,35 +138,6 @@
 
         div{
           margin: 50px 0 0px 0;
-        }
-      }
-
-      .borvo{
-        display: flex;
-        flex-direction: column;
-        margin: 170px 0 0 0;
-
-        span{
-          font-size: 123px;
-          line-height: .7;
-          
-          &:first-of-type::before{
-            width: 140px;
-            height: 140px;
-            transform: translate(-25.5%, 54%);
-          }
-        }
-
-        .circle{
-          width: 90px;
-          height: 90px;
-          margin: 15px 0 0 0;
-        }
-
-        .rvo{
-          width: 80px;
-          text-align: center;
-          word-break: break-all;
         }
       }
     }
