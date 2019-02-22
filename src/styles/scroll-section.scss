@@ -49,8 +49,8 @@
           }
         }
       }
-      &+.card-home + .card-home {
-        margin-right: 55vh;
+      &.hide-animation{
+        transform: translateX(-100%);
       }
     }
     .borvo {
@@ -65,7 +65,7 @@
 
         defs {
           clipPath {
-            transform-origin: 48.5% 50%;
+            transform-origin: 48.5% 65%;
           }
         }
       }
