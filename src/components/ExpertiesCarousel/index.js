@@ -24,10 +24,6 @@ export default class ExpertiesCarousel extends React.PureComponent {
     }
   }
 
-  componentDidUpdate(){
-    console.log(this.state)
-  }
-
   componentDidMount() {
     window.addEventListener('wheel', this.wheelHandler)
     window.addEventListener('scroll', this.scrollHandler)
@@ -141,7 +137,7 @@ export default class ExpertiesCarousel extends React.PureComponent {
     return (
       <section className="scroll-section" ref={el => this.scrollSection = el}>
         <div className="cards">
-          <div className='card-home' style={{ 'transform': 'translateX(' + -this.state.moveToLeft + 'vh' + ')' }}>
+          <div className='card-home'>
             <img src={card_1} />
             <div>
               <span>01</span>
@@ -150,7 +146,7 @@ export default class ExpertiesCarousel extends React.PureComponent {
               <a className="arrow" href="#" ><img src={rigthArrow} /></a>
             </div>
           </div>
-          <div className='card-home' style={{ 'transform': 'translateX(' + -this.state.moveToLeft + 'vh' + ')' }}>
+          <div className='card-home'>
             <img src={card_2} />
             <div>
               <span>02</span>
@@ -159,7 +155,7 @@ export default class ExpertiesCarousel extends React.PureComponent {
               <a className="arrow" href="#" ><img src={rigthArrow} /></a>
             </div>
           </div>
-          <div className='card-home' style={{ 'transform': 'translateX(' + -this.state.moveToLeft + 'vh' + ')' }}>
+          <div className='card-home'>
             <img src={card_3} />
             <div>
               <span>03</span>
@@ -169,21 +165,17 @@ export default class ExpertiesCarousel extends React.PureComponent {
             </div>
           </div>
           <div className="borvo" ref={domel => this.borvo = domel}  >
-          <div className='clip' >
             <Neural className={classnames({"scroll-hidden": !this.state.innerPageLock})} />
-          </div>
-          <span className="hide">{this.state.circlSize}</span>
-          <svg x='0px' y='0px' viewBox='0 0 593.2 157.3'>
-            <defs>
-            <clipPath id='text-borvo' style={{ 'transform' : `scale(${this.state.circlSize})` }} >
-                <path d='M0,154.5V0h35.7v55.8c8.8-11.1,20.8-16,33.1-16c28,0,49.3,22,49.3,58.6c0,38-21.8,58.8-49.3,58.8 c-12.5,0-23.9-5.1-33.1-15.8v13H0z M57,125.8c14.1,0,24.8-10.4,24.8-27.3c0-16.7-10.7-27.1-24.8-27.1c-7.6,0-16.9,4.2-21.3,10.2 v34.3C40.1,121.8,49.3,125.8,57,125.8z'/>
-                <path d='M129.7,98.4c0-31.5,22.7-58.6,60.7-58.6c38.5,0,61.2,27.1,61.2,58.6c0,31.5-22.7,58.8-61.2,58.8 C152.4,157.3,129.7,130,129.7,98.4z M215,98.4c0-14.8-8.8-27.1-24.6-27.1c-15.3,0-24.1,12.3-24.1,27.1c0,15.1,8.8,27.3,24.1,27.3 C206.2,125.8,215,113.5,215,98.4z'/>
-                <path d='M270.3,154.5V42.6H306v13.7c7.4-9,21.8-16.7,35-16.7v34.3c-2.1-0.7-5.1-0.9-8.8-0.9c-9.3,0-21.5,3.9-26.2,10.2 v71.3H270.3z'/>
-                <path d='M385.9,154.5l-44-111.9h37.5l25.5,70.9l25.2-70.9h37.8l-44,111.9H385.9z'/>
-                <path d='M471.4,98.4c0-31.5,22.7-58.6,60.7-58.6c38.5,0,61.2,27.1,61.2,58.6c0,31.5-22.7,58.8-61.2,58.8 C494.1,157.3,471.4,130,471.4,98.4z M556.6,98.4c0-14.8-8.8-27.1-24.6-27.1c-15.3,0-24.1,12.3-24.1,27.1c0,15.1,8.8,27.3,24.1,27.3 C547.8,125.8,556.6,113.5,556.6,98.4z'/>
-            </clipPath>
-            </defs>
-            </svg>
+           <div className='svg-container'  style={{ 'transform' : `scale(${this.state.circlSize})`}}>
+              <svg width="775.8px" height="366.2px" >
+                <g>
+                  <path d="M0,0v366.2h775.8V0H0z M181.7,240.3c-4.8,9.7-11.6,17.2-20.4,22.5c-8.8,5.3-19,8-30.6,8 c-8,0-15.2-1.5-21.7-4.6c-6.5-3-12-7.5-16.5-13.2v16.4H50.9V95.5h41.7V159c9.2-11.9,21.6-17.8,37.3-17.8c11.7,0,22,2.7,30.9,8.1c8.9,5.4,15.8,13,20.7,23c4.9,9.9,7.4,21.4,7.4,34.3C188.9,219.3,186.5,230.6,181.7,240.3z M329.9,239.9 c-5.8,9.8-13.9,17.3-24.4,22.7c-10.5,5.4-22.6,8.1-36.3,8.1c-13.7,0-25.9-2.7-36.3-8.1c-10.5-5.4-18.5-13-24.2-22.7c-5.7-9.8-8.6-21.1-8.6-34.1c0-12.8,2.8-24.1,8.6-33.9c5.7-9.8,13.8-17.3,24.2-22.7c10.5-5.4,22.6-8.1,36.3-8.1 c13.7,0,25.8,2.7,36.3,8.1c10.5,5.4,18.6,13,24.4,22.7c5.8,9.8,8.7,21,8.7,33.9C338.6,218.8,335.7,230.2,329.9,239.9z M442.4,179.1c-1.4-0.2-3.5-0.2-6.3-0.2c-9.8,0-17.8,2.3-23.9,6.9c-6.1,4.6-9.6,10.9-10.5,18.9v64.7h-41.7V142.6h41.7v21.1c4.4-7.3,10-13,17-16.9c6.9-3.9,14.9-5.9,23.8-5.9V179.1z M496.3,269.3l-47.3-126.8h42.9l26.5,88.1l26.7-88.1h41.7l-47.6,126.8H496.3z M716.3,239.9c-5.8,9.8-13.9,17.3-24.4,22.7c-10.5,5.4-22.6,8.1-36.3,8.1c-13.7,0-25.9-2.7-36.3-8.1c-10.5-5.4-18.5-13-24.2-22.7c-5.7-9.8-8.6-21.1-8.6-34.1c0-12.8,2.8-24.1,8.6-33.9c5.7-9.8,13.8-17.3,24.2-22.7c10.5-5.4,22.6-8.1,36.3-8.1c13.7,0,25.8,2.7,36.3,8.1c10.5,5.4,18.6,13,24.4,22.7c5.8,9.8,8.7,21,8.7,33.9C724.9,218.8,722,230.2,716.3,239.9z"/>
+                  <path d="M655.6,174.9c-8.1,0-14.7,2.9-19.7,8.7c-5,5.8-7.5,13.4-7.5,22.7c0,9.5,2.5,17.2,7.5,23c5,5.8,11.6,8.7,19.7,8.7c8.3,0,14.9-2.9,19.9-8.7c5-5.8,7.5-13.4,7.5-23c0-9.4-2.5-16.9-7.6-22.7C670.3,177.8,663.7,174.9,655.6,174.9z"/>
+                  <path d="M119.5,174c-8,0-14.4,2.9-19.4,8.8c-5,5.9-7.5,13.5-7.5,22.8c0,9.4,2.5,16.9,7.5,22.7c5,5.8,11.5,8.7,19.4,8.7c8.1,0,14.7-2.9,19.8-8.7c5.1-5.8,7.6-13.4,7.6-22.7c0-9.4-2.5-17-7.6-22.8C134.2,176.9,127.6,174,119.5,174z"/>
+                  <path d="M269.2,174.9c-8.1,0-14.7,2.9-19.7,8.7c-5,5.8-7.5,13.4-7.5,22.7c0,9.5,2.5,17.2,7.5,23c5,5.8,11.6,8.7,19.7,8.7c8.3,0,14.9-2.9,19.9-8.7c5-5.8,7.5-13.4,7.5-23c0-9.4-2.5-16.9-7.6-22.7C284,177.8,277.4,174.9,269.2,174.9z"/>
+                </g>
+              </svg>
+           </div>
           </div>
         </div>
       </section>

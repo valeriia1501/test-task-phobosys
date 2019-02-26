@@ -7,7 +7,7 @@
     display: flex;
     padding-left: 273px;
     margin-bottom: -15px;
-    padding-right: calc(50vw - 300px);
+    // padding-right: calc(50vw - 600px);
 
     & > div:last-child {
     }
@@ -49,53 +49,41 @@
           }
         }
       }
-      &.hide-animation{
-        transform: translateX(-100%);
-      }
     }
     .borvo {
+      width: 100vw;
       display: flex;
       align-items: center;
+      justify-content: center;
       position: relative;
       line-height: 1.4;
+      .svg-container {
+        transform-origin: 49% 58.5%;
+        z-index: 999;
+        svg {
+          fill: #0d0f1c;
+          outline: calc(100vh - 420px) solid #0d0f1c;
+        }
+      }
+      .neural {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 100vh;
+        overflow: hidden;
+        margin-bottom: 350px;
+        pointer-events: none;
 
-      > svg {
-        width: 0;
-        height: 0;
-
-        defs {
-          clipPath {
-            transform-origin: 48.5% 65%;
+        &.scroll-x {
+          overflow-y: auto;
+        }
+        .networks {
+          .networks-container {
+            line-height: 1;
           }
         }
       }
-      .clip {
-        width: 600px;
-        height: 160px;
-        clip-path: url(#text-borvo);
-        -webkit-clip-path: url(#text-borvo);
-        
-        .neural {
-          position: fixed;
-          top: 0;
-          left: 0;
-          right: 0;
-          height: 100vh;
-          overflow: hidden;
-          margin-bottom: 350px;
-          pointer-events: none;
-  
-          &.scroll-x {
-            overflow-y: auto;
-          }
-          .networks {
-            .networks-container {
-              line-height: 1;
-            }
-          }
-        }
-      }
-
     }
   }
 }
