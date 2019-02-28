@@ -464,6 +464,10 @@
   padding: 0;
   margin: 0; }
 
+*::selection {
+  background: #2979ff;
+  color: white; }
+
 .hide {
   opacity: 0; }
 
@@ -686,8 +690,9 @@
   .scroll-section > .cards {
     display: flex;
     padding-left: 273px;
-    margin-bottom: -15px;
-    padding-right: calc(50vw - 300px); }
+    margin-bottom: -15px; }
+    .scroll-section > .cards > .card-home:not(:last-child) {
+      z-index: 10; }
     .scroll-section > .cards .card-home {
       display: flex;
       align-items: center;
@@ -716,36 +721,32 @@
           align-items: center; }
           .scroll-section > .cards .card-home > div .arrow img {
             width: 17px; }
-      .scroll-section > .cards .card-home + .card-home + .card-home {
-        margin-right: 55vh; }
     .scroll-section > .cards .borvo {
+      width: 100vw;
       display: flex;
       align-items: center;
+      justify-content: center;
       position: relative;
       line-height: 1.4; }
-      .scroll-section > .cards .borvo > svg {
-        width: 0;
-        height: 0; }
-        .scroll-section > .cards .borvo > svg defs clipPath {
-          transform-origin: 48.5% 50%; }
-      .scroll-section > .cards .borvo .clip {
-        width: 600px;
-        height: 160px;
-        clip-path: url(#text-borvo);
-        -webkit-clip-path: url(#text-borvo); }
-        .scroll-section > .cards .borvo .clip .neural {
-          position: fixed;
-          top: 0;
-          left: 0;
-          right: 0;
-          height: 100vh;
-          overflow: hidden;
-          margin-bottom: 350px;
-          pointer-events: none; }
-          .scroll-section > .cards .borvo .clip .neural.scroll-x {
-            overflow-y: auto; }
-          .scroll-section > .cards .borvo .clip .neural .networks .networks-container {
-            line-height: 1; }
+      .scroll-section > .cards .borvo .svg-container {
+        transform-origin: 49% 58.5%;
+        z-index: 5; }
+        .scroll-section > .cards .borvo .svg-container svg {
+          fill: #0d0f1c;
+          outline: 100vh solid #0d0f1c; }
+      .scroll-section > .cards .borvo .neural {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 100vh;
+        overflow: hidden;
+        margin-bottom: 350px;
+        pointer-events: none; }
+        .scroll-section > .cards .borvo .neural.scroll-x {
+          overflow-y: auto; }
+        .scroll-section > .cards .borvo .neural .networks .networks-container {
+          line-height: 1; }
 
 .scroll-hidden {
   overflow: hidden; }
