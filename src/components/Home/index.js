@@ -6,6 +6,8 @@ import AI from '@/components/AI'
 export default class Home extends React.Component {
   constructor (props) {
     super(props)
+    this.html = document.getElementsByTagName('html')[0]
+    this.html.classList.remove('scroll-hidden')
     this.state = { AIPhrase: this.getAIPhrase() }
   }
 

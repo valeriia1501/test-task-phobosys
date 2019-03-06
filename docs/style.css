@@ -71,7 +71,7 @@
 		url(b7c512788e3c77b0196f0bace8a88418.eot?#iefix) format('embedded-opentype'),
 		url(2d2ae2556b24a45ff8d5ed86b07b5783.woff) format('woff'),
 		url(7ce6760d17685c466ba04d1b2c63c38b.ttf) format('truetype');
-	font-weight: normal;
+	font-weight: 100;
 	font-style: normal;
 }
 
@@ -474,6 +474,12 @@
 .show {
   display: flex !important; }
 
+.scroll-hidden {
+  overflow: hidden; }
+
+.scroll-x-hidden {
+  overflow-x: hidden !important; }
+
 .header {
   display: flex;
   justify-content: center;
@@ -547,7 +553,15 @@
       outline: none; }
 
 .white-page {
-  padding: 0; }
+  padding: 0;
+  position: relative; }
+  .white-page::before {
+    content: '';
+    width: 100vw;
+    height: 0.8px;
+    background: rgba(0, 0, 0, 0.1);
+    position: absolute;
+    bottom: -20px; }
   .white-page div a {
     color: black; }
     .white-page div a span {
@@ -689,7 +703,7 @@
   height: 100vh; }
   .scroll-section > .cards {
     display: flex;
-    padding-left: 273px;
+    padding-left: 250px;
     margin-bottom: -15px; }
     .scroll-section > .cards > .card-home:not(:last-child) {
       z-index: 10; }
@@ -727,13 +741,15 @@
       align-items: center;
       justify-content: center;
       position: relative;
-      line-height: 1.4; }
+      line-height: 1.4;
+      transform: translateX(-400px);
+      margin-right: -400px; }
       .scroll-section > .cards .borvo .svg-container {
         transform-origin: 49% 58.5%;
         z-index: 5; }
         .scroll-section > .cards .borvo .svg-container svg {
           fill: #0d0f1c;
-          outline: 100vh solid #0d0f1c; }
+          outline: 150vh solid #0d0f1c; }
       .scroll-section > .cards .borvo .neural {
         position: absolute;
         top: 0;
@@ -747,9 +763,6 @@
           overflow-y: auto; }
         .scroll-section > .cards .borvo .neural .networks .networks-container {
           line-height: 1; }
-
-.scroll-hidden {
-  overflow: hidden; }
 
 @media only screen and (max-width: 1200px) {
   .scroll-section > .cards {
@@ -775,6 +788,80 @@
           margin: 0; }
         .scroll-section .cards .card-home div {
           margin: 50px 0 0px 0; } }
+
+.works {
+  height: 100vh;
+  overflow: hidden;
+  display: flex; }
+  .works .works-container {
+    display: flex;
+    align-items: center;
+    line-height: 1;
+    padding-left: 50vh; }
+    .works .works-container .content {
+      margin-right: 200px; }
+      .works .works-container .content video {
+        width: 1000px; }
+    .works .works-container .text-about-work {
+      padding-right: 200px;
+      transform: translateX(150px);
+      opacity: 0;
+      transition: transform .8s, opacity .8s; }
+      .works .works-container .text-about-work.appearance-of-text {
+        transform: translateX(0);
+        opacity: 1; }
+      .works .works-container .text-about-work span {
+        font-size: 24px; }
+      .works .works-container .text-about-work h1 {
+        margin: 0;
+        width: 750px;
+        padding-right: 200px;
+        font-size: 80px;
+        font-weight: bold; }
+      .works .works-container .text-about-work p {
+        font-size: 20px;
+        line-height: 1.5;
+        color: #212121;
+        margin: 0 auto;
+        margin-top: 34px;
+        margin-bottom: 25px; }
+      .works .works-container .text-about-work div {
+        display: flex;
+        justify-content: center;
+        align-items: center; }
+        .works .works-container .text-about-work div span {
+          font-size: 20px;
+          color: #212121; }
+        .works .works-container .text-about-work div a {
+          display: flex;
+          align-items: center;
+          color: white;
+          text-decoration: none;
+          color: #212121; }
+          .works .works-container .text-about-work div a:hover {
+            text-decoration: underline; }
+          .works .works-container .text-about-work div a span {
+            width: 20px;
+            height: 20px;
+            border: 1px solid #212121;
+            border-radius: 50%;
+            margin-left: 10px;
+            display: flex;
+            justify-content: center; }
+            .works .works-container .text-about-work div a span .arrow {
+              width: 15px; }
+
+.video-section {
+  margin-bottom: 120px; }
+  .video-section .container {
+    display: flex;
+    justify-content: center; }
+    .video-section .container .video {
+      width: 100%;
+      height: 100%;
+      margin-left: 120px; }
+      .video-section .container .video:first-of-type {
+        margin-left: 0px; }
 
 .home {
   color: #ffffff;
@@ -846,58 +933,95 @@
   overflow-x: hidden;
   color: #212121;
   margin-bottom: 350px; }
-  .neural > .networks .networks-container {
-    margin-top: 100px;
-    text-align: center;
-    line-height: 1; }
-    .neural > .networks .networks-container h1 {
-      margin: 0;
-      font-size: 64px;
-      font-weight: bold; }
-    .neural > .networks .networks-container p {
-      font-size: 20px;
-      line-height: 1.5;
-      color: #212121;
-      margin: 0 auto;
-      margin-top: 34px;
-      margin-bottom: 25px; }
-    .neural > .networks .networks-container div {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin: 0 0 59px 0; }
-      .neural > .networks .networks-container div span {
-        font-size: 20px;
-        color: #212121; }
-      .neural > .networks .networks-container div a {
-        display: flex;
-        align-items: center;
-        color: white;
-        text-decoration: none;
-        color: #212121; }
-        .neural > .networks .networks-container div a:hover {
-          text-decoration: underline; }
-        .neural > .networks .networks-container div a span {
-          width: 20px;
-          height: 20px;
-          border: 1px solid #212121;
-          border-radius: 50%;
-          margin-left: 10px;
-          display: flex;
-          justify-content: center; }
-          .neural > .networks .networks-container div a span .arrow {
-            width: 15px; }
-  .neural .video-section {
-    margin-bottom: 120px; }
-    .neural .video-section .container {
-      display: flex;
-      justify-content: center; }
-      .neural .video-section .container .video {
-        width: 100%;
-        height: 100%;
-        margin-left: 120px; }
-        .neural .video-section .container .video:first-of-type {
-          margin-left: 0px; }
+  .neural .reviews-section {
+    height: 620px;
+    overflow: hidden;
+    background-color: #212121;
+    margin-bottom: 180px;
+    color: white;
+    transition: height .3s; }
+    .neural .reviews-section.show-all {
+      height: 1970px; }
+    .neural .reviews-section .container {
+      overflow: hidden; }
+      .neural .reviews-section .container .first-review,
+      .neural .reviews-section .container .second-review,
+      .neural .reviews-section .container .third-review {
+        width: 100vw;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-column-gap: 145px; }
+        .neural .reviews-section .container .first-review .video-or-img,
+        .neural .reviews-section .container .second-review .video-or-img,
+        .neural .reviews-section .container .third-review .video-or-img {
+          transition: transform .3s; }
+          .neural .reviews-section .container .first-review .video-or-img img,
+          .neural .reviews-section .container .second-review .video-or-img img,
+          .neural .reviews-section .container .third-review .video-or-img img {
+            width: 100%;
+            height: 620px; }
+        .neural .reviews-section .container .first-review .feedback-text,
+        .neural .reviews-section .container .second-review .feedback-text,
+        .neural .reviews-section .container .third-review .feedback-text {
+          width: 90%;
+          align-self: center;
+          display: grid;
+          grid-template-rows: 1fr 1fr 1fr;
+          grid-row-gap: 100px; }
+          .neural .reviews-section .container .first-review .feedback-text .show-testimonials,
+          .neural .reviews-section .container .second-review .feedback-text .show-testimonials,
+          .neural .reviews-section .container .third-review .feedback-text .show-testimonials {
+            width: 220px;
+            height: 45px;
+            border: solid 1px #424242;
+            background: transparent;
+            outline: none;
+            align-self: center;
+            display: flex;
+            justify-content: center;
+            align-items: center; }
+            .neural .reviews-section .container .first-review .feedback-text .show-testimonials span,
+            .neural .reviews-section .container .second-review .feedback-text .show-testimonials span,
+            .neural .reviews-section .container .third-review .feedback-text .show-testimonials span {
+              color: white;
+              font-size: 15px;
+              font-weight: 500; }
+            .neural .reviews-section .container .first-review .feedback-text .show-testimonials img,
+            .neural .reviews-section .container .second-review .feedback-text .show-testimonials img,
+            .neural .reviews-section .container .third-review .feedback-text .show-testimonials img {
+              margin-left: 10px;
+              transition: transform  .4s; }
+          .neural .reviews-section .container .first-review .feedback-text blockquote,
+          .neural .reviews-section .container .second-review .feedback-text blockquote,
+          .neural .reviews-section .container .third-review .feedback-text blockquote {
+            font-size: 24px;
+            line-height: 1.42; }
+          .neural .reviews-section .container .first-review .feedback-text .name-position,
+          .neural .reviews-section .container .second-review .feedback-text .name-position,
+          .neural .reviews-section .container .third-review .feedback-text .name-position {
+            display: flex;
+            flex-direction: column; }
+            .neural .reviews-section .container .first-review .feedback-text .name-position .name,
+            .neural .reviews-section .container .second-review .feedback-text .name-position .name,
+            .neural .reviews-section .container .third-review .feedback-text .name-position .name {
+              font-weight: bold;
+              font-size: 17px;
+              margin-bottom: 16px; }
+            .neural .reviews-section .container .first-review .feedback-text .name-position .position,
+            .neural .reviews-section .container .second-review .feedback-text .name-position .position,
+            .neural .reviews-section .container .third-review .feedback-text .name-position .position {
+              font-size: 13px;
+              color: #9e9e9e; }
+      .neural .reviews-section .container .second-review .feedback-text {
+        justify-self: end; }
+        .neural .reviews-section .container .second-review .feedback-text .name-position {
+          text-align: end; }
+      .neural .reviews-section .container .second-review,
+      .neural .reviews-section .container .third-review {
+        transform: scale(0.9); }
+        .neural .reviews-section .container .second-review .feedback-text,
+        .neural .reviews-section .container .third-review .feedback-text {
+          grid-template-rows: 1fr 1fr; }
   .neural .skills {
     padding-left: 25px;
     padding-right: 25px; }
@@ -977,12 +1101,32 @@
 .none {
   display: none; }
 
+@media only screen and (max-width: 1141px) {
+  .neural .reviews-section .container .first-review,
+  .neural .reviews-section .container .second-review,
+  .neural .reviews-section .container .third-review {
+    grid-column-gap: 50px; } }
+
 @media only screen and (max-width: 1100px) {
   .neural footer .container {
     width: 720px;
     flex-direction: column; }
     .neural footer .container .software {
       margin-bottom: 40px; } }
+
+@media only screen and (max-width: 1100px) {
+  .neural .reviews-section .container .first-review .feedback-text,
+  .neural .reviews-section .container .second-review .feedback-text,
+  .neural .reviews-section .container .third-review .feedback-text {
+    grid-row-gap: 10px; }
+    .neural .reviews-section .container .first-review .feedback-text blockquote,
+    .neural .reviews-section .container .second-review .feedback-text blockquote,
+    .neural .reviews-section .container .third-review .feedback-text blockquote {
+      line-height: 1; }
+    .neural .reviews-section .container .first-review .feedback-text .name-position,
+    .neural .reviews-section .container .second-review .feedback-text .name-position,
+    .neural .reviews-section .container .third-review .feedback-text .name-position {
+      align-self: center; } }
 
 @media only screen and (max-width: 620px) {
   .neural footer .container {
@@ -1007,6 +1151,18 @@
       height: 300px; }
     .neural footer .container .ua-ux ul {
       height: 160px; } }
+
+@media only screen and (min-width: 2000px) {
+  .neural .reviews-section .container .video-or-img {
+    justify-self: end; }
+    .neural .reviews-section .container .video-or-img img {
+      width: auto; }
+  .neural .reviews-section .container .first-review .feedback-text,
+  .neural .reviews-section .container .second-review .feedback-text,
+  .neural .reviews-section .container .third-review .feedback-text {
+    width: 650px; }
+  .neural .reviews-section .container .second-review .video-or-img {
+    justify-self: start; } }
 
 .section-services {
   padding-bottom: 145px;

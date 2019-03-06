@@ -5,9 +5,8 @@
 
   >.cards {
     display: flex;
-    padding-left: 273px;
+    padding-left: 250px;
     margin-bottom: -15px;
-    // padding-right: calc(50vw - 600px);
 
     & > .card-home:not(:last-child){
       z-index: 10;
@@ -58,12 +57,15 @@
       justify-content: center;
       position: relative;
       line-height: 1.4;
+      transform: translateX(-400px);
+      margin-right: -400px;
+      
       .svg-container {
         transform-origin: 49% 58.5%;
         z-index: 5;
         svg {
-          fill: #0d0f1c;
-          outline: 100vh solid #0d0f1c;
+          fill: $bgColor;
+          outline: 150vh solid $bgColor;
         }
       }
       .neural {
@@ -89,9 +91,7 @@
   }
 }
 
-.scroll-hidden {
-  overflow: hidden;
-}
+
 
 @media only screen and (max-width: 1200px){
   .scroll-section{

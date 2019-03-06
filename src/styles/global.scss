@@ -13,3 +13,9 @@
 .show{
     display: flex !important;
 }
+.scroll-hidden {
+    overflow: hidden;
+  }
+.scroll-x-hidden{
+    overflow-x: hidden !important; 
+}

@@ -96,47 +96,60 @@
     }
   }
 }
-.white-page{
+.white-page {
   padding: 0;
+  position: relative;
 
-  div{
-    a{
+  &::before {
+    content: '';
+    width: 100vw;
+    height: 0.8px;
+    background: rgba(0, 0, 0, 0.1);
+    position: absolute;
+    bottom: -20px;
+  }
+
+  div {
+
+    a {
       color: black;
-    span{
-      display: flex;
-      margin-left: 55px;
-      position: relative;
 
-      &::before{
-        content: "";
-        width: 12px;
-        height: 12px;
-        background: $lightblue;
-        border-radius: 50%;
-        opacity: 0.9;
-        box-shadow: 0 0 0 10px rgba(41, 120, 255, 0.3);
-        position: absolute;
-        left: -35px;
-        top: 12px;
+      span {
+        display: flex;
+        margin-left: 55px;
+        position: relative;
+
+        &::before {
+          content: "";
+          width: 12px;
+          height: 12px;
+          background: $lightblue;
+          border-radius: 50%;
+          opacity: 0.9;
+          box-shadow: 0 0 0 10px rgba(41, 120, 255, 0.3);
+          position: absolute;
+          left: -35px;
+          top: 12px;
+        }
+        
       }
     }
-    }
-    nav{
-      ul{
-        li{
-
-          a{
+    nav {
+      ul {
+        li {
+          a {
             @include resetStyleLink();
             color: black;
           }
         }
       }
     }
-    nav.mobile{
+    nav.mobile{ 
       background: rgba(0, 0, 0, 0.623);
-      ul{
-        li{
-          a{
+
+      ul {
+        li {
+          a {
             color: white;;
           }
         }
@@ -144,41 +157,44 @@
     }
   }
   .burger-icon {
-    .layer{
+    .layer {
       fill: black;
     }
   } 
-  button{
+  button {
     color: black;
   }
 }
 
 @media only screen and (max-width: 1550px){
-  .header{
+  .header {
     padding-left: 100px;
     padding-right: 25px;
   }
 }
 @media only screen and (max-width: 855px){
-  .header{
+  .header {
     padding-left: 25px;
-
   }
 }
-@media only screen and (max-width: 768px){
-  .header{
-    &-container{
+
+@media only screen and (max-width: 768px){ // for mobile
+  .header {
+    &-container {
       height: 30px;
-      div{
-        >nav{
+
+      div {
+        >nav {
           display: none;
         }
       }
-      .burger-icon{
+
+      .burger-icon {
         display: flex;
         margin: 0;
       } 
-      button{
+
+      button {
         display: none;
       }
     }
