@@ -7,16 +7,20 @@
         display: flex;
         align-items: center;
         line-height: 1;
-        padding-left: 50vh;
+        position: relative;
+        left: 50%;
+        transform: translateX(-12%);
 
         .content {
+            margin-right: 85px;
+
             video {
                 width: 1000px;
             }
-            margin-right: 200px;
         }
 
         .text-about-work {
+            width: 750px;
             padding-right: 200px;
             transform: translateX(150px);
             opacity: 0;
@@ -48,27 +52,24 @@
                 margin-bottom: 25px;
             }
     
-            div{
-                display: flex;
-                justify-content: center;
-                align-items: center;
+            div {
     
-                span{
+                span {
                     font-size: 20px;
                     color: #212121;
                 }
     
-                a{
+                a {
                     display: flex;
                     align-items: center;
                     @include resetStyleLink();
                     color: #212121;
     
-                    &:hover{
+                    &:hover {
                         text-decoration: underline;
                     }
     
-                    span{
+                    span {
                         width: 20px;
                         height: 20px;
                         border:  1px solid #212121;
@@ -104,3 +105,64 @@
             }
         }
 }
+
+@media only screen and (max-width: 1260px){
+    .works {
+        .works-container {
+            transform: translateX(-9.8%);
+            .content {
+                video {
+                    width: 670px;
+                }
+            }
+        }
+    }
+}
+@media only screen and (max-width: 768px){
+    .works {
+        height: auto;
+        justify-content: center;
+        overflow: visible;
+
+        .works-container {
+            flex-direction: column;
+            transform: translate(0);
+            position: static;
+            margin-top: 100px;
+
+            .content {
+                margin: 0;
+                padding-left: 30px;
+                padding-right: 30px;
+                video {
+                    width: 100%;
+                    
+                }
+            }
+            .text-about-work {
+                width: auto;
+                padding-left: 30px;
+                padding-right: 30px;
+                padding-top: 50px;
+                padding-bottom: 50px;
+
+                h1 {
+                    width: auto;
+                    padding: 0;
+                }
+            }
+        }
+    }
+}
+@media only screen and (max-width: 375px){
+    .works {
+        .works-container {
+            .text-about-work {
+                h1 {
+                    font-size: 62px;
+                }
+            }
+        }
+    }
+}
+

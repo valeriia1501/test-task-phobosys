@@ -797,12 +797,15 @@
     display: flex;
     align-items: center;
     line-height: 1;
-    padding-left: 50vh; }
+    position: relative;
+    left: 50%;
+    transform: translateX(-12%); }
     .works .works-container .content {
-      margin-right: 200px; }
+      margin-right: 85px; }
       .works .works-container .content video {
         width: 1000px; }
     .works .works-container .text-about-work {
+      width: 750px;
       padding-right: 200px;
       transform: translateX(150px);
       opacity: 0;
@@ -825,31 +828,27 @@
         margin: 0 auto;
         margin-top: 34px;
         margin-bottom: 25px; }
-      .works .works-container .text-about-work div {
+      .works .works-container .text-about-work div span {
+        font-size: 20px;
+        color: #212121; }
+      .works .works-container .text-about-work div a {
         display: flex;
-        justify-content: center;
-        align-items: center; }
-        .works .works-container .text-about-work div span {
-          font-size: 20px;
-          color: #212121; }
-        .works .works-container .text-about-work div a {
+        align-items: center;
+        color: white;
+        text-decoration: none;
+        color: #212121; }
+        .works .works-container .text-about-work div a:hover {
+          text-decoration: underline; }
+        .works .works-container .text-about-work div a span {
+          width: 20px;
+          height: 20px;
+          border: 1px solid #212121;
+          border-radius: 50%;
+          margin-left: 10px;
           display: flex;
-          align-items: center;
-          color: white;
-          text-decoration: none;
-          color: #212121; }
-          .works .works-container .text-about-work div a:hover {
-            text-decoration: underline; }
-          .works .works-container .text-about-work div a span {
-            width: 20px;
-            height: 20px;
-            border: 1px solid #212121;
-            border-radius: 50%;
-            margin-left: 10px;
-            display: flex;
-            justify-content: center; }
-            .works .works-container .text-about-work div a span .arrow {
-              width: 15px; }
+          justify-content: center; }
+          .works .works-container .text-about-work div a span .arrow {
+            width: 15px; }
 
 .video-section {
   margin-bottom: 120px; }
@@ -862,6 +861,42 @@
       margin-left: 120px; }
       .video-section .container .video:first-of-type {
         margin-left: 0px; }
+
+@media only screen and (max-width: 1260px) {
+  .works .works-container {
+    transform: translateX(-9.8%); }
+    .works .works-container .content video {
+      width: 670px; } }
+
+@media only screen and (max-width: 768px) {
+  .works {
+    height: auto;
+    justify-content: center;
+    overflow: visible; }
+    .works .works-container {
+      flex-direction: column;
+      transform: translate(0);
+      position: static;
+      margin-top: 100px; }
+      .works .works-container .content {
+        margin: 0;
+        padding-left: 30px;
+        padding-right: 30px; }
+        .works .works-container .content video {
+          width: 100%; }
+      .works .works-container .text-about-work {
+        width: auto;
+        padding-left: 30px;
+        padding-right: 30px;
+        padding-top: 50px;
+        padding-bottom: 50px; }
+        .works .works-container .text-about-work h1 {
+          width: auto;
+          padding: 0; } }
+
+@media only screen and (max-width: 375px) {
+  .works .works-container .text-about-work h1 {
+    font-size: 62px; } }
 
 .home {
   color: #ffffff;
@@ -931,17 +966,61 @@
   font-family: 'Proxima Nova Rg';
   background: white;
   overflow-x: hidden;
-  color: #212121;
-  margin-bottom: 350px; }
+  color: #212121; }
+  .neural .description-borvo {
+    display: flex;
+    justify-content: center;
+    background-color: #121212;
+    padding-top: 120px;
+    padding-bottom: 210px;
+    padding-left: 30px;
+    padding-right: 30px; }
+    .neural .description-borvo .description {
+      max-width: 580px;
+      min-width: 200px;
+      margin-right: 190px;
+      color: white; }
+      .neural .description-borvo .description span {
+        font-size: 20px; }
+      .neural .description-borvo .description h1 {
+        font-size: 64px;
+        margin-top: 15px;
+        margin-bottom: 35px; }
+      .neural .description-borvo .description p {
+        font-size: 20px;
+        color: #bdbdbd;
+        margin-bottom: 45px; }
+      .neural .description-borvo .description .btn-learn-more {
+        width: 160px;
+        height: 36px;
+        border: none;
+        border-radius: 4px;
+        outline: none;
+        color: white;
+        font-weight: 600;
+        background-color: #2979ff;
+        display: flex;
+        align-items: center;
+        justify-content: center; }
+        .neural .description-borvo .description .btn-learn-more > img {
+          width: 13px;
+          height: 13px;
+          padding: 1px;
+          border: 1px solid white;
+          border-radius: 50%;
+          transform: rotate(-90deg);
+          margin-left: 8px; }
+    .neural .description-borvo > img {
+      max-width: 681px;
+      min-width: 200px;
+      height: 680px; }
   .neural .reviews-section {
-    height: 620px;
+    height: 688px;
     overflow: hidden;
-    background-color: #212121;
-    margin-bottom: 180px;
-    color: white;
-    transition: height .3s; }
+    background-color: #121212;
+    color: white; }
     .neural .reviews-section.show-all {
-      height: 1970px; }
+      height: 100%; }
     .neural .reviews-section .container {
       overflow: hidden; }
       .neural .reviews-section .container .first-review,
@@ -954,23 +1033,11 @@
         .neural .reviews-section .container .first-review .video-or-img,
         .neural .reviews-section .container .second-review .video-or-img,
         .neural .reviews-section .container .third-review .video-or-img {
+          justify-self: end;
           transition: transform .3s; }
-          .neural .reviews-section .container .first-review .video-or-img img,
-          .neural .reviews-section .container .second-review .video-or-img img,
-          .neural .reviews-section .container .third-review .video-or-img img {
-            width: 100%;
-            height: 620px; }
-        .neural .reviews-section .container .first-review .feedback-text,
-        .neural .reviews-section .container .second-review .feedback-text,
-        .neural .reviews-section .container .third-review .feedback-text {
-          width: 90%;
-          align-self: center;
-          display: grid;
-          grid-template-rows: 1fr 1fr 1fr;
-          grid-row-gap: 100px; }
-          .neural .reviews-section .container .first-review .feedback-text .show-testimonials,
-          .neural .reviews-section .container .second-review .feedback-text .show-testimonials,
-          .neural .reviews-section .container .third-review .feedback-text .show-testimonials {
+          .neural .reviews-section .container .first-review .video-or-img .show-testimonials,
+          .neural .reviews-section .container .second-review .video-or-img .show-testimonials,
+          .neural .reviews-section .container .third-review .video-or-img .show-testimonials {
             width: 220px;
             height: 45px;
             border: solid 1px #424242;
@@ -979,18 +1046,34 @@
             align-self: center;
             display: flex;
             justify-content: center;
-            align-items: center; }
-            .neural .reviews-section .container .first-review .feedback-text .show-testimonials span,
-            .neural .reviews-section .container .second-review .feedback-text .show-testimonials span,
-            .neural .reviews-section .container .third-review .feedback-text .show-testimonials span {
+            align-items: center;
+            margin-left: auto;
+            margin-top: 30px; }
+            .neural .reviews-section .container .first-review .video-or-img .show-testimonials span,
+            .neural .reviews-section .container .second-review .video-or-img .show-testimonials span,
+            .neural .reviews-section .container .third-review .video-or-img .show-testimonials span {
               color: white;
               font-size: 15px;
               font-weight: 500; }
-            .neural .reviews-section .container .first-review .feedback-text .show-testimonials img,
-            .neural .reviews-section .container .second-review .feedback-text .show-testimonials img,
-            .neural .reviews-section .container .third-review .feedback-text .show-testimonials img {
+            .neural .reviews-section .container .first-review .video-or-img .show-testimonials img,
+            .neural .reviews-section .container .second-review .video-or-img .show-testimonials img,
+            .neural .reviews-section .container .third-review .video-or-img .show-testimonials img {
               margin-left: 10px;
-              transition: transform  .4s; }
+              transition: transform .4s; }
+          .neural .reviews-section .container .first-review .video-or-img > img,
+          .neural .reviews-section .container .second-review .video-or-img > img,
+          .neural .reviews-section .container .third-review .video-or-img > img {
+            width: 100%;
+            height: 578px;
+            transition: transform .4s; }
+        .neural .reviews-section .container .first-review .feedback-text,
+        .neural .reviews-section .container .second-review .feedback-text,
+        .neural .reviews-section .container .third-review .feedback-text {
+          width: 90%;
+          align-self: center;
+          display: grid;
+          grid-template-rows: 1fr 1fr;
+          grid-row-gap: 100px; }
           .neural .reviews-section .container .first-review .feedback-text blockquote,
           .neural .reviews-section .container .second-review .feedback-text blockquote,
           .neural .reviews-section .container .third-review .feedback-text blockquote {
@@ -1016,87 +1099,52 @@
         justify-self: end; }
         .neural .reviews-section .container .second-review .feedback-text .name-position {
           text-align: end; }
-      .neural .reviews-section .container .second-review,
-      .neural .reviews-section .container .third-review {
+      .neural .reviews-section .container .second-review .video-or-img img,
+      .neural .reviews-section .container .third-review .video-or-img img {
         transform: scale(0.9); }
-        .neural .reviews-section .container .second-review .feedback-text,
-        .neural .reviews-section .container .third-review .feedback-text {
-          grid-template-rows: 1fr 1fr; }
+      .neural .reviews-section .container .second-review .feedback-text,
+      .neural .reviews-section .container .third-review .feedback-text {
+        grid-template-rows: 1fr 1fr; }
   .neural .skills {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     padding-left: 25px;
-    padding-right: 25px; }
-    .neural .skills div {
-      text-align: center; }
-      .neural .skills div h1 {
-        font-size: 40px;
-        font-weight: bold; }
-      .neural .skills div p {
-        font-size: 18px;
-        margin: 28px 0 63px 0; }
+    padding-right: 25px;
+    padding-top: 115px;
+    padding-bottom: 90px; }
+    .neural .skills .technology {
+      width: 530px;
+      margin-right: 7%; }
+      .neural .skills .technology h1 {
+        font-size: 48px; }
+      .neural .skills .technology ul {
+        list-style: none;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-column-gap: 5%;
+        grid-row-gap: 10px;
+        margin-top: 46px; }
     .neural .skills .cards {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      margin-left: -25px; }
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-column-gap: 25px;
+      grid-row-gap: 25px;
+      text-align: center; }
       .neural .skills .cards .card {
         width: 174px;
         height: 174px;
         border-radius: 8px;
         border: 1px solid #f5f5f5;
-        margin-bottom: 62px;
         overflow: hidden;
         display: flex;
         justify-content: center;
-        flex-direction: column;
-        margin-left: 25px; }
+        flex-direction: column; }
         .neural .skills .cards .card img {
           width: 56px;
           height: 56px;
           margin: 0 auto;
-          margin-bottom: 19px; }
-  .neural footer {
-    display: flex;
-    justify-content: center;
-    padding-left: 25px;
-    padding-right: 25px; }
-    .neural footer .container {
-      width: 1385px;
-      display: flex; }
-      .neural footer .container .software {
-        width: 100%; }
-        .neural footer .container .software span {
-          display: inline-block;
-          margin-bottom: 21px;
-          font-size: 16px;
-          font-weight: bold; }
-        .neural footer .container .software ul {
-          display: flex;
-          height: 85px;
-          flex-direction: column;
-          flex-wrap: wrap;
-          list-style: none;
-          padding: 0;
-          margin: 0; }
-          .neural footer .container .software ul li + li {
-            margin-top: 8px; }
-      .neural footer .container .ua-ux {
-        width: 450px; }
-        .neural footer .container .ua-ux span {
-          display: inline-block;
-          margin-bottom: 21px;
-          font-size: 16px;
-          font-weight: bold; }
-        .neural footer .container .ua-ux ul {
-          width: 510px;
-          height: 85px;
-          display: flex;
-          flex-direction: column;
-          flex-wrap: wrap;
-          list-style: none;
-          padding: 0;
-          margin: 0; }
-          .neural footer .container .ua-ux ul li + li {
-            margin-top: 8px; }
+          margin-bottom: 20px; }
 
 .none {
   display: none; }
@@ -1105,14 +1153,14 @@
   .neural .reviews-section .container .first-review,
   .neural .reviews-section .container .second-review,
   .neural .reviews-section .container .third-review {
-    grid-column-gap: 50px; } }
-
-@media only screen and (max-width: 1100px) {
-  .neural footer .container {
-    width: 720px;
-    flex-direction: column; }
-    .neural footer .container .software {
-      margin-bottom: 40px; } }
+    grid-column-gap: 50px; }
+  .neural .skills .cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; }
+    .neural .skills .cards .card {
+      margin-bottom: 3%;
+      margin-right: 3%; } }
 
 @media only screen and (max-width: 1100px) {
   .neural .reviews-section .container .first-review .feedback-text,
@@ -1128,12 +1176,50 @@
     .neural .reviews-section .container .third-review .feedback-text .name-position {
       align-self: center; } }
 
-@media only screen and (max-width: 620px) {
-  .neural footer .container {
-    width: 445px;
-    flex-direction: column; }
-    .neural footer .container .software ul {
-      height: 160px; } }
+@media only screen and (max-width: 1024px) {
+  .neural .description-borvo {
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 120px; }
+    .neural .description-borvo .description {
+      margin: 0;
+      margin-bottom: 50px; }
+    .neural .description-borvo > img {
+      display: none; } }
+
+@media only screen and (max-width: 900px) {
+  .neural .reviews-section {
+    height: 800px; }
+    .neural .reviews-section .container .first-review,
+    .neural .reviews-section .container .second-review,
+    .neural .reviews-section .container .third-review {
+      display: flex;
+      flex-direction: column; }
+      .neural .reviews-section .container .first-review .video-or-img > img,
+      .neural .reviews-section .container .second-review .video-or-img > img,
+      .neural .reviews-section .container .third-review .video-or-img > img {
+        width: 100%;
+        height: auto; }
+      .neural .reviews-section .container .first-review .video-or-img .show-testimonials,
+      .neural .reviews-section .container .second-review .video-or-img .show-testimonials,
+      .neural .reviews-section .container .third-review .video-or-img .show-testimonials {
+        margin: auto;
+        margin-bottom: 30px;
+        margin-top: 30px; }
+    .neural .reviews-section .container .second-review .feedback-text,
+    .neural .reviews-section .container .third-review .feedback-text {
+      margin-top: 50px; }
+    .neural .reviews-section .container .second-review {
+      display: flex;
+      flex-direction: column-reverse;
+      margin-top: 100px; }
+      .neural .reviews-section .container .second-review .feedback-text .name-position {
+        justify-self: start;
+        text-align: start; } }
+
+@media only screen and (max-width: 600px) {
+  .neural .reviews-section {
+    height: 700px; } }
 
 @media only screen and (max-width: 768px) {
   .neural {
@@ -1143,14 +1229,19 @@
     .neural .skills .cards {
       flex-wrap: wrap; } }
 
-@media only screen and (max-width: 460px) {
-  .neural footer .container {
-    width: 235px;
+@media only screen and (max-width: 713px) {
+  .neural .skills {
     flex-direction: column; }
-    .neural footer .container .software ul {
-      height: 300px; }
-    .neural footer .container .ua-ux ul {
-      height: 160px; } }
+    .neural .skills .technology {
+      width: auto;
+      margin: 0; }
+  .neural .skills .cards {
+    margin-top: 50px;
+    justify-content: center; } }
+
+@media only screen and (max-width: 425px) {
+  .neural .skills .technology ul {
+    grid-template-columns: 1fr; } }
 
 @media only screen and (min-width: 2000px) {
   .neural .reviews-section .container .video-or-img {

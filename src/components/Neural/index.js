@@ -57,20 +57,33 @@ export default class Neural extends React.PureComponent {
     }
 
     render() {
-        return <div className={classnames(this.props.className, "neural")}>
-            <Header className="white-page" />
+        return <div className={classnames(this.props.className, 'neural')}>
+            <Header className='white-page' />
             <Works />
+            <section className='description-borvo'>
+                <div className='description'>
+                    <span>Your Dream Team</span>
+                    <h1>Great Products <br/> Are Built By Great Engineers</h1>
+                    <p>
+                      Borvo company provides premium software engineering services to leading technology companies.
+                      Our customers usually range from startup to high-growth and VC-backed companies that drive 
+                      a culture of acceleration and innovation.
+                    </p>
+                    <button className='btn-learn-more'>To Learn More <img src={downArrow}/></button>
+                </div>
+                <img src={imgTemp} />
+            </section>
             <section className={classnames('reviews-section',{'show-all': this.state.isHideAnimation})} >
                 <div className='container'>
                     <div className='first-review'>
-                        <div className='video-or-img' style={{ transform: `scale(${this.state.size})` }} >
-                            <img src={imgTemp} />
-                        </div>
-                        <div className='feedback-text' >
+                        <div className='video-or-img'  >
+                            <img src={imgTemp} style={{ transform: `scale(${this.state.size})` }} />
                             <button className='show-testimonials' ref={domel => this.btnShow = domel}>
                                 <span ref={domel => this.toggleText = domel} >Show all Testimonials</span>
                                 <img src={downArrow} style={{ transform: 'rotate(' + this.state.rotateArrow + 'deg' + ')' }} />
                             </button>
+                        </div>
+                        <div className='feedback-text' >
                             <blockquote>
                                 “Bornfight is extremely easy to work with, 
                                 allowing staff to focus on other work. The team 
@@ -119,73 +132,51 @@ export default class Neural extends React.PureComponent {
                     </div>
                 </div>
             </section>
-            <section className="skills">
-                <div>
-                    <h1>Skills to mention</h1>
-                    <p>Chase your dream by day and unwind with your favorite show at night.</p>
+            <section className='skills'>
+                <div className='technology' >
+                    <h1>We grow your business by using our technology expertise</h1>
+                    <ul>
+                        <li>Application Development</li>
+                        <li>Research & Development</li>
+                        <li>Big Data & Analytics</li>
+                        <li>Support services</li>
+                        <li>Internet of Things</li>
+                        <li>QA & Software Testing</li>
+                        <li>DevOps</li>
+                        <li>Chatbot Development</li>
+                    </ul>
                 </div>
-                <div className="cards">
-                    <div className="card">
-                        <img src={javascriptImg} alt="" />
+                <div className='cards'>
+                    <div className='card'>
+                        <img src={javascriptImg} />
                         <span>Java Script</span>
                     </div>
-                    <div className="card">
-                        <img src={reactImg} alt="" />
+                    <div className='card'>
+                        <img src={reactImg} />
                         <span>React</span>
                     </div>
-                    <div className="card">
-                        <img src={nodeImg} alt="" />
+                    <div className='card'>
+                        <img src={nodeImg} />
                         <span>Node js</span>
                     </div>
-                    <div className="card">
-                        <img src={angular} alt="" />
+                    <div className='card'>
+                        <img src={angular} />
                         <span>Angular</span>
                     </div>
-                    <div className="card">
-                        <img src={blockchain} alt="" />
+                    <div className='card'>
+                        <img src={blockchain} />
                         <span>Blockchain</span>
                     </div>
-                    <div className="card">
-                        <img src={tensorflow} alt="" />
+                    <div className='card'>
+                        <img src={tensorflow} />
                         <span>Tensorflow</span>
                     </div>
-                    <div className="card">
-                        <img src={kubernetes} alt="" />
+                    <div className='card'>
+                        <img src={kubernetes} />
                         <span>Kubernetes</span>
                     </div>
                 </div>
             </section>
-            <footer>
-                <div className="container">
-                    <div className="software">
-                        <span>Software Development</span>
-                        <ul>
-                            <li>Сloud computing</li>
-                            <li>Docker</li>
-                            <li>Kubernetes</li>
-                            <li>Machine learning</li>
-                            <li>JS App Development</li>
-                            <li>HTML/CSS</li>
-                            <li>Data science</li>
-                            <li>Сloud computing</li>
-                            <li>Docker</li>
-                            <li>Micro services</li>
-                            <li>JS app development</li>
-                        </ul>
-                    </div>
-                    <div className="ua-ux">
-                        <span>UA/UX/Marketing</span>
-                        <ul>
-                            <li>UA/UX</li>
-                            <li>Analytics Analysis</li>
-                            <li>Usability & Customer Experience</li>
-                            <li>Machine learning</li>
-                            <li>Content Creation</li>
-                            <li>Evolutionary Testing</li>
-                        </ul>
-                    </div>
-                </div>
-            </footer>
         </div>
     }
 }

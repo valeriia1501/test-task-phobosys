@@ -11,26 +11,34 @@ export default class Works extends React.PureComponent {
   constructor(props) {
       super(props)
       this.html = document.getElementsByTagName('html')[0]
+      this.clientWidth = document.body.clientWidth;
       this.state = {
         isHideText: false
       }
   }
 
   componentDidMount() {
+    if(this.clientWidth <= 768) {
+        this.setState({isHideText: true})
+        return
+     }
+
       this.html.addEventListener('wheel', this.wheelNeural)
       
       if(window.location.href.includes('neural') && !this.state.isScrolling) {
         let moment = +localStorage.getItem('moment of scroll')
         let fixText = localStorage.getItem('fix text') 
         JSON.parse(fixText)
+
         this.scrollWorks.scrollLeft = moment 
         this.setState({ isHideText: fixText })
       }
+
       if (window.performance && window.location.href.includes('neural')) {
         if (performance.navigation.type === 1 && this.html.scrollTop === 0) {
             this.html.classList.add('scroll-hidden')
         }
-      }
+      } 
   }
   componentWillUnmount() {
       if(!window.location.href.includes('neural')) {}
@@ -56,6 +64,12 @@ export default class Works extends React.PureComponent {
   }
 
   wheelNeural = (e) => {
+     if(this.clientWidth <= 768) {
+         this.setState({isHideText: true})
+         console.log(this.state)
+         return
+      }
+      
       if(!window.location.href.includes('neural')) return
 
       if(this.html.scrollTop === 0 && this.normalizeDelta(e) < 0 ) this.html.classList.add('scroll-hidden')
@@ -72,21 +86,20 @@ export default class Works extends React.PureComponent {
       }
 
       if(this.state.isScrolling) {
-          const scrollingStep = (this.scrollWorks.scrollWidth - this.scrollWorks.clientWidth) / 15
+          const scrollingStep = (this.scrollWorks.scrollWidth - this.scrollWorks.clientWidth) / 50
           this.scrollWorks.scrollLeft += this.normalizeDelta(e) * scrollingStep;          
           localStorage.clear()
       }
 
       if(this.scrollLeft(this.scrollWorks) === 0) {
-        this.setState({ isScrolling: !this.state.isScrolling })
-        localStorage.setItem('moment of scroll' ,this.scrollWorks.scrollLeft)
+          this.setState({ isScrolling: !this.state.isScrolling })
+          localStorage.setItem('moment of scroll' ,this.scrollWorks.scrollLeft)
       }
 
-      if(this.html.classList.contains('scroll-hidden') && !this.state.isScrolling){
+      if(this.html.classList.contains('scroll-hidden') && !this.state.isScrolling ){
           this.html.classList.remove('scroll-hidden') 
       }
   }
-
   render() {
     return ( 
         <section className="works" ref={ el => this.scrollWorks = el }>
@@ -98,7 +111,7 @@ export default class Works extends React.PureComponent {
                 </div>
                 <div className={classnames('text-about-work',{'appearance-of-text': this.state.isHideText})}>
                     <span>Emazing Project</span>
-                    <h1>Neural networks <br /> working with Twitter </h1>
+                    <h1>Neural networks working with Twitter </h1>
                     <p>It is a long established facte that a reader will be distracted by the readable <br /> content of a page when looking at its layout.</p>
                     <div>
                         <a href="#">
@@ -112,9 +125,9 @@ export default class Works extends React.PureComponent {
                             <source src={tempVideo} />
                     </video>             
                 </div>
-                <div className={classnames('text-about-work',{'appearance-of-text': this.state.isHideText})}>
+                <div className='text-about-work appearance-of-text' ref={ el => this.test = el }>
                     <span>Emazing Project</span>
-                    <h1>Neural networks <br /> working with Twitter </h1>
+                    <h1>Neural networks working with Twitter </h1>
                     <p>It is a long established facte that a reader will be distracted by the readable <br /> content of a page when looking at its layout.</p>
                     <div>
                         <a href="#">

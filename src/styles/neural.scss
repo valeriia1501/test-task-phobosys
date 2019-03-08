@@ -5,18 +5,79 @@
     background: white;
     overflow-x: hidden;
     color: #212121;
-    margin-bottom: 350px;
 
+    .description-borvo {
+        display: flex;
+        justify-content: center;
+        background-color: #121212;
+        padding-top: 120px;
+        padding-bottom: 210px;
+        padding-left: 30px;
+        padding-right: 30px;
+
+        .description {
+            max-width: 580px;
+            min-width: 200px;
+            margin-right: 190px;
+            color: white;
+
+            span {
+                font-size: 20px;
+            }
+
+            h1 {
+                font-size: 64px;
+                margin-top: 15px;
+                margin-bottom: 35px;
+            }
+
+            p {
+                font-size: 20px;
+                color: #bdbdbd;
+                margin-bottom: 45px;
+            }
+
+            .btn-learn-more {
+                width: 160px;
+                height: 36px;
+                border: none;
+                border-radius: 4px;
+                outline: none;
+                color: white;
+                font-weight: 600;
+                background-color: $lightblue;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                
+                > img {
+                    width: 13px;
+                    height: 13px;
+                    padding: 1px;
+                    border: 1px solid white;
+                    border-radius: 50%;
+                    transform: rotate(-90deg);
+                    margin-left: 8px;
+                }
+            }
+
+        }
+
+        > img {
+            max-width: 681px;
+            min-width: 200px;
+            height: 680px;
+        }
+    }
     .reviews-section {
-        height: 620px;
+        height: 688px;
         overflow: hidden;
-        background-color: #212121;
-        margin-bottom: 180px;
+        background-color: #121212;
         color: white;
-        transition: height .3s;
+
 
         &.show-all {
-            height: 1970px;
+            height: 100%;
         }
         
         .container {
@@ -30,42 +91,45 @@
                 grid-template-columns: 1fr 1fr;
                 grid-column-gap: 145px;
 
-                .video-or-img {                    
+                .video-or-img {
+                    justify-self: end;
                     transition: transform .3s;
+                        
+                        .show-testimonials {
+                            width: 220px;
+                            height: 45px;
+                            border: solid 1px #424242;
+                            background: transparent;
+                            outline: none;
+                            align-self: center;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            margin-left: auto;
+                            margin-top: 30px;
 
-                    img {
-                        width: 100%;
-                        height: 620px;
-                    }
+                            span {
+                                color: white;
+                                font-size: 15px;
+                                font-weight: 500;
+                            }
+                            img {
+                                margin-left: 10px;
+                                transition: transform .4s;                                
+                            }
+                        }
+                        > img {
+                            width: 100%;
+                            height: 578px;
+                            transition: transform .4s;
+                        }
                 }
                 .feedback-text {
                     width: 90%;
                     align-self: center;
                     display: grid;
-                    grid-template-rows: 1fr 1fr 1fr;
+                    grid-template-rows: 1fr 1fr;
                     grid-row-gap: 100px;
-
-                    .show-testimonials {
-                        width: 220px;
-                        height: 45px;
-                        border: solid 1px #424242;
-                        background: transparent;
-                        outline: none;
-                        align-self: center;
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
-
-                        span {
-                            color: white;
-                            font-size: 15px;
-                            font-weight: 500;
-                        }
-                        img {
-                            margin-left: 10px;
-                            transition: transform  .4s;
-                        }
-                    }
         
                     blockquote {
                         font-size: 24px;
@@ -99,9 +163,15 @@
                     }
                 }
             }
+        
             .second-review,
             .third-review {
-                transform: scale(0.9);
+                
+                .video-or-img {
+                    img {
+                        transform: scale(0.9);
+                    }
+                }
 
                 .feedback-text {
                     grid-template-rows: 1fr 1fr;
@@ -110,112 +180,62 @@
         }
     }
     .skills {
+        display: flex;
+        justify-content: center;
+        align-items: center;
         padding-left: 25px;
         padding-right: 25px;
-
-        div {
-            text-align: center;
+        padding-top: 115px;
+        padding-bottom: 90px;
+        
+        .technology {
+            width: 530px;
+            margin-right: 7%;
 
             h1 {
-                font-size: 40px;
-                font-weight: bold;
+                font-size: 48px;
             }
 
-            p {
-                font-size: 18px;
-                margin: 28px 0 63px 0;
+            ul {
+                list-style: none;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                grid-column-gap: 5%;
+                grid-row-gap: 10px;
+                margin-top: 46px;
+
+                li {
+                }
             }
         }
+
         .cards {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            margin-left: -25px; // because card +25 
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-column-gap: 25px;
+            grid-row-gap: 25px;
+            text-align: center;
 
             .card {
                 width: 174px;
                 height: 174px;
                 border-radius: 8px;
                 border: 1px solid #f5f5f5;
-                margin-bottom: 62px;
                 overflow: hidden;
                 display: flex;
                 justify-content: center;
                 flex-direction: column;
-                margin-left: 25px;
 
                 img {
                     width: 56px;
                     height: 56px;
                     margin: 0 auto;
-                    margin-bottom: 19px;
+                    margin-bottom: 20px;
                 }
             }
         }
     }
-    footer {
-        display: flex;
-        justify-content: center;
-        padding-left: 25px;
-        padding-right: 25px;
 
-        .container {
-            width: 1385px;
-            display: flex;
-
-            .software {
-                width: 100%;
-
-                span {
-                    display: inline-block;
-                    margin-bottom: 21px;
-                    font-size: 16px;
-                    font-weight: bold;
-                }
-
-                ul {
-                    display: flex;
-                    height: 85px;
-                    flex-direction: column;
-                    flex-wrap: wrap;
-                    @include footerUl();
-
-                    li{
-
-                        &+li{
-                            margin-top: 8px;
-                        }
-                    }
-                }
-            }
-            .ua-ux{
-                width: 450px;
-
-                span{
-                    display: inline-block;
-                    margin-bottom: 21px;
-                    font-size: 16px;
-                    font-weight: bold;
-                }
-
-                ul{
-                    width: 510px;
-                    height: 85px;
-                    display: flex;
-                    flex-direction: column;
-                    flex-wrap: wrap;
-                    @include footerUl();
-
-                    li{
-
-                        &+li{
-                            margin-top: 8px;
-                        }
-                    }
-                }
-            }
-        }
-    }
 }
 
 .none {
@@ -232,21 +252,18 @@
                 }
             }
         }
-    }
-}
-@media only screen and (max-width: 1100px) {
-    .neural {
-        footer {
-          .container {
-            width: 720px;
-            flex-direction: column;
-
-            .software {
-                margin-bottom: 40px;
-
+        .skills {
+            .cards {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                
+                .card {
+                    margin-bottom: 3%;
+                    margin-right: 3%;
+                }
             }
         }
-      }
     }
 }
 @media only screen and (max-width: 1100px) {
@@ -260,7 +277,7 @@
                     .feedback-text {
                         grid-row-gap: 10px;
 
-                        blockquote{
+                        blockquote {
                             line-height: 1;
                         }
 
@@ -273,25 +290,82 @@
         }
     }
 }
-@media only screen and (max-width: 620px) {
+
+@media only screen and (max-width: 1024px) {
     .neural {
+        .description-borvo {
+            flex-direction: column;
+            align-items: center;
+            padding-bottom: 120px;
 
-        footer {
+            .description {
+                margin: 0;
+                margin-bottom: 50px;
+            }
 
-            .container {
-              width: 445px;
-              flex-direction: column;
-
-              .software{
-
-                ul {
-                    height: 160px;
-                }
-              }
+            > img {
+               display: none;
             }
         }
     }
 }
+@media only screen and (max-width: 900px) {
+    .neural { 
+        .reviews-section {
+            height: 800px;
+
+            .container {
+                .first-review,
+                .second-review,
+                .third-review {
+                    display: flex;
+                    flex-direction: column;
+
+                    .video-or-img {
+                        > img {
+                            width: 100%;
+                            height: auto;
+                        }
+                        .show-testimonials {
+                            margin: auto;
+                            margin-bottom: 30px;
+                            margin-top: 30px;
+                        }
+                    }
+                }
+                .second-review,
+                .third-review {
+                    .feedback-text {
+                        margin-top: 50px;
+                    }
+                }
+                
+                .second-review { 
+                    display: flex;
+                    flex-direction: column-reverse;
+                    margin-top: 100px;
+                    
+                    .feedback-text {
+                        .name-position {
+                            justify-self: start;
+                            text-align: start;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .neural {
+        .reviews-section {
+            height: 700px;
+        }
+    }
+}
+
+
 @media only screen and (max-width: 768px) {
     .neural {
         margin-bottom: 100px;
@@ -310,28 +384,33 @@
     }
 }
 
-@media only screen and (max-width: 460px){
-    .neural{
+@media only screen and (max-width: 713px) {
+    .neural {
+        .skills {
+            flex-direction: column;
 
-        footer{
+            .technology {
+                width: auto;
+                margin: 0;
+                
+            }
+        }
 
-            .container{
-              width: 235px;
-              flex-direction: column;
-
-              .software{
-
-                ul{
-                    height: 300px;
+        .skills {
+            .cards {
+                margin-top: 50px;
+                justify-content: center;
+            }
+        }
+    }
+}
+@media only screen and (max-width: 425px) {
+    .neural {
+        .skills {
+            .technology {
+                ul {
+                    grid-template-columns: 1fr;
                 }
-              }
-
-              .ua-ux{
-
-                ul{
-                    height: 160px;
-                }
-              }
             }
         }
     }
@@ -354,8 +433,8 @@
                         width: 650px;
                     }
                 }
-                .second-review{
-                    .video-or-img{
+                .second-review {
+                    .video-or-img {
                         justify-self: start;
                     }
                 }
