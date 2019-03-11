@@ -7,9 +7,15 @@
     background: $lightblue;
     color: white;
 }
-.hide{
+.hide {
     opacity: 0;
 }
-.show{
+.show {
     display: flex !important;
+}
+.scroll-hidden {
+    overflow: hidden;
+  }
+.scroll-x-hidden {
+    overflow-x: hidden !important; 
 }

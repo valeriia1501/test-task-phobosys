@@ -3,6 +3,7 @@
     padding-top: 15vh;
     display: flex;
     justify-content: center;
+
     .cards-services {
         width: 1540px;
         padding-left: 25px;
@@ -11,25 +12,29 @@
         flex-wrap: wrap;
         justify-content: center;
         margin-left: 65px;
+
         .card-services {
             display: flex;
             flex-direction: column;
             font-size: 20px;
             margin-left: 65px;
             margin-bottom: 50px;
-            > span{
+            
+            > span {
                 margin-top: 50px;
             }
         }
     }
 }
 
-@media only screen and (max-width: 1654px){
-    .section-services{
+@media only screen and (max-width: 1654px) {
+    .section-services {
         padding: 0;
-        .cards-services{
+
+        .cards-services {
             justify-content: center;
             margin-left: -65px;
+            
         }
     }
 }

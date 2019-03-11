@@ -11,6 +11,11 @@ import card_1 from '@assets/card_1.png'
 import card_2 from '@assets/card_2.png'
 import card_3 from '@assets/card_3.png'
 import rigthArrow from '@assets/right-arrow.svg'
+import downArrow from '@assets/down-arrow.svg'
+import borvoLogo from '@assets/borvo-logo.svg'
+import imgTemp from '@assets/temp-img.jpg'
+import tempVideo from '@assets/video.mp4'
+
 
 export {
   blackArrow,
@@ -25,5 +30,9 @@ export {
   card_1,
   card_2,
   card_3,
-  rigthArrow
+  rigthArrow,
+  downArrow,
+  borvoLogo,
+  imgTemp,
+  tempVideo
 }

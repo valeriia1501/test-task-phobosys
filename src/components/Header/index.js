@@ -28,14 +28,14 @@ export default class Header extends React.PureComponent {
             </a>
             <nav>
               <ul>
-                <li><a href="#!/services">Services</a></li>
+                <li><a href="#!/services">Expertise</a></li>
                 <li><a href="#">About us</a></li>
                 <li><a href="#">Contact Us</a></li>
               </ul>
             </nav>
             <nav className="mobile" ref={el => this.mobileMenu = el}>
               <ul>
-                <li><a href="#!/services">Services</a></li>
+                <li><a href="#!/services">Expertise</a></li>
                 <li><a href="#">About us</a></li>
                 <li><a href="#">Contact Us</a></li>
               </ul>
