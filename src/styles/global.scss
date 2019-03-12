@@ -1,8 +1,10 @@
 * {
-    font-family: 'Proxima Nova Rg';
+    font-family: 'Proxima Nova';
     padding: 0;
     margin: 0;
+    font-weight: normal;
 }
+
 *::selection {
     background: $lightblue;
     color: white;

@@ -90,27 +90,43 @@
         }
     }
 }
-@media only screen and (max-width: 425px){
-    .AI{
-        .pulsatingCircle{
-            display: none;
-        }
-        p{
-            font-size: 75px;
+@media only screen and (max-width: 768px){
+    .AI {
+        height: 50vh;
+    }
+}
+@media only screen and (max-width: 500px){
+    .AI {
+        height: 50vh;
+        &-container {
+            p {
+                font-size: 65px;
+            }
         }
     }
 }
-@media only screen and (max-width: 375px){
-    .AI{
-        p{
-            font-size: 65px;
-        }
-    }
-}
-@media only screen and (max-width: 320px){
-    .AI{
-        p{
-            font-size: 55px;
-        }
-    }
-}
+
+// @media only screen and (max-width: 425px){
+//     .AI{
+//         .pulsatingCircle{
+//             display: none;
+//         }
+//         p{
+//             font-size: 75px;
+//         }
+//     }
+// }
+// @media only screen and (max-width: 375px){
+//     .AI{
+//         p{
+//             font-size: 65px;
+//         }
+//     }
+// }
+// @media only screen and (max-width: 320px){
+//     .AI{
+//         p{
+//             font-size: 55px;
+//         }
+//     }
+// }

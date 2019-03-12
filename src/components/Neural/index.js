@@ -2,7 +2,6 @@ import React from 'react';
 
 import classnames from 'classnames'
 
-import firstReviewVideo from '@assets/video.mp4'
 import {
     blackArrow,
     kubernetes,
@@ -12,10 +11,10 @@ import {
     nodeImg,
     reactImg,
     tensorflow,
-    imgVideo,
     downArrow,
-    imgTemp
-} from '@/images'
+    deathStar,
+    videoflyFirst
+} from '@/images&video'
 
 import Header from '@/components/Header'
 import Works from '@/components/Works'
@@ -36,6 +35,21 @@ export default class Neural extends React.PureComponent {
     componentWillUnmount(){
         this.btnShow.removeEventListener('click',this.showSection)
     }
+
+    normalizeDelta (e) {
+        const FireFoxWheelMod = 3
+        const ChromeOperaWheelMod = 53
+        
+        let normDeltaY = 0
+        if (!(e.deltaY % FireFoxWheelMod)) {
+            normDeltaY = e.deltaY / FireFoxWheelMod * 2
+        } else if (!(e.deltaY % ChromeOperaWheelMod)) {
+            normDeltaY = e.deltaY / ChromeOperaWheelMod * 2
+        }
+        const direction = e.deltaY / Math.abs(e.deltaY);
+        return (Math.min(3, Math.max(Math.abs(normDeltaY), 1)) * direction) || e.deltaY
+    }
+
     showSection = () => {
         if(this.state.isHideAnimation){
             this.setState({ 
@@ -53,7 +67,6 @@ export default class Neural extends React.PureComponent {
             size: 0.9
         })
         this.toggleText.textContent = 'Hide all Testimonials'
-        
     }
 
     render() {
@@ -71,13 +84,15 @@ export default class Neural extends React.PureComponent {
                     </p>
                     <button className='btn-learn-more'>To Learn More <img src={downArrow}/></button>
                 </div>
-                <img src={imgTemp} />
+                <img src={deathStar} />
             </section>
             <section className={classnames('reviews-section',{'show-all': this.state.isHideAnimation})} >
                 <div className='container'>
                     <div className='first-review'>
                         <div className='video-or-img'  >
-                            <img src={imgTemp} style={{ transform: `scale(${this.state.size})` }} />
+                            <video style={{ transform: `scale(${this.state.size})` }}>
+                                <source src={videoflyFirst}/>
+                            </video>
                             <button className='show-testimonials' ref={domel => this.btnShow = domel}>
                                 <span ref={domel => this.toggleText = domel} >Show all Testimonials</span>
                                 <img src={downArrow} style={{ transform: 'rotate(' + this.state.rotateArrow + 'deg' + ')' }} />
@@ -110,12 +125,16 @@ export default class Neural extends React.PureComponent {
                             </div>
                         </div>
                         <div className='video-or-img'  >
-                            <img src={imgTemp} />
+                            <video>
+                                <source src={videoflyFirst}/>
+                            </video>
                         </div>
                     </div>
                     <div className='third-review'> {/* 3 */}
                         <div className='video-or-img' >
-                            <img src={imgTemp} />
+                            <video>
+                                <source src={videoflyFirst}/>
+                            </video>
                         </div>
                         <div className='feedback-text' >
                             <blockquote>

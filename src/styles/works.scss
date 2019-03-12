@@ -13,15 +13,30 @@
 
         .content {
             margin-right: 85px;
+            position: relative;
+            border-radius: 11px;
+            box-shadow: 0px 0px 105px -28px #071331;
+            overflow: hidden;
 
+            &::before{
+                content: url(../../assets/video-header-svg.svg);
+                width: 1002px;
+                position: absolute;
+                top: 0;
+                left: 50%;
+                overflow: hidden;
+                transform: translateX(-50%);
+            }
             video {
                 width: 1000px;
+                margin-top: 13px;
+                margin-bottom: -5px;
             }
         }
 
         .text-about-work {
             width: 750px;
-            padding-right: 200px;
+            padding-right: 340px;
             transform: translateX(150px);
             opacity: 0;
             transition: transform .8s, opacity .8s; 
@@ -37,10 +52,12 @@
 
             h1 {
                 margin: 0;
-                width: 750px;
-                padding-right: 200px;
+                width: 915px;
+                font-family: 'Montserrat ExtraBold';
                 font-size: 80px;
+                line-height: 1.13;
                 font-weight: bold;
+                margin-top: 5px;
             }
     
             p {
@@ -49,7 +66,7 @@
                 color: #212121;
                 margin: 0 auto;
                 margin-top: 34px;
-                margin-bottom: 25px;
+                margin-bottom: 50px;
             }
     
             div {
@@ -63,7 +80,8 @@
                     display: flex;
                     align-items: center;
                     @include resetStyleLink();
-                    color: #212121;
+                    color: #2962ff;
+                    font-weight: bold;
     
                     &:hover {
                         text-decoration: underline;
@@ -72,13 +90,16 @@
                     span {
                         width: 20px;
                         height: 20px;
-                        border:  1px solid #212121;
+                        border:  1px solid #2962ff;
                         border-radius: 50%;
                         margin-left: 10px;
                         display: flex;
                         justify-content: center;
-                        .arrow{
-                            width: 15px;
+                        
+                        svg{
+                            width: 80%;
+                            height: auto;
+                            fill: #2962ff;
                         }
                     }
                 }
@@ -109,16 +130,24 @@
 @media only screen and (max-width: 1260px){
     .works {
         .works-container {
-            transform: translateX(-9.8%);
+            transform: translateX(-10.8%);
             .content {
+                
+                &::before {
+                    content: url(../../assets/video-header-svg.svg);
+                    width: 875px;
+                    position: absolute;
+                    top: 0;
+                    left: 50%;
+                }
                 video {
-                    width: 670px;
+                    width: 875px;
                 }
             }
         }
     }
 }
-@media only screen and (max-width: 768px){
+@media only screen and (max-width: 1024px){
     .works {
         height: auto;
         justify-content: center;
@@ -131,9 +160,14 @@
             margin-top: 100px;
 
             .content {
+                width: calc(100% - 60px);
                 margin: 0;
-                padding-left: 30px;
-                padding-right: 30px;
+                overflow: hidden;
+
+                &::before {
+                    width: 100%;
+                }
+
                 video {
                     width: 100%;
                     

@@ -1,5 +1,5 @@
 // fonts //
-@import"../../fonts/stylesheet.css";
+@import 'fonts';
 //       //
 
 // variables //
@@ -10,11 +10,9 @@
 @import"global";
 //        //
 
-
 // mixins //
 @import "mixins";
 //        //
-
 
 // elements of page //
 @import "header";
@@ -22,7 +20,6 @@
 @import "scroll-section";
 @import 'works';
 //                 //
-
 
 // pages // 
 @import "home";

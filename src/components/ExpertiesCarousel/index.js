@@ -10,7 +10,7 @@ import {
  card_2,
  card_3,
  rigthArrow
-} from '@/images'
+} from '@/images&video'
 
 export default class ExpertiesCarousel extends React.PureComponent {
 
@@ -31,14 +31,14 @@ export default class ExpertiesCarousel extends React.PureComponent {
   }
   
   componentDidMount() {
-    window.addEventListener('wheel', this.wheelHandler)
-    window.addEventListener('scroll', this.scrollHandler)
+    this.html.addEventListener('wheel', this.wheelHandler)
+    this.html.addEventListener('scroll', this.scrollHandler)
     this.scrollSection.addEventListener('scroll', this.horizontalScrollHandler)
   }
 
   componentWillUnmount() {
-    window.removeEventListener('wheel', this.wheelHandler)
-    window.removeEventListener('scroll', this.scrollHandler)
+    this.html.removeEventListener('wheel', this.wheelHandler)
+    this.html.removeEventListener('scroll', this.scrollHandler)
     this.scrollSection.removeEventListener('scroll', this.horizontalScrollHandler)
   }
 
@@ -60,7 +60,7 @@ export default class ExpertiesCarousel extends React.PureComponent {
   scrollLeft = el => el.scrollWidth - el.clientWidth - el.scrollLeft
   wheelHandler = (e) => {
 
-    if(this.clientWidth <= 768) return
+    if(this.clientWidth <= 1024) return
     if (this.state.innerPageLock) {
       router.page('/neural')
       return
@@ -132,10 +132,17 @@ export default class ExpertiesCarousel extends React.PureComponent {
     ) {
       this.setState({ circlZooming: true })
     }
+
+    const isMac = navigator.platform.match(/(Mac)/i)?true:false;
+    if(isMac && !this.state.verticalScrollLock){
+      e.preventDefault() 
+      const scrollingStepMac = (this.html.scrollHeight - this.html.clientHeight) / 20
+      this.html.scrollTop += this.normalizeDelta(e) * scrollingStepMac
+    } // normalize speed scroll macOS
   }
 
   scrollHandler = (e) => {
-    if(this.clientWidth <= 768) return
+    if(this.clientWidth <= 1024) return
     const el = e.target.scrollingElement;    
     const verticalScrollLock = (this.scrollBottom(el) === 0)
 
@@ -146,7 +153,7 @@ export default class ExpertiesCarousel extends React.PureComponent {
   }
 
   horizontalScrollHandler = (e) => {
-    if(this.clientWidth <= 768) return
+    if(this.clientWidth <= 1024) return
     const el = e.target;
     const circlZooming = (this.scrollLeft(el) === 0)
 
@@ -154,8 +161,7 @@ export default class ExpertiesCarousel extends React.PureComponent {
       this.setState({ circlZooming })
     }
   }
-
-  render() {
+    render() {
     return (
       <section className="scroll-section" ref={el => this.scrollSection = el}>
         <div className="cards">

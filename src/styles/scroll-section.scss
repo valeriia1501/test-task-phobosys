@@ -35,6 +35,9 @@
         > small {
           display: inline-block;
           margin: 24px 0 74px 0;
+          span {
+            color: #9e9e9e;
+          }
         }
         .arrow {
           width: 32px;
@@ -100,7 +103,27 @@
     }
   }
 }
+@media only screen and (max-width: 1400px){
+  .scroll-section {
+    .cards {
+      .borvo {
+        transform: translateX(-200px);
+        margin-right: -200px;
+      }
+    }
+  }
+}
 
+@media only screen and (max-width: 1024px){
+  .scroll-section {
+    overflow-x: scroll;
+    .borvo {
+      .neural {
+        display: none;
+      }
+    }
+  }
+}
 @media only screen and (max-width: 768px){
   .scroll-section{
     height: auto;
