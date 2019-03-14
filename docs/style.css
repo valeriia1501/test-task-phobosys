@@ -370,23 +370,23 @@
     line-height: 1;
     position: relative;
     left: 50%;
-    transform: translateX(-12%); }
+    transform: translateX(-12.5%); }
     .works .works-container .content {
       margin-right: 85px;
       position: relative;
-      border-radius: 11px;
-      box-shadow: 0px 0px 105px -28px #071331;
+      border-radius: 9px;
+      box-shadow: 0px 0px 66px -25px #071331;
       overflow: hidden; }
       .works .works-container .content::before {
-        content: url(d78554a859bffd41510adc43ba2dee5f.svg);
-        width: 1002px;
+        content: url(6f3b712d2f26dc802852f8039a1787d2.svg);
+        width: 101%;
         position: absolute;
         top: 0;
         left: 50%;
         overflow: hidden;
         transform: translateX(-50%); }
       .works .works-container .content video {
-        width: 1000px;
+        width: 1200px;
         margin-top: 13px;
         margin-bottom: -5px; }
     .works .works-container .text-about-work {
@@ -456,11 +456,8 @@
   .works .works-container {
     transform: translateX(-10.8%); }
     .works .works-container .content::before {
-      content: url(d78554a859bffd41510adc43ba2dee5f.svg);
-      width: 875px;
-      position: absolute;
-      top: 0;
-      left: 50%; }
+      content: url(6f3b712d2f26dc802852f8039a1787d2.svg);
+      width: 101%; }
     .works .works-container .content video {
       width: 875px; } }
 
@@ -479,7 +476,7 @@
         margin: 0;
         overflow: hidden; }
         .works .works-container .content::before {
-          width: 100%; }
+          width: 101%; }
         .works .works-container .content video {
           width: 100%; }
       .works .works-container .text-about-work {
@@ -621,11 +618,22 @@
     height: 685px;
     overflow: hidden;
     background-color: #121212;
-    color: white; }
+    color: white;
+    padding-top: 150px; }
     .neural .reviews-section.show-all {
       height: 100%; }
     .neural .reviews-section .container {
-      overflow: hidden; }
+      position: relative; }
+      .neural .reviews-section .container .bg-word-review {
+        font-size: 160px;
+        font-family: 'Montserrat ExtraBold';
+        opacity: 0.05;
+        font-weight: bold;
+        position: absolute;
+        right: 50%;
+        top: -100px;
+        transform: translateX(calc(50% + 215px));
+        z-index: 1; }
       .neural .reviews-section .container .first-review,
       .neural .reviews-section .container .second-review,
       .neural .reviews-section .container .third-review {
@@ -637,7 +645,8 @@
         .neural .reviews-section .container .second-review .video-or-img,
         .neural .reviews-section .container .third-review .video-or-img {
           justify-self: end;
-          transition: transform .3s; }
+          transition: transform .3s;
+          z-index: 999; }
           .neural .reviews-section .container .first-review .video-or-img .show-testimonials,
           .neural .reviews-section .container .second-review .video-or-img .show-testimonials,
           .neural .reviews-section .container .third-review .video-or-img .show-testimonials {
@@ -720,7 +729,7 @@
       width: 530px;
       margin-right: 7%; }
       .neural .skills .technology h1 {
-        font-family: 'Montserrat Medium';
+        font-family: 'Montserrat SemiBold';
         font-size: 40px;
         font-weight: bold; }
       .neural .skills .technology ul {
@@ -750,6 +759,71 @@
           height: 56px;
           margin: 0 auto;
           margin-bottom: 20px; }
+  .neural .section-vacancies {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #2159f4;
+    color: white;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    padding-left: 30px;
+    padding-right: 30px; }
+    .neural .section-vacancies .vacancies {
+      margin-right: 6%; }
+      .neural .section-vacancies .vacancies .vacancy-card {
+        max-width: 720px;
+        min-width: 200px;
+        background: #2979ff;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        padding-left: 32px;
+        padding-right: 32px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.12); }
+        .neural .section-vacancies .vacancies .vacancy-card:not(:last-of-type) {
+          margin-bottom: 16px; }
+        .neural .section-vacancies .vacancies .vacancy-card .location img {
+          margin-right: 12px; }
+        .neural .section-vacancies .vacancies .vacancy-card .location span {
+          font-size: 13px; }
+        .neural .section-vacancies .vacancies .vacancy-card p {
+          font-size: 20px;
+          margin-top: 15px;
+          margin-bottom: 15px;
+          line-height: 1.3; }
+        .neural .section-vacancies .vacancies .vacancy-card small {
+          font-size: 15px;
+          opacity: 0.4; }
+    .neural .section-vacancies .vacancies-text {
+      width: 530px; }
+      .neural .section-vacancies .vacancies-text h1 {
+        font-size: 48px;
+        font-family: 'Montserrat Medium';
+        font-weight: bold; }
+      .neural .section-vacancies .vacancies-text p {
+        font-size: 20px;
+        font-family: 'Montserrat Medium';
+        line-height: 1.6;
+        margin-top: 40px;
+        margin-bottom: 40px; }
+      .neural .section-vacancies .vacancies-text span {
+        width: 240px;
+        height: 40px;
+        font-size: 18px;
+        border-radius: 22.5px;
+        border: solid 2px #ffffff;
+        display: flex;
+        justify-content: center;
+        align-items: center; }
+        .neural .section-vacancies .vacancies-text span img {
+          width: 10px;
+          height: 10px;
+          border-radius: 50%;
+          padding: 3px;
+          border: 1px solid white;
+          margin-left: 10px;
+          transform: rotate(-90deg); }
 
 .none {
   display: none; }
@@ -801,6 +875,10 @@
     .neural .description-borvo > img {
       display: none; } }
 
+@media only screen and (max-width: 1100px) {
+  .neural .reviews-section .container .bg-word-review {
+    display: none; } }
+
 @media only screen and (max-width: 900px) {
   .neural .reviews-section {
     height: 800px; }
@@ -836,12 +914,15 @@
     height: 700px; } }
 
 @media only screen and (max-width: 768px) {
-  .neural {
-    margin-bottom: 100px; }
-    .neural .networks .networks-container {
-      margin-top: 135px; }
-    .neural .skills .cards {
-      flex-wrap: wrap; } }
+  .neural .networks .networks-container {
+    margin-top: 135px; }
+  .neural .skills .cards {
+    flex-wrap: wrap; }
+  .neural .section-vacancies {
+    flex-wrap: wrap; }
+    .neural .section-vacancies .vacancies {
+      margin: 0;
+      margin-bottom: 60px; } }
 
 @media only screen and (max-width: 713px) {
   .neural .skills {

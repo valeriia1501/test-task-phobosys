@@ -88,6 +88,7 @@ export default class Neural extends React.PureComponent {
             </section>
             <section className={classnames('reviews-section',{'show-all': this.state.isHideAnimation})} >
                 <div className='container'>
+                    <span className='bg-word-review'>Review</span>
                     <div className='first-review'>
                         <div className='video-or-img'  >
                             <video style={{ transform: `scale(${this.state.size})` }}>
@@ -194,6 +195,48 @@ export default class Neural extends React.PureComponent {
                         <img src={kubernetes} />
                         <span>Kubernetes</span>
                     </div>
+                </div>
+            </section>
+            <section className='section-vacancies' >
+                <div className='vacancies' >
+                    <div className='vacancy-card'>
+                        <div className='location'>
+                            <img src={downArrow} />
+                            <span>Odessa, Ukraine</span>
+                        </div>
+                        <p>Node.js Developer for Evrythng</p>
+                        <small>Software Engineering</small>
+                    </div>
+                    <div className='vacancy-card'>
+                        <div className='location'>
+                            <img src={downArrow} />
+                            <span>Odessa, Ukraine</span>
+                        </div>
+                        <p>Senior Full Stack .NET Developer for Optimal+</p>
+                        <small>Software Engineering</small>
+                    </div>
+                    <div className='vacancy-card'>
+                        <div className='location'>
+                            <img src={downArrow} />
+                            <span>Odessa, Ukraine</span>
+                        </div>
+                        <p>Back End Node.js Developer for Thomas Cook (Malaga)</p>
+                        <small>Software Engineering</small>
+                    </div>
+                    <div className='vacancy-card'>
+                        <div className='location'>
+                            <img src={downArrow} />
+                            <span>Odessa, Ukraine</span>
+                        </div>
+                        <p>Functional Lead (SAP Transport Management) for Rockwool (Wroclaw)</p>
+                        <small>Software Engineering</small>
+                    </div>
+                    
+                </div>
+                <div className='vacancies-text'>
+                    <h1>Find your dream job in Borno Team</h1>
+                    <p>Chase your dream by day and unwind with <br/> your favorite show at night.</p>
+                    <span>Learn more<img src={downArrow} /></span>
                 </div>
             </section>
         </div>
