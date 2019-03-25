@@ -118,9 +118,10 @@
         display: flex;
         margin-left: 55px;
         position: relative;
+        line-height: 1;
 
         &::before {
-          content: url('../../assets/borvo-logo.svg');
+          content: url('../../assets/img/borvo-logo.svg');
           position: absolute;
           left: -35px;
           top: 0px;

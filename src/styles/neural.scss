@@ -270,7 +270,6 @@
 
             .vacancy-card {
                 max-width: 720px;
-                min-width: 200px;
                 background: $lightblue;
                 padding-top: 20px;
                 padding-bottom: 20px;
@@ -284,7 +283,11 @@
                 }
 
                 .location {
+                    display: flex;
+                    align-items: flex-end;
+
                     img {
+                        width: 16px;
                         margin-right: 12px;
                     }
                     span {

@@ -3,7 +3,6 @@ import React from 'react';
 import classnames from 'classnames'
 
 import {
-    blackArrow,
     kubernetes,
     javascriptImg,
     angular,
@@ -13,11 +12,13 @@ import {
     tensorflow,
     downArrow,
     deathStar,
-    videoflyFirst
+    videoflyFirst,
+    svgFire
 } from '@/images&video'
 
 import Header from '@/components/Header'
 import Works from '@/components/Works'
+import Footer from '@/components/Footer'
 
 export default class Neural extends React.PureComponent {
     constructor(props) {
@@ -201,7 +202,7 @@ export default class Neural extends React.PureComponent {
                 <div className='vacancies' >
                     <div className='vacancy-card'>
                         <div className='location'>
-                            <img src={downArrow} />
+                            <img src={svgFire} />
                             <span>Odessa, Ukraine</span>
                         </div>
                         <p>Node.js Developer for Evrythng</p>
@@ -209,7 +210,7 @@ export default class Neural extends React.PureComponent {
                     </div>
                     <div className='vacancy-card'>
                         <div className='location'>
-                            <img src={downArrow} />
+                            <img src={svgFire} />
                             <span>Odessa, Ukraine</span>
                         </div>
                         <p>Senior Full Stack .NET Developer for Optimal+</p>
@@ -217,7 +218,7 @@ export default class Neural extends React.PureComponent {
                     </div>
                     <div className='vacancy-card'>
                         <div className='location'>
-                            <img src={downArrow} />
+                            <img src={svgFire} />
                             <span>Odessa, Ukraine</span>
                         </div>
                         <p>Back End Node.js Developer for Thomas Cook (Malaga)</p>
@@ -225,7 +226,7 @@ export default class Neural extends React.PureComponent {
                     </div>
                     <div className='vacancy-card'>
                         <div className='location'>
-                            <img src={downArrow} />
+                            <img src={svgFire} />
                             <span>Odessa, Ukraine</span>
                         </div>
                         <p>Functional Lead (SAP Transport Management) for Rockwool (Wroclaw)</p>
@@ -239,6 +240,7 @@ export default class Neural extends React.PureComponent {
                     <span>Learn more<img src={downArrow} /></span>
                 </div>
             </section>
+            <Footer/>
         </div>
     }
 }

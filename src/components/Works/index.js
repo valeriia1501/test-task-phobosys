@@ -37,10 +37,8 @@ export default class Works extends React.PureComponent {
         this.setState({ isHideText: fixText })
       }
 
-      if (window.performance && window.location.href.includes('neural')) {
-        if (performance.navigation.type === 1 && this.html.scrollTop === 0) {
+      if (this.html.scrollTop === 0 && window.location.href.includes('neural')) {
             this.html.classList.add('scroll-hidden')
-        }
       } 
   }
   componentWillUnmount() {
@@ -49,10 +47,6 @@ export default class Works extends React.PureComponent {
   }
 
   scrollLeft = el => el.scrollWidth - el.clientWidth - el.scrollLeft
-
-  touch = (e) => {
-    console.log(e)
-  }
 
   normalizeDelta (e) {
     const FireFoxWheelMod = 3
@@ -117,7 +111,7 @@ export default class Works extends React.PureComponent {
         <section className="works" ref={ el => this.scrollWorks = el }>
             <div className="works-container">
                 <div className='content' >
-                    <video autoPlay loop >
+                    <video autoPlay loop muted>
                         <source src={videoNeuralNetwork} />
                     </video>             
                 </div>
@@ -132,8 +126,8 @@ export default class Works extends React.PureComponent {
                         </a>
                     </div>
                 </div>
-                <div className='content' >
-                    <video autoPlay loop >
+                <div className='content'>
+                    <video autoPlay loop muted>
                         <source src={videoflyFirst} />
                     </video>             
                 </div>
