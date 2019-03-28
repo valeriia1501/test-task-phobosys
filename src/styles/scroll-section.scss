@@ -5,7 +5,7 @@
 
   >.cards {
     display: flex;
-    padding-left: 250px;
+    padding-left: calc(50% - 700px);
     margin-bottom: -15px;
 
     & > .card-home:not(:last-child){
@@ -16,6 +16,7 @@
       display: flex;
       align-items: center;
       margin-right: 80px;
+      padding-left: 50px;
 
       > img {
         margin-right: 40px;
@@ -96,10 +97,10 @@
 
 
 
-@media only screen and (max-width: 1200px){
+@media only screen and (max-width: 1550px){
   .scroll-section{
     > .cards{
-      padding-left: 100px;
+      // padding-left: 50px;
     }
   }
 }

@@ -30,10 +30,13 @@ export default class Services extends React.PureComponent {
 
     normalizeSpeedScroll = (e) => {
         const isMac = navigator.platform.match(/(Mac)/i)?true:false;
-        if(!isMac){}
+        const isSafari = navigator.userAgent.toLowerCase().indexOf('safari/') > -1;
+    
+        if(isMac && !isSafari){
+            e.preventDefault() 
+            this.html.scrollTop += this.normalizeDelta(e) * 40
+        }
 
-        e.preventDefault() 
-        this.html.scrollTop += this.normalizeDelta(e) * 40
     }
     render() {
         return (

@@ -40,7 +40,10 @@
             transform: translateX(150px);
             opacity: 0;
             transition: transform .8s, opacity .8s; 
-
+            
+            &:last-child {
+                padding: 0;
+            }
             &.appearance-of-text {
                 transform: translateX(0);
                 opacity: 1;
@@ -79,7 +82,7 @@
                 a {
                     display: flex;
                     align-items: center;
-                    @include resetStyleLink();
+                    text-decoration: none;
                     color: #2962ff;
                     font-weight: bold;
     
@@ -196,4 +199,15 @@
         }
     }
 }
-
+@media only screen and (max-height: 770px) and (min-width: 1025px) {
+    .works {
+        .works-container {
+            transform: translateX(-9%);
+            .content {
+                video {
+                    width: 700px;
+                }
+            }
+        }
+    }
+}

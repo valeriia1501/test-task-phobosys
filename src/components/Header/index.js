@@ -30,6 +30,7 @@ export default class Header extends React.PureComponent {
               <ul>
                 <li><a href="#!/services">Expertise</a></li>
                 <li><a href="#">About us</a></li>
+                <li><a href="#">Careers</a></li>
                 <li><a href="#">Contact Us</a></li>
               </ul>
             </nav>
@@ -37,6 +38,7 @@ export default class Header extends React.PureComponent {
               <ul>
                 <li><a href="#!/services">Expertise</a></li>
                 <li><a href="#">About us</a></li>
+                <li><a href="#">Careers</a></li>
                 <li><a href="#">Contact Us</a></li>
               </ul>
             </nav>
@@ -44,6 +46,7 @@ export default class Header extends React.PureComponent {
           <BurgerIcon ref={el => this.burgerIconRef = el} />
           <button>Get in touch</button>
         </div>
+        <div className='line'></div>
       </header>
     )
   }

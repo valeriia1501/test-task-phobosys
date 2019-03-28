@@ -58,7 +58,6 @@ export default class Footer extends React.PureComponent {
                 </ul>
             </div>
           </div>
-          
       </footer>
     )
   }

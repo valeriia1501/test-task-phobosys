@@ -134,7 +134,9 @@ export default class ExpertiesCarousel extends React.PureComponent {
     }
 
     const isMac = navigator.platform.match(/(Mac)/i)?true:false;
-    if(isMac && !this.state.verticalScrollLock){
+    const isSafari = navigator.userAgent.toLowerCase().indexOf('safari/') > -1;
+    
+    if(isMac && !this.state.verticalScrollLock && !isSafari){
       e.preventDefault() 
       const scrollingStepMac = (this.html.scrollHeight - this.html.clientHeight) / 20
       this.html.scrollTop += this.normalizeDelta(e) * scrollingStepMac
@@ -171,7 +173,7 @@ export default class ExpertiesCarousel extends React.PureComponent {
               <span>01</span>
               <p>Professional Startup Solution</p>
               <small>Service <span>- Sturupe solution</span></small>
-              <a className="arrow" href="#" ><img src={rigthArrow} /></a>
+              <a className="arrow" href="#!/experties" ><img src={rigthArrow} /></a>
             </div>
           </div>
           <div className='card-home'>

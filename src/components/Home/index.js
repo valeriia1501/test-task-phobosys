@@ -8,6 +8,7 @@ export default class Home extends React.Component {
     super(props)
     this.html = document.getElementsByTagName('html')[0]
     this.html.classList.remove('scroll-hidden')
+    this.html.classList.add('scroll-x-hidden')
     this.state = { AIPhrase: this.getAIPhrase() }
   }
 
@@ -15,7 +16,7 @@ export default class Home extends React.Component {
     if (window.location.hash === '#!/services') {
       return 'We offer our services - long, expensive, very cool'
     }
-    if (window.location.hash === '#!/' || window.location.hash === '#!') {
+    if (window.location.hash === '#!/') {
       return 'Inspiring businesses to bring innovative ideas to life'
     }
   }

@@ -75,17 +75,19 @@ export default class Neural extends React.PureComponent {
             <Header className='white-page' />
             <Works />
             <section className='description-borvo'>
-                <div className='description'>
-                    <span>Your Dream Team</span>
-                    <h1>Great Products <br/> Are Built By Great Engineers</h1>
-                    <p>
-                      Borvo company provides premium software engineering services to leading technology companies.
-                      Our customers usually range from startup to high-growth and VC-backed companies that drive 
-                      a culture of acceleration and innovation.
-                    </p>
-                    <button className='btn-learn-more'>To Learn More <img src={downArrow}/></button>
+                <div className='container-description' >
+                    <div className='description'>
+                        <span>Your Dream Team</span>
+                        <h1>Great Products <br/> Are Built By Great Engineers</h1>
+                        <p>
+                            Borvo company provides premium software engineering services to leading technology companies.
+                            Our customers usually range from startup to high-growth and VC-backed companies that drive 
+                            a culture of acceleration and innovation.
+                        </p>
+                        <button className='btn-learn-more'>To Learn More <img src={downArrow}/></button>
+                    </div>
+                    <img src={deathStar} />
                 </div>
-                <img src={deathStar} />
             </section>
             <section className={classnames('reviews-section',{'show-all': this.state.isHideAnimation})} >
                 <div className='container'>
@@ -199,45 +201,47 @@ export default class Neural extends React.PureComponent {
                 </div>
             </section>
             <section className='section-vacancies' >
-                <div className='vacancies' >
-                    <div className='vacancy-card'>
-                        <div className='location'>
-                            <img src={svgFire} />
-                            <span>Odessa, Ukraine</span>
+                <div className='container-vacancies' >
+                    <div className='vacancies' >
+                        <div className='vacancy-card'>
+                            <div className='location'>
+                                <img src={svgFire} />
+                                <span>Odessa, Ukraine</span>
+                            </div>
+                            <p>Node.js Developer for Evrythng</p>
+                            <small>Software Engineering</small>
                         </div>
-                        <p>Node.js Developer for Evrythng</p>
-                        <small>Software Engineering</small>
-                    </div>
-                    <div className='vacancy-card'>
-                        <div className='location'>
-                            <img src={svgFire} />
-                            <span>Odessa, Ukraine</span>
+                        <div className='vacancy-card'>
+                            <div className='location'>
+                                <img src={svgFire} />
+                                <span>Odessa, Ukraine</span>
+                            </div>
+                            <p>Senior Full Stack .NET Developer for Optimal+</p>
+                            <small>Software Engineering</small>
                         </div>
-                        <p>Senior Full Stack .NET Developer for Optimal+</p>
-                        <small>Software Engineering</small>
-                    </div>
-                    <div className='vacancy-card'>
-                        <div className='location'>
-                            <img src={svgFire} />
-                            <span>Odessa, Ukraine</span>
+                        <div className='vacancy-card'>
+                            <div className='location'>
+                                <img src={svgFire} />
+                                <span>Odessa, Ukraine</span>
+                            </div>
+                            <p>Back End Node.js Developer for Thomas Cook (Malaga)</p>
+                            <small>Software Engineering</small>
                         </div>
-                        <p>Back End Node.js Developer for Thomas Cook (Malaga)</p>
-                        <small>Software Engineering</small>
-                    </div>
-                    <div className='vacancy-card'>
-                        <div className='location'>
-                            <img src={svgFire} />
-                            <span>Odessa, Ukraine</span>
+                        <div className='vacancy-card'>
+                            <div className='location'>
+                                <img src={svgFire} />
+                                <span>Odessa, Ukraine</span>
+                            </div>
+                            <p>Functional Lead (SAP Transport Management) for Rockwool (Wroclaw)</p>
+                            <small>Software Engineering</small>
                         </div>
-                        <p>Functional Lead (SAP Transport Management) for Rockwool (Wroclaw)</p>
-                        <small>Software Engineering</small>
+                        
                     </div>
-                    
-                </div>
-                <div className='vacancies-text'>
-                    <h1>Find your dream job in Borno Team</h1>
-                    <p>Chase your dream by day and unwind with <br/> your favorite show at night.</p>
-                    <span>Learn more<img src={downArrow} /></span>
+                    <div className='vacancies-text'>
+                        <h1>Find your dream job in Borno Team</h1>
+                        <p>Chase your dream by day and unwind with <br/> your favorite show at night.</p>
+                        <span>Learn more<img src={downArrow} /></span>
+                    </div>
                 </div>
             </section>
             <Footer/>

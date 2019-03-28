@@ -1,6 +1,7 @@
 import master from '@components/master'
 import Services from '@components/Services'
 import Neural from '@components/Neural'
+import Experties from '@components/Experties'
 import Home from '@components/Home'
 
 import ExpertiesCarousel from '@components/ExpertiesCarousel'
@@ -20,14 +21,14 @@ export default [
         children: [
           {
             path: '/',
-            name: 'Experties',
-            tile: '',
+            name: 'ExpertiesCarousel',
+            title: '',
             component: ExpertiesCarousel
           },
           {
             path: '/services',
             name: 'Services',
-            tile: '',
+            title: '',
             component: Services
           }
         ]
@@ -35,13 +36,19 @@ export default [
       {
         path: '/neural',
         name: 'Neural',
-        tile: '',
+        title: '',
         component: Neural
+      },
+      {
+        path: '/experties',
+        name: 'Experties',
+        title: '',
+        component: Experties
       },
       {
         path: '*',
         name: 'Not Found',
-        tile: '',
+        title: '',
         component: Home
       }
     ]
