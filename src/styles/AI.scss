@@ -75,9 +75,13 @@
         }
    }
 }
-@media only screen and (max-width: 1550px){
+@media only screen and (max-width: 1500px){
     .AI{
-        // padding-left: 50px;
+        &-container {
+            .pulsatingCircle {
+                display: none;
+            }
+        }
     }
 }
 @media only screen and (max-width: 855px){

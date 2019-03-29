@@ -34,6 +34,8 @@
     "webpack-dev-server": "^3.1.14"
   },
   "dependencies": {
+    "in-view": "^0.6.1",
+    "in-viewport": "^3.6.0",
     "react-page-router": "1.11.10"
   }
 }

@@ -70,9 +70,10 @@ export default class Works extends React.PureComponent {
       if(!window.location.href.includes('neural')) return
 
       const isMac = navigator.platform.match(/(Mac)/i)?true:false;
-      const isSafari = navigator.userAgent.toLowerCase().indexOf('safari/') > -1;
+      const isSafari = navigator.userAgent.toLowerCase().indexOf('safari/') > -1
+
       if(isMac && !isSafari){
-        if(!this.html.classList.contains('scroll-hidden') && (this.html.scrollTop > 0)) {
+        if(!this.html.classList.contains('scroll-hidden') && (document.body.scrollTop > 0)) { //document.body.scrollTop for safari
             e.preventDefault() 
             const scrollingStep = (this.html.scrollHeight - this.html.clientHeight) / 70
             this.html.scrollTop += this.normalizeDelta(e) * scrollingStep
@@ -81,12 +82,13 @@ export default class Works extends React.PureComponent {
       
         
         if(
-            this.html.scrollTop === 0 &&
+            window.pageYOffset === 0 &&
             this.normalizeDelta(e) < 0 && 
             !this.html.classList.contains("scroll-hidden") 
             ) {
             this.html.classList.add('scroll-hidden')
         } 
+
 
         if(this.html.classList.contains('scroll-hidden')) {
             this.setState({ 

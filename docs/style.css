@@ -355,6 +355,10 @@ footer {
       font-weight: bold;
       position: relative; }
 
+@media only screen and (max-width: 1500px) {
+  .AI-container .pulsatingCircle {
+    display: none; } }
+
 @media only screen and (max-width: 855px) {
   .AI {
     padding-left: 25px;
@@ -379,6 +383,13 @@ footer {
   display: flex;
   overflow: hidden;
   height: 100vh; }
+  .scroll-section .bottom-page {
+    width: 1px;
+    height: 1px;
+    background: red;
+    position: absolute;
+    left: 0;
+    bottom: 20px; }
   .scroll-section > .cards {
     display: flex;
     padding-left: calc(50% - 700px);
@@ -429,8 +440,11 @@ footer {
         transform-origin: 49% 58.5%;
         z-index: 5; }
         .scroll-section > .cards .borvo .svg-container svg {
+          outline: 150vh solid #0d0f1c;
           fill: #0d0f1c;
-          outline: 150vh solid #0d0f1c; }
+          display: inline-block; }
+        .scroll-section > .cards .borvo .svg-container .safari-svg {
+          display: none; }
       .scroll-section > .cards .borvo .neural {
         position: absolute;
         top: 0;
@@ -476,6 +490,15 @@ footer {
           margin: 0; }
         .scroll-section .cards .card-home div {
           margin: 50px 0 0px 0; } }
+
+@media not all and (min-resolution: 0.001dpcm) {
+  @supports (-webkit-appearance: none) {
+    .safari_only .cards .borvo .svg-container {
+      outline: 150vh solid #0d0f1c; }
+      .safari_only .cards .borvo .svg-container svg {
+        display: inline-block; }
+      .safari_only .cards .borvo .svg-container .safari-svg {
+        display: none; } } }
 
 .works {
   height: calc(100vh - 40px);
@@ -1082,7 +1105,7 @@ footer {
   justify-content: center; }
   .section-services .cards-services {
     width: 1540px;
-    padding-left: 25px;
+    padding-left: 65px;
     padding-right: 25px;
     display: flex;
     flex-wrap: wrap;
@@ -1097,10 +1120,15 @@ footer {
       .section-services .cards-services .card-services > span {
         margin-top: 50px; }
 
-@media only screen and (max-width: 1654px) {
+@media only screen and (max-width: 1729px) {
   .section-services .cards-services {
-    justify-content: center;
-    margin-left: -65px; } }
+    padding-left: 0;
+    margin-left: 0; }
+    .section-services .cards-services .card-services {
+      width: 404px;
+      -moz-width: 404px; }
+      .section-services .cards-services .card-services img {
+        width: 100%; } }
 
 @media only screen and (max-height: 750px) {
   .section-services {

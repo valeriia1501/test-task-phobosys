@@ -1,4 +1,5 @@
 import React from 'react';
+import isViewport from 'in-viewport'
 
 import classnames from 'classnames'
 
@@ -69,7 +70,6 @@ export default class Neural extends React.PureComponent {
         })
         this.toggleText.textContent = 'Hide all Testimonials'
     }
-
     render() {
         return <div className={classnames(this.props.className, 'neural')}>
             <Header className='white-page' />
