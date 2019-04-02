@@ -21,6 +21,8 @@ import footerLogo from '@assets/img/footer-logo.svg'
 import fbIconFooter  from '@assets/img/fb-icon-footer.svg'
 import inIconFooter  from '@assets/img/in-icon-footer.svg'
 import expertiesMainPhoto  from '@assets/img/experties-main-photo.png'
+import buttonClip  from '@assets/img/button-clip.svg'
+import closeCross  from '@assets/img/close-cross.svg'
 
 export {
   blackArrow,
@@ -45,5 +47,7 @@ export {
   fbIconFooter,
   footerLogo,
   svgFire,
-  expertiesMainPhoto
+  expertiesMainPhoto,
+  buttonClip,
+  closeCross
 }

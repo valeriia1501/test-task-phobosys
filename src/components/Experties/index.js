@@ -3,9 +3,7 @@ import React from 'react';
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 
-import {
-    expertiesMainPhoto    
-  } from '@/images&video'
+import {expertiesMainPhoto} from '@/images&video'
   
   export default class Experties extends React.PureComponent {
     constructor(props) {
@@ -13,6 +11,7 @@ import {
     }
     componentDidMount() {
       this.html = document.getElementsByTagName('html')[0]
+      this.html.classList.remove('scroll-hidden')
       this.html.classList.add('scroll-x-hidden')
     }
     render() {

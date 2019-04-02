@@ -1,22 +1,30 @@
 import React from 'react';
 
 import classnames from 'classnames'
-import BurgerIcon from '@/components/BurgerIcon'
 
+import BurgerIcon from '@/components/BurgerIcon'
+import GetInTouch from '@/components/GetInTouch'
 
 export default class Header extends React.PureComponent {
   constructor(props) {
     super(props)
-    this.setState = {};
+    this.state = {
+       
+    }
   }
   componentDidMount() {
     this.burgerIconRef.svgRef.addEventListener('click', this.handleClick)
+    this.btnGetInTouch.addEventListener('click', this.showBlock)
   }
   componentWillUnmount() {
     this.burgerIconRef.svgRef.removeEventListener('click', this.handleClick)
+    this.btnGetInTouch.removeEventListener('click', this.showBlock)    
   }
   handleClick = () => {
     this.mobileMenu.classList.toggle('show')
+  }
+  showBlock = () => {
+    this.setState({isShowPopUp : true})
   }
   render() {
     return (
@@ -44,9 +52,10 @@ export default class Header extends React.PureComponent {
             </nav>
           </div>
           <BurgerIcon ref={el => this.burgerIconRef = el} />
-          <button>Get in touch</button>
+          <button ref={el => this.btnGetInTouch = el } >Get in touch</button>
         </div>
         <div className='line'></div>
+        <GetInTouch style={this.state.isShowPopUp} ref ={el => this.sectionPopUp = el} />
       </header>
     )
   }

@@ -6,13 +6,18 @@ export default class Services extends React.PureComponent {
     constructor(props) {
         super(props)
         this.html = document.getElementsByTagName('html')[0]
+        //this.cardServices = document.querySelectorAll('.card-services')
         this.html.classList.remove('scroll-hidden')
     }
     componentDidMount(){
         this.html.addEventListener('wheel', this.normalizeSpeedScroll) 
+        //this.cardServices.addEventListener('click', this.routeExperties)
     }
     componentWillUnmount(){
         this.html.removeEventListener('wheel', this.normalizeSpeedScroll) 
+        //this.cardServices.removeEventListener('click', this.routeExperties)
+    }
+    routeExperties = () => {
     }
     normalizeDelta (e) {
         const FireFoxWheelMod = 3
@@ -39,10 +44,11 @@ export default class Services extends React.PureComponent {
 
     }
     render() {
+        console.log(this.card)
         return (
             <section className="section-services" >
                 <div className="cards-services">
-                    <div className="card-services">
+                    <div className="card-services" ref={el => this.card = el}>
                         <img src={card_3} />
                         <span>UX</span>
                     </div>

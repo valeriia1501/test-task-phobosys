@@ -1,5 +1,4 @@
 import React from 'react';
-import isViewport from 'in-viewport'
 
 import classnames from 'classnames'
 
@@ -25,6 +24,8 @@ export default class Neural extends React.PureComponent {
     constructor(props) {
         super(props)
         this.html = document.getElementsByTagName('html')[0]
+        this.html.classList.remove('scroll-hidden')
+        this.html.classList.add('scroll-x-hidden')
         this.state = {
             rotateArrow: 0
         }
@@ -72,7 +73,7 @@ export default class Neural extends React.PureComponent {
     }
     render() {
         return <div className={classnames(this.props.className, 'neural')}>
-            <Header className='white-page' />
+            <Header className='bg-neural' />
             <Works />
             <section className='description-borvo'>
                 <div className='container-description' >

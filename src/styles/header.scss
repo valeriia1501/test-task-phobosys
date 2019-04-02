@@ -5,6 +5,8 @@
   padding-top: 20px;
   padding-right: 25px;
   padding-left: 25px;
+  overflow-y: hidden;
+
   &-container{
     width: 1360px;
     display: flex;
@@ -14,7 +16,7 @@
       z-index: 1;
     }
   
-    div {
+    > div {
       display: flex;
       align-items: center;
   
@@ -96,14 +98,15 @@
       }
     } 
     button{
-      width: 134px;
+      width: 120px;
       height: 40px;
       font-size: 15px;
       color: white;
-      border: 1px solid $lightblue;
-      background-color: transparent;
-      border-radius: 20px;
+      background-color: $lightblue;
+      border-radius: 4px;
       outline: none;
+      border: none;
+      cursor: pointer;
     }
   }
   .line {
@@ -115,13 +118,33 @@
     top: 75px;
   }
 }
+
+.bg-neural {
+  background: black;
+  a {
+    color: white;
+
+    .logo {
+
+      &::before {
+        content: url('../../assets/img/borvo-logo-white.svg');
+        position: absolute;
+        left: -35px;
+        top: 0px;
+      }
+      
+    }
+  }
+}
+
 .white-page {
   position: relative;
+  background: black;
 
   div {
 
     a {
-      color: black;
+      color: white;
 
       .logo {
         display: flex;
