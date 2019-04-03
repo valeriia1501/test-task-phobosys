@@ -7,11 +7,11 @@
 }
 
 *::selection {
-    background: $lightblue;
+    background: #2979ff;
     color: white;
 }
 .hide {
-    opacity: 0;
+    display: none ;
 }
 .show {
     display: flex !important;

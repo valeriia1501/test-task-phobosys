@@ -6,10 +6,6 @@
 @import "variables";
 //          //
 
-// global //
-@import"global";
-//        //
-
 // mixins //
 @import "mixins";
 //        //
@@ -22,6 +18,10 @@
 @import "scroll-section";
 @import 'works';
 //                 //
+
+// global //
+@import"global";
+//        //
 
 // pages // 
 @import "home";

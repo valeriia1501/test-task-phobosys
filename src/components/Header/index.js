@@ -9,7 +9,7 @@ export default class Header extends React.PureComponent {
   constructor(props) {
     super(props)
     this.state = {
-       
+      isShowPopUp : false
     }
   }
   componentDidMount() {
@@ -21,10 +21,13 @@ export default class Header extends React.PureComponent {
     this.btnGetInTouch.removeEventListener('click', this.showBlock)    
   }
   handleClick = () => {
+    console.log('show')
     this.mobileMenu.classList.toggle('show')
   }
   showBlock = () => {
-    this.setState({isShowPopUp : true})
+    this.setState({
+      isShowPopUp : !this.state.isShowPopUp
+    })
   }
   render() {
     return (
@@ -52,7 +55,7 @@ export default class Header extends React.PureComponent {
             </nav>
           </div>
           <BurgerIcon ref={el => this.burgerIconRef = el} />
-          <button ref={el => this.btnGetInTouch = el } >Get in touch</button>
+          <button ref={el => this.btnGetInTouch = el}>Get in touch</button>
         </div>
         <div className='line'></div>
         <GetInTouch style={this.state.isShowPopUp} ref ={el => this.sectionPopUp = el} />

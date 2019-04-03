@@ -120,12 +120,6 @@ export default class ExpertiesCarousel extends React.PureComponent {
           }
         })
       }
-
-      if(this.isSafari) {
-        this.setState({
-          
-        })
-      }
     }
     
     this.setState({

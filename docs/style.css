@@ -42,29 +42,6 @@
   font-family: 'Montserrat Medium';
   src: url(a98626e1aef6ceba5dfc1ee7112e235a.ttf); }
 
-* {
-  font-family: 'Proxima Nova';
-  padding: 0;
-  margin: 0;
-  font-weight: normal;
-  list-style: none; }
-
-*::selection {
-  background: #2979ff;
-  color: white; }
-
-.hide {
-  opacity: 0; }
-
-.show {
-  display: flex !important; }
-
-.scroll-hidden {
-  overflow: hidden; }
-
-.scroll-x-hidden {
-  overflow-x: hidden !important; }
-
 .header {
   display: flex;
   justify-content: center;
@@ -218,7 +195,6 @@
 
 .pop-up {
   color: white;
-  min-height: 100vh;
   background: black;
   z-index: 999;
   position: absolute;
@@ -229,7 +205,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  display: none; }
+  display: none;
+  overflow-y: auto;
+  padding-bottom: 100px;
+  padding-top: 100px; }
   .pop-up .pop-up-container {
     width: 1360px;
     padding-left: 30px;
@@ -274,7 +253,7 @@
         z-index: 10;
         position: absolute; }
         .pop-up .pop-up-container .form-container form .down-input label input {
-          min-width: 900px;
+          width: 900px;
           height: 50px;
           outline: none;
           background: transparent;
@@ -329,6 +308,30 @@
     top: 10px;
     right: 10px;
     cursor: pointer; }
+
+@media only screen and (max-width: 940px) {
+  .pop-up .pop-up-container .form-container form .down-input label {
+    width: 100%; }
+    .pop-up .pop-up-container .form-container form .down-input label input {
+      width: 100%; } }
+
+@media only screen and (max-width: 920px) {
+  .pop-up .pop-up-container {
+    padding-top: 300px; }
+    .pop-up .pop-up-container h1 {
+      margin-bottom: 30px; }
+    .pop-up .pop-up-container .form-container form .four-input {
+      display: flex;
+      flex-direction: column; }
+      .pop-up .pop-up-container .form-container form .four-input label input {
+        width: 100%; }
+    .pop-up .pop-up-container .form-container form .down-input {
+      margin-top: 40px; } }
+
+@media only screen and (max-width: 425px) {
+  .pop-up .pop-up-container h1 {
+    text-align: center;
+    font-size: 60px; } }
 
 footer {
   position: relative;
@@ -548,6 +551,7 @@ footer {
           font-size: 15px;
           opacity: .3; }
         .scroll-section > .cards .card-home > div > p {
+          max-width: 225px;
           font-size: 24px;
           font-weight: bold;
           margin: 8px 0 0 0; }
@@ -620,16 +624,24 @@ footer {
     .scroll-section .cards {
       flex-direction: column;
       padding: 0;
-      margin: 0; }
+      margin: 0;
+      overflow-x: hidden; }
       .scroll-section .cards .card-home {
         flex-direction: column;
-        margin: 0; }
+        margin: 0;
+        padding: 0; }
         .scroll-section .cards .card-home + .card-home {
           margin-top: 100px; }
         .scroll-section .cards .card-home img {
           margin: 0; }
         .scroll-section .cards .card-home div {
           margin: 50px 0 0px 0; } }
+
+@media only screen and (max-width: 425px) {
+  .scroll-section .cards {
+    padding: 0 30px; }
+    .scroll-section .cards .card-home img {
+      width: 100%; } }
 
 @media not all and (min-resolution: 0.001dpcm) {
   @supports (-webkit-appearance: none) {
@@ -728,6 +740,29 @@ footer {
 @media only screen and (max-height: 1000px) and (min-width: 1025px) {
   .works .works-container .content video {
     width: 1000px; } }
+
+* {
+  font-family: 'Proxima Nova';
+  padding: 0;
+  margin: 0;
+  font-weight: normal;
+  list-style: none; }
+
+*::selection {
+  background: #2979ff;
+  color: white; }
+
+.hide {
+  display: none; }
+
+.show {
+  display: flex !important; }
+
+.scroll-hidden {
+  overflow: hidden; }
+
+.scroll-x-hidden {
+  overflow-x: hidden !important; }
 
 .home {
   color: #ffffff;
@@ -1220,6 +1255,21 @@ footer {
     .section-services .cards-services .card-services {
       width: 404px;
       -moz-width: 404px; }
+      .section-services .cards-services .card-services img {
+        width: 100%; } }
+
+@media only screen and (max-width: 768px) {
+  .section-services .cards-services {
+    padding: 0; }
+    .section-services .cards-services .card-services {
+      margin-left: 0; } }
+
+@media only screen and (max-width: 500px) {
+  .section-services .cards-services {
+    padding-left: 30px;
+    padding-right: 30px; }
+    .section-services .cards-services .card-services {
+      width: auto; }
       .section-services .cards-services .card-services img {
         width: 100%; } }
 

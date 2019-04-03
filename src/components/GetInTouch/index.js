@@ -7,19 +7,31 @@ export default class Header extends React.PureComponent {
   constructor(props) {
     super(props)
     this.html = document.getElementsByTagName('html')[0]
-    this.state = {}
+    this.state = {
+        
+    }
   }
-  componentDidUpdate() {
+    componentDidMount(){
+        this.close.addEventListener('click', this.closePopUp)
+    }
+    componentWillUnmount(){
+        this.close.removeEventListener('click', this.closePopUp)
+    }
+    componentDidUpdate() {
       if(this.refSecttion.classList.contains('show')){
           this.html.classList.add('scroll-hidden')
       }
-      else {
-          this.html.classList.remove('scroll-hidden')
+      if(this.refSecttion.classList.contains('hide')){
+          this.html.classList.remove('scroll-hidden')        
       }
+  }
+
+  closePopUp = () => {
+    this.refSecttion.classList.toggle('show')
   }
   render() {
     return (
-      <section className={classnames('pop-up', { 'show': this.props.style })} ref={el => this.refSecttion = el}>
+      <section className={classnames('pop-up', { 'show': this.props.style, 'hide': !this.props.style })} ref={el => this.refSecttion = el}>
         <div className='pop-up-container' >
             <h1>Let's talk</h1>
             <div className='form-container' >
@@ -63,7 +75,7 @@ export default class Header extends React.PureComponent {
                 <div className='btn-send'> Send message </div>
             </div>
         </div>
-        <img className='close' src={closeCross}/>
+        <img className='close' src={closeCross} ref={el => this.close = el} />
       </section>
     )
   }

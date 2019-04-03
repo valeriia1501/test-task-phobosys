@@ -36,6 +36,7 @@
           opacity: .3;
         }
         > p {
+          max-width: 225px;
           font-size: 24px;
           font-weight: bold;
           margin: 8px 0 0 0;
@@ -141,10 +142,12 @@
       flex-direction: column;
       padding: 0;
       margin: 0;
+      overflow-x: hidden;
+      
       .card-home{
         flex-direction: column;        
         margin: 0;
-
+        padding: 0;
         &+.card-home{
           margin-top: 100px;
         }
@@ -160,6 +163,20 @@
     }
   }
 }
+
+@media only screen and (max-width: 425px){
+  .scroll-section {
+    .cards {
+      padding: 0 30px;
+      .card-home {
+        img{
+          width: 100%;  
+        }
+      }
+    }
+  }
+}
+
 @media not all and (min-resolution:.001dpcm) // safari browser
 { @supports (-webkit-appearance:none) {
 

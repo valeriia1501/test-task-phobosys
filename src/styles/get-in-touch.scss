@@ -9,7 +9,6 @@
 }
 .pop-up {
     color: white;
-    min-height: 100vh;
     background: black;
     z-index: 999;
     position: absolute;
@@ -19,7 +18,10 @@
     justify-content: center;
     align-items: center;
     display: none;
-    
+    overflow-y: auto;
+    padding-bottom: 100px;
+    padding-top: 100px;
+
     .pop-up-container {
         width: 1360px;
         padding-left: 30px;
@@ -72,7 +74,7 @@
                         z-index: 10;
                         position: absolute;
                         input {
-                            min-width: 900px;
+                            width: 900px;
                             @include inputStyle;
                             
                             &:not(:placeholder-shown) + .placeholder {
@@ -145,5 +147,71 @@
         top: 10px;
         right: 10px;
         cursor: pointer;
+    }
+}
+
+@media only screen and (max-width: 940px) {
+    .pop-up {
+        .pop-up-container {
+            .form-container {
+                form {
+                    .down-input {
+                        label {
+                            width: 100%;
+                            input {
+                                width: 100%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media only screen and (max-width: 920px) {
+    .pop-up {
+        .pop-up-container {
+            padding-top: 300px;
+            h1 {
+                margin-bottom: 30px;
+            }
+            .form-container {
+                form {
+
+                    .four-input {
+                        display: flex;
+                        flex-direction: column;
+                        
+                        label {
+                            input {
+                                width: 100%;
+                            }
+                        }
+                    }
+                    .down-input {
+                        margin-top: 40px;
+                    }
+                }
+            }
+        }
+    }
+}
+@media only screen and (max-width: 425px) {
+    .pop-up {
+        .pop-up-container {
+            h1 {
+                text-align: center;
+                font-size: 60px;
+            }
+        }
+    }
+}
+@media only screen and (max-width: 565px) {
+    .pop-up {
+        .pop-up-container {
+            h1 {
+                
+            }
+        }
     }
 }

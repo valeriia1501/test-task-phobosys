@@ -49,23 +49,30 @@
                     width: 100%
                 }
             }
-            // .card-services:nth-child(1) { 
-           
-            // }
-            // .card-services:nth-child(2) { 
-            //     width: $percent-3;
-            //     -moz-width: $percent-3;
-            //     img {
-            //         width: 100%
-            //     }
-            // }
-            // .card-services:nth-child(3) { 
-            //     width: $percent-3;
-            //     -moz-width: $percent-3;
-            //     img {
-            //         width: 100%
-            //     }
-            // }
+        }
+    }
+}
+@media only screen and (max-width: 768px) {
+    .section-services {
+        .cards-services {
+            padding: 0;
+            .card-services {
+                margin-left: 0;
+            }
+        }
+    }
+}
+@media only screen and (max-width: 500px) {
+    .section-services {
+        .cards-services {
+            padding-left: 30px;
+            padding-right: 30px;
+            .card-services {
+                width: auto;
+                img {
+                    width: 100%;
+                }
+            }
         }
     }
 }

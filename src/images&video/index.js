@@ -15,7 +15,6 @@ import rigthArrow from '@assets/img/right-arrow.svg'
 import downArrow from '@assets/img/down-arrow.svg'
 import borvoLogoBlack from '@assets/img/borvo-logo-black.svg'
 import deathStar from '@assets/img/death-star.png'
-import videoflyFirst from '@assets/video/fly-first.mov'
 import svgFire from '@assets/img/fire.svg'
 import footerLogo from '@assets/img/footer-logo.svg'
 import fbIconFooter  from '@assets/img/fb-icon-footer.svg'
@@ -41,7 +40,6 @@ export {
   borvoLogoBlack,
   deathStar,
   videoNeuralNetwork,
-  videoflyFirst,
   videoHeaderSvg,
   inIconFooter,
   fbIconFooter,

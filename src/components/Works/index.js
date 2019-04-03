@@ -65,7 +65,8 @@ export default class Works extends React.PureComponent {
             <div className="works-container">
                 <div className='content' >
                     <video autoPlay loop muted preload='true' > 
-                        <source src={videoNeuralNetwork} />
+                        <source src={videoNeuralNetwork} type="video/webm"/>
+                        <source src={videoNeuralNetwork} type="video/mp4"/>
                     </video>             
                 </div>
                 <div className='bg-gradient' >

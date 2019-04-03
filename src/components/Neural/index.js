@@ -12,8 +12,8 @@ import {
     tensorflow,
     downArrow,
     deathStar,
-    videoflyFirst,
-    svgFire
+    svgFire,
+    videoNeuralNetwork
 } from '@/images&video'
 
 import Header from '@/components/Header'
@@ -96,7 +96,7 @@ export default class Neural extends React.PureComponent {
                     <div className='first-review'>
                         <div className='video-or-img'  >
                             <video style={{ transform: `scale(${this.state.size})` }}>
-                                <source src={videoflyFirst}/>
+                                <source src={videoNeuralNetwork}/>
                             </video>
                             <button className='show-testimonials' ref={domel => this.btnShow = domel}>
                                 <span ref={domel => this.toggleText = domel} >Show all Testimonials</span>
@@ -131,14 +131,14 @@ export default class Neural extends React.PureComponent {
                         </div>
                         <div className='video-or-img'  >
                             <video>
-                                <source src={videoflyFirst}/>
+                                <source src={videoNeuralNetwork}/>
                             </video>
                         </div>
                     </div>
                     <div className='third-review'> {/* 3 */}
                         <div className='video-or-img' >
                             <video>
-                                <source src={videoflyFirst}/>
+                                <source src={videoNeuralNetwork}/>
                             </video>
                         </div>
                         <div className='feedback-text' >
