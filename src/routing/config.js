@@ -3,6 +3,8 @@ import Services from '@components/Services'
 import Neural from '@components/Neural'
 import Experties from '@components/Experties'
 import Home from '@components/Home'
+import AboutUs from '@components/AboutUs'
+
 
 import ExpertiesCarousel from '@components/ExpertiesCarousel'
 
@@ -44,6 +46,12 @@ export default [
         name: 'Experties',
         title: '',
         component: Experties
+      },
+      {
+        path: '/about-us',
+        name: 'AboutUs',
+        title: '',
+        component: AboutUs
       },
       {
         path: '*',

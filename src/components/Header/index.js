@@ -21,7 +21,6 @@ export default class Header extends React.PureComponent {
     this.btnGetInTouch.removeEventListener('click', this.showBlock)    
   }
   handleClick = () => {
-    console.log('show')
     this.mobileMenu.classList.toggle('show')
   }
   showBlock = () => {
@@ -40,7 +39,7 @@ export default class Header extends React.PureComponent {
             <nav>
               <ul>
                 <li><a href="#!/services">Expertise</a></li>
-                <li><a href="#">About us</a></li>
+                <li><a href="#!/about-us">About us</a></li>
                 <li><a href="#">Careers</a></li>
                 <li><a href="#">Contact Us</a></li>
               </ul>
@@ -48,7 +47,7 @@ export default class Header extends React.PureComponent {
             <nav className="mobile" ref={el => this.mobileMenu = el}>
               <ul>
                 <li><a href="#!/services">Expertise</a></li>
-                <li><a href="#">About us</a></li>
+                <li><a href="#!/about-us">About us</a></li>
                 <li><a href="#">Careers</a></li>
                 <li><a href="#">Contact Us</a></li>
               </ul>

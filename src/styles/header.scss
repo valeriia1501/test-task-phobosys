@@ -137,62 +137,11 @@
   }
 }
 
-.white-page {
-  position: relative;
-  background: black;
-
-  div {
-
-    a {
-      color: white;
-
-      .logo {
-        display: flex;
-        margin-left: 55px;
-        position: relative;
-        line-height: 1;
-
-        &::before {
-          content: url('../../assets/img/borvo-logo-black.svg');
-          position: absolute;
-          left: -35px;
-          top: 0px;
-        }
-        
-      }
-    }
-    nav {
-      ul {
-        li {
-          a {
-            text-decoration: none;
-            color: black;
-          }
-        }
-      }
-    }
-    nav.mobile{ 
-      background: rgba(0, 0, 0, 0.623);
-
-      ul {
-        li {
-          a {
-            color: white;;
-          }
-        }
-      }
-    }
-  }
-  .burger-icon {
-    .layer {
-      fill: black;
-    }
-  } 
-  button {
-    color: black;
-  }
+.bg-about-us {
   .line {
-    background: black;
+    background: white;
+    opacity: 0.3;
+    z-index: 999;
   }
 }
 
