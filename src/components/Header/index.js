@@ -1,5 +1,4 @@
-import React from 'react';
-
+import React from 'react'
 import classnames from 'classnames'
 
 import BurgerIcon from '@/components/BurgerIcon'
@@ -9,26 +8,23 @@ export default class Header extends React.PureComponent {
   constructor(props) {
     super(props)
     this.state = {
-      isShowPopUp : false
+      isShowPopUp: false,
+      isShowMobileMenu: false
     }
   }
-  componentDidMount() {
-    this.burgerIconRef.svgRef.addEventListener('click', this.handleClick)
-    this.btnGetInTouch.addEventListener('click', this.showBlock)
-  }
-  componentWillUnmount() {
-    this.burgerIconRef.svgRef.removeEventListener('click', this.handleClick)
-    this.btnGetInTouch.removeEventListener('click', this.showBlock)    
-  }
-  handleClick = () => {
-    console.log('show')
-    this.mobileMenu.classList.toggle('show')
-  }
-  showBlock = () => {
+
+  toogleMobileMenu = () => {
     this.setState({
-      isShowPopUp : !this.state.isShowPopUp
+      isShowMobileMenu: !this.state.isShowMobileMenu
     })
   }
+
+  tooglePopUp = () => {
+    this.setState({
+      isShowPopUp: !this.state.isShowPopUp
+    })
+  }
+
   render() {
     return (
       <header className={classnames(this.props.className, "header")}>
@@ -45,7 +41,7 @@ export default class Header extends React.PureComponent {
                 <li><a href="#">Contact Us</a></li>
               </ul>
             </nav>
-            <nav className="mobile" ref={el => this.mobileMenu = el}>
+            <nav className={classnames('mobile', { 'show': this.state.isShowMobileMenu })}>
               <ul>
                 <li><a href="#!/services">Expertise</a></li>
                 <li><a href="#">About us</a></li>
@@ -54,11 +50,15 @@ export default class Header extends React.PureComponent {
               </ul>
             </nav>
           </div>
-          <BurgerIcon ref={el => this.burgerIconRef = el} />
-          <button ref={el => this.btnGetInTouch = el}>Get in touch</button>
+          <div onClick={this.toogleMobileMenu}>
+            <BurgerIcon ref={el => this.burgerIconRef = el} />
+          </div>
+          <button onClick={this.tooglePopUp}>Get in touch</button>
         </div>
         <div className='line'></div>
-        <GetInTouch style={this.state.isShowPopUp} ref ={el => this.sectionPopUp = el} />
+        <GetInTouch
+          isShowPopUp={this.state.isShowPopUp}
+          closePopUp={this.tooglePopUp} />
       </header>
     )
   }
