@@ -24,8 +24,8 @@ export default class Neural extends React.PureComponent {
     constructor(props) {
         super(props)
         this.html = document.getElementsByTagName('html')[0]
-        this.html.classList.remove('scroll-hidden')
         this.html.classList.add('scroll-x-hidden')
+        this.html.classList.remove('scroll-hidden')
         this.state = {
             rotateArrow: 0
         }
@@ -77,17 +77,21 @@ export default class Neural extends React.PureComponent {
             <Works />
             <section className='description-borvo'>
                 <div className='container-description' >
-                    <div className='description'>
-                        <span>Your Dream Team</span>
-                        <h1>Great Products <br/> Are Built By Great Engineers</h1>
-                        <p>
-                            Borvo company provides premium software engineering services to leading technology companies.
-                            Our customers usually range from startup to high-growth and VC-backed companies that drive 
-                            a culture of acceleration and innovation.
-                        </p>
-                        <button className='btn-learn-more'>To Learn More <img src={downArrow}/></button>
+                    <p>Borvo company provides premium software engineering services to leading technology firms</p>
+                    <div className='right-text' >
+                        <div className='block-text'>
+                            <span>Extend your team</span>
+                            <p>Boost your development team with Ciklum’s dedicated specialists</p>
+                        </div>
+                        <div className='block-text'>
+                            <span>Build Your Idea from Scratch</span>
+                            <p>Support your operations with a custom-built application</p>
+                        </div>
+                        <div className='block-text'>
+                            <span>Manage your service</span>
+                            <p>Free up your team’s time with our support, QA, and DevOps teams</p>
+                        </div>
                     </div>
-                    <img src={deathStar} />
                 </div>
             </section>
             <section className={classnames('reviews-section',{'show-all': this.state.isHideAnimation})} >

@@ -12,11 +12,12 @@
 
         .content {
             overflow: hidden;
+            @include padding-both;
 
             video {
                 width: 1360px;
                 border-radius: 10px;
-                opacity: .4;
+                opacity: .3;
                 margin-bottom: -5px;
             }
         }
@@ -27,20 +28,19 @@
             align-items: center;
             position: absolute;
             right: 0;
-            background-image: linear-gradient(to right, rgba(16, 16, 16, 0), #101010);
-            
+            background-image: linear-gradient(to right, rgba(16, 16, 16, 0), black);
+
             .text-about-work {
                 color: white;
-                margin-right: 40px;
 
                 span {
                     font-size: 24px;
                 }
     
                 h1 {
-                    max-width: 710px;
-                    font-family: 'Montserrat ExtraBold';
-                    font-size: 80px;
+                    max-width: 670px;
+                    font-family: 'Montserrat Bold';
+                    font-size: 72px;
                     line-height: 1.13;
                     font-weight: bold;
                     margin-top: 5px;
@@ -58,7 +58,7 @@
                         display: flex;
                         align-items: center;
                         text-decoration: none;
-                        color: #2962ff;
+                        color: #d77860;
                         font-weight: bold;
         
                         &:hover {
@@ -68,16 +68,16 @@
                         span {
                             width: 20px;
                             height: 20px;
-                            border:  1px solid #2962ff;
-                            border-radius: 50%;
                             margin-left: 10px;
                             display: flex;
                             justify-content: center;
                             
-                            svg{
+                            svg {
                                 width: 80%;
                                 height: auto;
-                                fill: #2962ff;
+                                fill: #d77860;
+                                stroke-width: 3px;
+                                stroke: #d77860;
                             }
                         }
                     }
@@ -108,8 +108,6 @@
     .works {
         .works-container {
             .content {
-                padding-left: 30px;
-                padding-right: 30px;
                 video {
                     width: 100%;
                 }
@@ -123,7 +121,7 @@
             .bg-gradient {
                 .text-about-work {
                     h1 {
-                        max-width: 580px;
+                        // max-width: 580px;
                         font-size: 65px;
                     }
                 }

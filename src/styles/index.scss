@@ -1,14 +1,19 @@
-// fonts //
-@import 'fonts';
-//       //
+// global //
+@import"global";
+//        //
 
 // variables //
 @import "variables";
 //          //
 
+// fonts //
+@import 'fonts';
+//       //
+
 // mixins //
 @import "mixins";
 //        //
+
 
 // elements of page //
 @import "header";
@@ -19,14 +24,11 @@
 @import 'works';
 //                 //
 
-// global //
-@import"global";
-//        //
-
 // pages // 
 @import "home";
 @import "neural";
 @import "services";
 @import 'experties';
 @import 'about-us';
+@import 'contacts';
 //       //

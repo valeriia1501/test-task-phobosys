@@ -15,20 +15,17 @@ export default class Works extends React.PureComponent {
       this.html = document.getElementsByTagName('html')[0]
       this.clientWidth = document.body.clientWidth;
       this.state = {
-        isHideText: false
+        isHideText: true
       }
   }
 
   componentDidMount() {
-    if(this.clientWidth <= 1024) {
-        return
-     }
+    if(this.clientWidth <= 1024) { return }
       this.html.addEventListener('wheel', this.wheelNeural)
   }
   componentWillUnmount() {
       this.html.removeEventListener('wheel', this.wheelNeural)
   }
-
   normalizeDelta (e) {
     const FireFoxWheelMod = 3
     const ChromeOperaWheelMod = 53
@@ -69,13 +66,13 @@ export default class Works extends React.PureComponent {
                         <source src={videoNeuralNetwork} type="video/mp4"/>
                     </video>             
                 </div>
-                <div className='bg-gradient' >
+                <div className='bg-gradient'>
                     <div className={'text-about-work'} >
                         <span>Emazing Project</span>
-                        <h1>Neural networks working with Twitter </h1>
+                        <h1  >Neural networks working with Twitter </h1>
                         <div>
                             <a href="#">
-                                Learn more
+                                Project details
                                 <span><ArrowSvg className='arrow'/></span>
                             </a>
                         </div>

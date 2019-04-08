@@ -22,6 +22,10 @@ import inIconFooter  from '@assets/img/in-icon-footer.svg'
 import expertiesMainPhoto  from '@assets/img/experties-main-photo.png'
 import buttonClip  from '@assets/img/button-clip.svg'
 import closeCross  from '@assets/img/close-cross.svg'
+import Person_1  from '@assets/img/person-1.png'
+import Person_2  from '@assets/img/person-2.png'
+import Person_3  from '@assets/img/person-3.png'
+import Person_4  from '@assets/img/person-4.png'
 
 export {
   blackArrow,
@@ -47,5 +51,9 @@ export {
   svgFire,
   expertiesMainPhoto,
   buttonClip,
-  closeCross
+  closeCross,
+  Person_1,
+  Person_2,
+  Person_3,
+  Person_4
 }

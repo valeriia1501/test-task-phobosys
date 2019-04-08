@@ -1,0 +1,324 @@
+.contacts {    
+    .map-bg {
+        width: 100%;
+        height: 760px;
+        background: url('../../assets/img/map.svg') no-repeat center center;
+        background-size: contain;
+        background-color: black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .container {
+            width: 1360px;
+            height: 590px;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            @include padding-both;
+
+            h1 {
+                font-size: 64px;
+                font-family: 'Montserrat SemiBold';
+            }
+
+            .cities {
+                display: flex;
+                justify-content: space-between;
+
+                .block {
+                    > span {
+                        font-size: 18px;
+                        font-family: 'Montserrat Bold';
+                        position: relative;
+                        display: inline-block;
+                        margin-bottom: 50px;
+                        position: relative;
+
+                        &::before {
+                            width: 210px;
+                            font-size: 16px;
+                            color: #bdbdbd;
+                            font-family: 'Proxima Nova';
+                            position: absolute;
+                            top: 28px;
+                        }
+                    }
+                    p {
+                        font-size: 16px;
+                        line-height: 1.63;
+                        color: #e0e0e0;
+                    }
+                }
+                
+                .odesa { span { &::before { content: 'Ukraine'; }}}
+                .dublin { span { &::before { content: 'Dublin'; }}}
+                .los-angeles { span { &::before { content: 'United States'; }}}
+                .details { > span { &::before { content: 'For Questions & Suggestions:'; }}}
+
+                .details {
+                    .number-email {
+                        display: flex;
+                        justify-content: space-between;
+                        width: calc(100% + 15px);
+
+                        div {
+                            display: flex;
+                            flex-direction: column;
+                            line-height: 1.63;
+                            
+                            span {
+                                color: #e0e0e0;
+                            }
+                            .number { color: white }
+                            .email { color: white }
+                        }
+                        
+                    }
+                }
+            }
+        }
+    }
+    .message {
+        color: white;
+        background: black;
+        display: flex;
+        justify-content: center;
+        overflow-y: auto;
+        padding-top: 100px;
+        padding-bottom: 90px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+
+        .message-container {
+            width: 1360px;
+            @include padding-both;
+    
+            h1 {
+                font-size: 88px;
+                font-weight: bold;
+                margin-bottom: 100px;
+            }
+            .form-container {
+                form {
+                    .four-input {
+                        max-width: 900px;
+                        display: flex;
+                        justify-content: space-between;
+                        flex-wrap: wrap;
+                        margin-top: -40px;
+    
+                        label {
+                            margin-top: 40px;                        
+                            position: relative;
+    
+                            input {
+                                width: 420px;
+                                @include inputStyle;
+      
+                                &:not(:placeholder-shown) + .placeholder {
+                                    transition: font-size .3s, bottom .3s;
+                                    font-size: 12px;
+                                    bottom: 45px;
+                                }
+    
+                                &::placeholder {
+                                    color: transparent;
+                                }
+                            }
+            
+                            .placeholder {
+                                position: absolute;
+                                left: 0;
+                                bottom: 15px;
+                            }
+                        }
+                    }
+                    .down-input {
+                        height: 50px;
+                        margin-top: 60px;
+                        position: relative;
+                        label {
+                            z-index: 10;
+                            position: absolute;
+                            input {
+                                width: 900px;
+                                @include inputStyle;
+                                
+                                &:not(:placeholder-shown) + .placeholder {
+                                    transition: font-size .3s, bottom .3s;
+                                    font-size: 12px;
+                                    bottom: 45px;
+                                }
+    
+                                &::placeholder {
+                                    color: transparent;
+                                }
+    
+                            }
+                            .placeholder {
+                                position: absolute;
+                                left: 0;
+                                bottom: 15px;
+                            }
+                        }
+                        .style-type-file {
+                            position: absolute;
+                            right: 20px;
+                            bottom: 30px;
+                            label[for=file-input]{
+                                &::before {
+                                    content: url('../../assets/img/button-clip.svg');
+                                    z-index: 1;
+                                    cursor: pointer;
+                                }
+                            }
+                            #file-input {
+                                display: none;
+                            }
+                        }
+                    }
+                }
+            }
+            .footer {
+                p {
+                    font-size: 15px;
+                    margin-top: 30px;
+                    margin-bottom: 20px;
+                }
+                label {
+                    display: flex;
+                    align-items: center;
+    
+                    input[type=checkbox]{
+                        margin-right: 15px;    
+                    }
+                }
+                .btn-send {
+                    width: 130px;
+                    height: 36px;
+                    background: $lightblue;
+                    border-radius: 4px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    font-size: 15px;
+                    font-weight: bold;
+                    margin-top: 40px;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
+@media only screen and (max-width: 997px) {
+    .contacts {
+        .message {
+            .message-container {
+                .form-container {
+                    form {
+                        .down-input {
+                            label {
+                                width: 100%;
+                                input {
+                                    width: 100%;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media only screen and (max-width: 955px) {
+    .contacts {
+        .message {
+            .message-container {
+                h1 {
+                    margin-bottom: 30px;
+                }
+                .form-container {
+                    form {
+    
+                        .four-input {
+                            display: flex;
+                            flex-direction: column;
+                            
+                            label {
+                                input {
+                                    width: 100%;
+                                }
+                            }
+                        }
+                        .down-input {
+                            margin-top: 40px;
+                        }
+                    }
+                }
+            }
+        }
+    }    
+}
+
+@media only screen and (max-width: 930px) {
+    .contacts {
+        .map-bg {
+            .container {
+                align-items: center;
+
+                .cities {
+                    max-width: 550px;
+                    flex-wrap: wrap;
+                    
+                    .block:nth-child(3) { padding-top: 30px; }
+                    .block:nth-child(4) { padding-top: 30px; }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 530px) {
+    .contacts {
+        .map-bg {
+            padding-top: 80px;
+            padding-bottom: 80px;
+
+            .container {
+                height: auto;
+
+                h1 {
+                    text-align: center;
+                    font-size: 45px;
+                }
+
+                .cities {
+                    padding-top: 70px;
+                    flex-direction: column;
+                    
+                    .block {
+                        padding: 0;
+                        
+                        & + .block {
+                            padding-top: 30px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    .contacts {
+        .message {
+            .message-container {
+                h1 {
+                    font-size: 30px;
+                    text-align: center;
+                }
+            }
+        }
+    }
+}

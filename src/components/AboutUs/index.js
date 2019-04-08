@@ -1,7 +1,14 @@
 import React from 'react';
 
 import Header from '@/components/Header'
+import Footer from '@/components/Footer'
 
+import {
+    Person_1,
+    Person_2,
+    Person_3,
+    Person_4
+} from '@/images&video'
 
 export default class AboutUs extends React.PureComponent {
   constructor(props) {
@@ -72,6 +79,42 @@ export default class AboutUs extends React.PureComponent {
                     </div>
                 </div>
           </section>
+          <section className='leadership' >
+            <div className='container' >
+                <h1>Leadership team</h1>
+                <div className='team' >
+                    <div className='person' >
+                        <img src={Person_1}/>
+                        <div className='name-position' >
+                            <span>Misha Radja Dev</span>
+                            <small>CEO</small>
+                        </div>
+                    </div>
+                    <div className='person' >
+                        <img src={Person_2}/>
+                        <div className='name-position' >
+                            <span>Misha Radja Dev</span>
+                            <small>Chief Sales & Marketing Officer</small>
+                        </div>
+                    </div>
+                    <div className='person' >
+                        <img src={Person_3}/>
+                        <div className='name-position' >
+                            <span>Misha Radja Dev</span>
+                            <small>Chief Sales & Marketing Officer</small>
+                        </div>
+                    </div>
+                    <div className='person' >
+                        <img src={Person_4}/>
+                        <div className='name-position' >
+                            <span>Misha Radja Dev</span>
+                            <small>Chief Sales & Marketing Officer</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </section>
+          <Footer/>
       </div>
     )
   }

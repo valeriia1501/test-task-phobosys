@@ -9,78 +9,52 @@
     .description-borvo {
         display: flex;
         justify-content: center;
-        background-color: #121212;
+        background: black;
         padding-top: 120px;
-        padding-left: 30px;
-        padding-right: 30px;
+        @include padding-both;
 
         .container-description {
             width: 1360px;
             display: flex;
             justify-content: space-between;
+            color: white;
+
+            > p {
+                font-family: 'Montserrat Bold';
+                max-width: 720px;
+                font-size: 63px;
+                background-image: linear-gradient(307deg, #ff7829, #6478ff);
+                -webkit-text-fill-color: transparent;
+                -webkit-background-clip: text;
+            }
             
-            .description {
-                color: white;
-    
-                span {
-                    font-size: 20px;
-                }
-    
-                h1 {
-                    max-width: 600px;
-                    font-family: 'Montserrat Bold';
-                    font-size: 60px;
-                    margin-top: 15px;
-                    margin-bottom: 35px;
-                }
-    
-                p {
-                    max-width: 710px;
-                    font-size: 20px;
-                    color: #bdbdbd;
-                    margin-bottom: 45px;
-                    line-height: 1.5;
-                }
-                > button {
-                    font-size: 15px;
-                }
-    
-                .btn-learn-more {
-                    width: 160px;
-                    height: 36px;
-                    border: none;
-                    border-radius: 4px;
-                    outline: none;
-                    color: white;
-                    font-weight: 600;
-                    background-color: $lightblue;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    
-                    > img {
-                        width: 13px;
-                        height: 13px;
-                        padding: 1px;
-                        border: 1px solid white;
-                        border-radius: 50%;
-                        transform: rotate(-90deg);
-                        margin-left: 8px;
+            .right-text {
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+
+                .block-text {
+
+                    span {
+                        font-size: 32px;
+                    }
+                    p {
+                        margin-top: 10px;
+                        max-width: 450px;
+                        font-size: 18px;
+                        color: #bdbdbd;
+                        line-height: 1.67;
                     }
                 }
-    
             }
-    
-            > img {
-                width: 600px;
-                height: 600px;
-            }
+            
         }
     }
     .reviews-section {
         height: 685px;
         overflow: hidden;
-        background-color: #121212;
+        background-color: black;
         color: white;
         padding-top: 150px;
 
@@ -94,13 +68,14 @@
             .bg-word-review {
                 font-size: 160px;
                 font-family: 'Montserrat ExtraBold';
-                opacity: 0.05;
+                opacity: 0.12;
                 font-weight: bold;
                 position: absolute;
                 right: 50%;
                 top: -100px;
                 transform: translateX(calc(50% + 215px));
                 z-index: 1;
+                color: #8478d2;
             }
 
             .first-review,
@@ -205,10 +180,9 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        padding-left: 25px;
-        padding-right: 25px;
         padding-top: 115px;
         padding-bottom: 90px;
+        @include padding-both;
         
         .technology {
             width: 530px;
@@ -263,8 +237,7 @@
         color: white;
         padding-top: 50px;
         padding-bottom: 50px;
-        padding-left: 30px;
-        padding-right: 30px;
+        @include padding-both;
 
         .container-vacancies {
             width: 1360px;
@@ -369,21 +342,7 @@
             padding-bottom: 120px;
             
             .container-description {
-                align-items: center;
-                flex-direction: column;
-
-                .description {
-                    margin: 0;
-                    margin-bottom: 50px;
-        
-                    h1 {
-                        font-size: 60px;
-                    }
-                }
-        
-                > img {
-                   display: none;
-                }
+                
             }
         }
     }
@@ -450,6 +409,58 @@
         }
     }
 }
+
+
+@media only screen and (max-width: 1000px) {
+    .neural {
+        .networks {
+            .networks-container {
+                margin-top: 135px;
+            }
+        }
+
+        .skills {
+            .cards {
+                flex-wrap: wrap;
+            }
+        }
+
+        .section-vacancies {
+            .container-vacancies {
+                justify-content: center;
+                flex-wrap: wrap;
+        
+                .vacancies {
+                    margin-bottom: 60px;
+                }
+                .vacancies-text {
+                    padding: 0;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 924px) {
+    .neural {
+        .skills {
+            flex-direction: column;
+
+            .technology {
+                width: auto;
+                margin: 0;
+                
+            }
+        }
+
+        .skills {
+            .cards {
+                margin-top: 50px;
+                justify-content: center;
+            }
+        }
+    }
+}
 @media only screen and (max-width: 900px) {
     .neural { 
         .reviews-section {
@@ -507,56 +518,6 @@
     }
 }
 
-
-@media only screen and (max-width: 768px) {
-    .neural {
-        .networks {
-            .networks-container {
-                margin-top: 135px;
-            }
-        }
-
-        .skills {
-            .cards {
-                flex-wrap: wrap;
-            }
-        }
-
-        .section-vacancies {
-            .container-vacancies {
-                flex-wrap: wrap;
-        
-                .vacancies {
-                    margin-bottom: 60px;
-                }
-                .vacancies-text {
-                    padding: 0;
-                }
-            }
-        }
-    }
-}
-
-@media only screen and (max-width: 713px) {
-    .neural {
-        .skills {
-            flex-direction: column;
-
-            .technology {
-                width: auto;
-                margin: 0;
-                
-            }
-        }
-
-        .skills {
-            .cards {
-                margin-top: 50px;
-                justify-content: center;
-            }
-        }
-    }
-}
 @media only screen and (max-width: 425px) {
     .neural {
         .skills {
@@ -568,23 +529,7 @@
         }
     }
 }
-@media only screen and (max-width: 375px) {
-    .neural {
-        .description-borvo {
-            .container-description {
-                .description {
-                    h1 {
-                        font-size: 49px;
-                    }
-                }
-            }
-        }
-    }
-    footer {
-        .container {
-        }
-    }
-}
+
 @media only screen and (min-width: 2000px) {
     .neural {
         .reviews-section {
