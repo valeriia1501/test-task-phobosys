@@ -37,7 +37,7 @@ export default class Header extends React.PureComponent {
               <ul>
                 <li><a href="#!/services">Expertise</a></li>
                 <li><a href="#!/about-us">About us</a></li>
-                <li><a href="#">Careers</a></li>
+                <li><a href="#!/careers">Careers</a></li>
                 <li><a href="#!/contacts">Contact Us</a></li>
               </ul>
             </nav>
@@ -45,7 +45,7 @@ export default class Header extends React.PureComponent {
               <ul>
                 <li><a href="#!/services">Expertise</a></li>
                 <li><a href="#!/about-us">About us</a></li>
-                <li><a href="#">Careers</a></li>
+                <li><a href="#!/careers">Careers</a></li>
                 <li><a href="#!/contacts">Contact Us</a></li>
               </ul>
             </nav>

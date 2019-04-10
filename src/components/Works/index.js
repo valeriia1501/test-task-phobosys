@@ -15,17 +15,18 @@ export default class Works extends React.PureComponent {
       this.html = document.getElementsByTagName('html')[0]
       this.clientWidth = document.body.clientWidth;
       this.state = {
-        isHideText: true
+        isHideText: false,
       }
-  }
+    }
 
-  componentDidMount() {
-    if(this.clientWidth <= 1024) { return }
+  componentDidMount() {    
+      if(this.clientWidth <= 1024) { return }
       this.html.addEventListener('wheel', this.wheelNeural)
   }
   componentWillUnmount() {
       this.html.removeEventListener('wheel', this.wheelNeural)
   }
+
   normalizeDelta (e) {
     const FireFoxWheelMod = 3
     const ChromeOperaWheelMod = 53
@@ -41,9 +42,7 @@ export default class Works extends React.PureComponent {
   }
 
   wheelNeural = (e) => {
-      if(this.clientWidth <= 1024) {
-         return
-      }
+      if(this.clientWidth <= 1024) { return }
       if(!window.location.href.includes('neural')) return
 
       const isMac = navigator.platform.match(/(Mac)/i)?true:false;
@@ -68,6 +67,7 @@ export default class Works extends React.PureComponent {
                 </div>
                 <div className='bg-gradient'>
                     <div className={'text-about-work'} >
+                        <div className='project' >Project</div>
                         <span>Emazing Project</span>
                         <h1  >Neural networks working with Twitter </h1>
                         <div>

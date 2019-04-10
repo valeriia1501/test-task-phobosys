@@ -5,6 +5,7 @@ import Experties from '@components/Experties'
 import Home from '@components/Home'
 import AboutUs from '@components/AboutUs'
 import Contacts from '@components/Contacts'
+import Careers from '@components/Careers'
 
 
 import ExpertiesCarousel from '@components/ExpertiesCarousel'
@@ -59,6 +60,12 @@ export default [
         name: 'Contacts',
         title: '',
         component: Contacts
+      },
+      {
+        path: '/careers',
+        name: 'Сareers',
+        title: '',
+        component: Careers
       },
       {
         path: '*',

@@ -167,10 +167,14 @@
 @media only screen and (max-width: 425px){
   .scroll-section {
     .cards {
-      padding: 0 30px;
+      @include padding-both;
+
       .card-home {
         img{
           width: 100%;  
+        }
+        > div {
+          width: auto;
         }
       }
     }

@@ -102,7 +102,7 @@ export default class ExpertiesCarousel extends React.PureComponent {
       let mv = this.state.circlSize + this.normalizeDelta(e) 
       
       const circlSize = Math.min(50, Math.max(cs, 1))
-      const moveLeft = Math.min(30, Math.max(mv, 0)) * 8
+      const moveLeft = Math.min(40, Math.max(mv, 0)) * 6.3
       
       this.setState({
         circlSize: circlSize,

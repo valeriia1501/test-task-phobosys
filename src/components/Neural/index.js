@@ -11,7 +11,6 @@ import {
     reactImg,
     tensorflow,
     downArrow,
-    deathStar,
     svgFire,
     videoNeuralNetwork
 } from '@/images&video'
@@ -27,7 +26,7 @@ export default class Neural extends React.PureComponent {
         this.html.classList.add('scroll-x-hidden')
         this.html.classList.remove('scroll-hidden')
         this.state = {
-            rotateArrow: 0
+            rotateArrow: 0,
         }
     }
 
@@ -74,7 +73,7 @@ export default class Neural extends React.PureComponent {
     render() {
         return <div className={classnames(this.props.className, 'neural')}>
             <Header className='bg-neural' />
-            <Works />
+            <Works/>
             <section className='description-borvo'>
                 <div className='container-description' >
                     <p>Borvo company provides premium software engineering services to leading technology firms</p>
@@ -102,10 +101,6 @@ export default class Neural extends React.PureComponent {
                             <video style={{ transform: `scale(${this.state.size})` }}>
                                 <source src={videoNeuralNetwork}/>
                             </video>
-                            <button className='show-testimonials' ref={domel => this.btnShow = domel}>
-                                <span ref={domel => this.toggleText = domel} >Show all Testimonials</span>
-                                <img src={downArrow} style={{ transform: 'rotate(' + this.state.rotateArrow + 'deg' + ')' }} />
-                            </button>
                         </div>
                         <div className='feedback-text' >
                             <blockquote>
@@ -118,6 +113,10 @@ export default class Neural extends React.PureComponent {
                                 <span className='name'>Michael Rodriguez</span>
                                 <small className='position'>Executive Director, Camping Šimuni</small>
                             </div>
+                            <button className='show-testimonials' ref={domel => this.btnShow = domel}>
+                                <span ref={domel => this.toggleText = domel} >Show all Testimonials</span>
+                                <img src={downArrow} style={{ transform: 'rotate(' + this.state.rotateArrow + 'deg' + ')' }} />
+                            </button>
                         </div>
                     </div>
                     <div className='second-review '> {/* 2 */}
@@ -240,10 +239,9 @@ export default class Neural extends React.PureComponent {
                             <p>Functional Lead (SAP Transport Management) for Rockwool (Wroclaw)</p>
                             <small>Software Engineering</small>
                         </div>
-                        
                     </div>
                     <div className='vacancies-text'>
-                        <h1>Find your dream job in Borno Team</h1>
+                        <h1>Find your dream job in Borvo Team</h1>
                         <p>Chase your dream by day and unwind with <br/> your favorite show at night.</p>
                         <span>Learn more<img src={downArrow} /></span>
                     </div>

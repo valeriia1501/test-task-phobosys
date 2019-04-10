@@ -1,5 +1,4 @@
 import videoNeuralNetwork from '@assets/video/neural-network.mov'
-import videoHeaderSvg from '@assets/img/video-header-svg.svg'
 import blackArrow from '@assets/img/right-arrow-black.svg'
 import kubernetes from '@assets/img/kubernetes.svg'
 import javascriptImg from '@assets/img/javascript.svg'
@@ -22,10 +21,11 @@ import inIconFooter  from '@assets/img/in-icon-footer.svg'
 import expertiesMainPhoto  from '@assets/img/experties-main-photo.png'
 import buttonClip  from '@assets/img/button-clip.svg'
 import closeCross  from '@assets/img/close-cross.svg'
-import Person_1  from '@assets/img/person-1.png'
-import Person_2  from '@assets/img/person-2.png'
-import Person_3  from '@assets/img/person-3.png'
-import Person_4  from '@assets/img/person-4.png'
+import person_1  from '@assets/img/person-1.png'
+import person_2  from '@assets/img/person-2.png'
+import person_3  from '@assets/img/person-3.png'
+import person_4  from '@assets/img/person-4.png'
+import careersTopPhoto  from '@assets/img/careers-top-page.png'
 
 export {
   blackArrow,
@@ -44,7 +44,6 @@ export {
   borvoLogoBlack,
   deathStar,
   videoNeuralNetwork,
-  videoHeaderSvg,
   inIconFooter,
   fbIconFooter,
   footerLogo,
@@ -52,8 +51,9 @@ export {
   expertiesMainPhoto,
   buttonClip,
   closeCross,
-  Person_1,
-  Person_2,
-  Person_3,
-  Person_4
+  person_1,
+  person_2,
+  person_3,
+  person_4,
+  careersTopPhoto
 }

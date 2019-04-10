@@ -12,7 +12,7 @@ export default class Contacts extends React.PureComponent {
     render() {
         return (
         <div className='contacts' >
-            <Header className='bg-contacts' />
+            <Header className='bg-black' />
             <section className='map-bg'>
                 <div className='container' >
                     <h1>Our World Offices</h1>

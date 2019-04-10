@@ -86,8 +86,7 @@
 }
 @media only screen and (max-width: 855px){
     .AI{
-        padding-left: 25px;
-        padding-right: 25px;
+        @include padding-both;
         padding-bottom: 200px;
         height: 100%;
         p{
@@ -95,18 +94,28 @@
         }
     }
 }
+
 @media only screen and (max-width: 768px){
     .AI {
         height: 50vh;
     }
 }
+
 @media only screen and (max-width: 500px){
     .AI {
         height: 50vh;
         &-container {
             p {
-                width: 100%;
-                font-size: 65px;
+                font-size: 59px;
+            }
+        }
+    }
+}
+@media only screen and (max-width: 400px) {
+    .AI {
+        &-container {
+            p {
+                font-size: 50px;
             }
         }
     }
