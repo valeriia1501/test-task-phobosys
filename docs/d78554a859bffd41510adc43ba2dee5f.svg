@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1068px" height="20px" viewBox="0 0 1068 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
+    <title>Rectangle</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop-HD-232" transform="translate(-419.000000, -124.000000)">
+            <g id="Group-4" transform="translate(419.000000, 124.000000)">
+                <g id="Rectangle">
+                    <path d="M8,0 L1060,0 C1064.41828,-8.11624501e-16 1068,3.581722 1068,8 L1068,20 L0,20 L0,8 C-5.41083001e-16,3.581722 3.581722,8.11624501e-16 8,0 Z" fill="#DEE1E6"></path>
+                    <g id="Group-2" stroke-width="1" transform="translate(8.000000, 6.000000)">
+                        <circle id="Oval" fill="#FF544D" cx="4" cy="4" r="4"></circle>
+                        <circle id="Oval" fill="#FFC330" cx="16" cy="4" r="4"></circle>
+                        <circle id="Oval" fill="#27CA41" cx="28" cy="4" r="4"></circle>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

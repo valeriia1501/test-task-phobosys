@@ -1,0 +1,271 @@
+.about-us {
+    .bg-photo {
+        color: white;
+        width: 100%;
+        height: 760px;
+        background: url('../../assets/img/people.png') no-repeat center center fixed;
+        background-size: auto;
+        background-position: top;
+        background-color: black;
+        margin-top: -60px;
+        display: flex;
+        
+
+        .text-gradient {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), #000000);   
+            
+            .text {
+                width: 1360px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                margin-bottom: 100px;
+                @include padding-both;
+
+                > p {
+                    max-width: 1060px;
+                    font-family: 'Montserrat Bold';
+                    font-size: 64px;
+                    margin-bottom: 50px;   
+                }
+                > small {
+                    max-width: 975px;
+                    display: inline-block;
+                    font-size: 24px;
+                    line-height: 1.42;
+                }
+            }
+        }
+    }
+    .three-columns {
+        display: flex;
+        justify-content: center;
+        background: black;
+        color: white;
+        padding-bottom: 110px;
+
+        .container-columns {
+            width: 1360px;
+            display: flex;
+            justify-content: space-between;
+            @include padding-both;
+
+            .column {
+                max-width: 360px;
+                
+                &:nth-child(2) { padding: 0 35px;}
+                
+                span {
+                    display: inline-block;
+                    font-size: 32px;
+                    font-weight: bold;
+                    line-height: 1.32;
+                    margin-bottom: 40px;
+                }
+                p {
+                    font-size: 16px;
+                    line-height: 1.63;
+                    color: #9e9e9e;
+                }
+            }
+        }
+    }
+    .white-text-section {
+        display: flex;
+        justify-content: center;
+        padding: 0 30px;
+
+        .container {
+            padding-top: 125px;
+            width: 1360px;
+            display: flex;
+            flex-direction: column;
+            h1 {
+                max-width: 875px;
+                font-size: 48px;
+                line-height: 1.21;
+                font-family: 'Montserrat Bold';
+                margin-bottom: 70px;
+            }
+            .two-columns {
+                display: flex;
+                justify-content: space-between;
+                font-size: 18px;
+                color: #757575;
+                padding-bottom: 100px;
+                border-bottom: 1px solid #eeeeee;
+                
+                p{ max-width: 620px; }
+                p:nth-child(2) { padding-left: 30px }
+            }    
+        }
+    }
+    .leadership {
+        display: flex;
+        justify-content: center;
+
+        .container {
+            width: 1360px;
+            padding-top: 50px;
+            padding-bottom: 150px;
+            @include padding-both;
+
+            h1 {
+                font-size: 48px;
+                font-family: 'Montserrat Bold'
+            }
+            .team {
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                padding-top: 75px;
+
+                .person {
+                    padding: 10px 10px;
+                    
+                    img {
+                        margin-bottom: 30px;
+                    }
+                    .name-position {
+                        display: flex;
+                        flex-direction: column;
+
+                        span {
+                            font-family: 'Montserrat Bold';
+                            font-size: 24px;
+                        }
+                        small {
+                            font-size: 17px;
+                            color: #757575;
+                            margin-top: 15px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 930px) {
+    .about-us {
+        .three-columns {
+            .container-columns {
+                flex-wrap: wrap;
+    
+                .column:nth-child(2) { padding: 0 }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 860px) {
+    .about-us {
+        .three-columns {
+            padding-top: 110px;
+            min-height: 800px;
+
+            .container-columns {
+                flex-wrap: nowrap;
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .about-us {
+        .bg-photo {
+            .text-gradient {
+                .text {
+                    > p {
+                        font-size: 40px;
+                    }
+                    small {
+                        font-size: 19px;
+                    }
+                }
+            }
+        }
+        .white-text-section {
+            .container {
+                h1 {
+                    font-size: 30px;
+                }
+
+                .two-columns {
+                    flex-wrap: wrap;
+
+                    p + p {
+                        padding-top: 40px;
+                    }
+
+                    p:nth-child(2) { padding-left: 0 }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 750px) {
+    .about-us {
+        .leadership {
+            .container {
+                h1 {
+                    font-size: 35px;
+                    text-align: center;
+                }
+                .team {
+                    justify-content: center;
+                    
+                    .person {
+                        img {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media only screen and (max-width: 450px) {
+    .about-us {
+        .three-columns {
+            .container-columns {
+                .column {
+
+                    & + .column {
+                        padding-top: 25px;
+                    }
+
+                    span {
+                        font-size: 24px;
+                    }
+                    p {
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+        .leadership {
+            .container {
+                .team {
+                    .person {
+                        .name-position {
+                            span {
+                                font-size: 17px;
+                            }
+                            small {
+                                font-size: 13px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

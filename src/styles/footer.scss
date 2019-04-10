@@ -1,0 +1,135 @@
+footer {
+    
+    .footer {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        border-top: 1px solid #f5f5f5;
+        padding-bottom: 70px;
+        @include padding-both;
+
+        .container {
+            width: 1360px;
+            display: flex;
+            justify-content: space-between;
+            margin-top: 40px;
+            
+            div {
+                padding: 0 30px;
+                h2 {
+                    margin-bottom: 10px;
+                    font-size: 15px;
+                    font-family: 'Montserrat ExtraBold'
+                }
+                p { 
+                    font-size: 15px;
+                    line-height: 1.7;
+                    color: #424242;
+                    margin-bottom: 15px;
+                }
+                .list {
+                    color: #424242;
+                    li + li {
+                        margin-top: 30px;
+                    }
+                }
+            }
+    
+            .footer-logo {
+                height: 30px;
+                width: 140px;
+            }
+            .company {
+                .list {
+                }
+            }
+        }
+    }
+    .bottom-page {
+        display: flex;
+        justify-content: center;
+        border-top: 1px solid #f5f5f5;
+        padding-top: 10px;
+        .container {
+            width: 1360px;
+            display: flex;
+            justify-content: space-between;
+            @include padding-both;
+
+            .social-network {
+                img + img { margin-left: 20px }
+            }
+            span {
+                font-size: 13px;
+                color: #3b3f42;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 1000px){
+    footer {
+        .footer {
+            .container {
+                .footer-logo {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    footer {
+        .footer {
+            .container {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: 1fr 1fr;
+                grid-row-gap: 25px;
+
+                div {
+                    padding: 0;
+
+                    &:nth-child(2) { justify-self: center; }
+                    &:nth-child(4) { justify-self: center; }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 520px) {
+    footer {
+        .footer {
+            .container {
+                display: flex;
+                flex-direction: column;
+                width: 200px;                
+                div {
+
+                    & + div {
+                        margin-top: 30px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    footer {
+        .bottom-page {
+            .container {
+                .social-network {
+                    img {
+                        width: 12px;
+                    }
+                }
+                span {
+                    font-size: 10px;
+                }
+            }
+        }
+    }
+} 

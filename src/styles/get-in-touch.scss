@@ -1,0 +1,209 @@
+@mixin inputStyle {
+        height: 50px;
+        outline: none;
+        background: transparent;
+        border: transparent;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.32);
+        font-size:24px;
+        color: white;
+}
+.pop-up {
+    color: white;
+    background: black;
+    z-index: 999;
+    position: absolute;
+    top: 0; bottom: 0;
+    left: 0; right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+    overflow-y: auto;
+    padding-top: 100px;
+
+    .pop-up-container {
+        width: 1360px;
+        padding-left: 30px;
+        padding-right: 30px;
+        padding-bottom: 100px;
+
+        h1 {
+            font-size: 88px;
+            font-weight: bold;
+            margin-bottom: 100px;
+        }
+        .form-container {
+            form {
+                .four-input {
+                    max-width: 900px;
+                    display: flex;
+                    justify-content: space-between;
+                    flex-wrap: wrap;
+                    margin-top: -40px;
+
+                    label {
+                        margin-top: 40px;                        
+                        position: relative;
+
+                        input {
+                            width: 420px;
+                            @include inputStyle;
+  
+                            &:not(:placeholder-shown) + .placeholder {
+                                transition: font-size .3s, bottom .3s;
+                                font-size: 12px;
+                                bottom: 45px;
+                            }
+
+                            &::placeholder {
+                                color: transparent;
+                            }
+                        }
+        
+                        .placeholder {
+                            position: absolute;
+                            left: 0;
+                            bottom: 15px;
+                        }
+                    }
+                }
+                .down-input {
+                    height: 50px;
+                    margin-top: 60px;
+                    position: relative;
+                    label {
+                        z-index: 10;
+                        position: absolute;
+                        input {
+                            width: 900px;
+                            @include inputStyle;
+                            
+                            &:not(:placeholder-shown) + .placeholder {
+                                transition: font-size .3s, bottom .3s;
+                                font-size: 12px;
+                                bottom: 45px;
+                            }
+
+                            &::placeholder {
+                                color: transparent;
+                            }
+
+                        }
+                        .placeholder {
+                            position: absolute;
+                            left: 0;
+                            bottom: 15px;
+                        }
+                    }
+                    .style-type-file {
+                        position: absolute;
+                        right: 20px;
+                        bottom: 30px;
+                        label[for=file-input]{
+                            &::before {
+                                content: url('../../assets/img/button-clip.svg');
+                                z-index: 1;
+                                cursor: pointer;
+                            }
+                        }
+                        #file-input {
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+        .footer {
+            p {
+                font-size: 15px;
+                margin-top: 30px;
+                margin-bottom: 20px;
+            }
+            label {
+                display: flex;
+                align-items: center;
+
+                input[type=checkbox]{
+                    margin-right: 15px;    
+                }
+            }
+            .btn-send {
+                width: 130px;
+                height: 36px;
+                background: $lightblue;
+                border-radius: 4px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 15px;
+                font-weight: bold;
+                margin-top: 40px;
+                cursor: pointer;
+            }
+        }
+    }
+    .close {
+        position: fixed;
+        transform: scale(0.5);
+        top: 10px;
+        right: 10px;
+        cursor: pointer;
+    }
+}
+
+@media only screen and (max-width: 940px) {
+    .pop-up {
+        .pop-up-container {
+            .form-container {
+                form {
+                    .down-input {
+                        label {
+                            width: 100%;
+                            input {
+                                width: 100%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media only screen and (max-width: 920px) {
+    .pop-up {
+        .pop-up-container {
+            padding-top: 300px;
+            h1 {
+                margin-bottom: 30px;
+            }
+            .form-container {
+                form {
+
+                    .four-input {
+                        display: flex;
+                        flex-direction: column;
+                        
+                        label {
+                            input {
+                                width: 100%;
+                            }
+                        }
+                    }
+                    .down-input {
+                        margin-top: 40px;
+                    }
+                }
+            }
+        }
+    }
+}
+@media only screen and (max-width: 425px) {
+    .pop-up {
+        .pop-up-container {
+            h1 {
+                text-align: center;
+                font-size: 60px;
+            }
+        }
+    }
+}

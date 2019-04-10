@@ -1,23 +1,30 @@
-import React from 'react';
-
+import React from 'react'
 import classnames from 'classnames'
-import BurgerIcon from '@/components/BurgerIcon'
 
+import BurgerIcon from '@/components/BurgerIcon'
+import GetInTouch from '@/components/GetInTouch'
 
 export default class Header extends React.PureComponent {
   constructor(props) {
     super(props)
-    this.setState = {};
+    this.state = {
+      isShowPopUp: false,
+      isShowMobileMenu: false
+    }
   }
-  componentDidMount() {
-    this.burgerIconRef.svgRef.addEventListener('click', this.handleClick)
+
+  toogleMobileMenu = () => {
+    this.setState({
+      isShowMobileMenu: !this.state.isShowMobileMenu
+    })
   }
-  componentWillUnmount() {
-    this.burgerIconRef.svgRef.removeEventListener('click', this.handleClick)
+
+  tooglePopUp = () => {
+    this.setState({
+      isShowPopUp: !this.state.isShowPopUp
+    })
   }
-  handleClick = () => {
-    this.mobileMenu.classList.toggle('show')
-  }
+
   render() {
     return (
       <header className={classnames(this.props.className, "header")}>
@@ -29,21 +36,29 @@ export default class Header extends React.PureComponent {
             <nav>
               <ul>
                 <li><a href="#!/services">Expertise</a></li>
-                <li><a href="#">About us</a></li>
-                <li><a href="#">Contact Us</a></li>
+                <li><a href="#!/about-us">About us</a></li>
+                <li><a href="#!/careers">Careers</a></li>
+                <li><a href="#!/contacts">Contact Us</a></li>
               </ul>
             </nav>
-            <nav className="mobile" ref={el => this.mobileMenu = el}>
+            <nav className={classnames('mobile', { 'show': this.state.isShowMobileMenu })}>
               <ul>
                 <li><a href="#!/services">Expertise</a></li>
-                <li><a href="#">About us</a></li>
-                <li><a href="#">Contact Us</a></li>
+                <li><a href="#!/about-us">About us</a></li>
+                <li><a href="#!/careers">Careers</a></li>
+                <li><a href="#!/contacts">Contact Us</a></li>
               </ul>
             </nav>
           </div>
-          <BurgerIcon ref={el => this.burgerIconRef = el} />
-          <button>Get in touch</button>
+          <div onClick={this.toogleMobileMenu}>
+            <BurgerIcon ref={el => this.burgerIconRef = el} />
+          </div>
+          <button onClick={this.tooglePopUp}>Get in touch</button>
         </div>
+        <div className='line'></div>
+        <GetInTouch
+          isShowPopUp={this.state.isShowPopUp}
+          closePopUp={this.tooglePopUp} />
       </header>
     )
   }

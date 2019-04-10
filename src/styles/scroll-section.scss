@@ -2,10 +2,17 @@
   display: flex;
   overflow: hidden;
   height: 100vh;
-
+  .bottom-page{
+    width: 1px;
+    height: 1px;
+    background: red;
+    position: absolute;
+    left: 0;
+    bottom: 20px;
+  }
   >.cards {
     display: flex;
-    padding-left: 250px;
+    padding-left: calc(50% - 700px);
     margin-bottom: -15px;
 
     & > .card-home:not(:last-child){
@@ -16,6 +23,7 @@
       display: flex;
       align-items: center;
       margin-right: 80px;
+      padding-left: 50px;
 
       > img {
         margin-right: 40px;
@@ -28,6 +36,7 @@
           opacity: .3;
         }
         > p {
+          max-width: 225px;
           font-size: 24px;
           font-weight: bold;
           margin: 8px 0 0 0;
@@ -35,6 +44,9 @@
         > small {
           display: inline-block;
           margin: 24px 0 74px 0;
+          span {
+            color: #9e9e9e;
+          }
         }
         .arrow {
           width: 32px;
@@ -64,8 +76,13 @@
         transform-origin: 49% 58.5%;
         z-index: 5;
         svg {
-          fill: $bgColor;
           outline: 150vh solid $bgColor;
+          fill: $bgColor;
+          display: inline-block;
+        }
+        .safari-svg {
+          
+          display: none;
         }
       }
       .neural {
@@ -91,16 +108,28 @@
   }
 }
 
-
-
-@media only screen and (max-width: 1200px){
-  .scroll-section{
-    > .cards{
-      padding-left: 100px;
+@media only screen and (max-width: 1400px){
+  .scroll-section {
+    .cards {
+      .borvo {
+        transform: translateX(-200px);
+        margin-right: -200px;
+      }
     }
   }
 }
 
+@media only screen and (max-width: 1024px){
+  .scroll-section {
+    overflow-x: scroll;
+    margin-bottom: -15px;
+    .borvo {
+      .neural {
+        display: none;
+      }
+    }
+  }
+}
 @media only screen and (max-width: 768px){
   .scroll-section{
     height: auto;
@@ -113,10 +142,12 @@
       flex-direction: column;
       padding: 0;
       margin: 0;
+      overflow-x: hidden;
+      
       .card-home{
         flex-direction: column;        
         margin: 0;
-
+        padding: 0;
         &+.card-home{
           margin-top: 100px;
         }
@@ -132,3 +163,41 @@
     }
   }
 }
+
+@media only screen and (max-width: 425px){
+  .scroll-section {
+    .cards {
+      @include padding-both;
+
+      .card-home {
+        img{
+          width: 100%;  
+        }
+        > div {
+          width: auto;
+        }
+      }
+    }
+  }
+}
+
+@media not all and (min-resolution:.001dpcm) // safari browser
+{ @supports (-webkit-appearance:none) {
+
+    .safari_only { 
+      .cards {
+        .borvo {
+          
+          .svg-container {
+            outline: 150vh solid $bgColor;
+            svg {
+              display: inline-block;
+            }
+            .safari-svg {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+}}

@@ -6,6 +6,7 @@
     transform: translateY(100px);
     position: relative;
     pointer-events: none;
+    padding-left: 50px;
 
    &-container{
        width: 1360px;
@@ -14,7 +15,7 @@
             width:0px;
             height:0px;
             display:block;
-            transform:scale(4,4) translate(-13px, 13px) ;
+            transform:scale(4,4) translate(-13px, 10px) ;
         }
 
         .firstCircle,
@@ -74,15 +75,18 @@
         }
    }
 }
-@media only screen and (max-width: 1550px){
+@media only screen and (max-width: 1500px){
     .AI{
-        padding-left: 100px;
+        &-container {
+            .pulsatingCircle {
+                display: none;
+            }
+        }
     }
 }
 @media only screen and (max-width: 855px){
     .AI{
-        padding-left: 25px;
-        padding-right: 25px;
+        @include padding-both;
         padding-bottom: 200px;
         height: 100%;
         p{
@@ -90,27 +94,29 @@
         }
     }
 }
-@media only screen and (max-width: 425px){
-    .AI{
-        .pulsatingCircle{
-            display: none;
-        }
-        p{
-            font-size: 75px;
+
+@media only screen and (max-width: 768px){
+    .AI {
+        height: 50vh;
+    }
+}
+
+@media only screen and (max-width: 500px){
+    .AI {
+        height: 50vh;
+        &-container {
+            p {
+                font-size: 59px;
+            }
         }
     }
 }
-@media only screen and (max-width: 375px){
-    .AI{
-        p{
-            font-size: 65px;
-        }
-    }
-}
-@media only screen and (max-width: 320px){
-    .AI{
-        p{
-            font-size: 55px;
+@media only screen and (max-width: 400px) {
+    .AI {
+        &-container {
+            p {
+                font-size: 50px;
+            }
         }
     }
 }

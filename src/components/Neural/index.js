@@ -2,9 +2,7 @@ import React from 'react';
 
 import classnames from 'classnames'
 
-import firstReviewVideo from '@assets/video.mp4'
 import {
-    blackArrow,
     kubernetes,
     javascriptImg,
     angular,
@@ -12,20 +10,23 @@ import {
     nodeImg,
     reactImg,
     tensorflow,
-    imgVideo,
     downArrow,
-    imgTemp
-} from '@/images'
+    svgFire,
+    videoNeuralNetwork
+} from '@/images&video'
 
 import Header from '@/components/Header'
 import Works from '@/components/Works'
+import Footer from '@/components/Footer'
 
 export default class Neural extends React.PureComponent {
     constructor(props) {
         super(props)
         this.html = document.getElementsByTagName('html')[0]
+        this.html.classList.add('scroll-x-hidden')
+        this.html.classList.remove('scroll-hidden')
         this.state = {
-            rotateArrow: 0
+            rotateArrow: 0,
         }
     }
 
@@ -36,6 +37,21 @@ export default class Neural extends React.PureComponent {
     componentWillUnmount(){
         this.btnShow.removeEventListener('click',this.showSection)
     }
+
+    normalizeDelta (e) {
+        const FireFoxWheelMod = 3
+        const ChromeOperaWheelMod = 53
+        
+        let normDeltaY = 0
+        if (!(e.deltaY % FireFoxWheelMod)) {
+            normDeltaY = e.deltaY / FireFoxWheelMod * 2
+        } else if (!(e.deltaY % ChromeOperaWheelMod)) {
+            normDeltaY = e.deltaY / ChromeOperaWheelMod * 2
+        }
+        const direction = e.deltaY / Math.abs(e.deltaY);
+        return (Math.min(3, Math.max(Math.abs(normDeltaY), 1)) * direction) || e.deltaY
+    }
+
     showSection = () => {
         if(this.state.isHideAnimation){
             this.setState({ 
@@ -53,35 +69,38 @@ export default class Neural extends React.PureComponent {
             size: 0.9
         })
         this.toggleText.textContent = 'Hide all Testimonials'
-        
     }
-
     render() {
         return <div className={classnames(this.props.className, 'neural')}>
-            <Header className='white-page' />
-            <Works />
+            <Header className='bg-neural' />
+            <Works/>
             <section className='description-borvo'>
-                <div className='description'>
-                    <span>Your Dream Team</span>
-                    <h1>Great Products <br/> Are Built By Great Engineers</h1>
-                    <p>
-                      Borvo company provides premium software engineering services to leading technology companies.
-                      Our customers usually range from startup to high-growth and VC-backed companies that drive 
-                      a culture of acceleration and innovation.
-                    </p>
-                    <button className='btn-learn-more'>To Learn More <img src={downArrow}/></button>
+                <div className='container-description' >
+                    <p>Borvo company provides premium software engineering services to leading technology firms</p>
+                    <div className='right-text' >
+                        <div className='block-text'>
+                            <span>Extend your team</span>
+                            <p>Boost your development team with Ciklum’s dedicated specialists</p>
+                        </div>
+                        <div className='block-text'>
+                            <span>Build Your Idea from Scratch</span>
+                            <p>Support your operations with a custom-built application</p>
+                        </div>
+                        <div className='block-text'>
+                            <span>Manage your service</span>
+                            <p>Free up your team’s time with our support, QA, and DevOps teams</p>
+                        </div>
+                    </div>
                 </div>
-                <img src={imgTemp} />
             </section>
             <section className={classnames('reviews-section',{'show-all': this.state.isHideAnimation})} >
                 <div className='container'>
+                    <span className='bg-word-review'>Review</span>
                     <div className='first-review'>
                         <div className='video-or-img'  >
-                            <img src={imgTemp} style={{ transform: `scale(${this.state.size})` }} />
-                            <button className='show-testimonials' ref={domel => this.btnShow = domel}>
-                                <span ref={domel => this.toggleText = domel} >Show all Testimonials</span>
-                                <img src={downArrow} style={{ transform: 'rotate(' + this.state.rotateArrow + 'deg' + ')' }} />
-                            </button>
+                            <video style={{ transform: `scale(${this.state.size})` }}>
+                                <source src={videoNeuralNetwork}/>
+                            </video>
                         </div>
                         <div className='feedback-text' >
                             <blockquote>
@@ -94,6 +113,10 @@ export default class Neural extends React.PureComponent {
                                 <span className='name'>Michael Rodriguez</span>
                                 <small className='position'>Executive Director, Camping Šimuni</small>
                             </div>
+                            <button className='show-testimonials' ref={domel => this.btnShow = domel}>
+                                <span ref={domel => this.toggleText = domel} >Show all Testimonials</span>
+                                <img src={downArrow} style={{ transform: 'rotate(' + this.state.rotateArrow + 'deg' + ')' }} />
+                            </button>
                         </div>
                     </div>
                     <div className='second-review '> {/* 2 */}
@@ -110,12 +133,16 @@ export default class Neural extends React.PureComponent {
                             </div>
                         </div>
                         <div className='video-or-img'  >
-                            <img src={imgTemp} />
+                            <video>
+                                <source src={videoNeuralNetwork}/>
+                            </video>
                         </div>
                     </div>
                     <div className='third-review'> {/* 3 */}
                         <div className='video-or-img' >
-                            <img src={imgTemp} />
+                            <video>
+                                <source src={videoNeuralNetwork}/>
+                            </video>
                         </div>
                         <div className='feedback-text' >
                             <blockquote>
@@ -177,6 +204,50 @@ export default class Neural extends React.PureComponent {
                     </div>
                 </div>
             </section>
+            <section className='section-vacancies' >
+                <div className='container-vacancies' >
+                    <div className='vacancies' >
+                        <div className='vacancy-card'>
+                            <div className='location'>
+                                <img src={svgFire} />
+                                <span>Odessa, Ukraine</span>
+                            </div>
+                            <p>Node.js Developer for Evrythng</p>
+                            <small>Software Engineering</small>
+                        </div>
+                        <div className='vacancy-card'>
+                            <div className='location'>
+                                <img src={svgFire} />
+                                <span>Odessa, Ukraine</span>
+                            </div>
+                            <p>Senior Full Stack .NET Developer for Optimal+</p>
+                            <small>Software Engineering</small>
+                        </div>
+                        <div className='vacancy-card'>
+                            <div className='location'>
+                                <img src={svgFire} />
+                                <span>Odessa, Ukraine</span>
+                            </div>
+                            <p>Back End Node.js Developer for Thomas Cook (Malaga)</p>
+                            <small>Software Engineering</small>
+                        </div>
+                        <div className='vacancy-card'>
+                            <div className='location'>
+                                <img src={svgFire} />
+                                <span>Odessa, Ukraine</span>
+                            </div>
+                            <p>Functional Lead (SAP Transport Management) for Rockwool (Wroclaw)</p>
+                            <small>Software Engineering</small>
+                        </div>
+                    </div>
+                    <div className='vacancies-text'>
+                        <h1>Find your dream job in Borvo Team</h1>
+                        <p>Chase your dream by day and unwind with <br/> your favorite show at night.</p>
+                        <span>Learn more<img src={downArrow} /></span>
+                    </div>
+                </div>
+            </section>
+            <Footer/>
         </div>
     }
 }

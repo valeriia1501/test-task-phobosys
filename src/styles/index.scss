@@ -1,15 +1,10 @@
-// fonts //
-@import"../../fonts/stylesheet.css";
-//       //
-
 // variables //
 @import "variables";
 //          //
 
-// global //
-@import"global";
-//        //
-
+// fonts //
+@import 'fonts';
+//       //
 
 // mixins //
 @import "mixins";
@@ -18,14 +13,23 @@
 
 // elements of page //
 @import "header";
+@import 'get-in-touch';
+@import "footer";
 @import 'AI';
 @import "scroll-section";
 @import 'works';
 //                 //
 
-
 // pages // 
 @import "home";
 @import "neural";
 @import "services";
+@import 'experties';
+@import 'about-us';
+@import 'contacts';
+@import 'careers';
 //       //
+
+// global //
+@import"global";
+//        //

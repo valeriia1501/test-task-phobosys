@@ -1,14 +1,13 @@
 * {
-    font-family: 'Proxima Nova Rg';
+    font-family: 'Proxima Nova';
     padding: 0;
     margin: 0;
+    font-weight: normal;
+    list-style: none;
 }
-*::selection {
-    background: $lightblue;
-    color: white;
-}
+
 .hide {
-    opacity: 0;
+    display: none ;
 }
 .show {
     display: flex !important;

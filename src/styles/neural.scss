@@ -9,119 +9,103 @@
     .description-borvo {
         display: flex;
         justify-content: center;
-        background-color: #121212;
+        background: black;
         padding-top: 120px;
-        padding-bottom: 210px;
-        padding-left: 30px;
-        padding-right: 30px;
+        @include padding-both;
 
-        .description {
-            max-width: 580px;
-            min-width: 200px;
-            margin-right: 190px;
+        .container-description {
+            width: 1360px;
+            display: flex;
+            justify-content: space-between;
             color: white;
 
-            span {
-                font-size: 20px;
+            > p {
+                font-family: 'Montserrat Bold';
+                max-width: 720px;
+                font-size: 63px;
+                background-image: linear-gradient(307deg, #ff7829, #6478ff);
+                -webkit-text-fill-color: transparent;
+                -webkit-background-clip: text;
             }
-
-            h1 {
-                font-size: 64px;
-                margin-top: 15px;
-                margin-bottom: 35px;
-            }
-
-            p {
-                font-size: 20px;
-                color: #bdbdbd;
-                margin-bottom: 45px;
-            }
-
-            .btn-learn-more {
-                width: 160px;
-                height: 36px;
-                border: none;
-                border-radius: 4px;
-                outline: none;
-                color: white;
-                font-weight: 600;
-                background-color: $lightblue;
+            
+            .right-text {
+                max-width: 440px;
+                height: 100%;
                 display: flex;
-                align-items: center;
-                justify-content: center;
-                
-                > img {
-                    width: 13px;
-                    height: 13px;
-                    padding: 1px;
-                    border: 1px solid white;
-                    border-radius: 50%;
-                    transform: rotate(-90deg);
-                    margin-left: 8px;
+                flex-direction: column;
+                justify-content: space-between;
+
+                .block-text {
+
+                    &:nth-child(1) { padding-bottom: 20px }
+                    &:nth-child(2) { 
+                        padding: 20px 0;
+                        border-top: solid 1px #212121; 
+                        border-bottom: solid 1px #212121; 
+                    }
+                    &:nth-child(3) { padding-top: 20px }
+
+                    span {
+                        font-size: 32px;
+                    }
+                    p {
+                        margin-top: 10px;
+                        max-width: 450px;
+                        font-size: 18px;
+                        color: #bdbdbd;
+                        line-height: 1.67;
+                    }
                 }
             }
-
-        }
-
-        > img {
-            max-width: 681px;
-            min-width: 200px;
-            height: 680px;
+            
         }
     }
     .reviews-section {
-        height: 688px;
+        height: 519px;
         overflow: hidden;
-        background-color: #121212;
+        background-color: black;
         color: white;
-
+        padding-top: 150px;
 
         &.show-all {
             height: 100%;
         }
         
         .container {
-            overflow: hidden;
+            position: relative;
+
+            .bg-word-review {
+                font-size: 160px;
+                font-family: 'Montserrat ExtraBold';
+                opacity: 0.12;
+                font-weight: bold;
+                position: absolute;
+                right: 50%;
+                top: -100px;
+                transform: translateX(calc(50% + 215px));
+                z-index: 1;
+                color: #8478d2;
+                pointer-events: none;
+            }
 
             .first-review,
             .second-review,
             .third-review {
                 width: 100vw;
                 display: grid;
-                grid-template-columns: 1fr 1fr;
+                grid-template-columns: auto auto;
                 grid-column-gap: 145px;
 
                 .video-or-img {
                     justify-self: end;
                     transition: transform .3s;
-                        
-                        .show-testimonials {
-                            width: 220px;
-                            height: 45px;
-                            border: solid 1px #424242;
-                            background: transparent;
-                            outline: none;
-                            align-self: center;
-                            display: flex;
-                            justify-content: center;
-                            align-items: center;
-                            margin-left: auto;
-                            margin-top: 30px;
+                    z-index: 999;
 
-                            span {
-                                color: white;
-                                font-size: 15px;
-                                font-weight: 500;
-                            }
-                            img {
-                                margin-left: 10px;
-                                transition: transform .4s;                                
-                            }
-                        }
-                        > img {
+                        > video {
                             width: 100%;
                             height: 578px;
                             transition: transform .4s;
+                            
                         }
                 }
                 .feedback-text {
@@ -129,7 +113,7 @@
                     align-self: center;
                     display: grid;
                     grid-template-rows: 1fr 1fr;
-                    grid-row-gap: 100px;
+                    grid-row-gap: 55px;
         
                     blockquote {
                         font-size: 24px;
@@ -151,6 +135,33 @@
                             color: #9e9e9e;
                         }
                     }
+                    .show-testimonials {
+                        width: 220px;
+                        height: 45px;
+                        background: transparent;
+                        outline: none;
+                        align-self: center;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        margin-right: auto;
+                        border: double 2px transparent;
+                        border-radius: 80px;
+                        background-image: linear-gradient(black, black), radial-gradient(circle at top left, #7578e6,#d7775f);
+                        background-origin: border-box;
+                        background-clip: content-box, border-box;
+
+
+                        span {
+                            color: white;
+                            font-size: 15px;
+                            font-weight: 500;
+                        }
+                        img {
+                            margin-left: 10px;
+                            transition: transform .4s;                                
+                        }
+                    }
                 }
             }
             .second-review {
@@ -168,7 +179,7 @@
             .third-review {
                 
                 .video-or-img {
-                    img {
+                    video {
                         transform: scale(0.9);
                     }
                 }
@@ -183,17 +194,18 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        padding-left: 25px;
-        padding-right: 25px;
         padding-top: 115px;
         padding-bottom: 90px;
+        @include padding-both;
         
         .technology {
             width: 530px;
             margin-right: 7%;
 
             h1 {
-                font-size: 48px;
+                font-family: 'Montserrat SemiBold';
+                font-size: 40px;
+                font-weight: bold;
             }
 
             ul {
@@ -201,11 +213,8 @@
                 display: grid;
                 grid-template-columns: 1fr 1fr;
                 grid-column-gap: 5%;
-                grid-row-gap: 10px;
+                grid-row-gap: 20px;
                 margin-top: 46px;
-
-                li {
-                }
             }
         }
 
@@ -235,12 +244,126 @@
             }
         }
     }
+    .section-vacancies {
+        display: flex;
+        justify-content: center;
+        background: #2159f4;
+        color: white;
+        padding-top: 50px;
+        padding-bottom: 50px;
+        @include padding-both;
 
+        .container-vacancies {
+            width: 1360px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .vacancies {
+    
+                .vacancy-card {
+                    max-width: 720px;
+                    background: $lightblue;
+                    padding-top: 20px;
+                    padding-bottom: 20px;
+                    padding-left: 32px;
+                    padding-right: 32px;
+                    border-radius: 8px;
+                    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.12);
+                    
+                    &:not(:last-of-type) {
+                        margin-bottom: 16px;
+                    }
+    
+                    .location {
+                        display: flex;
+                        align-items: flex-end;
+    
+                        img {
+                            width: 16px;
+                            margin-right: 12px;
+                        }
+                        span {
+                            font-size: 13px;
+                        }
+                    }
+    
+                    p {
+                        font-size: 20px;
+                        margin-top: 15px;
+                        margin-bottom: 15px;
+                        line-height: 1.3;
+                    }
+    
+                    small {
+                        font-size: 15px;
+                        opacity: 0.4;
+                    }
+                }
+            }
+            .vacancies-text {
+                max-width: 530px;
+                padding-left: 50px;
+                
+                h1 {
+                    font-size: 48px;
+                    font-family: 'Montserrat Medium';
+                    font-weight: bold;
+                    
+                }
+                p {
+                    font-size: 20px;
+                    font-family: 'Montserrat Medium';
+                    line-height: 1.6;
+                    margin-top: 40px;
+                    margin-bottom: 40px;
+                }
+                span {
+                    width: 240px;
+                    height: 40px;
+                    font-size: 18px;
+                    border-radius: 22.5px;
+                    border: solid 2px #ffffff;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+    
+                    img {
+                        width: 10px;
+                        height: 10px;
+                        border-radius: 50%;
+                        padding: 3px;
+                        border: 1px solid white;
+                        margin-left: 10px;
+                        transform: rotate(-90deg);
+    
+                    }
+                }
+            }
+        }
+
+
+    }
 }
 
 .none {
     display: none;
 }
+
+@media only screen and (max-width: 1200px) {
+    .neural {
+        .description-borvo {
+            padding-bottom: 120px;
+            
+            .container-description {
+                > p {
+                    font-size: 50px;
+                }
+            }
+        }
+    }
+}
+
 @media only screen and (max-width: 1141px) {
     .neural {
         .reviews-section {
@@ -270,7 +393,9 @@
     .neural {
         .reviews-section {
             .container {
-
+                .bg-word-review {
+                    display: none;
+                }
                 .first-review,
                 .second-review,
                 .third-review {
@@ -291,48 +416,98 @@
     }
 }
 
-@media only screen and (max-width: 1024px) {
+@media only screen and (max-width: 1000px) {
     .neural {
-        .description-borvo {
-            flex-direction: column;
-            align-items: center;
-            padding-bottom: 120px;
-
-            .description {
-                margin: 0;
-                margin-bottom: 50px;
+        .networks {
+            .networks-container {
+                margin-top: 135px;
             }
+        }
 
-            > img {
-               display: none;
+        .skills {
+            .cards {
+                flex-wrap: wrap;
+            }
+        }
+
+        .section-vacancies {
+            .container-vacancies {
+                justify-content: center;
+                flex-wrap: wrap;
+                
+
+                .vacancies {
+                    margin-bottom: 60px;
+                }
+                .vacancies-text {
+                    padding: 0;
+                }
             }
         }
     }
 }
+
+@media only screen and (max-width: 924px) {
+    .neural {
+        .skills {
+            flex-direction: column;
+
+            .technology {
+                width: auto;
+                margin: 0;
+                
+            }
+        }
+
+        .skills {
+            .cards {
+                margin-top: 50px;
+                justify-content: center;
+            }
+        }
+    }
+}
+
 @media only screen and (max-width: 900px) {
     .neural { 
+        .description-borvo {
+            .container-description {
+                width: 500px;
+                flex-direction: column;
+
+
+                > p {
+                    font-size: 45px;
+                    padding-bottom: 70px;
+                }
+            }
+        }
         .reviews-section {
-            height: 800px;
+            height: 820px;
 
             .container {
+            
                 .first-review,
                 .second-review,
                 .third-review {
                     display: flex;
                     flex-direction: column;
-
+                    
                     .video-or-img {
-                        > img {
+                        > video {
                             width: 100%;
                             height: auto;
-                        }
-                        .show-testimonials {
-                            margin: auto;
-                            margin-bottom: 30px;
-                            margin-top: 30px;
+                        }                    
+                    }
+
+                    .feedback-text {
+                            padding-top: 50px;      
+                            
+                            .show-testimonials {
+                                margin: auto;
+                            }
                         }
                     }
-                }
                 .second-review,
                 .third-review {
                     .feedback-text {
@@ -357,53 +532,26 @@
     }
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 620px) {
     .neural {
         .reviews-section {
-            height: 700px;
+            height: 750px;
         }
     }
 }
 
-
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 550px) {
     .neural {
-        margin-bottom: 100px;
-
-        .networks {
-            .networks-container {
-                margin-top: 135px;
-            }
-        }
-
-        .skills {
-            .cards {
-                flex-wrap: wrap;
+        .description-borvo {
+            .container-description {
+                > p {
+                    font-size: 36px;
+                }
             }
         }
     }
 }
 
-@media only screen and (max-width: 713px) {
-    .neural {
-        .skills {
-            flex-direction: column;
-
-            .technology {
-                width: auto;
-                margin: 0;
-                
-            }
-        }
-
-        .skills {
-            .cards {
-                margin-top: 50px;
-                justify-content: center;
-            }
-        }
-    }
-}
 @media only screen and (max-width: 425px) {
     .neural {
         .skills {
@@ -415,6 +563,7 @@
         }
     }
 }
+
 @media only screen and (min-width: 2000px) {
     .neural {
         .reviews-section {
@@ -422,7 +571,7 @@
                 .video-or-img {
                     justify-self: end;
 
-                    img {
+                    video {
                         width: auto;
                     }
                 }
