@@ -9,8 +9,42 @@ export default class Header extends React.PureComponent {
     super(props)
     this.state = {
       isShowPopUp: false,
-      isShowMobileMenu: false
+      isShowMobileMenu: false,
+      isExpertise: false,
+      isAbout: false,
+      isCareers: false,
+      isContacts: false,
+      tabs: [
+        {
+          name: 'Expertise',
+          link: '#!/services'
+        },
+        {
+          name: 'About us',
+          link: '#!/about-us'
+        },
+        {
+          name: 'Careers',
+          link: '#!/careers'
+        },
+        {
+          name: 'Contacts',
+          link: '#!/contacts'
+        }
+      ]
     }
+  }
+
+  updateCurrentUrl = () => {
+    this.setState({ currentUrl: window.location.hash })
+  }
+
+  componentDidMount () {
+    window.addEventListener('popstate', this.updateCurrentUrl)
+  }
+
+  componentWillUnmount () {
+    window.removeEventListener('popstate', this.updateCurrentUrl)
   }
 
   toogleMobileMenu = () => {
@@ -25,6 +59,27 @@ export default class Header extends React.PureComponent {
     })
   }
 
+  isCurrentTab = (tabUrl) => window.location.hash.startsWith(tabUrl)
+
+  createTabs() {
+    return <ul>
+      {
+        this.state.tabs.map((tab, idx) => {
+          const { link, name } = tab
+          return <li key={idx}>
+            <a href={link}>
+              {name}
+              <span className={classnames(
+                'bottom-link-header',
+                { 'show': this.isCurrentTab(link) }
+              )} />
+            </a>
+          </li>
+        })
+      }
+    </ul>
+  }
+
   render() {
     return (
       <header className={classnames(this.props.className, "header")}>
@@ -34,12 +89,7 @@ export default class Header extends React.PureComponent {
               <span className="logo">borvo</span>
             </a>
             <nav>
-              <ul>
-                <li><a href="#!/services">Expertise</a></li>
-                <li><a href="#!/about-us">About us</a></li>
-                <li><a href="#!/careers">Careers</a></li>
-                <li><a href="#!/contacts">Contact Us</a></li>
-              </ul>
+              {this.createTabs()}
             </nav>
             <nav className={classnames('mobile', { 'show': this.state.isShowMobileMenu })}>
               <ul>

@@ -6,9 +6,14 @@ import Home from '@components/Home'
 import AboutUs from '@components/AboutUs'
 import Contacts from '@components/Contacts'
 import Careers from '@components/Careers'
+import Vacancies from '@components/Vacancies'
+
 
 
 import ExpertiesCarousel from '@components/ExpertiesCarousel'
+
+import CareersVacancies from '@components/CareersVacancies'
+
 
 export default [
   {
@@ -34,9 +39,34 @@ export default [
             name: 'Services',
             title: '',
             component: Services
-          }
+          },
         ]
       },
+
+      {
+        path: '/careers',
+        name: 'CareersVacancies',
+        tile: '',
+        transition: { timeout: 500, classNames: 'careers-vacancies' },
+        component: CareersVacancies,
+        children: [
+          {
+            path: '/',
+            name: 'Сareers',
+            title: '',
+            component: Careers,
+          },
+          {
+            path: '/:id',
+            name: 'Vacancies',
+            title: '',
+            component: Vacancies
+          },
+        ]
+      },
+
+      
+
       {
         path: '/neural',
         name: 'Neural',
@@ -60,12 +90,6 @@ export default [
         name: 'Contacts',
         title: '',
         component: Contacts
-      },
-      {
-        path: '/careers',
-        name: 'Сareers',
-        title: '',
-        component: Careers
       },
       {
         path: '*',

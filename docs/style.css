@@ -3,6 +3,10 @@
   src: url(bf9f5d50c1b928ff21436517a1a95ad9.otf); }
 
 @font-face {
+  font-family: 'ProximaNova-Light';
+  src: url(ac51ad8a36d5bab6da11d454bcd06561.otf); }
+
+@font-face {
   font-family: 'ProximaNova-Extrabold';
   src: url(5243e362912f7119ede836ab03f23ac7.otf); }
 
@@ -46,14 +50,15 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 20px;
   padding-right: 25px;
   padding-left: 25px;
   overflow-y: hidden; }
   .header-container {
     width: 1360px;
     display: flex;
-    justify-content: space-between; }
+    justify-content: space-between;
+    align-items: center;
+    line-height: 2.4; }
     .header-container > * {
       z-index: 1; }
     .header-container > div {
@@ -72,7 +77,7 @@
             content: url(9cf527c842c4663612f8f5147dcaa748.svg);
             position: absolute;
             left: -40px;
-            top: 0px; }
+            top: -16px; }
       .header-container > div nav ul {
         display: flex;
         font-size: 16px;
@@ -83,7 +88,20 @@
           margin-left: 48px; }
         .header-container > div nav ul li a {
           color: white;
-          text-decoration: none; }
+          text-decoration: none;
+          transition: color .2s;
+          position: relative; }
+          .header-container > div nav ul li a span {
+            width: 100%;
+            height: 2px;
+            background-color: #2979ff;
+            position: absolute;
+            top: 43px;
+            left: 0;
+            display: none; }
+          .header-container > div nav ul li a:hover {
+            color: #2979ff;
+            transition: color .2s; }
       .header-container > div nav.mobile {
         width: 140px;
         display: flex;
@@ -123,13 +141,13 @@
       border: none;
       cursor: pointer; }
   .header .line {
-    width: 100vw;
+    width: 250vw;
     height: 1px;
     opacity: 0.08;
     background-color: #f5f5f5;
     position: absolute;
     top: 75px;
-    z-index: 999; }
+    z-index: 5; }
 
 .bg-neural {
   background: black; }
@@ -143,7 +161,6 @@
 
 .bg-about-us .line {
   background: white;
-  opacity: 0.3;
   z-index: 999; }
 
 .bg-black {
@@ -164,15 +181,13 @@
     display: inline-block; } }
 
 @media only screen and (max-width: 768px) {
-  .header-container {
-    height: 30px; }
-    .header-container div > nav {
-      display: none; }
-    .header-container .burger-icon {
-      display: flex;
-      margin: 0; }
-    .header-container button {
-      display: none; } }
+  .header-container div > nav {
+    display: none; }
+  .header-container .burger-icon {
+    display: flex;
+    margin: 0; }
+  .header-container button {
+    display: none; } }
 
 .pop-up {
   color: white;
@@ -226,6 +241,9 @@
           position: absolute;
           left: 0;
           bottom: 15px; }
+        .pop-up .pop-up-container .form-container form .four-input label [data-end]::after {
+          content: attr(data-end);
+          color: #2979ff; }
     .pop-up .pop-up-container .form-container form .down-input {
       height: 50px;
       margin-top: 60px;
@@ -630,9 +648,9 @@ footer .bottom-page {
       padding-left: 50px;
       padding-right: 50px; }
       .works .works-container .content video {
-        width: 100%;
+        width: 90%;
         border-radius: 10px;
-        opacity: .3;
+        opacity: 0.15;
         margin-bottom: -5px; }
     .works .works-container .bg-gradient {
       height: 100vh;
@@ -645,10 +663,16 @@ footer .bottom-page {
         color: white;
         position: relative;
         padding-left: 50px;
-        padding-right: 50px; }
+        padding-right: 50px;
+        transform: translateX(100px);
+        opacity: 0; }
+        .works .works-container .bg-gradient .text-about-work.show-animation-neural {
+          transform: translateX(0);
+          opacity: 1;
+          transition: transform .6s , opacity 1.5s; }
         .works .works-container .bg-gradient .text-about-work .project {
           position: absolute;
-          top: 0;
+          top: 15px;
           left: -150px;
           border-style: solid;
           border-width: 2px;
@@ -662,7 +686,7 @@ footer .bottom-page {
           font-size: 24px; }
         .works .works-container .bg-gradient .text-about-work h1 {
           max-width: 670px;
-          font-family: 'Montserrat Bold';
+          font-family: 'Montserrat SemiBold';
           font-size: 72px;
           line-height: 1.13;
           font-weight: bold;
@@ -676,7 +700,9 @@ footer .bottom-page {
           align-items: center;
           text-decoration: none;
           color: #d77860;
-          font-weight: bold; }
+          font-weight: bold;
+          font-size: 22px;
+          padding-top: 20px; }
           .works .works-container .bg-gradient .text-about-work div a:hover {
             text-decoration: underline; }
           .works .works-container .bg-gradient .text-about-work div a span {
@@ -837,17 +863,15 @@ footer .bottom-page {
           font-size: 18px;
           color: #bdbdbd;
           line-height: 1.67; }
-  .neural .reviews-section {
-    height: 519px;
+  .neural .reviews {
     overflow: hidden;
     background-color: black;
     color: white;
-    padding-top: 150px; }
-    .neural .reviews-section.show-all {
-      height: 100%; }
-    .neural .reviews-section .container {
+    padding-top: 150px;
+    padding-bottom: 30px; }
+    .neural .reviews .container {
       position: relative; }
-      .neural .reviews-section .container .bg-word-review {
+      .neural .reviews .container .bg-word-review {
         font-size: 160px;
         font-family: 'Montserrat ExtraBold';
         opacity: 0.12;
@@ -859,57 +883,41 @@ footer .bottom-page {
         z-index: 1;
         color: #8478d2;
         pointer-events: none; }
-      .neural .reviews-section .container .first-review,
-      .neural .reviews-section .container .second-review,
-      .neural .reviews-section .container .third-review {
+      .neural .reviews .container .first-review {
         width: 100vw;
         display: grid;
         grid-template-columns: auto auto;
-        grid-column-gap: 145px; }
-        .neural .reviews-section .container .first-review .video-or-img,
-        .neural .reviews-section .container .second-review .video-or-img,
-        .neural .reviews-section .container .third-review .video-or-img {
-          justify-self: end;
+        grid-column-gap: 10%; }
+        .neural .reviews .container .first-review .video-or-img {
+          justify-self: start;
           transition: transform .3s;
           z-index: 999; }
-          .neural .reviews-section .container .first-review .video-or-img > video,
-          .neural .reviews-section .container .second-review .video-or-img > video,
-          .neural .reviews-section .container .third-review .video-or-img > video {
+          .neural .reviews .container .first-review .video-or-img > img {
             width: 100%;
-            height: 578px;
+            height: 100%;
             transition: transform .4s; }
-        .neural .reviews-section .container .first-review .feedback-text,
-        .neural .reviews-section .container .second-review .feedback-text,
-        .neural .reviews-section .container .third-review .feedback-text {
+        .neural .reviews .container .first-review .feedback-text {
           width: 90%;
           align-self: center;
           display: grid;
           grid-template-rows: 1fr 1fr;
           grid-row-gap: 55px; }
-          .neural .reviews-section .container .first-review .feedback-text blockquote,
-          .neural .reviews-section .container .second-review .feedback-text blockquote,
-          .neural .reviews-section .container .third-review .feedback-text blockquote {
+          .neural .reviews .container .first-review .feedback-text blockquote {
+            max-width: 620px;
+            font-family: 'ProximaNova-Light';
             font-size: 24px;
             line-height: 1.42; }
-          .neural .reviews-section .container .first-review .feedback-text .name-position,
-          .neural .reviews-section .container .second-review .feedback-text .name-position,
-          .neural .reviews-section .container .third-review .feedback-text .name-position {
+          .neural .reviews .container .first-review .feedback-text .name-position {
             display: flex;
             flex-direction: column; }
-            .neural .reviews-section .container .first-review .feedback-text .name-position .name,
-            .neural .reviews-section .container .second-review .feedback-text .name-position .name,
-            .neural .reviews-section .container .third-review .feedback-text .name-position .name {
+            .neural .reviews .container .first-review .feedback-text .name-position .name {
               font-weight: bold;
               font-size: 17px;
               margin-bottom: 16px; }
-            .neural .reviews-section .container .first-review .feedback-text .name-position .position,
-            .neural .reviews-section .container .second-review .feedback-text .name-position .position,
-            .neural .reviews-section .container .third-review .feedback-text .name-position .position {
+            .neural .reviews .container .first-review .feedback-text .name-position .position {
               font-size: 13px;
               color: #9e9e9e; }
-          .neural .reviews-section .container .first-review .feedback-text .show-testimonials,
-          .neural .reviews-section .container .second-review .feedback-text .show-testimonials,
-          .neural .reviews-section .container .third-review .feedback-text .show-testimonials {
+          .neural .reviews .container .first-review .feedback-text .show-testimonials {
             width: 220px;
             height: 45px;
             background: transparent;
@@ -924,27 +932,153 @@ footer .bottom-page {
             background-image: linear-gradient(black, black), radial-gradient(circle at top left, #7578e6, #d7775f);
             background-origin: border-box;
             background-clip: content-box, border-box; }
-            .neural .reviews-section .container .first-review .feedback-text .show-testimonials span,
-            .neural .reviews-section .container .second-review .feedback-text .show-testimonials span,
-            .neural .reviews-section .container .third-review .feedback-text .show-testimonials span {
+            .neural .reviews .container .first-review .feedback-text .show-testimonials span {
               color: white;
               font-size: 15px;
               font-weight: 500; }
-            .neural .reviews-section .container .first-review .feedback-text .show-testimonials img,
-            .neural .reviews-section .container .second-review .feedback-text .show-testimonials img,
-            .neural .reviews-section .container .third-review .feedback-text .show-testimonials img {
+            .neural .reviews .container .first-review .feedback-text .show-testimonials img {
               margin-left: 10px;
               transition: transform .4s; }
-      .neural .reviews-section .container .second-review .feedback-text {
-        justify-self: end; }
-        .neural .reviews-section .container .second-review .feedback-text .name-position {
-          text-align: end; }
-      .neural .reviews-section .container .second-review .video-or-img video,
-      .neural .reviews-section .container .third-review .video-or-img video {
-        transform: scale(0.9); }
-      .neural .reviews-section .container .second-review .feedback-text,
-      .neural .reviews-section .container .third-review .feedback-text {
-        grid-template-rows: 1fr 1fr; }
+    .neural .reviews .third-review {
+      width: 100vw;
+      display: grid;
+      grid-template-columns: auto auto;
+      grid-column-gap: 10%; }
+      .neural .reviews .third-review .video-or-img {
+        justify-self: start;
+        transition: transform .3s;
+        z-index: 999; }
+        .neural .reviews .third-review .video-or-img > img {
+          width: 100%;
+          height: 100%;
+          transition: transform .4s; }
+      .neural .reviews .third-review .feedback-text {
+        width: 90%;
+        align-self: center;
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        grid-row-gap: 55px; }
+        .neural .reviews .third-review .feedback-text blockquote {
+          max-width: 620px;
+          font-family: 'ProximaNova-Light';
+          font-size: 24px;
+          line-height: 1.42; }
+        .neural .reviews .third-review .feedback-text .name-position {
+          display: flex;
+          flex-direction: column; }
+          .neural .reviews .third-review .feedback-text .name-position .name {
+            font-weight: bold;
+            font-size: 17px;
+            margin-bottom: 16px; }
+          .neural .reviews .third-review .feedback-text .name-position .position {
+            font-size: 13px;
+            color: #9e9e9e; }
+        .neural .reviews .third-review .feedback-text .show-testimonials {
+          width: 220px;
+          height: 45px;
+          background: transparent;
+          outline: none;
+          align-self: center;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-right: auto;
+          border: double 2px transparent;
+          border-radius: 80px;
+          background-image: linear-gradient(black, black), radial-gradient(circle at top left, #7578e6, #d7775f);
+          background-origin: border-box;
+          background-clip: content-box, border-box; }
+          .neural .reviews .third-review .feedback-text .show-testimonials span {
+            color: white;
+            font-size: 15px;
+            font-weight: 500; }
+          .neural .reviews .third-review .feedback-text .show-testimonials img {
+            margin-left: 10px;
+            transition: transform .4s; }
+  .neural .all-reviews {
+    background-color: black;
+    color: white;
+    overflow: hidden;
+    height: 0; }
+    .neural .all-reviews.show-all {
+      height: 100%; }
+    .neural .all-reviews .container > div {
+      padding-top: 50px; }
+    .neural .all-reviews .container .third-review,
+    .neural .all-reviews .container .second-review {
+      width: 100vw;
+      display: grid;
+      grid-template-columns: auto auto;
+      grid-column-gap: 10%; }
+      .neural .all-reviews .container .third-review .video-or-img,
+      .neural .all-reviews .container .second-review .video-or-img {
+        justify-self: start;
+        transition: transform .3s;
+        z-index: 999; }
+        .neural .all-reviews .container .third-review .video-or-img > img,
+        .neural .all-reviews .container .second-review .video-or-img > img {
+          width: 100%;
+          height: 100%;
+          transition: transform .4s; }
+      .neural .all-reviews .container .third-review .feedback-text,
+      .neural .all-reviews .container .second-review .feedback-text {
+        width: 90%;
+        align-self: center;
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        grid-row-gap: 55px; }
+        .neural .all-reviews .container .third-review .feedback-text blockquote,
+        .neural .all-reviews .container .second-review .feedback-text blockquote {
+          max-width: 620px;
+          font-family: 'ProximaNova-Light';
+          font-size: 24px;
+          line-height: 1.42; }
+        .neural .all-reviews .container .third-review .feedback-text .name-position,
+        .neural .all-reviews .container .second-review .feedback-text .name-position {
+          display: flex;
+          flex-direction: column; }
+          .neural .all-reviews .container .third-review .feedback-text .name-position .name,
+          .neural .all-reviews .container .second-review .feedback-text .name-position .name {
+            font-weight: bold;
+            font-size: 17px;
+            margin-bottom: 16px; }
+          .neural .all-reviews .container .third-review .feedback-text .name-position .position,
+          .neural .all-reviews .container .second-review .feedback-text .name-position .position {
+            font-size: 13px;
+            color: #9e9e9e; }
+    .neural .all-reviews .container .second-review .video-or-img {
+      justify-self: end; }
+    .neural .all-reviews .container .feedback-text {
+      width: 90%;
+      align-self: center;
+      display: grid;
+      grid-template-rows: 1fr 1fr;
+      grid-row-gap: 55px; }
+      .neural .all-reviews .container .feedback-text blockquote {
+        max-width: 620px;
+        font-family: 'ProximaNova-Light';
+        font-size: 24px;
+        line-height: 1.42; }
+      .neural .all-reviews .container .feedback-text .name-position {
+        display: flex;
+        flex-direction: column; }
+        .neural .all-reviews .container .feedback-text .name-position .name {
+          font-weight: bold;
+          font-size: 17px;
+          margin-bottom: 16px; }
+        .neural .all-reviews .container .feedback-text .name-position .position {
+          font-size: 13px;
+          color: #9e9e9e; }
+    .neural .all-reviews .second-review .feedback-text {
+      justify-self: end; }
+      .neural .all-reviews .second-review .feedback-text .name-position {
+        text-align: end; }
+    .neural .all-reviews .second-review .video-or-img img,
+    .neural .all-reviews .third-review .video-or-img img {
+      transform: scale(0.9); }
+    .neural .all-reviews .second-review .feedback-text,
+    .neural .all-reviews .third-review .feedback-text {
+      grid-template-rows: 1fr 1fr; }
   .neural .skills {
     display: flex;
     justify-content: center;
@@ -1001,33 +1135,41 @@ footer .bottom-page {
       display: flex;
       justify-content: space-between;
       align-items: center; }
-      .neural .section-vacancies .container-vacancies .vacancies .vacancy-card {
-        max-width: 720px;
-        background: #2979ff;
-        padding-top: 20px;
-        padding-bottom: 20px;
-        padding-left: 32px;
-        padding-right: 32px;
-        border-radius: 8px;
-        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.12); }
-        .neural .section-vacancies .container-vacancies .vacancies .vacancy-card:not(:last-of-type) {
-          margin-bottom: 16px; }
-        .neural .section-vacancies .container-vacancies .vacancies .vacancy-card .location {
-          display: flex;
-          align-items: flex-end; }
-          .neural .section-vacancies .container-vacancies .vacancies .vacancy-card .location img {
-            width: 16px;
-            margin-right: 12px; }
-          .neural .section-vacancies .container-vacancies .vacancies .vacancy-card .location span {
-            font-size: 13px; }
-        .neural .section-vacancies .container-vacancies .vacancies .vacancy-card p {
-          font-size: 20px;
-          margin-top: 15px;
-          margin-bottom: 15px;
-          line-height: 1.3; }
-        .neural .section-vacancies .container-vacancies .vacancies .vacancy-card small {
-          font-size: 15px;
-          opacity: 0.4; }
+      .neural .section-vacancies .container-vacancies .vacancies {
+        width: 50%; }
+        .neural .section-vacancies .container-vacancies .vacancies .vacancy-card {
+          background: #2979ff;
+          padding-top: 20px;
+          padding-bottom: 20px;
+          padding-left: 32px;
+          padding-right: 32px;
+          border-radius: 8px;
+          box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.12);
+          display: inherit;
+          color: white;
+          text-decoration: none;
+          transition: box-shadow .3s; }
+          .neural .section-vacancies .container-vacancies .vacancies .vacancy-card:hover {
+            box-shadow: 0 0px 20px 8px rgba(0, 0, 0, 0.16);
+            transition: box-shadow .3s; }
+          .neural .section-vacancies .container-vacancies .vacancies .vacancy-card:not(:last-of-type) {
+            margin-bottom: 16px; }
+          .neural .section-vacancies .container-vacancies .vacancies .vacancy-card .location {
+            display: flex;
+            align-items: flex-end; }
+            .neural .section-vacancies .container-vacancies .vacancies .vacancy-card .location img {
+              width: 16px;
+              margin-right: 12px; }
+            .neural .section-vacancies .container-vacancies .vacancies .vacancy-card .location span {
+              font-size: 13px; }
+          .neural .section-vacancies .container-vacancies .vacancies .vacancy-card p {
+            font-size: 20px;
+            margin-top: 15px;
+            margin-bottom: 15px;
+            line-height: 1.3; }
+          .neural .section-vacancies .container-vacancies .vacancies .vacancy-card small {
+            font-size: 15px;
+            opacity: 0.4; }
       .neural .section-vacancies .container-vacancies .vacancies-text {
         max-width: 530px;
         padding-left: 50px; }
@@ -1041,16 +1183,18 @@ footer .bottom-page {
           line-height: 1.6;
           margin-top: 40px;
           margin-bottom: 40px; }
-        .neural .section-vacancies .container-vacancies .vacancies-text span {
+        .neural .section-vacancies .container-vacancies .vacancies-text a {
           width: 240px;
           height: 40px;
           font-size: 18px;
+          color: white;
+          text-decoration: none;
           border-radius: 22.5px;
           border: solid 2px #ffffff;
           display: flex;
           justify-content: center;
           align-items: center; }
-          .neural .section-vacancies .container-vacancies .vacancies-text span img {
+          .neural .section-vacancies .container-vacancies .vacancies-text a img {
             width: 10px;
             height: 10px;
             border-radius: 50%;
@@ -1068,44 +1212,46 @@ footer .bottom-page {
     .neural .description-borvo .container-description > p {
       font-size: 50px; } }
 
-@media only screen and (max-width: 1141px) {
-  .neural .reviews-section .container .first-review,
-  .neural .reviews-section .container .second-review,
-  .neural .reviews-section .container .third-review {
-    grid-column-gap: 50px; }
-  .neural .skills .cards {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center; }
-    .neural .skills .cards .card {
-      margin-bottom: 3%;
-      margin-right: 3%; } }
-
-@media only screen and (max-width: 1100px) {
-  .neural .reviews-section .container .bg-word-review {
+@media only screen and (max-width: 1400px) {
+  .neural .reviews .container .bg-word-review,
+  .neural .all-reviews .container .bg-word-review {
     display: none; }
-  .neural .reviews-section .container .first-review .feedback-text,
-  .neural .reviews-section .container .second-review .feedback-text,
-  .neural .reviews-section .container .third-review .feedback-text {
-    grid-row-gap: 10px; }
-    .neural .reviews-section .container .first-review .feedback-text blockquote,
-    .neural .reviews-section .container .second-review .feedback-text blockquote,
-    .neural .reviews-section .container .third-review .feedback-text blockquote {
+  .neural .reviews .container .first-review .feedback-text,
+  .neural .reviews .container .second-review .feedback-text,
+  .neural .reviews .container .third-review .feedback-text,
+  .neural .all-reviews .container .first-review .feedback-text,
+  .neural .all-reviews .container .second-review .feedback-text,
+  .neural .all-reviews .container .third-review .feedback-text {
+    grid-row-gap: 30px; }
+    .neural .reviews .container .first-review .feedback-text blockquote,
+    .neural .reviews .container .second-review .feedback-text blockquote,
+    .neural .reviews .container .third-review .feedback-text blockquote,
+    .neural .all-reviews .container .first-review .feedback-text blockquote,
+    .neural .all-reviews .container .second-review .feedback-text blockquote,
+    .neural .all-reviews .container .third-review .feedback-text blockquote {
+      font-size: 20px;
       line-height: 1; }
-    .neural .reviews-section .container .first-review .feedback-text .name-position,
-    .neural .reviews-section .container .second-review .feedback-text .name-position,
-    .neural .reviews-section .container .third-review .feedback-text .name-position {
+    .neural .reviews .container .first-review .feedback-text .name-position,
+    .neural .reviews .container .second-review .feedback-text .name-position,
+    .neural .reviews .container .third-review .feedback-text .name-position,
+    .neural .all-reviews .container .first-review .feedback-text .name-position,
+    .neural .all-reviews .container .second-review .feedback-text .name-position,
+    .neural .all-reviews .container .third-review .feedback-text .name-position {
       align-self: center; } }
 
 @media only screen and (max-width: 1000px) {
   .neural .networks .networks-container {
     margin-top: 135px; }
   .neural .skills .cards {
+    display: flex;
     flex-wrap: wrap; }
+    .neural .skills .cards .card {
+      margin: 25px; }
   .neural .section-vacancies .container-vacancies {
     justify-content: center;
     flex-wrap: wrap; }
     .neural .section-vacancies .container-vacancies .vacancies {
+      width: 100%;
       margin-bottom: 60px; }
     .neural .section-vacancies .container-vacancies .vacancies-text {
       padding: 0; } }
@@ -1127,40 +1273,56 @@ footer .bottom-page {
     .neural .description-borvo .container-description > p {
       font-size: 45px;
       padding-bottom: 70px; }
-  .neural .reviews-section {
-    height: 820px; }
-    .neural .reviews-section .container .first-review,
-    .neural .reviews-section .container .second-review,
-    .neural .reviews-section .container .third-review {
-      display: flex;
-      flex-direction: column; }
-      .neural .reviews-section .container .first-review .video-or-img > video,
-      .neural .reviews-section .container .second-review .video-or-img > video,
-      .neural .reviews-section .container .third-review .video-or-img > video {
-        width: 100%;
-        height: auto; }
-      .neural .reviews-section .container .first-review .feedback-text,
-      .neural .reviews-section .container .second-review .feedback-text,
-      .neural .reviews-section .container .third-review .feedback-text {
-        padding-top: 50px; }
-        .neural .reviews-section .container .first-review .feedback-text .show-testimonials,
-        .neural .reviews-section .container .second-review .feedback-text .show-testimonials,
-        .neural .reviews-section .container .third-review .feedback-text .show-testimonials {
-          margin: auto; }
-    .neural .reviews-section .container .second-review .feedback-text,
-    .neural .reviews-section .container .third-review .feedback-text {
-      margin-top: 50px; }
-    .neural .reviews-section .container .second-review {
-      display: flex;
-      flex-direction: column-reverse;
-      margin-top: 100px; }
-      .neural .reviews-section .container .second-review .feedback-text .name-position {
-        justify-self: start;
-        text-align: start; } }
-
-@media only screen and (max-width: 620px) {
-  .neural .reviews-section {
-    height: 750px; } }
+  .neural .reviews .container .first-review,
+  .neural .reviews .container .second-review,
+  .neural .reviews .container .third-review,
+  .neural .all-reviews .container .first-review,
+  .neural .all-reviews .container .second-review,
+  .neural .all-reviews .container .third-review {
+    display: flex;
+    flex-direction: column; }
+    .neural .reviews .container .first-review .video-or-img > img,
+    .neural .reviews .container .second-review .video-or-img > img,
+    .neural .reviews .container .third-review .video-or-img > img,
+    .neural .all-reviews .container .first-review .video-or-img > img,
+    .neural .all-reviews .container .second-review .video-or-img > img,
+    .neural .all-reviews .container .third-review .video-or-img > img {
+      width: 100%;
+      height: auto; }
+    .neural .reviews .container .first-review .feedback-text,
+    .neural .reviews .container .second-review .feedback-text,
+    .neural .reviews .container .third-review .feedback-text,
+    .neural .all-reviews .container .first-review .feedback-text,
+    .neural .all-reviews .container .second-review .feedback-text,
+    .neural .all-reviews .container .third-review .feedback-text {
+      padding-top: 50px; }
+      .neural .reviews .container .first-review .feedback-text blockquote,
+      .neural .reviews .container .second-review .feedback-text blockquote,
+      .neural .reviews .container .third-review .feedback-text blockquote,
+      .neural .all-reviews .container .first-review .feedback-text blockquote,
+      .neural .all-reviews .container .second-review .feedback-text blockquote,
+      .neural .all-reviews .container .third-review .feedback-text blockquote {
+        font-size: 24px; }
+      .neural .reviews .container .first-review .feedback-text .show-testimonials,
+      .neural .reviews .container .second-review .feedback-text .show-testimonials,
+      .neural .reviews .container .third-review .feedback-text .show-testimonials,
+      .neural .all-reviews .container .first-review .feedback-text .show-testimonials,
+      .neural .all-reviews .container .second-review .feedback-text .show-testimonials,
+      .neural .all-reviews .container .third-review .feedback-text .show-testimonials {
+        margin: auto; }
+  .neural .reviews .container .second-review .feedback-text,
+  .neural .reviews .container .third-review .feedback-text,
+  .neural .all-reviews .container .second-review .feedback-text,
+  .neural .all-reviews .container .third-review .feedback-text {
+    margin-top: 50px; }
+  .neural .reviews .container .second-review,
+  .neural .all-reviews .container .second-review {
+    display: flex;
+    flex-direction: column-reverse; }
+    .neural .reviews .container .second-review .feedback-text .name-position,
+    .neural .all-reviews .container .second-review .feedback-text .name-position {
+      justify-self: start;
+      text-align: start; } }
 
 @media only screen and (max-width: 550px) {
   .neural .description-borvo .container-description > p {
@@ -1169,18 +1331,6 @@ footer .bottom-page {
 @media only screen and (max-width: 425px) {
   .neural .skills .technology ul {
     grid-template-columns: 1fr; } }
-
-@media only screen and (min-width: 2000px) {
-  .neural .reviews-section .container .video-or-img {
-    justify-self: end; }
-    .neural .reviews-section .container .video-or-img video {
-      width: auto; }
-  .neural .reviews-section .container .first-review .feedback-text,
-  .neural .reviews-section .container .second-review .feedback-text,
-  .neural .reviews-section .container .third-review .feedback-text {
-    width: 650px; }
-  .neural .reviews-section .container .second-review .video-or-img {
-    justify-self: start; } }
 
 .section-services {
   padding-bottom: 145px;
@@ -1198,9 +1348,10 @@ footer .bottom-page {
       display: flex;
       flex-direction: column;
       font-size: 20px;
-      padding: 0 20px; }
+      padding: 0 20px;
+      flex: 1 1 290px; }
       .section-services .cards-services .card-services > img {
-        width: 290px; }
+        width: 100%; }
       .section-services .cards-services .card-services > span {
         margin-top: 50px;
         margin-bottom: 50px; }
@@ -1217,9 +1368,7 @@ footer .bottom-page {
     padding-left: 30px;
     padding-right: 30px; }
     .section-services .cards-services .card-services {
-      width: auto; }
-      .section-services .cards-services .card-services img {
-        width: 100%; } }
+      width: auto; } }
 
 .services-provided {
   overflow-x: hidden; }
@@ -1331,7 +1480,7 @@ footer .bottom-page {
   background-size: auto;
   background-position: top;
   background-color: black;
-  margin-top: -60px;
+  margin-top: -78px;
   display: flex; }
   .about-us .bg-photo .text-gradient {
     width: 100%;
@@ -1497,8 +1646,6 @@ footer .bottom-page {
 .contacts .map-bg {
   width: 100%;
   height: 760px;
-  background: url(9df2d23bac7d8a6803c71bfe3f8fb3c3.svg) no-repeat center center;
-  background-size: contain;
   background-color: black;
   display: flex;
   justify-content: center;
@@ -1506,6 +1653,8 @@ footer .bottom-page {
   .contacts .map-bg .container {
     width: 1360px;
     height: 590px;
+    background: url(9df2d23bac7d8a6803c71bfe3f8fb3c3.svg) no-repeat center center;
+    background-size: contain;
     color: white;
     display: flex;
     flex-direction: column;
@@ -1604,6 +1753,9 @@ footer .bottom-page {
           position: absolute;
           left: 0;
           bottom: 15px; }
+        .contacts .message .message-container .form-container form .four-input label [data-end]::after {
+          content: attr(data-end);
+          color: #2979ff; }
     .contacts .message .message-container .form-container form .down-input {
       height: 50px;
       margin-top: 60px;
@@ -1761,7 +1913,12 @@ footer .bottom-page {
       justify-content: space-between;
       padding: 30px 0;
       padding-right: 30px;
-      padding-left: 40px; }
+      padding-left: 40px;
+      text-decoration: none;
+      color: black; }
+      .careers .white-vacancies .container .card-vacancy:hover {
+        box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.16);
+        color: #2979ff; }
       .careers .white-vacancies .container .card-vacancy .location {
         display: flex;
         align-items: flex-end; }
@@ -1804,6 +1961,88 @@ footer .bottom-page {
 @media only screen and (max-width: 1000px) {
   .careers .white-vacancies .container {
     grid-template-columns: 1fr; } }
+
+.vacancies .top-block {
+  background: black;
+  color: white;
+  display: flex;
+  justify-content: center;
+  padding-top: 55px;
+  padding-bottom: 55px; }
+  .vacancies .top-block .container {
+    width: 1360px;
+    height: 390px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-left: 50px;
+    padding-right: 50px; }
+    .vacancies .top-block .container .return {
+      max-width: 250px;
+      display: flex;
+      align-items: center;
+      color: #d77860;
+      font-size: 20px;
+      text-decoration: none; }
+      .vacancies .top-block .container .return img {
+        padding-right: 15px; }
+    .vacancies .top-block .container h1 {
+      font-family: 'Montserrat SemiBold';
+      font-size: 64px; }
+    .vacancies .top-block .container .block {
+      display: flex;
+      align-items: center; }
+      .vacancies .top-block .container .block .location {
+        padding-left: 10px;
+        padding-right: 10px;
+        color: #bdbdbd; }
+      .vacancies .top-block .container .block .position {
+        color: #2962ff; }
+
+.vacancies .description {
+  display: flex;
+  justify-content: center;
+  padding-top: 85px;
+  padding-bottom: 110px; }
+  .vacancies .description .container {
+    width: 1360px;
+    display: flex;
+    padding-left: 50px;
+    padding-right: 50px; }
+    .vacancies .description .container .container-text {
+      max-width: 920px; }
+      .vacancies .description .container .container-text h1 {
+        font-size: 32px;
+        font-family: 'Montserrat Bold'; }
+      .vacancies .description .container .container-text p {
+        padding-top: 40px;
+        font-size: 18px;
+        color: #5f5f5f;
+        line-height: 1.56; }
+      .vacancies .description .container .container-text ul {
+        font-size: 18px;
+        color: #5f5f5f;
+        padding-left: 35px; }
+        .vacancies .description .container .container-text ul li {
+          position: relative;
+          padding-top: 30px;
+          line-height: 1.56; }
+          .vacancies .description .container .container-text ul li::before {
+            content: '';
+            width: 24px;
+            height: 1px;
+            background-color: #2962ff;
+            position: absolute;
+            left: -35px;
+            margin-top: 13px; }
+      .vacancies .description .container .container-text .block:not(:first-of-type) {
+        padding-top: 60px; }
+
+@media only screen and (max-width: 425px) {
+  .vacancies .top-block .container h1 {
+    font-size: 41px; }
+  .vacancies .top-block .container .block {
+    font-size: 20px; } }
 
 * {
   font-family: 'Proxima Nova';

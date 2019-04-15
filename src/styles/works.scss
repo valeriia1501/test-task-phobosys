@@ -16,9 +16,9 @@
             @include padding-both;
 
             video {
-                width: 100%;
+                width: 90%;
                 border-radius: 10px;
-                opacity: .3;
+                opacity: 0.15;
                 margin-bottom: -5px;
             }
         }
@@ -35,10 +35,18 @@
                 color: white;
                 position: relative;
                 @include padding-both;
+                transform: translateX(100px);
+                opacity: 0;
+
+                &.show-animation-neural {
+                    transform: translateX(0);
+                    opacity: 1;
+                    transition:  transform .6s , opacity 1.5s; 
+                }
 
                 .project {
                     position: absolute;
-                    top: 0;
+                    top: 15px;
                     left: -150px;
                     border-style: solid;
                     border-width: 2px;
@@ -57,7 +65,7 @@
     
                 h1 {
                     max-width: 670px;
-                    font-family: 'Montserrat Bold';
+                    font-family: 'Montserrat SemiBold';
                     font-size: 72px;
                     line-height: 1.13;
                     font-weight: bold;
@@ -78,7 +86,9 @@
                         text-decoration: none;
                         color: #d77860;
                         font-weight: bold;
-        
+                        font-size: 22px;
+                        padding-top: 20px;
+
                         &:hover {
                             text-decoration: underline;
                         }

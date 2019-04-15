@@ -2,6 +2,7 @@ const path = require('path');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
+
 const projectRoot = path.resolve(__dirname)
 
 module.exports = {
@@ -26,7 +27,11 @@ module.exports = {
 			'@components': projectRoot + '/src/components',
       '@styles': projectRoot + '/src/styles',
       '@assets': projectRoot + '/assets',
-		}
+    },
+    extensions: [
+      '.js', '.json', '.css', '.scss', '.sass',
+      '.svg', '.png', '.jpeg', '.gif'
+    ],
 	},
   module: {
     rules: [
@@ -74,7 +79,7 @@ module.exports = {
         use: [
           'file-loader'
         ]
-      }
+      },
     ]
   },
   plugins: [
