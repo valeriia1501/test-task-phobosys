@@ -4,6 +4,8 @@ import classnames from 'classnames'
 import BurgerIcon from '@/components/BurgerIcon'
 import GetInTouch from '@/components/GetInTouch'
 
+import currentRoute from '@/routing/currentRoute'
+
 export default class Header extends React.PureComponent {
   constructor(props) {
     super(props)
@@ -33,33 +35,21 @@ export default class Header extends React.PureComponent {
         }
       ]
     }
+    currentRoute.on(this.handleCustomEvent)
+    
   }
 
-  updateCurrentUrl = () => {
-    this.setState({ currentUrl: window.location.hash })
+  handleCustomEvent = () => {
+    this.setState({ currentUrl: currentRoute.context.state.path  })
   }
 
-  componentDidMount () {
-    window.addEventListener('popstate', this.updateCurrentUrl)
-  }
+  componentWillUnmount () { currentRoute.off(this.handleCustomEvent) }
 
-  componentWillUnmount () {
-    window.removeEventListener('popstate', this.updateCurrentUrl)
-  }
+  toogleMobileMenu = () => this.setState({ isShowMobileMenu: !this.state.isShowMobileMenu })
 
-  toogleMobileMenu = () => {
-    this.setState({
-      isShowMobileMenu: !this.state.isShowMobileMenu
-    })
-  }
+  tooglePopUp = () => this.setState({ isShowPopUp: !this.state.isShowPopUp })
 
-  tooglePopUp = () => {
-    this.setState({
-      isShowPopUp: !this.state.isShowPopUp
-    })
-  }
-
-  isCurrentTab = (tabUrl) => window.location.hash.startsWith(tabUrl)
+  isCurrentTab = (tabUrl) => currentRoute.context.state.path.includes(tabUrl)
 
   createTabs() {
     return <ul>

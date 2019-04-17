@@ -1,4 +1,5 @@
 .careers {
+
     .top-page {
         color: white;
         display: flex;
@@ -8,8 +9,7 @@
         background: url('../../assets/img/careers-top-page.png') no-repeat;
         background-position: right bottom;
         background-size: 800px;
-        background-color: black;
-
+        background-color: $bgColor;
         
         .container {
             width: 1360px;

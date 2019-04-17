@@ -5,6 +5,22 @@
     justify-content: center;
     background: black;
 
+    .blue-block {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: rgba(41, 98, 255, 0.16);
+        z-index: 2;
+
+    }
+    .hide-blue-block {
+        transition: opacity .5s;
+        opacity: 0;
+        z-index: 2;
+    }
+
     .works-container {
         display: flex;
         align-items: center;
@@ -21,6 +37,7 @@
                 opacity: 0.15;
                 margin-bottom: -5px;
             }
+            
         }
 
         .bg-gradient {
@@ -30,6 +47,7 @@
             position: absolute;
             right: 0;
             background-image: linear-gradient(to right, rgba(16, 16, 16, 0), black);
+            z-index: 1;
 
             .text-about-work {
                 color: white;

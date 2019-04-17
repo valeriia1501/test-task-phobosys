@@ -2,7 +2,7 @@
     .map-bg {
         width: 100%;
         height: 760px;
-        background-color: black;
+        background-color: $bgColor;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -82,7 +82,7 @@
     }
     .message {
         color: white;
-        background: black;
+        background-color: $bgColor;
         display: flex;
         justify-content: center;
         overflow-y: auto;

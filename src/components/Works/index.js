@@ -4,35 +4,39 @@ import ArrowSvg from '@components/ArrowSvg'
 import { videoNeuralNetwork } from '@/images&video'
 
 import classnames from 'classnames'
-import events from '@/events'
-import { CHANGE_ROUTE } from '@/constants'
+import currentRoute from '@/routing/currentRoute'
 
-export default class Works extends React.Component {
+export default class Works extends React.PureComponent {
     constructor(props) {
         super(props)
         this.html = document.getElementsByTagName('html')[0]
         this.clientWidth = document.body.clientWidth;
-        this.state = {
-            isHideText: false
-        }
-        events.addEventListener(CHANGE_ROUTE, this.handleEvent)
+        this.state =  { 
+            isShowText: false,
+            isHideBlueBlock: !(currentRoute.routepath === '/neural') ? false : JSON.parse(localStorage.getItem('hideBlue')),
+            displayNone: false
+         }
+        currentRoute.on(this.handleCustomEvent)
     }
 
     componentDidMount() {
         this.html.addEventListener('wheel', this.wheelNeural)
-        this.handleEvent;
+        localStorage.setItem('hideBlue',true)
+        if(currentRoute.routepath === '/neural') { 
+            this.setState({        
+                isShowText: true, 
+                isHideBlueBlock: true
+            })
+            setTimeout(() => this.setState({ displayNone: 'none' }), 500)  
+        } else localStorage.clear()
     }
 
     componentWillUnmount() {
         this.html.removeEventListener('wheel', this.wheelNeural)
-        events.removeEventListener(CHANGE_ROUTE, this.handleEvent)
+        currentRoute.off(this.handleCustomEvent)
     }
 
-    handleEvent = (eventData) => {
-        if(eventData.routepath === '/neural') {
-            this.setState({ isHideText: true })            
-        }
-    }
+    handleCustomEvent = () => {}
 
     normalizeDelta(e) {
         const FireFoxWheelMod = 3
@@ -63,6 +67,7 @@ export default class Works extends React.Component {
     render() {
         return (
             <section className="works" ref={el => this.scrollWorks = el}>
+            <div className={classnames('blue-block', {'hide-blue-block': this.state.isHideBlueBlock})} style={{'display': this.state.displayNone}} ></div>
                 <div className="works-container">
                     <div className='content' >
                         <video autoPlay loop muted preload='true' >
@@ -71,7 +76,7 @@ export default class Works extends React.Component {
                         </video>
                     </div>
                     <div className='bg-gradient'>
-                        <div className={classnames('text-about-work', { 'show-animation-neural': this.state.isHideText })} >
+                        <div className={classnames('text-about-work', { 'show-animation-neural': this.state.isShowText })}  >
                             <div className='project' >Project</div>
                             <h1  >Neural networks working with Twitter </h1>
                             <div>

@@ -58,7 +58,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    line-height: 2.4; }
+    line-height: 2.4;
+    z-index: 5; }
     .header-container > * {
       z-index: 1; }
     .header-container > div {
@@ -164,7 +165,7 @@
   z-index: 999; }
 
 .bg-black {
-  background: black;
+  background-color: #0d0f1c;
   color: white; }
 
 @media only screen and (max-width: 1550px) {
@@ -638,6 +639,18 @@ footer .bottom-page {
   display: flex;
   justify-content: center;
   background: black; }
+  .works .blue-block {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(41, 98, 255, 0.16);
+    z-index: 2; }
+  .works .hide-blue-block {
+    transition: opacity .5s;
+    opacity: 0;
+    z-index: 2; }
   .works .works-container {
     display: flex;
     align-items: center;
@@ -658,7 +671,8 @@ footer .bottom-page {
       align-items: center;
       position: absolute;
       right: 0;
-      background-image: linear-gradient(to right, rgba(16, 16, 16, 0), black); }
+      background-image: linear-gradient(to right, rgba(16, 16, 16, 0), black);
+      z-index: 1; }
       .works .works-container .bg-gradient .text-about-work {
         color: white;
         position: relative;
@@ -1487,7 +1501,7 @@ footer .bottom-page {
     display: flex;
     justify-content: center;
     align-items: flex-end;
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), #000000); }
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), #0d0f1c); }
     .about-us .bg-photo .text-gradient .text {
       width: 1360px;
       display: flex;
@@ -1510,7 +1524,7 @@ footer .bottom-page {
 .about-us .three-columns {
   display: flex;
   justify-content: center;
-  background: black;
+  background-color: #0d0f1c;
   color: white;
   padding-bottom: 110px; }
   .about-us .three-columns .container-columns {
@@ -1646,7 +1660,7 @@ footer .bottom-page {
 .contacts .map-bg {
   width: 100%;
   height: 760px;
-  background-color: black;
+  background-color: #0d0f1c;
   display: flex;
   justify-content: center;
   align-items: center; }
@@ -1710,7 +1724,7 @@ footer .bottom-page {
 
 .contacts .message {
   color: white;
-  background: black;
+  background-color: #0d0f1c;
   display: flex;
   justify-content: center;
   overflow-y: auto;
@@ -1873,7 +1887,7 @@ footer .bottom-page {
   background: url(f4ac2cf661de8adba96fc447960549c7.png) no-repeat;
   background-position: right bottom;
   background-size: 800px;
-  background-color: black; }
+  background-color: #0d0f1c; }
   .careers .top-page .container {
     width: 1360px;
     display: flex;
