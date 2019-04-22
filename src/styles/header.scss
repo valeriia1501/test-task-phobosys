@@ -150,6 +150,7 @@
   background: transparent;
   z-index: 2;
   background: transparent !important;
+  mix-blend-mode: exclusion;
 }
 
 .bg-neural {
