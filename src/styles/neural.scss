@@ -11,6 +11,7 @@
         justify-content: center;
         background: $bgColor;
         padding-top: 120px;
+        padding-bottom: 120px;
         @include padding-both;
 
         .container-description {
@@ -72,8 +73,8 @@
             position: relative;
 
             .bg-word-review {
-                font-size: 160px;
-                font-family: 'Montserrat ExtraBold';
+                font-size: 120px;
+                font-family: 'Montserrat SemiBold';
                 opacity: 0.12;
                 font-weight: bold;
                 position: absolute;

@@ -5,6 +5,7 @@
   padding-right: 25px;
   padding-left: 25px;
   overflow-y: hidden;
+  mix-blend-mode: exclusion;
 
   &-container{
     width: 1360px;
@@ -26,20 +27,21 @@
         text-decoration: none;
         color: white;
         margin-right: 54px;
-
+        position: relative;
 
         .logo {
           font-family: 'ProximaNova-Extrabold';
           font-size: 32px;
           font-weight: bold;
           position: relative;
-
-          &::before {
-            content: url('../../assets/img/borvo-logo-white.svg');
-            position: absolute;
-            left: -40px;
-            top: -16px;
-          }
+        }
+        
+        svg {
+          fill: white;
+          position: absolute;
+          left: -37px;
+          top: 50%;
+          transform: translateY(-50%)
         }
       }
       nav {
@@ -141,21 +143,19 @@
   }
 }
 
+.fixed-header {
+  position: fixed;
+  left: 0;
+  right: 0;
+  overflow-x: hidden;
+  z-index: 2;
+}
+
 .bg-neural {
-    background: $bgColor;
+    // background: $bgColor;
+    background: transparent;
   a {
     color: white;
-
-    .logo {
-
-      &::before {
-        content: url('../../assets/img/borvo-logo-white.svg');
-        position: absolute;
-        left: -35px;
-        top: 0px;
-      }
-      
-    }
   }
 }
 
@@ -180,7 +180,7 @@
 }
 @media only screen and (max-width: 855px){
   .header {
-    padding-left: 25px;
+    padding-left: 50px;
     .header-container {
       div {
         a {
