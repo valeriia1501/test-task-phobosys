@@ -79,7 +79,7 @@ export default class Services extends React.PureComponent {
                         <img src={card_3} />
                         <span>UX</span>
                     </div>
-                    <div className="card-services" style={{'opacity':'0'}}  >
+                    <div className="card-services" >
                         <img src={card_3} />
                         <span>UX</span>
                     </div>

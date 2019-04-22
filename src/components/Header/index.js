@@ -33,17 +33,15 @@ export default class Header extends React.PureComponent {
           name: 'Contacts',
           link: '#!/contacts'
         }
-      ]
+      ],
     }
     currentRoute.on(this.handleCustomEvent)
     
   }
 
-  handleCustomEvent = () => {
-    this.setState({ currentUrl: currentRoute.context.state.path  })
-  }
-
   componentWillUnmount () { currentRoute.off(this.handleCustomEvent) }
+  
+  handleCustomEvent = () => this.setState({ currentUrl: currentRoute.context.state.path  }) 
 
   toogleMobileMenu = () => this.setState({ isShowMobileMenu: !this.state.isShowMobileMenu })
 
@@ -59,10 +57,7 @@ export default class Header extends React.PureComponent {
           return <li key={idx}>
             <a href={link}>
               {name}
-              <span className={classnames(
-                'bottom-link-header',
-                { 'show': this.isCurrentTab(link) }
-              )} />
+              <span className={classnames('bottom-link-header', { 'show': this.isCurrentTab(link) })} />
             </a>
           </li>
         })
@@ -72,7 +67,7 @@ export default class Header extends React.PureComponent {
 
   render() {
     return (
-      <header className={classnames(this.props.className, "header")}>
+      <header className={classnames(this.props.className, "header")} >
         <div className="header-container">
           <div>
             <a href="#!/">

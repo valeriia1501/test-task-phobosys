@@ -35,7 +35,8 @@
     "webpack-dev-server": "^3.2.1"
   },
   "dependencies": {
-    "react-page-router": "1.11.10",
-    "redux": "^4.0.1"
+    "in-view": "^0.6.1",
+    "inview": "0.0.14",
+    "react-page-router": "1.11.10"
   }
 }

@@ -9,7 +9,7 @@
     .description-borvo {
         display: flex;
         justify-content: center;
-        background: black;
+        background: $bgColor;
         padding-top: 120px;
         @include padding-both;
 
@@ -60,9 +60,10 @@
             
         }
     }
+    $columnGap: 50px;
     .reviews {
         overflow: hidden;
-        background-color: black;
+        background-color: $bgColor;
         color: white;
         padding-top: 150px;
         padding-bottom: 30px;
@@ -87,12 +88,13 @@
                 width: 100vw;
                 display: grid;
                 grid-template-columns: auto auto;
-                grid-column-gap: 10%;
+                grid-column-gap: $columnGap;
+
 
                 .video-or-img {
-                    justify-self: start;
+                    justify-self: center;
                     transition: transform .3s;
-                    z-index: 999;
+                    z-index: 1;
 
                         > img {
                             width: 100%;
@@ -142,7 +144,7 @@
                         margin-right: auto;
                         border: double 2px transparent;
                         border-radius: 80px;
-                        background-image: linear-gradient(black, black), radial-gradient(circle at top left, #7578e6,#d7775f);
+                        background-image: linear-gradient($bgColor, $bgColor), radial-gradient(circle at top left, #7578e6,#d7775f);
                         background-origin: border-box;
                         background-clip: content-box, border-box;
 
@@ -165,10 +167,11 @@
             width: 100vw;
             display: grid;
             grid-template-columns: auto auto;
-            grid-column-gap: 10%;
+            grid-column-gap: $columnGap;
+
 
             .video-or-img {
-                justify-self: start;
+                justify-self: center;
                 transition: transform .3s;
                 z-index: 999;
 
@@ -239,7 +242,7 @@
         }
     } // reviews section 
     .all-reviews {
-        background-color: black;
+        background-color: $bgColor;
         color: white;
         overflow: hidden;
         height: 0;
@@ -258,10 +261,10 @@
                 width: 100vw;
                 display: grid;
                 grid-template-columns: auto auto;
-                grid-column-gap: 10%;
+                grid-column-gap: $columnGap;
     
                 .video-or-img {
-                    justify-self: start;
+                    justify-self: center;
                     transition: transform .3s;
                     z-index: 999;
     
@@ -306,7 +309,7 @@
             
             .second-review  {
                 .video-or-img {
-                    justify-self: end;
+                    justify-self: center;
                 }
             }
 

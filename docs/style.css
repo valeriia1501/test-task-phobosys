@@ -46,6 +46,23 @@
   font-family: 'Montserrat Medium';
   src: url(a98626e1aef6ceba5dfc1ee7112e235a.ttf); }
 
+.container-careers-vacancies .careers-vacancies-enter {
+  opacity: 0;
+  position: absolute;
+  left: 0;
+  right: 0; }
+  .container-careers-vacancies .careers-vacancies-enter.careers-vacancies-enter-active {
+    transition: opacity .5s;
+    opacity: 1;
+    transition-delay: .15s; }
+
+.container-careers-vacancies .careers-vacancies-exit {
+  opacity: 1; }
+  .container-careers-vacancies .careers-vacancies-exit.careers-vacancies-exit-active {
+    opacity: 0;
+    transition: opacity .5s;
+    transition-delay: .15s; }
+
 .header {
   display: flex;
   justify-content: center;
@@ -151,7 +168,7 @@
     z-index: 5; }
 
 .bg-neural {
-  background: black; }
+  background: #0d0f1c; }
   .bg-neural a {
     color: white; }
     .bg-neural a .logo::before {
@@ -369,7 +386,8 @@ footer .bottom-page {
   display: flex;
   justify-content: center;
   border-top: 1px solid #f5f5f5;
-  padding-top: 10px; }
+  padding-top: 10px;
+  padding-bottom: 5px; }
   footer .bottom-page .container {
     width: 1360px;
     display: flex;
@@ -421,7 +439,8 @@ footer .bottom-page {
   transform: translateY(100px);
   position: relative;
   pointer-events: none;
-  padding-left: 50px; }
+  padding-left: 50px;
+  z-index: 3; }
   .AI-container {
     width: 1360px; }
     .AI-container .pulsatingCircle {
@@ -638,17 +657,17 @@ footer .bottom-page {
   overflow: hidden;
   display: flex;
   justify-content: center;
-  background: black; }
+  background: #0d0f1c; }
   .works .blue-block {
     position: absolute;
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
-    background: rgba(41, 98, 255, 0.16);
+    background: rgba(41, 98, 255, 0.25);
     z-index: 2; }
   .works .hide-blue-block {
-    transition: opacity .5s;
+    transition: opacity 1s;
     opacity: 0;
     z-index: 2; }
   .works .works-container {
@@ -671,7 +690,7 @@ footer .bottom-page {
       align-items: center;
       position: absolute;
       right: 0;
-      background-image: linear-gradient(to right, rgba(16, 16, 16, 0), black);
+      background-image: linear-gradient(to right, rgba(16, 16, 16, 0), #0d0f1c);
       z-index: 1; }
       .works .works-container .bg-gradient .text-about-work {
         color: white;
@@ -767,6 +786,10 @@ footer .bottom-page {
       width: 15px;
       height: 10px; } }
 
+@media only screen and (max-height: 917px) {
+  .works .works-container .content video {
+    width: 70%; } }
+
 .home {
   color: #ffffff;
   background-color: #0d0f1c;
@@ -783,7 +806,10 @@ footer .bottom-page {
       position: relative;
       min-height: 100%;
       top: -150px;
-      right: -250px; }
+      right: -250px;
+      z-index: 2;
+      opacity: 1;
+      transition: opacity .5s; }
   .home > div:first-of-type {
     position: relative; }
   .home .scroll-section.home-route-enter {
@@ -839,7 +865,7 @@ footer .bottom-page {
   .neural .description-borvo {
     display: flex;
     justify-content: center;
-    background: black;
+    background: #0d0f1c;
     padding-top: 120px;
     padding-left: 50px;
     padding-right: 50px; }
@@ -879,7 +905,7 @@ footer .bottom-page {
           line-height: 1.67; }
   .neural .reviews {
     overflow: hidden;
-    background-color: black;
+    background-color: #0d0f1c;
     color: white;
     padding-top: 150px;
     padding-bottom: 30px; }
@@ -901,11 +927,11 @@ footer .bottom-page {
         width: 100vw;
         display: grid;
         grid-template-columns: auto auto;
-        grid-column-gap: 10%; }
+        grid-column-gap: 50px; }
         .neural .reviews .container .first-review .video-or-img {
-          justify-self: start;
+          justify-self: center;
           transition: transform .3s;
-          z-index: 999; }
+          z-index: 1; }
           .neural .reviews .container .first-review .video-or-img > img {
             width: 100%;
             height: 100%;
@@ -943,7 +969,7 @@ footer .bottom-page {
             margin-right: auto;
             border: double 2px transparent;
             border-radius: 80px;
-            background-image: linear-gradient(black, black), radial-gradient(circle at top left, #7578e6, #d7775f);
+            background-image: linear-gradient(#0d0f1c, #0d0f1c), radial-gradient(circle at top left, #7578e6, #d7775f);
             background-origin: border-box;
             background-clip: content-box, border-box; }
             .neural .reviews .container .first-review .feedback-text .show-testimonials span {
@@ -957,9 +983,9 @@ footer .bottom-page {
       width: 100vw;
       display: grid;
       grid-template-columns: auto auto;
-      grid-column-gap: 10%; }
+      grid-column-gap: 50px; }
       .neural .reviews .third-review .video-or-img {
-        justify-self: start;
+        justify-self: center;
         transition: transform .3s;
         z-index: 999; }
         .neural .reviews .third-review .video-or-img > img {
@@ -1010,7 +1036,7 @@ footer .bottom-page {
             margin-left: 10px;
             transition: transform .4s; }
   .neural .all-reviews {
-    background-color: black;
+    background-color: #0d0f1c;
     color: white;
     overflow: hidden;
     height: 0; }
@@ -1023,10 +1049,10 @@ footer .bottom-page {
       width: 100vw;
       display: grid;
       grid-template-columns: auto auto;
-      grid-column-gap: 10%; }
+      grid-column-gap: 50px; }
       .neural .all-reviews .container .third-review .video-or-img,
       .neural .all-reviews .container .second-review .video-or-img {
-        justify-self: start;
+        justify-self: center;
         transition: transform .3s;
         z-index: 999; }
         .neural .all-reviews .container .third-review .video-or-img > img,
@@ -1061,7 +1087,7 @@ footer .bottom-page {
             font-size: 13px;
             color: #9e9e9e; }
     .neural .all-reviews .container .second-review .video-or-img {
-      justify-self: end; }
+      justify-self: center; }
     .neural .all-reviews .container .feedback-text {
       width: 90%;
       align-self: center;
@@ -1357,18 +1383,26 @@ footer .bottom-page {
     padding-right: 30px;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between; }
+    justify-content: space-between;
+    z-index: 8; }
     .section-services .cards-services .card-services {
       display: flex;
       flex-direction: column;
       font-size: 20px;
       padding: 0 20px;
       flex: 1 1 290px; }
+      .section-services .cards-services .card-services:last-child {
+        display: none; }
       .section-services .cards-services .card-services > img {
         width: 100%; }
       .section-services .cards-services .card-services > span {
         margin-top: 50px;
         margin-bottom: 50px; }
+
+@media only screen and (max-width: 1395px) {
+  .section-services .cards-services .card-services:last-child {
+    opacity: 0;
+    display: block; } }
 
 @media only screen and (max-width: 768px) {
   .section-services .cards-services {
@@ -1884,9 +1918,9 @@ footer .bottom-page {
   justify-content: center;
   padding-top: 110px;
   padding-bottom: 110px;
-  background: url(f4ac2cf661de8adba96fc447960549c7.png) no-repeat;
-  background-position: right bottom;
-  background-size: 800px;
+  background: url(d039f76040d7467c40d0922a3290c761.png) no-repeat;
+  background-position: 85% 50%;
+  background-size: 481px;
   background-color: #0d0f1c; }
   .careers .top-page .container {
     width: 1360px;
@@ -1952,19 +1986,17 @@ footer .bottom-page {
 
 @media only screen and (max-width: 1800px) {
   .careers .top-page {
-    background-size: 700px; }
+    background-size: 400px; }
     .careers .top-page .container .text h1 {
       font-size: 60px; } }
 
 @media only screen and (max-width: 1470px) {
-  .careers .top-page {
-    background-size: 600px; }
-    .careers .top-page .container .text h1 {
-      max-width: 730px;
-      font-size: 52px; }
-    .careers .top-page .container .text p {
-      max-width: 660px;
-      font-size: 18px; } }
+  .careers .top-page .container .text h1 {
+    max-width: 730px;
+    font-size: 52px; }
+  .careers .top-page .container .text p {
+    max-width: 660px;
+    font-size: 18px; } }
 
 @media only screen and (max-width: 1290px) {
   .careers .top-page {
@@ -1977,7 +2009,7 @@ footer .bottom-page {
     grid-template-columns: 1fr; } }
 
 .vacancies .top-block {
-  background: black;
+  background-color: #0d0f1c;
   color: white;
   display: flex;
   justify-content: center;
@@ -2076,3 +2108,17 @@ footer .bottom-page {
 
 .scroll-x-hidden {
   overflow-x: hidden !important; }
+
+.add-opacity-zero {
+  opacity: 0 !important;
+  transition: opacity .5s !important; }
+
+.open-pop-up {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0; }
+
+.switch-color {
+  color: black !important; }

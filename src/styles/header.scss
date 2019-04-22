@@ -1,4 +1,4 @@
-.header{
+.header {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -142,7 +142,7 @@
 }
 
 .bg-neural {
-    background: black;
+    background: $bgColor;
   a {
     color: white;
 

@@ -115,7 +115,7 @@ export default class Neural extends React.PureComponent {
             </section>
             <section className='reviews' >
                 <div className='container'>
-                    <span className='bg-word-review'>Review</span>
+                    <span className='bg-word-review'>Reviews</span>
                     <div className='first-review'>
                         <div className='video-or-img'  >
                             <img src={reviewImage} style={{ transform: `scale(${this.state.size})` }} />

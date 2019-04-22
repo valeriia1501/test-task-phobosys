@@ -12,7 +12,7 @@ export default class Works extends React.PureComponent {
         this.html = document.getElementsByTagName('html')[0]
         this.clientWidth = document.body.clientWidth;
         this.state =  { 
-            isShowText: false,
+            isShow: false,
             isHideBlueBlock: !(currentRoute.routepath === '/neural') ? false : JSON.parse(localStorage.getItem('hideBlue')),
             displayNone: false
          }
@@ -24,10 +24,10 @@ export default class Works extends React.PureComponent {
         localStorage.setItem('hideBlue',true)
         if(currentRoute.routepath === '/neural') { 
             this.setState({        
-                isShowText: true, 
+                isShow: true, 
                 isHideBlueBlock: true
             })
-            setTimeout(() => this.setState({ displayNone: 'none' }), 500)  
+            setTimeout(() => this.setState({ displayNone: 'none' }), 1000)  
         } else localStorage.clear()
     }
 
@@ -76,7 +76,7 @@ export default class Works extends React.PureComponent {
                         </video>
                     </div>
                     <div className='bg-gradient'>
-                        <div className={classnames('text-about-work', { 'show-animation-neural': this.state.isShowText })}  >
+                        <div className={classnames('text-about-work', { 'show-animation-neural': this.state.isShow })}  >
                             <div className='project' >Project</div>
                             <h1  >Neural networks working with Twitter </h1>
                             <div>

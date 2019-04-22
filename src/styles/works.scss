@@ -3,7 +3,7 @@
     overflow: hidden;
     display: flex;
     justify-content: center;
-    background: black;
+    background: $bgColor;
 
     .blue-block {
         position: absolute;
@@ -11,12 +11,12 @@
         bottom: 0;
         left: 0;
         right: 0;
-        background: rgba(41, 98, 255, 0.16);
+        background: rgba(41, 98, 255, 0.25);
         z-index: 2;
 
     }
     .hide-blue-block {
-        transition: opacity .5s;
+        transition: opacity 1s;
         opacity: 0;
         z-index: 2;
     }
@@ -37,7 +37,6 @@
                 opacity: 0.15;
                 margin-bottom: -5px;
             }
-            
         }
 
         .bg-gradient {
@@ -46,7 +45,7 @@
             align-items: center;
             position: absolute;
             right: 0;
-            background-image: linear-gradient(to right, rgba(16, 16, 16, 0), black);
+            background-image: linear-gradient(to right, rgba(16, 16, 16, 0), $bgColor);
             z-index: 1;
 
             .text-about-work {
@@ -212,6 +211,18 @@
                             }
                         }
                     } 
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-height: 917px) {
+    .works {
+        .works-container {
+            .content {
+                video {
+                    width: 70%;
                 }
             }
         }
