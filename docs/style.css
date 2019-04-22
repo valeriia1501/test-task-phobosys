@@ -174,7 +174,9 @@
   left: 0;
   right: 0;
   overflow-x: hidden;
-  z-index: 2; }
+  background: transparent;
+  z-index: 2;
+  background: transparent !important; }
 
 .bg-neural {
   background: #0d0f1c; }
@@ -2121,5 +2123,5 @@ footer .bottom-page {
   left: 0;
   right: 0; }
 
-.switch-color {
-  color: black !important; }
+.mix-blend-mode {
+  mix-blend-mode: exclusion; }
