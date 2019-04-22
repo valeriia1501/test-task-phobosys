@@ -25,7 +25,9 @@ import person_1  from '@assets/img/person-1.png'
 import person_2  from '@assets/img/person-2.png'
 import person_3  from '@assets/img/person-3.png'
 import person_4  from '@assets/img/person-4.png'
-import careersTopPhoto  from '@assets/img/careers-top-page.png'
+import vacanciesArrowSvg  from '@assets/img/arrow-icon.svg'
+import vacanciesMarker  from '@assets/img/location-icon.svg'
+import reviewImage from '@assets/img/review-image.png'
 
 export {
   blackArrow,
@@ -55,5 +57,7 @@ export {
   person_2,
   person_3,
   person_4,
-  careersTopPhoto
+  vacanciesArrowSvg,
+  vacanciesMarker,
+  reviewImage
 }

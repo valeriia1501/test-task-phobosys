@@ -3,7 +3,23 @@
     overflow: hidden;
     display: flex;
     justify-content: center;
-    background: black;
+    background: $bgColor;
+
+    .blue-block {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: rgba(41, 98, 255, 0.25);
+        z-index: 2;
+
+    }
+    .hide-blue-block {
+        transition: opacity 1s;
+        opacity: 0;
+        z-index: 2;
+    }
 
     .works-container {
         display: flex;
@@ -16,9 +32,9 @@
             @include padding-both;
 
             video {
-                width: 100%;
+                width: 90%;
                 border-radius: 10px;
-                opacity: .3;
+                opacity: 0.15;
                 margin-bottom: -5px;
             }
         }
@@ -29,16 +45,25 @@
             align-items: center;
             position: absolute;
             right: 0;
-            background-image: linear-gradient(to right, rgba(16, 16, 16, 0), black);
+            background-image: linear-gradient(to right, rgba(16, 16, 16, 0), $bgColor);
+            z-index: 1;
 
             .text-about-work {
                 color: white;
                 position: relative;
                 @include padding-both;
+                transform: translateX(100px);
+                opacity: 0;
+
+                &.show-animation-neural {
+                    transform: translateX(0);
+                    opacity: 1;
+                    transition:  transform .6s , opacity 1.5s; 
+                }
 
                 .project {
                     position: absolute;
-                    top: 0;
+                    top: 15px;
                     left: -150px;
                     border-style: solid;
                     border-width: 2px;
@@ -57,7 +82,7 @@
     
                 h1 {
                     max-width: 670px;
-                    font-family: 'Montserrat Bold';
+                    font-family: 'Montserrat SemiBold';
                     font-size: 72px;
                     line-height: 1.13;
                     font-weight: bold;
@@ -78,7 +103,9 @@
                         text-decoration: none;
                         color: #d77860;
                         font-weight: bold;
-        
+                        font-size: 22px;
+                        padding-top: 20px;
+
                         &:hover {
                             text-decoration: underline;
                         }
@@ -184,6 +211,18 @@
                             }
                         }
                     } 
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-height: 917px) {
+    .works {
+        .works-container {
+            .content {
+                video {
+                    width: 70%;
                 }
             }
         }

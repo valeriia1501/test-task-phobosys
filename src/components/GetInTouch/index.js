@@ -35,7 +35,7 @@ export default class GetInTouch extends React.PureComponent {
               <div className='four-input'>
                 <label>
                   <input type='text' placeholder='.' />
-                  <span className='placeholder'>Full name*</span>
+                  <span className='placeholder' data-end='*' >Full name</span>
                 </label>
                 <label>
                   <input type='text' placeholder='.' />
@@ -43,7 +43,7 @@ export default class GetInTouch extends React.PureComponent {
                 </label>
                 <label>
                   <input type='email' placeholder='.' />
-                  <span className='placeholder'>Email*</span>
+                  <span className='placeholder'  data-end='*' >Email</span>
                 </label>
                 <label>
                   <input type='text' placeholder='.' />

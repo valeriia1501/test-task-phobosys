@@ -84,7 +84,7 @@ export default class ExpertiesCarousel extends React.PureComponent {
       (e.deltaY > 0)
     ) {
       this.html.classList.add('scroll-hidden')
-      this.setState({ verticalScrollLock: true })  
+      this.setState({ verticalScrollLock: true }) 
     }
 
     if (this.state.verticalScrollLock && !this.state.circlZooming) {
@@ -95,7 +95,6 @@ export default class ExpertiesCarousel extends React.PureComponent {
     if (this.state.circlZooming) {
       if (this.state.circlSize === 1 && (e.deltaY < 0)) {
         this.setState({ circlZooming: false })
-        
       }
       
       let cs = this.state.circlSize * (this.normalizeDelta(e) / 5 + 1) 
@@ -120,6 +119,7 @@ export default class ExpertiesCarousel extends React.PureComponent {
           }
         })
       }
+      this.props.hideWebGlElement()
     }
     
     this.setState({
@@ -153,17 +153,16 @@ export default class ExpertiesCarousel extends React.PureComponent {
       this.html.classList.add('scroll-hidden')
       this.setState({ verticalScrollLock })
     }
-    
   }
 
   horizontalScrollHandler = (e) => {
     if(this.clientWidth <= 1024) return
     const el = e.target;
     const circlZooming = (this.scrollLeft(el) === 0)
-
     if (!this.state.circlZooming && circlZooming) {
       this.setState({ circlZooming })
     }
+    this.props.showWebGlElement()    
   }
     render() {
     return (

@@ -6,6 +6,10 @@ export default class AI extends React.PureComponent {
     this.state = { phrase: props.phrase || 'Hi', typeSpeed: 50, deleteSpeed: 10 }
   }
 
+  componentWillUnmount () {
+    clearInterval(this.state.interval)
+  }
+
   typing = (phrase) => {
     clearInterval(this.state.interval)
     let idx = 0

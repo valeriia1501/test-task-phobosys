@@ -79,7 +79,7 @@ export default class AboutUs extends React.PureComponent {
                     </div>
                 </div>
           </section>
-          <section className='leadership' >
+          {/* <section className='leadership' >
             <div className='container' >
                 <h1>Leadership team</h1>
                 <div className='team' >
@@ -113,7 +113,7 @@ export default class AboutUs extends React.PureComponent {
                     </div>
                 </div>
             </div>
-          </section>
+          </section> */}
           <Footer/>
       </div>
     )

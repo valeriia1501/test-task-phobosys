@@ -12,8 +12,10 @@ import {
     tensorflow,
     downArrow,
     svgFire,
-    videoNeuralNetwork
+    reviewImage
 } from '@/images&video'
+
+import vacations from '@/data/vacations';
 
 import Header from '@/components/Header'
 import Works from '@/components/Works'
@@ -32,16 +34,16 @@ export default class Neural extends React.PureComponent {
 
     componentDidMount() {
         this.html.scrollTop = 0;
-        this.btnShow.addEventListener('click',this.showSection)
+        this.btnShow.addEventListener('click', this.showSection)
     }
-    componentWillUnmount(){
-        this.btnShow.removeEventListener('click',this.showSection)
+    componentWillUnmount() {
+        this.btnShow.removeEventListener('click', this.showSection)
     }
 
-    normalizeDelta (e) {
+    normalizeDelta(e) {
         const FireFoxWheelMod = 3
         const ChromeOperaWheelMod = 53
-        
+
         let normDeltaY = 0
         if (!(e.deltaY % FireFoxWheelMod)) {
             normDeltaY = e.deltaY / FireFoxWheelMod * 2
@@ -52,10 +54,28 @@ export default class Neural extends React.PureComponent {
         return (Math.min(3, Math.max(Math.abs(normDeltaY), 1)) * direction) || e.deltaY
     }
 
+    generateVacations () {
+        const vacEls = []
+        for (let vid in vacations) {
+            const vac = vacations[vid]
+            vacEls.push(
+                <a key={vid} href={'#!/careers/' + vid} className='vacancy-card'>
+                    <div className='location'>
+                        <img src={svgFire} />
+                        <span>{vac.location}</span>
+                    </div>
+                    <p>{vac.title}</p>
+                    <small>{vac.position}</small>
+                </a>
+            )
+        }
+        return vacEls
+    }
+
     showSection = () => {
-        if(this.state.isHideAnimation){
-            this.setState({ 
-                isHideAnimation: false, 
+        if (this.state.isHideAnimation) {
+            this.setState({
+                isHideAnimation: false,
                 rotateArrow: 0,
                 size: 1
             })
@@ -63,7 +83,7 @@ export default class Neural extends React.PureComponent {
             return
         }
 
-        this.setState({ 
+        this.setState({
             isHideAnimation: true,
             rotateArrow: 180,
             size: 0.9
@@ -73,7 +93,7 @@ export default class Neural extends React.PureComponent {
     render() {
         return <div className={classnames(this.props.className, 'neural')}>
             <Header className='bg-neural' />
-            <Works/>
+            <Works />
             <section className='description-borvo'>
                 <div className='container-description' >
                     <p>Borvo company provides premium software engineering services to leading technology firms</p>
@@ -93,21 +113,19 @@ export default class Neural extends React.PureComponent {
                     </div>
                 </div>
             </section>
-            <section className={classnames('reviews-section',{'show-all': this.state.isHideAnimation})} >
+            <section className='reviews' >
                 <div className='container'>
-                    <span className='bg-word-review'>Review</span>
+                    <span className='bg-word-review'>Reviews</span>
                     <div className='first-review'>
                         <div className='video-or-img'  >
-                            <video style={{ transform: `scale(${this.state.size})` }}>
-                                <source src={videoNeuralNetwork}/>
-                            </video>
+                            <img src={reviewImage} style={{ transform: `scale(${this.state.size})` }} />
                         </div>
                         <div className='feedback-text' >
                             <blockquote>
-                                “Bornfight is extremely easy to work with, 
-                                allowing staff to focus on other work. The team 
+                                Bornfight is extremely easy to work with,
+                                allowing staff to focus on other work. The team
                                 accepts changes easily, communicates well, and is
-                                flexible in terms of their approach.”
+                                flexible in terms of their approach.
                             </blockquote>
                             <div className='name-position' >
                                 <span className='name'>Michael Rodriguez</span>
@@ -119,13 +137,17 @@ export default class Neural extends React.PureComponent {
                             </button>
                         </div>
                     </div>
+                </div>
+            </section>
+            <section className={classnames('all-reviews', { 'show-all': this.state.isHideAnimation })} >
+                <div className='container' >
                     <div className='second-review '> {/* 2 */}
                         <div className='feedback-text' >
                             <blockquote>
-                                “Bornfight is extremely easy to work with, 
-                                allowing staff to focus on other work. The team 
+                                Bornfight is extremely easy to work with,
+                                allowing staff to focus on other work. The team
                                 accepts changes easily, communicates well, and is
-                                flexible in terms of their approach.”
+                                flexible in terms of their approach.
                             </blockquote>
                             <div className='name-position' >
                                 <span className='name'>Michael Rodriguez</span>
@@ -133,23 +155,19 @@ export default class Neural extends React.PureComponent {
                             </div>
                         </div>
                         <div className='video-or-img'  >
-                            <video>
-                                <source src={videoNeuralNetwork}/>
-                            </video>
+                            <img src={reviewImage} />
                         </div>
                     </div>
                     <div className='third-review'> {/* 3 */}
                         <div className='video-or-img' >
-                            <video>
-                                <source src={videoNeuralNetwork}/>
-                            </video>
+                            <img src={reviewImage} />
                         </div>
                         <div className='feedback-text' >
                             <blockquote>
-                                “Bornfight is extremely easy to work with, 
-                                allowing staff to focus on other work. The team 
+                                Bornfight is extremely easy to work with,
+                                allowing staff to focus on other work. The team
                                 accepts changes easily, communicates well, and is
-                                flexible in terms of their approach.”
+                                flexible in terms of their approach.
                             </blockquote>
                             <div className='name-position' >
                                 <span className='name'>Michael Rodriguez</span>
@@ -207,47 +225,16 @@ export default class Neural extends React.PureComponent {
             <section className='section-vacancies' >
                 <div className='container-vacancies' >
                     <div className='vacancies' >
-                        <div className='vacancy-card'>
-                            <div className='location'>
-                                <img src={svgFire} />
-                                <span>Odessa, Ukraine</span>
-                            </div>
-                            <p>Node.js Developer for Evrythng</p>
-                            <small>Software Engineering</small>
-                        </div>
-                        <div className='vacancy-card'>
-                            <div className='location'>
-                                <img src={svgFire} />
-                                <span>Odessa, Ukraine</span>
-                            </div>
-                            <p>Senior Full Stack .NET Developer for Optimal+</p>
-                            <small>Software Engineering</small>
-                        </div>
-                        <div className='vacancy-card'>
-                            <div className='location'>
-                                <img src={svgFire} />
-                                <span>Odessa, Ukraine</span>
-                            </div>
-                            <p>Back End Node.js Developer for Thomas Cook (Malaga)</p>
-                            <small>Software Engineering</small>
-                        </div>
-                        <div className='vacancy-card'>
-                            <div className='location'>
-                                <img src={svgFire} />
-                                <span>Odessa, Ukraine</span>
-                            </div>
-                            <p>Functional Lead (SAP Transport Management) for Rockwool (Wroclaw)</p>
-                            <small>Software Engineering</small>
-                        </div>
+                        {this.generateVacations()}
                     </div>
                     <div className='vacancies-text'>
                         <h1>Find your dream job in Borvo Team</h1>
-                        <p>Chase your dream by day and unwind with <br/> your favorite show at night.</p>
-                        <span>Learn more<img src={downArrow} /></span>
+                        <p>Chase your dream by day and unwind with <br /> your favorite show at night.</p>
+                        <a href='#!/careers' >Learn more<img src={downArrow} /></a>
                     </div>
                 </div>
             </section>
-            <Footer/>
+            <Footer />
         </div>
     }
 }

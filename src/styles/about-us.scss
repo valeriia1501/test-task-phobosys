@@ -7,7 +7,7 @@
         background-size: auto;
         background-position: top;
         background-color: black;
-        margin-top: -60px;
+        margin-top: -78px;
         display: flex;
         
 
@@ -16,7 +16,7 @@
             display: flex;
             justify-content: center;
             align-items: flex-end;
-            background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), #000000);   
+            background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), $bgColor);   
             
             .text {
                 width: 1360px;
@@ -44,7 +44,7 @@
     .three-columns {
         display: flex;
         justify-content: center;
-        background: black;
+        background-color: $bgColor;
         color: white;
         padding-bottom: 110px;
 

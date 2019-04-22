@@ -44,7 +44,6 @@ export default class Services extends React.PureComponent {
 
     }
     render() {
-        console.log(this.card)
         return (
             <section className="section-services" >
                 <div className="cards-services">
@@ -77,6 +76,10 @@ export default class Services extends React.PureComponent {
                         <span>UX</span>
                     </div>
                     <div className="card-services">
+                        <img src={card_3} />
+                        <span>UX</span>
+                    </div>
+                    <div className="card-services" >
                         <img src={card_3} />
                         <span>UX</span>
                     </div>

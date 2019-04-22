@@ -1,8 +1,7 @@
-.header{
+.header {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 20px;
   padding-right: 25px;
   padding-left: 25px;
   overflow-y: hidden;
@@ -11,6 +10,9 @@
     width: 1360px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    line-height: 2.4;
+    z-index: 5;
 
     & > * {
       z-index: 1;
@@ -24,7 +26,8 @@
         text-decoration: none;
         color: white;
         margin-right: 54px;
-        
+
+
         .logo {
           font-family: 'ProximaNova-Extrabold';
           font-size: 32px;
@@ -35,7 +38,7 @@
             content: url('../../assets/img/borvo-logo-white.svg');
             position: absolute;
             left: -40px;
-            top: 0px;
+            top: -16px;
           }
         }
       }
@@ -54,6 +57,24 @@
             a {
               color: white;
               text-decoration: none;
+              transition: color .2s;
+              position: relative;
+
+
+              span {
+                width: 100%;
+                height: 2px;
+                background-color: $lightblue;
+                position: absolute;
+                top: 43px;
+                left: 0;
+                display: none;
+              }
+
+              &:hover {
+                color: $lightblue;
+                transition: color .2s;
+              }
             }
           }
         }
@@ -110,18 +131,18 @@
     }
   }
   .line {
-    width: 100vw;
+    width: 250vw;
     height: 1px;
     opacity: 0.08;
     background-color: #f5f5f5;
     position: absolute;
     top: 75px;
-    z-index: 999;
+    z-index: 5;
   }
 }
 
 .bg-neural {
-    background: black;
+    background: $bgColor;
   a {
     color: white;
 
@@ -141,14 +162,13 @@
 .bg-about-us {
   .line {
     background: white;
-    opacity: 0.3;
     z-index: 999;
   }
 }
 
 
 .bg-black {
-  background: black;
+  background-color: $bgColor;
   color: white;
 }
 
@@ -187,8 +207,6 @@
 @media only screen and (max-width: 768px){ // for mobile
   .header {
     &-container {
-      height: 30px;
-
       div {
         >nav {
           display: none;

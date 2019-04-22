@@ -1,24 +1,41 @@
 import React from 'react';
 
-import Header from '@/components/Header'
-import Footer from '@/components/Footer'
-
-import { careersTopPhoto } from '@/images&video'
-
 import {
     svgFire,
 } from '@/images&video'
+
+import vacations from '@/data/vacations';
 
 export default class Careers extends React.PureComponent {
     constructor(props) {
         super(props)
         this.html = document.getElementsByTagName('html')[0]
         this.html.classList.add('scroll-x-hidden')
+        document.body.scrollTop = 0 // for safari
+        this.html.scrollTop = 0
     }
+
+    generateVacations () {
+        const vacEls = []
+        for (let vid in vacations) {
+            const vac = vacations[vid]
+            vacEls.push(
+                <a key={vid} href={'#!/careers/' + vid} className='card-vacancy'>
+                    <div className='location'>
+                        <img src={svgFire} />
+                        <span>{vac.location}</span>
+                    </div>
+                    <p>{vac.title}</p>
+                    <small>{vac.position}</small>
+                </a>
+            )
+        }
+        return vacEls
+    }
+
     render() {
         return (
         <div className='careers' >
-            <Header className='bg-black' />
             <section className='top-page' >
                 <div className='container' >
                     <div className='text' >
@@ -34,49 +51,9 @@ export default class Careers extends React.PureComponent {
             </section>
             <section className='white-vacancies' >
                 <div className='container' >
-                    <div className='card-vacancy'>
-                        <div className='location'>
-                            <img src={svgFire} />
-                            <span>Odessa, Ukraine</span>
-                        </div>
-                        <p>Node.js Developer for Evrythng</p>
-                        <small>Software Engineering</small>
-                    </div>
-                    <div className='card-vacancy'>
-                        <div className='location'>
-                            <img src={svgFire} />
-                            <span>Odessa, Ukraine</span>
-                        </div>
-                        <p>Senior Full Stack .NET Developer for Optimal+</p>
-                        <small>Software Engineering</small>
-                    </div>
-                    <div className='card-vacancy'>
-                        <div className='location'>
-                            <img src={svgFire} />
-                            <span>Odessa, Ukraine</span>
-                        </div>
-                        <p>Back End Node.js Developer for Thomas Cook (Malaga)</p>
-                        <small>Software Engineering</small>
-                    </div>
-                    <div className='card-vacancy'>
-                        <div className='location'>
-                            <img src={svgFire} />
-                            <span>Odessa, Ukraine</span>
-                        </div>
-                        <p>Functional Lead (SAP Transport Management) for Rockwool (Wroclaw)</p>
-                        <small>Software Engineering</small>
-                    </div>
-                    <div className='card-vacancy'>
-                        <div className='location'>
-                            <img src={svgFire} />
-                            <span>Odessa, Ukraine</span>
-                        </div>
-                        <p>Node.js Developer for Evrythng</p>
-                        <small>Software Engineering</small>
-                    </div>
+                    {this.generateVacations()}
                 </div>
             </section>
-            <Footer/>
         </div>
         )
     }

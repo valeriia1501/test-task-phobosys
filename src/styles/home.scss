@@ -11,12 +11,16 @@
         width: 100%;
         overflow: hidden;
         top: 0;
+        
 
         #vanta-net{
             position: relative;
             min-height: 100%;
             top: -150px;
             right: -250px;
+            z-index: 2;
+            opacity: 1;
+            transition: opacity .5s;
         }
     }
 
