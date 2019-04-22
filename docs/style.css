@@ -176,7 +176,8 @@
   overflow-x: hidden;
   background: transparent;
   z-index: 2;
-  background: transparent !important; }
+  background: transparent !important;
+  mix-blend-mode: exclusion; }
 
 .bg-neural {
   background: #0d0f1c; }
@@ -2122,6 +2123,3 @@ footer .bottom-page {
   bottom: 0;
   left: 0;
   right: 0; }
-
-.mix-blend-mode {
-  mix-blend-mode: exclusion; }
