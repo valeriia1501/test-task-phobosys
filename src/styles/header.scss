@@ -5,6 +5,7 @@
   padding-right: 25px;
   padding-left: 25px;
   overflow-y: hidden;
+  mix-blend-mode: exclusion;
 
   &-container{
     width: 1360px;
@@ -151,7 +152,8 @@
 }
 
 .bg-neural {
-    background: $bgColor;
+    // background: $bgColor;
+    background: transparent;
   a {
     color: white;
   }

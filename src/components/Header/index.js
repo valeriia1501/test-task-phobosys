@@ -68,7 +68,7 @@ export default class Header extends React.PureComponent {
 
   render() {
     return (
-      <header className={classnames(this.props.className, "header")}  style={{'overflow': 'visible'}}>
+      <header className={classnames(this.props.className, "header", {'open-pop-up': this.state.isShowPopUp})} style={{'overflow': 'visible'}}>
         <div className="header-container">
           <div>
             <a href="#!/">
