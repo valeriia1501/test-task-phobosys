@@ -15,7 +15,6 @@ export default class CareersVacancies extends React.Component {
     return (
       <div className='container-careers-vacancies' >
         <Header className='bg-black' />
-        
         {this.props.children}
         <Footer/>
       </div>

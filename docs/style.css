@@ -85,17 +85,19 @@
       .header-container > div > a {
         text-decoration: none;
         color: white;
-        margin-right: 54px; }
+        margin-right: 54px;
+        position: relative; }
         .header-container > div > a .logo {
           font-family: 'ProximaNova-Extrabold';
           font-size: 32px;
           font-weight: bold;
           position: relative; }
-          .header-container > div > a .logo::before {
-            content: url(9cf527c842c4663612f8f5147dcaa748.svg);
-            position: absolute;
-            left: -40px;
-            top: -16px; }
+        .header-container > div > a svg {
+          fill: white;
+          position: absolute;
+          left: -37px;
+          top: 50%;
+          transform: translateY(-50%); }
       .header-container > div nav ul {
         display: flex;
         font-size: 16px;
@@ -167,15 +169,17 @@
     top: 75px;
     z-index: 5; }
 
+.fixed-header {
+  position: fixed;
+  left: 0;
+  right: 0;
+  overflow-x: hidden;
+  z-index: 2; }
+
 .bg-neural {
   background: #0d0f1c; }
   .bg-neural a {
     color: white; }
-    .bg-neural a .logo::before {
-      content: url(9cf527c842c4663612f8f5147dcaa748.svg);
-      position: absolute;
-      left: -35px;
-      top: 0px; }
 
 .bg-about-us .line {
   background: white;
@@ -192,7 +196,7 @@
 
 @media only screen and (max-width: 855px) {
   .header {
-    padding-left: 25px; }
+    padding-left: 50px; }
     .header .header-container div a .logo::before {
       display: none; }
   .white-page .header-container div a .logo::before {
@@ -653,7 +657,7 @@ footer .bottom-page {
         display: none; } } }
 
 .works {
-  height: calc(100vh - 50px);
+  height: 100vh;
   overflow: hidden;
   display: flex;
   justify-content: center;
@@ -786,10 +790,6 @@ footer .bottom-page {
       width: 15px;
       height: 10px; } }
 
-@media only screen and (max-height: 917px) {
-  .works .works-container .content video {
-    width: 70%; } }
-
 .home {
   color: #ffffff;
   background-color: #0d0f1c;
@@ -867,6 +867,7 @@ footer .bottom-page {
     justify-content: center;
     background: #0d0f1c;
     padding-top: 120px;
+    padding-bottom: 120px;
     padding-left: 50px;
     padding-right: 50px; }
     .neural .description-borvo .container-description {
@@ -912,8 +913,8 @@ footer .bottom-page {
     .neural .reviews .container {
       position: relative; }
       .neural .reviews .container .bg-word-review {
-        font-size: 160px;
-        font-family: 'Montserrat ExtraBold';
+        font-size: 120px;
+        font-family: 'Montserrat SemiBold';
         opacity: 0.12;
         font-weight: bold;
         position: absolute;

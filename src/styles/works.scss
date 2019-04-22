@@ -1,5 +1,5 @@
 .works {
-    height: calc(100vh - 50px);
+    height: 100vh;
     overflow: hidden;
     display: flex;
     justify-content: center;
@@ -217,15 +217,15 @@
     }
 }
 
-@media only screen and (max-height: 917px) {
-    .works {
-        .works-container {
-            .content {
-                video {
-                    width: 70%;
-                }
-            }
-        }
-    }
-}
+// @media only screen and (max-height: 917px) {
+//     .works {
+//         .works-container {
+//             .content {
+//                 video {
+//                     width: 70%;
+//                 }
+//             }
+//         }
+//     }
+// }
 

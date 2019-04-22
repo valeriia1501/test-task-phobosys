@@ -1,6 +1,7 @@
 import React from 'react';
 
 import classnames from 'classnames'
+import currentRoute from '@/routing/currentRoute'
 
 import {
     kubernetes,
@@ -29,16 +30,23 @@ export default class Neural extends React.PureComponent {
         this.html.classList.remove('scroll-hidden')
         this.state = {
             rotateArrow: 0,
+            isFixed: false
         }
+        currentRoute.on(this.handleCustomEvent)
     }
 
     componentDidMount() {
         this.html.scrollTop = 0;
-        this.btnShow.addEventListener('click', this.showSection)
+        this.btnShow.addEventListener('click', this.showSection)   
+        this.handleCustomEvent()
     }
-    componentWillUnmount() {
-        this.btnShow.removeEventListener('click', this.showSection)
+
+    handleCustomEvent = () => {
+        const isNeural = currentRoute.routepath === '/neural';
+        if(isNeural) this.setState({ isFixed: true })
     }
+
+    componentWillUnmount() { this.btnShow.removeEventListener('click', this.showSection) }
 
     normalizeDelta(e) {
         const FireFoxWheelMod = 3
@@ -92,7 +100,7 @@ export default class Neural extends React.PureComponent {
     }
     render() {
         return <div className={classnames(this.props.className, 'neural')}>
-            <Header className='bg-neural' />
+            <Header className={classnames('bg-neural',{'fixed-header': this.state.isFixed})} />
             <Works />
             <section className='description-borvo'>
                 <div className='container-description' >

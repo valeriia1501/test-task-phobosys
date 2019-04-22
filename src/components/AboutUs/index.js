@@ -113,7 +113,7 @@ export default class AboutUs extends React.PureComponent {
                     </div>
                 </div>
             </div>
-          </section> */}
+          </section> */} {/* temp blocked */}
           <Footer/>
       </div>
     )

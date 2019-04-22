@@ -3,6 +3,7 @@ import classnames from 'classnames'
 
 import BurgerIcon from '@/components/BurgerIcon'
 import GetInTouch from '@/components/GetInTouch'
+import LogoHeader from '@/components/LogoHeader'
 
 import currentRoute from '@/routing/currentRoute'
 
@@ -67,11 +68,12 @@ export default class Header extends React.PureComponent {
 
   render() {
     return (
-      <header className={classnames(this.props.className, "header")} >
+      <header className={classnames(this.props.className, "header")}  style={{'overflow': 'visible'}}>
         <div className="header-container">
           <div>
             <a href="#!/">
               <span className="logo">borvo</span>
+              <LogoHeader/>
             </a>
             <nav>
               {this.createTabs()}
