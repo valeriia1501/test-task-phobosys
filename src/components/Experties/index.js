@@ -13,6 +13,8 @@ import {expertiesMainPhoto} from '@/images&video'
       this.html = document.getElementsByTagName('html')[0]
       this.html.classList.remove('scroll-hidden')
       this.html.classList.add('scroll-x-hidden')
+      this.html.scrollTop = 0
+      document.body.scrollTop = 0 // for safari
     }
     render() {
     return (

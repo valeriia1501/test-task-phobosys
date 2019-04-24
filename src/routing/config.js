@@ -6,7 +6,7 @@ import Home from '@components/Home'
 import AboutUs from '@components/AboutUs'
 import Contacts from '@components/Contacts'
 import Careers from '@components/Careers'
-import Vacancies from '@components/Vacancies'
+import Vacancy from '@components/Vacancy'
 
 
 
@@ -58,9 +58,9 @@ export default [
           },
           {
             path: '/:id',
-            name: 'Vacancies',
+            name: 'Vacancy',
             title: '',
-            component: Vacancies
+            component: Vacancy
           },
         ]
       },

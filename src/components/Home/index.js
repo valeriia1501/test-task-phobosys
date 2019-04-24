@@ -58,7 +58,7 @@ export default class Home extends React.Component {
     })
     return (
       <div className="home">
-        <Header />
+        <Header/>
         <section className='web-gl' >
           <div id='vanta-net' className={classnames({'add-opacity-zero': this.state.opacityZero})}/>
         </section>

@@ -6,8 +6,9 @@ export default class Services extends React.PureComponent {
     constructor(props) {
         super(props)
         this.html = document.getElementsByTagName('html')[0]
-        //this.cardServices = document.querySelectorAll('.card-services')
         this.html.classList.remove('scroll-hidden')
+        this.html.scrollTop = 0
+        document.body.scrollTop = 0 // for safari
     }
     componentDidMount(){
         this.html.addEventListener('wheel', this.normalizeSpeedScroll) 
