@@ -15,6 +15,8 @@ export default class AboutUs extends React.PureComponent {
     super(props)
     this.html = document.getElementsByTagName('html')[0]
     this.html.classList.add('scroll-x-hidden')
+    this.html.scrollTop = 0
+    document.body.scrollTop = 0 // for safari
   }
   render() {
     return (

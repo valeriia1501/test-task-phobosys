@@ -1,21 +1,36 @@
-import React from 'react';
+import React from 'react'
 
-import VacanciesTopBlock from '@/components/VacanciesTopBlock'
+import vacancyDescription from '@/data/vacancyDescription';
+import { throws } from 'assert';
 
-export default class Vacancies extends React.PureComponent {
+export default class VacanciesTopBlock extends React.PureComponent {
     constructor(props) {
         super(props)
-        this.html = document.getElementsByTagName('html')[0]
-        this.html.classList.add('scroll-x-hidden')
-        this.state = {}
-        document.body.scrollTop = 0 // for safari
-        this.html.scrollTop = 0
+        this.state = {
+            
+        }
+    }
+
+    componentWillMount() {
+        this.updateGetVation({})   
+    }
+
+    updateGetVation = (e) => {
+        const match = /#!\/careers\/([^/]+)$/g.exec(window.location.hash)
+
+        console.log(match[1])
+
+        if (match[1]) {
+            const vac = vacancyDescription[match[1]]
+            if (!vac) router.page('#!/careers')
+            this.setState({ vac: vac })
+        }
+        console.log(this.state)
     }
 
     render() {
+        const vacation = this.state.vac
         return (
-        <div className='vacancies' >
-            <VacanciesTopBlock />
             <section className='description' >
                 <div className='container' >
                     <div className='container-text' >
@@ -23,13 +38,23 @@ export default class Vacancies extends React.PureComponent {
                             <h1>About client:</h1>
                             <p>
                                 Our Customer is a leading payment gateway provider
-                                that provides multi-channel payment solutions, allowing 
+                                that provides multi-channel payment solutions, allowing
                                 merchants to accept various local and international payments
                                 through credit and debit cards, bank channels (ATMs, iBanking and mBanking)
                                 and cash acceptance via payment counters.
                             </p>
                         </div>
-                        <div className='block' >
+                        {vacation.map((item, idx) => <div
+                            key={idx}
+                            className='block' >
+                                <h1>
+                                    {item.title}:
+                                </h1>
+                                <ul>
+                                    {item.elements.map((listElement, idx) => <li key={idx}>{ listElement }</li>)}
+                                </ul>
+                        </div>)}
+                        {/* <div className='block' >
                             <h1>Main responsibilities:</h1>
                             <ul>
                                 <li>Develop solutions and algorithms according to technical specifications or other requirements documentation; use standard algorithms in the applicable cases</li>
@@ -72,11 +97,10 @@ export default class Vacancies extends React.PureComponent {
                                 <li>Team of professionals</li>
                                 <li>Dynamic environment with low level of bureaucracy</li>
                             </ul>
-                        </div>
+                        </div> */}
                     </div>
                 </div>
             </section>
-        </div>
         )
     }
 }
