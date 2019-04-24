@@ -10,8 +10,7 @@
 .pop-up {
     color: white;
     background: black;
-    z-index: 999;
-    position: absolute;
+    position: fixed;
     top: 0; bottom: 0;
     left: 0; right: 0;
     display: flex;
@@ -20,6 +19,7 @@
     display: none;
     overflow-y: auto;
     padding-top: 100px;
+    z-index: 999;
 
     .pop-up-container {
         width: 1360px;
