@@ -174,7 +174,6 @@
   left: 0;
   right: 0;
   overflow-x: hidden;
-  background: transparent;
   z-index: 2;
   background: transparent !important;
   mix-blend-mode: exclusion; }
@@ -217,8 +216,7 @@
 .pop-up {
   color: white;
   background: black;
-  z-index: 999;
-  position: absolute;
+  position: fixed;
   top: 0;
   bottom: 0;
   left: 0;
@@ -228,7 +226,8 @@
   align-items: center;
   display: none;
   overflow-y: auto;
-  padding-top: 100px; }
+  padding-top: 100px;
+  z-index: 999; }
   .pop-up .pop-up-container {
     width: 1360px;
     padding-left: 30px;
@@ -2118,8 +2117,9 @@ footer .bottom-page {
   transition: opacity .5s !important; }
 
 .open-pop-up {
-  position: fixed;
+  position: absolute;
   top: 0;
   bottom: 0;
   left: 0;
-  right: 0; }
+  right: 0;
+  mix-blend-mode: inherit; }
