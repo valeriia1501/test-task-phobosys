@@ -25,7 +25,6 @@ export default class VacanciesTopBlock extends React.PureComponent {
             if (!vac) router.page('#!/careers')
             this.setState({ vac: vac })
         }
-        console.log(this.state)
     }
 
     render() {
@@ -47,57 +46,11 @@ export default class VacanciesTopBlock extends React.PureComponent {
                         {vacation.map((item, idx) => <div
                             key={idx}
                             className='block' >
-                                <h1>
-                                    {item.title}:
-                                </h1>
+                                <h1>{item.title}:</h1>
                                 <ul>
                                     {item.elements.map((listElement, idx) => <li key={idx}>{ listElement }</li>)}
                                 </ul>
                         </div>)}
-                        {/* <div className='block' >
-                            <h1>Main responsibilities:</h1>
-                            <ul>
-                                <li>Develop solutions and algorithms according to technical specifications or other requirements documentation; use standard algorithms in the applicable cases</li>
-                                <li>New functionality design</li>
-                                <li>Write program code according to the defined application architecture</li>
-                                <li>Structure and format the source code, comment and mark up the code, as well as name variables, functions, classes, data structures, and files according to the company conventions and industry best practices</li>
-                                <li>Use version control systems to track code optimization progress, as well as to merge or split code entities. Commit changes according to version control rules</li>
-                            </ul>
-                        </div>
-                        <div className='block' >
-                            <h1>Mandatory requirements:</h1>
-                            <ul>
-                                <li>4+ years of experience with .NET/C#</li>
-                                <li>At least 1 year of commercial experience with .NET Core</li>
-                                <li>OOP, SOLID</li>
-                                <li>Good knowledge of MSSQL</li>
-                                <li>Multithreading, synchronization</li>
-                                <li>Strong сommunication skills</li>
-                                <li>Upper intermediate level of English</li>
-                            </ul>
-                        </div>
-                        <div className='block' >
-                            <h1>Would be a plus:</h1>
-                            <ul>
-                                <li>Knowledge of Front End</li>
-                                <li>Experience with containers</li>
-                                <li>Jira management</li>
-                            </ul>
-                        </div>
-                        <div className='block' >
-                            <h1>What you will get with Borvo:</h1>
-                            <ul>
-                                <li>Above average compensation and competitive Social package</li>
-                                <li>Close cooperation with a customer</li>
-                                <li>Business trips</li>
-                                <li>Challenging tasks</li>
-                                <li>Competence development</li>
-                                <li>Ability to influence project technologies</li>
-                                <li>Project from scratch</li>
-                                <li>Team of professionals</li>
-                                <li>Dynamic environment with low level of bureaucracy</li>
-                            </ul>
-                        </div> */}
                     </div>
                 </div>
             </section>
