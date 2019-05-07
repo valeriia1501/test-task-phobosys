@@ -21,8 +21,12 @@ export default class AboutUs extends React.PureComponent {
   render() {
     return (
       <div className='about-us' >
-          <Header className='bg-about-us' />
           <section className='bg-photo' >
+            <section className='black-theme' > 
+                <div className='container-header' >
+                    <Header className='bg-neural' />
+                </div>
+            </section>
             <div className='text-gradient'>
                 <div className='text'>
                     <p>CRM veterans with over 2 years of experience in the market</p>
@@ -31,6 +35,11 @@ export default class AboutUs extends React.PureComponent {
             </div>
           </section>
           <section className='three-columns' >
+                <section className='black-theme' > 
+                    <div className='container-header' >
+                        <Header className='bg-neural' />
+                    </div>
+                </section>
                 <div className='container-columns' >
                     <div className='column'>
                         <span>Corporate Social</span>
@@ -62,6 +71,11 @@ export default class AboutUs extends React.PureComponent {
                 </div>
           </section>
           <section className='white-text-section'>
+                <section className='white-theme' > 
+                    <div className='container-header' >
+                        <Header className='bg-neural' />
+                    </div>
+                </section>
                 <div className='container'>
                     <h1>Borvo – A Globally Trusted Partner for Digital Transformation</h1>
                     <div className='two-columns' >

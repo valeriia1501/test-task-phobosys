@@ -46,7 +46,7 @@ export default class AI extends React.PureComponent {
 
   render() {
     return (
-      <section className='AI'>
+    <section className='AI'>
       <div className='AI-container'>
         <div className="pulsatingCircle">    
           <span className="firstCircle"></span>

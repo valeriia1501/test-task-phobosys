@@ -1,43 +1,12 @@
 .careers {
 
-    .top-page {
-        color: white;
-        display: flex;
-        justify-content: center;
-        padding-top: 110px;
-        padding-bottom: 110px;
-        background: url('../../assets/img/death-star.png') no-repeat;
-        background-position: 85% 50%;
-        background-size: 481px;
-        background-color: $bgColor;
-        
-        .container {
-            width: 1360px;
-            display: flex;
-            justify-content: flex-start;
-            @include padding-both;
-
-            .text {
-                h1 {
-                    max-width: 900px;
-                    font-size: 72px;
-                    font-family: 'Montserrat SemiBold'
-                }
-                p {
-                    max-width: 730px;
-                    font-size: 20px;
-                    line-height: 1.6;
-                    color: #bdbdbd;
-                    padding-top: 50px;
-                }
-            }
-        }
-    }
+   
     .white-vacancies {
         display: flex;
         justify-content: center;
         padding-top: 50px;
         padding-bottom: 80px;
+        position: relative;
 
         .container {
             width: 1360px;

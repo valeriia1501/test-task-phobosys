@@ -5,8 +5,8 @@ import Experties from '@components/Experties'
 import Home from '@components/Home'
 import AboutUs from '@components/AboutUs'
 import Contacts from '@components/Contacts'
-import Careers from '@components/Careers'
-import Vacancy from '@components/Vacancy'
+import Careers from '@components/CareersVacancies/Careers'
+import Vacancy from '@components/CareersVacancies/Vacancy'
 
 
 
@@ -47,7 +47,7 @@ export default [
         path: '/careers',
         name: 'CareersVacancies',
         tile: '',
-        transition: { timeout: 500, classNames: 'careers-vacancies' },
+        // transition: { timeout: 500, classNames: 'careers-vacancies' },
         component: CareersVacancies,
         children: [
           {

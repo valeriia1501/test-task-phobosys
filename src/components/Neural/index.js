@@ -16,7 +16,7 @@ import {
     reviewImage
 } from '@/images&video'
 
-import vacations from '@/data/vacations';
+import vacations from '@/data/vacations.json';
 
 import Header from '@/components/Header'
 import Works from '@/components/Works'
@@ -30,23 +30,24 @@ export default class Neural extends React.PureComponent {
         this.html.classList.remove('scroll-hidden')
         this.state = {
             rotateArrow: 0,
-            isFixed: false
+            isFixed: currentRoute.context.routepath === '/neural'
         }
         currentRoute.on(this.handleCustomEvent)
     }
 
     componentDidMount() {
         this.html.scrollTop = 0;
-        this.btnShow.addEventListener('click', this.showSection)   
-        this.handleCustomEvent()
+        this.btnShow.addEventListener('click', this.showSection)
     }
 
-    handleCustomEvent = () => {
-        const isNeural = currentRoute.routepath === '/neural';
-        if(isNeural) this.setState({ isFixed: true })
+    handleCustomEvent = (context) => {
+        this.setState({ isFixed: context.routepath === '/neural' })
     }
 
-    componentWillUnmount() { this.btnShow.removeEventListener('click', this.showSection) }
+    componentWillUnmount() { 
+        currentRoute.off(this.handleCustomEvent)
+        this.btnShow.removeEventListener('click', this.showSection)
+    }
 
     normalizeDelta(e) {
         const FireFoxWheelMod = 3
@@ -100,9 +101,14 @@ export default class Neural extends React.PureComponent {
     }
     render() {
         return <div className={classnames(this.props.className, 'neural')}>
-            <Header className={classnames('bg-neural',{'fixed-header': this.state.isFixed})} />
+            {/* <Header className={classnames('bg-neural',{'fixed-header': this.state.isFixed})} /> */}
             <Works />
             <section className='description-borvo'>
+                <section className='black-theme' > 
+                    <div className={classnames({'container-header': this.state.isFixed})} >
+                        <Header className='bg-neural' />
+                    </div>
+                </section>
                 <div className='container-description' >
                     <p>Borvo company provides premium software engineering services to leading technology firms</p>
                     <div className='right-text' >
@@ -122,6 +128,11 @@ export default class Neural extends React.PureComponent {
                 </div>
             </section>
             <section className='reviews' >
+                <section className='black-theme' > 
+                    <div className={classnames({'container-header': this.state.isFixed})} >
+                        <Header className='bg-neural' />
+                    </div>
+                </section>
                 <div className='container'>
                     <span className='bg-word-review'>Reviews</span>
                     <div className='first-review'>
@@ -148,6 +159,11 @@ export default class Neural extends React.PureComponent {
                 </div>
             </section>
             <section className={classnames('all-reviews', { 'show-all': this.state.isHideAnimation })} >
+                <section className='black-theme' > 
+                    <div className={classnames({'container-header': this.state.isFixed})} >
+                        <Header className='bg-neural' />
+                    </div>
+                </section>
                 <div className='container' >
                     <div className='second-review '> {/* 2 */}
                         <div className='feedback-text' >
@@ -186,6 +202,11 @@ export default class Neural extends React.PureComponent {
                 </div>
             </section>
             <section className='skills'>
+                <section className='white-theme' > 
+                    <div className={classnames({'container-header': this.state.isFixed})} >
+                        <Header className='bg-neural' />
+                    </div>
+                </section>
                 <div className='technology' >
                     <h1>We grow your business by using our technology expertise</h1>
                     <ul>
@@ -231,6 +252,11 @@ export default class Neural extends React.PureComponent {
                 </div>
             </section>
             <section className='section-vacancies' >
+                <section className='blue-theme' > 
+                    <div className={classnames({'container-header': this.state.isFixed})} >
+                        <Header className='bg-neural' />
+                    </div>
+                </section>
                 <div className='container-vacancies' >
                     <div className='vacancies' >
                         {this.generateVacations()}

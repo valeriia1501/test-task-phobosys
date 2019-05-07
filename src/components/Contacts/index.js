@@ -14,8 +14,12 @@ export default class Contacts extends React.PureComponent {
     render() {
         return (
         <div className='contacts' >
-            <Header className='bg-black' />
             <section className='map-bg'>
+                <section className='black-theme' > 
+                    <div className='container-header' >
+                        <Header className='bg-neural' />
+                    </div>
+                </section>
                 <div className='container' >
                     <h1>Our World Offices</h1>
                     <div className='cities' >
@@ -57,6 +61,11 @@ export default class Contacts extends React.PureComponent {
                 </div>
             </section>
             <section className='message' >
+                <section className='black-theme z-index' > 
+                    <div className='container-header' >
+                        <Header className='bg-neural' />
+                    </div>
+                </section>
                 <div className='message-container' >
                     <h1>Write us a Message</h1>
                     <div className='form-container' >

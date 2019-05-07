@@ -2,16 +2,17 @@ import React from 'react'
 import classnames from 'classnames'
 
 import BurgerIcon from '@/components/BurgerIcon'
-import GetInTouch from '@/components/GetInTouch'
 import LogoHeader from '@/components/LogoHeader'
 
 import currentRoute from '@/routing/currentRoute'
 
+import rootStore from '@/store/RootStore.js'
+
 export default class Header extends React.PureComponent {
   constructor(props) {
     super(props)
+    this.html = document.getElementsByTagName('html')[0]
     this.state = {
-      isShowPopUp: false,
       isShowMobileMenu: false,
       isExpertise: false,
       isAbout: false,
@@ -35,20 +36,26 @@ export default class Header extends React.PureComponent {
           link: '#!/contacts'
         }
       ],
+      render: 0,
+      currentUrl: currentRoute.context.canonicalPath
     }
     currentRoute.on(this.handleCustomEvent)
-    
+  }
+  
+  componentWillUnmount () { 
+    currentRoute.off(this.handleCustomEvent)
   }
 
-  componentWillUnmount () { currentRoute.off(this.handleCustomEvent) }
-  
-  handleCustomEvent = () => this.setState({ currentUrl: currentRoute.context.state.path  }) 
+  showGetInTouch = () => {
+    const isOpen = true
+    rootStore.togglePopUp(isOpen)
+  }
+
+  handleCustomEvent = (context) => this.setState({ currentUrl: context.canonicalPath  })
 
   toogleMobileMenu = () => this.setState({ isShowMobileMenu: !this.state.isShowMobileMenu })
 
-  tooglePopUp = () => this.setState({ isShowPopUp: !this.state.isShowPopUp })
-
-  isCurrentTab = (tabUrl) => currentRoute.context.state.path.includes(tabUrl)
+  isCurrentTab = (tabUrl) => this.state.currentUrl.includes(tabUrl)
 
   createTabs() {
     return <ul>
@@ -68,7 +75,7 @@ export default class Header extends React.PureComponent {
 
   render() {
     return (
-      <header className={classnames(this.props.className, "header", {'open-pop-up': this.state.isShowPopUp})} style={{'overflow': 'visible'}}>
+      <header className={classnames(this.props.className, "header")} style={{'overflow': 'visible'}}>
         <div className="header-container">
           <div>
             <a href="#!/">
@@ -87,15 +94,13 @@ export default class Header extends React.PureComponent {
               </ul>
             </nav>
           </div>
+          <span className='render' >{this.state.render}</span>
           <div onClick={this.toogleMobileMenu}>
-            <BurgerIcon ref={el => this.burgerIconRef = el} />
+            <BurgerIcon />
           </div>
-          <button onClick={this.tooglePopUp}>Get in touch</button>
+          <button onClick={this.showGetInTouch}>Get in touch</button>
         </div>
         <div className='line'></div>
-        <GetInTouch
-          isShowPopUp={this.state.isShowPopUp}
-          closePopUp={this.tooglePopUp} />
       </header>
     )
   }
