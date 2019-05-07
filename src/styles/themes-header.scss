@@ -1,0 +1,85 @@
+.white-theme,
+.black-theme,
+.blue-theme  {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    clip: rect(auto, auto, auto, auto);
+    pointer-events: none;
+    z-index: 2;
+}
+
+.container-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 0;
+    z-index: 99;
+    pointer-events: all;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    will-change: transform;
+    perspective: 1000;
+}
+
+.blue-theme {
+    .container-header {
+        background: #2159f4;
+
+        * > a {
+            color: white;
+        }
+
+        button {
+            background: white;
+            color: $lightblue;
+        }
+    }
+}
+
+.white-theme {
+    .container-header {
+        background: white;
+
+        * > svg {
+            fill: black;
+
+            .layer {
+                fill: black;
+            }
+        }
+
+        * > a {
+            color: black;
+        }
+    }
+}
+
+.black-theme {
+    .container-header {
+        background: $bgColor;
+
+        svg {
+            fill: white;
+        }
+
+        a {
+            color: white;
+
+                // hover color: #95bcff;
+        }
+    }
+}
+
+.half-transparent-theme {
+    .container-header {
+        
+    }
+}
+
+.z-index {
+    z-index: 99;
+}

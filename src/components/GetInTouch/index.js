@@ -1,21 +1,29 @@
 import React from 'react'
 import classnames from 'classnames'
 
+import rootStore from '@/store/RootStore.js'
+
 import { closeCross } from '@/images&video'
 
 export default class GetInTouch extends React.PureComponent {
   constructor(props) {
     super(props)
     this.html = document.getElementsByTagName('html')[0]
+    this.state = {
+      isShowPopUp: rootStore.isOpen
+    }
+    rootStore.on(this.customTogglePopUp)
   }
 
-  componentDidUpdate() {
-    if (this.refSecttion.classList.contains('show')) {
-      this.html.classList.add('scroll-hidden')
-    }
-    if (this.refSecttion.classList.contains('hide')) {
-      this.html.classList.remove('scroll-hidden')
-    }
+  componentWillUnmount () {
+    rootStore.off(this.customTogglePopUp)
+  }
+
+  customTogglePopUp = ({ isOpen }) => this.setState({ isShowPopUp: isOpen })
+
+  close = () => {
+    const isOpen = false
+    rootStore.togglePopUp(isOpen)
   }
 
   render() {
@@ -24,8 +32,8 @@ export default class GetInTouch extends React.PureComponent {
         classnames(
           'pop-up',
           {
-            'show': this.props.isShowPopUp,
-            'hide': !this.props.isShowPopUp
+            'show': this.state.isShowPopUp,
+            'hide': !this.state.isShowPopUp
           }
         )} ref={el => this.refSecttion = el}>
         <div className='pop-up-container' >
@@ -71,7 +79,7 @@ export default class GetInTouch extends React.PureComponent {
             <div className='btn-send'> Send message </div>
           </div>
         </div>
-        <img className='close' src={closeCross} onClick={this.props.closePopUp} />
+        <img className='close' src={closeCross} onClick={this.close} />
       </section>
     )
   }

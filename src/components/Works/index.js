@@ -3,6 +3,8 @@ import React from 'react';
 import ArrowSvg from '@components/ArrowSvg'
 import { videoNeuralNetwork } from '@/images&video'
 
+import Header from '@/components/Header'
+
 import classnames from 'classnames'
 import currentRoute from '@/routing/currentRoute'
 
@@ -14,7 +16,8 @@ export default class Works extends React.PureComponent {
         this.state =  { 
             isShow: false,
             isHideBlueBlock: !(currentRoute.routepath === '/neural') ? false : JSON.parse(localStorage.getItem('hideBlue')),
-            displayNone: false
+            displayNone: false,
+            isFixed: currentRoute.context.routepath === '/neural'            
          }
         currentRoute.on(this.handleCustomEvent)
     }
@@ -66,7 +69,12 @@ export default class Works extends React.PureComponent {
     }
     render() {
         return (
-            <section className="works" ref={el => this.scrollWorks = el}>
+        <section className="works" ref={el => this.scrollWorks = el}>
+            <section className='black-theme'> 
+                <div className={classnames({'container-header': this.state.isFixed})} >
+                    <Header className='bg-neural' />
+                </div>
+            </section>
             <div className={classnames('blue-block', {'hide-blue-block': this.state.isHideBlueBlock})} style={{'display': this.state.displayNone}} ></div>
                 <div className="works-container">
                     <div className='content' >

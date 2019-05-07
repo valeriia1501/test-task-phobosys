@@ -142,18 +142,9 @@
   }
 }
 
-.fixed-header {
-  position: fixed;
-  left: 0;
-  right: 0;
-  overflow-x: hidden;
-  z-index: 2;
-  background: transparent !important;
-  mix-blend-mode: exclusion;
-}
 
 .bg-neural {
-    background: $bgColor;
+    // background: $bgColor;
   a {
     color: white;
   }

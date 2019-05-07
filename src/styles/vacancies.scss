@@ -1,57 +1,11 @@
 .vacancies {
-    .top-block {
-        background-color: $bgColor;
-        color: white;
-        display: flex;
-        justify-content: center;
-        padding-top: 55px;
-        padding-bottom: 55px;
-
-        .container {
-            width: 1360px;
-            height: 390px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            @include padding-both;
-
-            .return {
-                max-width: 250px;
-                display: flex;
-                align-items: center;
-                color: #d77860;
-                font-size: 20px;
-                text-decoration: none;
-
-                img { padding-right: 15px }
-            }
-            
-            h1 {
-                font-family: 'Montserrat SemiBold';
-                font-size: 64px;
-            }
-
-            .block {
-                display: flex;
-                align-items: center;
-
-                .location {
-                    padding-left: 10px;
-                    padding-right: 10px;
-                    color: #bdbdbd;
-                }
-                .position {
-                    color: #2962ff;    
-                }
-            }
-
-        }
-    }
+    
     .description {
         display: flex;
         justify-content: center;
         padding-top: 85px;
         padding-bottom: 110px;
+        position: relative;
 
         .container {
             width: 1360px;

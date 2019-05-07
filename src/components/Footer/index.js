@@ -1,18 +1,40 @@
 import React from 'react';
 
+import Header from '@/components/Header'
+import classnames from 'classnames'
+import currentRoute from '@/routing/currentRoute'
+
 import {
     inIconFooter,
     fbIconFooter,
     footerLogo,
 } from '@/images&video'
 
+
 export default class Footer extends React.PureComponent {
   constructor(props) {
     super(props)
+    this.state ={
+        isFixed: ['/neural', '/experties', '/about-us', '/careers', '/contacts'].indexOf(currentRoute.context.routepath) === -1 ? false : true
+    }
+    currentRoute.on(this.handleCustomEvent)
   }
+
+  checkLocation = () => {
+    let href = 
+    href === -1 ? href = false : href = true
+  }
+
+  handleCustomEvent = () => {}
+
   render() {
     return (
       <footer>
+          <section className='white-theme' > 
+                <div className={classnames({'container-header': this.state.isFixed})} >
+                    <Header className='bg-neural' />
+                </div>
+            </section>
           <div className='footer' >
             <div className='container'>
                 <img  className='footer-logo' src={footerLogo}/>

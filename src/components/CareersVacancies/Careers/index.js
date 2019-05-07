@@ -4,7 +4,9 @@ import {
     svgFire,
 } from '@/images&video'
 
-import vacations from '@/data/vacations';
+import Header from '@/components/Header'
+
+import vacations from '@/data/vacations.json';
 
 export default class Careers extends React.PureComponent {
     constructor(props) {
@@ -36,20 +38,12 @@ export default class Careers extends React.PureComponent {
     render() {
         return (
         <div className='careers' >
-            <section className='top-page' >
-                <div className='container' >
-                    <div className='text' >
-                        <h1>Inspiring brilliant minds to innovate & create</h1>
-                        <p>
-                            In Borvo, we create an environment and atmosphere that 
-                            stimulates not only professional but also personal growth.
-                            Everything is designed for your initiatives to grow up from
-                            an idea to a smooth realisation within the community
-                        </p>
-                    </div>
-                </div>
-            </section>
             <section className='white-vacancies' >
+                <section className='white-theme' > 
+                    <div className='container-header' >
+                        <Header className='bg-neural' />
+                    </div>
+                </section>
                 <div className='container' >
                     {this.generateVacations()}
                 </div>

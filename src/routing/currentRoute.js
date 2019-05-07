@@ -1,11 +1,13 @@
 import EventEmitter from 'events'
 
 const ROUTE_CHANGED = 'ROUTE_CHANGED'
+
 class CurrentRoute extends EventEmitter {
     constructor(args) {
         super(args)
         this.routepath = null
         this.context = null
+        this.setMaxListeners(100)
     }
 
     on = (func) => {
@@ -20,7 +22,7 @@ class CurrentRoute extends EventEmitter {
         return (context, next) => {
             this.routepath = context.routepath
             this.context = context
-            this.emit(ROUTE_CHANGED, this)
+            this.emit(ROUTE_CHANGED, context)
             next()
         }
     }

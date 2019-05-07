@@ -16,11 +16,18 @@ import {expertiesMainPhoto} from '@/images&video'
       this.html.scrollTop = 0
       document.body.scrollTop = 0 // for safari
     }
-    render() {
-    return (
+
+    handleCustomEvent = () => {}
+
+render() {
+  return (
     <div className='services-provided' >
-        <Header/>
           <section className='application' >
+            <section className='black-theme' > 
+                <div className='container-header' >
+                    <Header className='bg-neural' />
+                </div>
+            </section>
             <div className='application-container' >
               <div>
                 <span>Application <br/> development</span>
@@ -30,6 +37,11 @@ import {expertiesMainPhoto} from '@/images&video'
             </div>
           </section>
           <section className='about-applications'>
+              <section className='white-theme' > 
+                  <div className='container-header' >
+                      <Header className='bg-neural' />
+                  </div>
+              </section>
               <div className='container' > 
                 <div className='content' >
                     <img src={expertiesMainPhoto} />
