@@ -1887,178 +1887,178 @@ footer {
   .about-us .bg-photo .text-gradient .text small {
     font-size: 15px; } }
 
-.contacts .map-bg {
-  width: 100%;
-  height: 760px;
-  background-color: #0d0f1c;
-  display: flex;
-  justify-content: center;
-  align-items: center; }
-  .contacts .map-bg .container {
-    width: 1360px;
-    height: 590px;
-    background: url(9df2d23bac7d8a6803c71bfe3f8fb3c3.svg) no-repeat center center;
-    background-size: contain;
-    color: white;
+.contacts {
+  position: relative; }
+  .contacts .map-bg {
+    width: 100%;
+    height: 760px;
+    background-color: #0d0f1c;
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding-left: 50px;
-    padding-right: 50px;
-    padding-top: 50px; }
-    .contacts .map-bg .container h1 {
-      font-size: 64px;
-      font-family: 'Montserrat SemiBold'; }
-    .contacts .map-bg .container .cities {
+    justify-content: center;
+    align-items: center; }
+    .contacts .map-bg .container {
+      width: 1360px;
+      height: 590px;
+      background: url(9df2d23bac7d8a6803c71bfe3f8fb3c3.svg) no-repeat center center;
+      background-size: contain;
+      color: white;
       display: flex;
-      justify-content: space-between; }
-      .contacts .map-bg .container .cities .block > span {
-        font-size: 18px;
-        font-family: 'Montserrat Bold';
-        position: relative;
-        display: inline-block;
-        margin-bottom: 50px;
-        position: relative; }
-        .contacts .map-bg .container .cities .block > span::before {
-          width: 210px;
+      flex-direction: column;
+      justify-content: space-between;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px; }
+      .contacts .map-bg .container h1 {
+        font-size: 64px;
+        font-family: 'Montserrat SemiBold'; }
+      .contacts .map-bg .container .cities {
+        display: flex;
+        justify-content: space-between; }
+        .contacts .map-bg .container .cities .block > span {
+          font-size: 18px;
+          font-family: 'Montserrat Bold';
+          position: relative;
+          display: inline-block;
+          margin-bottom: 50px;
+          position: relative; }
+          .contacts .map-bg .container .cities .block > span::before {
+            width: 210px;
+            font-size: 16px;
+            color: #bdbdbd;
+            font-family: 'Proxima Nova';
+            position: absolute;
+            top: 28px; }
+        .contacts .map-bg .container .cities .block p {
           font-size: 16px;
-          color: #bdbdbd;
-          font-family: 'Proxima Nova';
-          position: absolute;
-          top: 28px; }
-      .contacts .map-bg .container .cities .block p {
-        font-size: 16px;
-        line-height: 1.63;
-        color: #e0e0e0; }
-      .contacts .map-bg .container .cities .odesa span::before {
-        content: 'Ukraine'; }
-      .contacts .map-bg .container .cities .dublin span::before {
-        content: 'Dublin'; }
-      .contacts .map-bg .container .cities .los-angeles span::before {
-        content: 'United States'; }
-      .contacts .map-bg .container .cities .details > span::before {
-        content: 'For Questions & Suggestions:'; }
-      .contacts .map-bg .container .cities .details .number-email {
+          line-height: 1.63;
+          color: #e0e0e0; }
+        .contacts .map-bg .container .cities .odesa span::before {
+          content: 'Ukraine'; }
+        .contacts .map-bg .container .cities .dublin span::before {
+          content: 'Dublin'; }
+        .contacts .map-bg .container .cities .los-angeles span::before {
+          content: 'United States'; }
+        .contacts .map-bg .container .cities .details > span::before {
+          content: 'For Questions & Suggestions:'; }
+        .contacts .map-bg .container .cities .details .number-email {
+          display: flex;
+          justify-content: space-between;
+          width: calc(100% + 15px); }
+          .contacts .map-bg .container .cities .details .number-email div {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.63; }
+            .contacts .map-bg .container .cities .details .number-email div span {
+              color: #e0e0e0; }
+            .contacts .map-bg .container .cities .details .number-email div .number {
+              color: white; }
+            .contacts .map-bg .container .cities .details .number-email div .email {
+              color: white; }
+  .contacts .message {
+    color: white;
+    background-color: #0d0f1c;
+    display: flex;
+    justify-content: center;
+    overflow-y: auto;
+    padding-top: 100px;
+    padding-bottom: 90px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative; }
+    .contacts .message .message-container {
+      width: 1360px;
+      padding-left: 50px;
+      padding-right: 50px; }
+      .contacts .message .message-container h1 {
+        font-size: 88px;
+        font-weight: bold;
+        margin-bottom: 100px; }
+      .contacts .message .message-container .form-container form .four-input {
+        max-width: 900px;
         display: flex;
         justify-content: space-between;
-        width: calc(100% + 15px); }
-        .contacts .map-bg .container .cities .details .number-email div {
-          display: flex;
-          flex-direction: column;
-          line-height: 1.63; }
-          .contacts .map-bg .container .cities .details .number-email div span {
-            color: #e0e0e0; }
-          .contacts .map-bg .container .cities .details .number-email div .number {
+        flex-wrap: wrap;
+        margin-top: -40px; }
+        .contacts .message .message-container .form-container form .four-input label {
+          margin-top: 40px;
+          position: relative; }
+          .contacts .message .message-container .form-container form .four-input label input {
+            width: 420px;
+            height: 50px;
+            outline: none;
+            background: transparent;
+            border: transparent;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.32);
+            font-size: 24px;
             color: white; }
-          .contacts .map-bg .container .cities .details .number-email div .email {
-            color: white; }
-
-.contacts .message {
-  color: white;
-  background-color: #0d0f1c;
-  display: flex;
-  justify-content: center;
-  overflow-y: auto;
-  padding-top: 100px;
-  padding-bottom: 90px;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  position: relative; }
-  .contacts .message .message-container {
-    width: 1360px;
-    padding-left: 50px;
-    padding-right: 50px; }
-    .contacts .message .message-container h1 {
-      font-size: 88px;
-      font-weight: bold;
-      margin-bottom: 100px; }
-    .contacts .message .message-container .form-container form .four-input {
-      max-width: 900px;
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      margin-top: -40px; }
-      .contacts .message .message-container .form-container form .four-input label {
-        margin-top: 40px;
+            .contacts .message .message-container .form-container form .four-input label input:not(:placeholder-shown) + .placeholder {
+              transition: font-size .3s, bottom .3s;
+              font-size: 12px;
+              bottom: 45px; }
+            .contacts .message .message-container .form-container form .four-input label input::placeholder {
+              color: transparent; }
+          .contacts .message .message-container .form-container form .four-input label .placeholder {
+            position: absolute;
+            left: 0;
+            bottom: 15px; }
+          .contacts .message .message-container .form-container form .four-input label [data-end]::after {
+            content: attr(data-end);
+            color: #2979ff; }
+      .contacts .message .message-container .form-container form .down-input {
+        height: 50px;
+        margin-top: 60px;
         position: relative; }
-        .contacts .message .message-container .form-container form .four-input label input {
-          width: 420px;
-          height: 50px;
-          outline: none;
-          background: transparent;
-          border: transparent;
-          border-bottom: 1px solid rgba(255, 255, 255, 0.32);
-          font-size: 24px;
-          color: white; }
-          .contacts .message .message-container .form-container form .four-input label input:not(:placeholder-shown) + .placeholder {
-            transition: font-size .3s, bottom .3s;
-            font-size: 12px;
-            bottom: 45px; }
-          .contacts .message .message-container .form-container form .four-input label input::placeholder {
-            color: transparent; }
-        .contacts .message .message-container .form-container form .four-input label .placeholder {
+        .contacts .message .message-container .form-container form .down-input label {
+          position: absolute; }
+          .contacts .message .message-container .form-container form .down-input label input {
+            width: 900px;
+            height: 50px;
+            outline: none;
+            background: transparent;
+            border: transparent;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.32);
+            font-size: 24px;
+            color: white; }
+            .contacts .message .message-container .form-container form .down-input label input:not(:placeholder-shown) + .placeholder {
+              transition: font-size .3s, bottom .3s;
+              font-size: 12px;
+              bottom: 45px; }
+            .contacts .message .message-container .form-container form .down-input label input::placeholder {
+              color: transparent; }
+          .contacts .message .message-container .form-container form .down-input label .placeholder {
+            position: absolute;
+            left: 0;
+            bottom: 15px; }
+        .contacts .message .message-container .form-container form .down-input .style-type-file {
           position: absolute;
-          left: 0;
-          bottom: 15px; }
-        .contacts .message .message-container .form-container form .four-input label [data-end]::after {
-          content: attr(data-end);
-          color: #2979ff; }
-    .contacts .message .message-container .form-container form .down-input {
-      height: 50px;
-      margin-top: 60px;
-      position: relative; }
-      .contacts .message .message-container .form-container form .down-input label {
-        z-index: 10;
-        position: absolute; }
-        .contacts .message .message-container .form-container form .down-input label input {
-          width: 900px;
-          height: 50px;
-          outline: none;
-          background: transparent;
-          border: transparent;
-          border-bottom: 1px solid rgba(255, 255, 255, 0.32);
-          font-size: 24px;
-          color: white; }
-          .contacts .message .message-container .form-container form .down-input label input:not(:placeholder-shown) + .placeholder {
-            transition: font-size .3s, bottom .3s;
-            font-size: 12px;
-            bottom: 45px; }
-          .contacts .message .message-container .form-container form .down-input label input::placeholder {
-            color: transparent; }
-        .contacts .message .message-container .form-container form .down-input label .placeholder {
-          position: absolute;
-          left: 0;
-          bottom: 15px; }
-      .contacts .message .message-container .form-container form .down-input .style-type-file {
-        position: absolute;
-        right: 20px;
-        bottom: 30px; }
-        .contacts .message .message-container .form-container form .down-input .style-type-file label[for=file-input]::before {
-          content: url(bf8c3e21f58831e03b1e448752b88363.svg);
-          z-index: 1;
-          cursor: pointer; }
-        .contacts .message .message-container .form-container form .down-input .style-type-file #file-input {
-          display: none; }
-    .contacts .message .message-container .footer p {
-      font-size: 15px;
-      margin-top: 30px;
-      margin-bottom: 20px; }
-    .contacts .message .message-container .footer label {
-      display: flex;
-      align-items: center; }
-      .contacts .message .message-container .footer label input[type=checkbox] {
-        margin-right: 15px; }
-    .contacts .message .message-container .footer .btn-send {
-      width: 130px;
-      height: 36px;
-      background: #2979ff;
-      border-radius: 4px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-size: 15px;
-      font-weight: bold;
-      margin-top: 40px;
-      cursor: pointer; }
+          right: 20px;
+          bottom: 30px; }
+          .contacts .message .message-container .form-container form .down-input .style-type-file label[for=file-input]::before {
+            content: url(bf8c3e21f58831e03b1e448752b88363.svg);
+            z-index: 1;
+            cursor: pointer; }
+          .contacts .message .message-container .form-container form .down-input .style-type-file #file-input {
+            display: none; }
+      .contacts .message .message-container .footer p {
+        font-size: 15px;
+        margin-top: 30px;
+        margin-bottom: 20px; }
+      .contacts .message .message-container .footer label {
+        display: flex;
+        align-items: center; }
+        .contacts .message .message-container .footer label input[type=checkbox] {
+          margin-right: 15px; }
+      .contacts .message .message-container .footer .btn-send {
+        width: 130px;
+        height: 36px;
+        background: #2979ff;
+        border-radius: 4px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 15px;
+        font-weight: bold;
+        margin-top: 40px;
+        cursor: pointer; }
 
 @media only screen and (max-width: 997px) {
   .contacts .message .message-container .form-container form .down-input label {
@@ -2090,16 +2090,16 @@ footer {
 
 @media only screen and (max-width: 530px) {
   .contacts .map-bg {
-    padding-top: 80px;
-    padding-bottom: 80px; }
+    padding-top: 80px; }
     .contacts .map-bg .container {
       height: auto; }
       .contacts .map-bg .container h1 {
         text-align: center;
-        font-size: 45px; }
+        font-size: 27px; }
       .contacts .map-bg .container .cities {
-        padding-top: 70px;
-        flex-direction: column; }
+        padding-top: 30px;
+        flex-direction: column;
+        padding-bottom: 80px; }
         .contacts .map-bg .container .cities .block {
           padding: 0; }
           .contacts .map-bg .container .cities .block + .block {
