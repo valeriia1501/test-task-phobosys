@@ -61,7 +61,7 @@
 
 
         .text {
-            padding: 130px 0;
+            padding: 150px 0;
 
             h1 {
                 max-width: 900px;
@@ -138,6 +138,7 @@
         min-height: 410px;
         height: 300px;
         .containe-careers {
+            padding-top: 50px;
             .text {
                 h1 {
                     font-size: 35px;
@@ -158,6 +159,7 @@
                     font-size: 29px;
                 }
                 p {
+                    padding-top: 25px; 
                     font-size: 12px;
                 }
             }
