@@ -20,10 +20,12 @@ export default class GetInTouch extends React.PureComponent {
   }
 
   componentDidUpdate() {
-    if(rootStore._state.isOpen) 
+    if(rootStore._state.isOpen){ 
       this.html.classList.add('scroll-hidden') 
-    else 
+  }
+    else {
       this.html.classList.remove('scroll-hidden') 
+    }
   }
 
   customTogglePopUp = ({ isOpen }) => this.setState({ isShowPopUp: isOpen })

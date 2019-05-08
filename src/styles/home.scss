@@ -101,12 +101,19 @@
     }
 }
 
-@media only screen and (max-width: 630px){
+@media only screen and (max-width: 1160px){
     .home {
         .web-gl {
             #vanta-net {
                 right: 0;
             }
+        }
+    }
+}
+@media only screen and (max-width: 768px){
+    .home {
+        .web-gl {
+            display: none;
         }
     }
 }

@@ -381,18 +381,22 @@
     width: 100%;
     height: 100%;
     flex-direction: column;
-    font-size: 16px; }
+    font-size: 16px;
+    display: grid;
+    justify-items: start; }
     .mobile ul li + li {
       margin: 0; }
     .mobile ul li a {
       height: 55px;
       line-height: 55px;
-      padding-right: 80px;
       display: flex;
       justify-content: center;
       color: white;
       text-decoration: none;
-      transition: color .2s; }
+      transition: color .2s;
+      display: grid;
+      grid-template-columns: 240px;
+      padding-left: 40px; }
       .mobile ul li a:hover {
         color: #2962ff;
         transition: color .2s; }
@@ -601,9 +605,8 @@ footer {
       align-items: center;
       margin-right: 80px;
       padding-left: 50px; }
-      .scroll-section > .cards .card-home > img {
-        margin-right: 40px; }
       .scroll-section > .cards .card-home > div {
+        margin-left: 40px;
         width: 280px; }
         .scroll-section > .cards .card-home > div > span {
           font-size: 15px;
@@ -796,6 +799,7 @@ footer {
           font-size: 20px;
           color: #212121; }
         .works .works-container .bg-gradient .text-about-work div a {
+          width: fit-content;
           display: flex;
           align-items: center;
           text-decoration: none;
@@ -1030,9 +1034,13 @@ footer {
     .home .section-services.home-route-exit.home-route-exit-active .card-services:nth-child(5) {
       transition-delay: 0.2s; }
 
-@media only screen and (max-width: 630px) {
+@media only screen and (max-width: 1160px) {
   .home .web-gl #vanta-net {
     right: 0; } }
+
+@media only screen and (max-width: 768px) {
+  .home .web-gl {
+    display: none; } }
 
 .neural {
   font-family: 'Proxima Nova Rg';
@@ -1572,23 +1580,16 @@ footer {
       display: flex;
       flex-direction: column;
       font-size: 20px;
-      padding: 0 20px;
-      flex: 1 1 320px; }
-      .section-services .cards-services .card-services:last-child {
-        display: block; }
+      padding: 0 20px; }
       .section-services .cards-services .card-services > img {
         width: 100%; }
       .section-services .cards-services .card-services > span {
         margin-top: 50px;
         margin-bottom: 50px; }
 
-@media only screen and (max-width: 1155px) {
-  .section-services .cards-services .card-services:last-child {
-    display: none; } }
-
-@media only screen and (max-width: 1066px) {
-  .section-services .cards-services .card-services:last-child {
-    display: none; } }
+@media only screen and (max-width: 800px) {
+  .section-services .cards-services .card-services {
+    flex: 1 1 320px; } }
 
 @media only screen and (max-width: 768px) {
   .section-services .cards-services {
@@ -1625,10 +1626,10 @@ footer {
       align-items: center; }
       .services-provided .application-container div span {
         font-family: 'Montserrat Bold';
-        font-size: 96px; }
+        font-size: 75px; }
       .services-provided .application-container div p {
         font-family: 'Proxima Nova';
-        font-size: 24px;
+        font-size: 18px;
         margin-top: 35px; }
   .services-provided .about-applications {
     display: flex;
@@ -1711,8 +1712,8 @@ footer {
   color: white;
   width: 100%;
   height: 760px;
-  background: url(291b024d15ae6e5755cfd6f3ba32e92d.png) no-repeat center center fixed;
-  background-size: auto;
+  background: url(9692301402d48a123992db3dccde00fb.png) no-repeat center center fixed;
+  background-size: cover;
   background-position: top;
   background-color: black;
   margin-top: -78px;

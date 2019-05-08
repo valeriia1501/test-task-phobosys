@@ -15,7 +15,16 @@ export default class Footer extends React.PureComponent {
   constructor(props) {
     super(props)
     this.state ={
-        isFixed: ['/neural', '/experties', '/about-us', '/careers', '/contacts'].indexOf(currentRoute.context.routepath) === -1 ? false : true
+        isFixed: [
+            '/neural', 
+            '/experties', 
+            '/about-us', 
+            '/careers', 
+            '/contacts',
+            '/experties/ProfessionalStartupSolution',
+            '/experties/ImproveAndSupport',
+            '/experties/UiUxEngeniring',
+        ].indexOf(currentRoute.context.routepath) === -1 ? false : true
     }
     currentRoute.on(this.handleCustomEvent)
   }
