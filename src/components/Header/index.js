@@ -51,9 +51,11 @@ export default class Header extends React.PureComponent {
     rootStore.togglePopUp(isOpen)
   }
 
-  handleCustomEvent = (context) => this.setState({ currentUrl: context.canonicalPath  })
+  showMobMenu = () => {
+    rootStore.toggleMobMenu()
+  }
 
-  toogleMobileMenu = () => this.setState({ isShowMobileMenu: !this.state.isShowMobileMenu })
+  handleCustomEvent = (context) => this.setState({ currentUrl: context.canonicalPath  })
 
   isCurrentTab = (tabUrl) => this.state.currentUrl.includes(tabUrl)
 
@@ -85,17 +87,9 @@ export default class Header extends React.PureComponent {
             <nav>
               {this.createTabs()}
             </nav>
-            <nav className={classnames('mobile', { 'show': this.state.isShowMobileMenu })}>
-              <ul>
-                <li><a href="#!/services">Expertise</a></li>
-                <li><a href="#!/about-us">About us</a></li>
-                <li><a href="#!/careers">Careers</a></li>
-                <li><a href="#!/contacts">Contact Us</a></li>
-              </ul>
-            </nav>
           </div>
           <span className='render' >{this.state.render}</span>
-          <div onClick={this.toogleMobileMenu}>
+          <div onClick={this.showMobMenu}>
             <BurgerIcon />
           </div>
           <button onClick={this.showGetInTouch}>Get in touch</button>

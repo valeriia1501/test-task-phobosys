@@ -17,6 +17,7 @@
             flex-direction: column;
             justify-content: space-between;
             @include padding-both;
+            padding-top: 50px;
 
             h1 {
                 font-size: 64px;

@@ -19,10 +19,10 @@
             flex-direction: column;
             font-size: 20px;
             padding: 0 20px;
-            flex: 1 1 290px;
+            flex: 1 1 320px;
             
             &:last-child {
-                display: none;
+                display: block;
             }
 
             > img {
@@ -36,12 +36,11 @@
     }
 }
 
-@media only screen and (max-width: 1395px) {
+@media only screen and (max-width: 1155px) {
     .section-services {
         .cards-services {
             .card-services:last-child {
-                opacity: 0;
-                display: block;
+                display: none;
             }
         }
     }
@@ -76,6 +75,8 @@
             padding-right: 30px;
             .card-services {
                 width: auto;
+                padding-left: 0;
+                padding-right: 0;
             }
         }
     }

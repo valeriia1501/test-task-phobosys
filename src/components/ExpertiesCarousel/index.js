@@ -183,7 +183,7 @@ export default class ExpertiesCarousel extends React.PureComponent {
               <span>02</span>
               <p>Improve and Support Your Product</p>
               <small>Service <span>- Sturupe solution</span></small>
-              <a className="arrow" href="#" ><img src={rigthArrow} /></a>
+              <a className="arrow" href="#!/experties" ><img src={rigthArrow} /></a>
             </div>
           </div>
           <div className='card-home' style={{ 'transform' : 'translateX'+'('+ -this.state.moveLeft+'vh'+')' }} >
@@ -192,7 +192,7 @@ export default class ExpertiesCarousel extends React.PureComponent {
               <span>03</span>
               <p>UI/UX Engeniring</p>
               <small>Service <span>- Sturupe solution</span></small>
-              <a className="arrow" href="#" ><img src={rigthArrow} /></a>
+              <a className="arrow" href="#!/experties" ><img src={rigthArrow} /></a>
             </div>
           </div>
           <div className="borvo" ref={domel => this.borvo = domel}  >
