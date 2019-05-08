@@ -1,14 +1,15 @@
 import master from '@components/master'
 import Services from '@components/Services'
 import Neural from '@components/Neural'
-import Experties from '@components/Experties'
 import Home from '@components/Home'
 import AboutUs from '@components/AboutUs'
 import Contacts from '@components/Contacts'
 import Careers from '@components/CareersVacancies/Careers'
 import Vacancy from '@components/CareersVacancies/Vacancy'
-
-
+import Experties from '@components/Experties'
+import ProfessionalStartupSolution from '@components/Experties/ProfessionalStartupSolution'
+import ImproveAndSupport  from '@components/Experties/ImproveAndSupport'
+import UiUxEngeniring  from '@components/Experties/UiUxEngeniring'
 
 import ExpertiesCarousel from '@components/ExpertiesCarousel'
 
@@ -47,7 +48,6 @@ export default [
         path: '/careers',
         name: 'CareersVacancies',
         tile: '',
-        // transition: { timeout: 500, classNames: 'careers-vacancies' },
         component: CareersVacancies,
         children: [
           {
@@ -64,20 +64,39 @@ export default [
           },
         ]
       },
-
       
+      // {
+      //   path: '/experties',
+      //   name: 'Experties',
+      //   title: '',
+      //   component: Experties,
+      // },
+      {
+        path: '/experties/ImproveAndSupport',
+        name: 'Improve and Support ',
+        title: '',
+        component: ImproveAndSupport,
+      },
+
+      {
+        path: '/experties/ProfessionalStartupSolution',
+        name: 'Professional Startup Solution',
+        title: '',
+        component: ProfessionalStartupSolution,
+      },
+
+      {
+        path: '/experties/UiUxEngeniring',
+        name: 'UiUxEngeniring',
+        title: '',
+        component: UiUxEngeniring,
+      },
 
       {
         path: '/neural',
         name: 'Neural',
         title: '',
         component: Neural
-      },
-      {
-        path: '/experties',
-        name: 'Experties',
-        title: '',
-        component: Experties
       },
       {
         path: '/about-us',

@@ -19,11 +19,8 @@
             flex-direction: column;
             font-size: 20px;
             padding: 0 20px;
-            flex: 1 1 320px;
-            
-            &:last-child {
-                display: block;
-            }
+            // flex: 1 1 320px;
+
 
             > img {
                 width: 100%
@@ -36,21 +33,11 @@
     }
 }
 
-@media only screen and (max-width: 1155px) {
+@media only screen and (max-width: 800px) {
     .section-services {
         .cards-services {
-            .card-services:last-child {
-                display: none;
-            }
-        }
-    }
-}
-
-@media only screen and (max-width: 1066px) {
-    .section-services {
-        .cards-services {
-            .card-services:last-child {
-                display: none;
+            .card-services {
+                flex: 1 1 320px
             }
         }
     }
@@ -68,6 +55,7 @@
         }
     }
 }
+
 @media only screen and (max-width: 500px) {
     .section-services {
         .cards-services {

@@ -169,30 +169,36 @@ export default class ExpertiesCarousel extends React.PureComponent {
       <section className="scroll-section safari_only" ref={el => this.scrollSection = el}>
         <div className="cards">
           <div className='card-home' >
-            <img src={card_1} />
+            <a href={"#!/experties" + '/ProfessionalStartupSolution'} >
+              <img src={card_1} />
+            </a>
             <div>
               <span>01</span>
               <p>Professional Startup Solution</p>
               <small>Service <span>- Sturupe solution</span></small>
-              <a className="arrow" href="#!/experties" ><img src={rigthArrow} /></a>
+              <a className="arrow" href={"#!/experties" + '/ProfessionalStartupSolution'} ><img src={rigthArrow} /></a>
             </div>
           </div>
           <div className='card-home'>
-            <img src={card_2} />
+            <a href={"#!/experties" + '/ImproveAndSupport'} >
+              <img src={card_2} />
+            </a>
             <div>
               <span>02</span>
               <p>Improve and Support Your Product</p>
               <small>Service <span>- Sturupe solution</span></small>
-              <a className="arrow" href="#!/experties" ><img src={rigthArrow} /></a>
+              <a className="arrow" href={"#!/experties" + '/ImproveAndSupport'} ><img src={rigthArrow} /></a>
             </div>
           </div>
           <div className='card-home' style={{ 'transform' : 'translateX'+'('+ -this.state.moveLeft+'vh'+')' }} >
-            <img src={card_3} />
+            <a href={"#!/experties" + '/UiUxEngeniring'} >
+              <img src={card_3} />
+            </a>
             <div>
               <span>03</span>
               <p>UI/UX Engeniring</p>
               <small>Service <span>- Sturupe solution</span></small>
-              <a className="arrow" href="#!/experties" ><img src={rigthArrow} /></a>
+              <a className="arrow" href={"#!/experties" + '/UiUxEngeniring'} ><img src={rigthArrow} /></a>
             </div>
           </div>
           <div className="borvo" ref={domel => this.borvo = domel}  >

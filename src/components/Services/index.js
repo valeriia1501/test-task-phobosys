@@ -1,6 +1,10 @@
 import React from 'react';
 
-import { card_3 } from '@/images&video'
+import {
+    card_1,
+    card_2,
+    card_3,
+   } from '@/images&video'
 
 export default class Services extends React.PureComponent {
     constructor(props) {
@@ -49,38 +53,18 @@ export default class Services extends React.PureComponent {
             <section className="section-services" >
                 <div className="cards-services">
                     <div className="card-services" ref={el => this.card = el}>
-                        <img src={card_3} />
-                        <span>UX</span>
+                        <img src={card_1} />
+                        <span>Professional Startup Solution</span>
+                    </div>
+                    <div className="card-services">
+                        <img src={card_2} />
+                        <span>Improve and Support Your Product</span>
                     </div>
                     <div className="card-services">
                         <img src={card_3} />
-                        <span>UX</span>
+                        <span>UI/UX Engeniring</span>
                     </div>
                     <div className="card-services">
-                        <img src={card_3} />
-                        <span>UX</span>
-                    </div>
-                    <div className="card-services">
-                        <img src={card_3} />
-                        <span>UX</span>
-                    </div>
-                    <div className="card-services">
-                        <img src={card_3} />
-                        <span>UX</span>
-                    </div>
-                    <div className="card-services">
-                        <img src={card_3} />
-                        <span>UX</span>
-                    </div>
-                    <div className="card-services">
-                        <img src={card_3} />
-                        <span>UX</span>
-                    </div>
-                    <div className="card-services">
-                        <img src={card_3} />
-                        <span>UX</span>
-                    </div>
-                    <div className="card-services" >
                         <img src={card_3} />
                         <span>UX</span>
                     </div>

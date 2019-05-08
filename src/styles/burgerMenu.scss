@@ -24,6 +24,8 @@
       height: 100%;
       flex-direction: column;
       font-size: 16px;
+      display: grid;
+      justify-items: start;
 
       li{
 
@@ -33,12 +35,14 @@
         a{
           height: 55px;
           line-height: 55px;
-          padding-right: 80px;
           display: flex;
           justify-content: center;
           color: white;
           text-decoration: none;
           transition: color .2s;
+          display: grid;
+          grid-template-columns: 240px;
+          padding-left: 40px;
 
           &:hover {
               color: #2962ff;
