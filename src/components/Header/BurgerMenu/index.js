@@ -74,6 +74,11 @@ export default class MobileBurgerMenu extends React.PureComponent {
         rootStore.toggleMobMenu()
     }
 
+    showGetInTouch = () => {
+        const isOpen = true
+        rootStore.togglePopUp(isOpen)
+    }
+
     customTogglePopUp = ({isShowMobMenu}) => this.setState({ isShowMobMenu: rootStore._state.isShowMobMenu })
 
     render() {
@@ -84,6 +89,7 @@ export default class MobileBurgerMenu extends React.PureComponent {
                 })}>
                 <img className='close' src={closeCross} onClick={this.close} />                
                 {this.createTabs()}
+                <div onClick={this.showGetInTouch} className='get-in-touch-mobile' >Get in touch</div>
             </nav>
         )
     }

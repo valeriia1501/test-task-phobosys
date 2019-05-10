@@ -207,7 +207,7 @@
   .white-page .header-container div a .logo::before {
     display: inline-block; } }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 800px) {
   .header-container div > nav {
     display: none; }
   .header-container .burger-icon {
@@ -369,7 +369,8 @@
   right: 0;
   top: 0;
   z-index: 999;
-  overflow: hidden; }
+  overflow: hidden;
+  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.5); }
   .mobile .close {
     position: fixed;
     fill: white;
@@ -400,6 +401,20 @@
       .mobile ul li a:hover {
         color: #2962ff;
         transition: color .2s; }
+  .mobile .get-in-touch-mobile {
+    width: 224px;
+    height: 36px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    border-radius: 4px;
+    background: #2979ff;
+    position: fixed;
+    bottom: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+    cursor: pointer; }
 
 .show-menu {
   display: flex;
@@ -671,11 +686,9 @@ footer {
 @media only screen and (max-width: 1024px) {
   .scroll-section {
     overflow-x: scroll;
-    margin-bottom: -15px; }
-    .scroll-section .borvo .neural {
-      display: none; } }
+    margin-bottom: -15px; } }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 800px) {
   .scroll-section {
     height: auto;
     display: flex;
@@ -1580,7 +1593,9 @@ footer {
       display: flex;
       flex-direction: column;
       font-size: 20px;
-      padding: 0 20px; }
+      padding: 0 20px;
+      color: white;
+      text-decoration: none; }
       .section-services .cards-services .card-services > img {
         width: 100%; }
       .section-services .cards-services .card-services > span {
@@ -1793,8 +1808,7 @@ footer {
       justify-content: space-between;
       font-size: 18px;
       color: #757575;
-      padding-bottom: 100px;
-      border-bottom: 1px solid #eeeeee; }
+      padding-bottom: 100px; }
       .about-us .white-text-section .container .two-columns p {
         max-width: 620px; }
       .about-us .white-text-section .container .two-columns p:nth-child(2) {
@@ -2136,8 +2150,10 @@ footer {
       padding-right: 30px;
       padding-left: 40px;
       text-decoration: none;
-      color: black; }
+      color: black;
+      transition: box-shadow .25s, color .25s; }
       .careers .white-vacancies .container .card-vacancy:hover {
+        transition: box-shadow .25s, color .25s;
         box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.16);
         color: #2979ff; }
       .careers .white-vacancies .container .card-vacancy .location {

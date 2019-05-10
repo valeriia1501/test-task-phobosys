@@ -60,8 +60,8 @@ export default class ExpertiesCarousel extends React.PureComponent {
   scrollBottom = el => el.scrollHeight - el.clientHeight - window.pageYOffset
   scrollLeft = el => el.scrollWidth - el.clientWidth - el.scrollLeft
   wheelHandler = (e) => {
+    if(this.clientWidth <= 800) return
 
-    if(this.clientWidth <= 1024) return
     if (this.state.innerPageLock) {
       router.page('/neural')
       document.body.scrollTop = 0; // for safari
@@ -145,7 +145,8 @@ export default class ExpertiesCarousel extends React.PureComponent {
   }
 
   scrollHandler = (e) => {
-    if(this.clientWidth <= 1024) return
+    if(this.clientWidth <= 800) return
+
     const el = e.target.scrollingElement;    
     const verticalScrollLock = (this.scrollBottom(el) === 0)
 
@@ -156,7 +157,8 @@ export default class ExpertiesCarousel extends React.PureComponent {
   }
 
   horizontalScrollHandler = (e) => {
-    if(this.clientWidth <= 1024) return
+    if(this.clientWidth <= 800) return
+
     const el = e.target;
     const circlZooming = (this.scrollLeft(el) === 0)
     if (!this.state.circlZooming && circlZooming) {

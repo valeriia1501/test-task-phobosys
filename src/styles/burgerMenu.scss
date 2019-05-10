@@ -9,6 +9,7 @@
     top: 0;
     z-index: 999;
     overflow: hidden;
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.5);
 
     .close {
         position: fixed;
@@ -50,6 +51,22 @@
           }
         }
       }
+    }
+
+    .get-in-touch-mobile {
+        width: 224px;
+        height: 36px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        border-radius: 4px;
+        background: #2979ff;
+        position: fixed;
+        bottom: 16px;
+        left: 50%;
+        transform: translateX(-50%);
+        cursor: pointer;
     }
   }
 

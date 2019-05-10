@@ -52,22 +52,22 @@ export default class Services extends React.PureComponent {
         return (
             <section className="section-services" >
                 <div className="cards-services">
-                    <div className="card-services" ref={el => this.card = el}>
+                    <a href={"#!/experties" + '/ProfessionalStartupSolution'} className="card-services" ref={el => this.card = el}>
                         <img src={card_1} />
                         <span>Professional Startup Solution</span>
-                    </div>
-                    <div className="card-services">
+                    </a>
+                    <a href={"#!/experties" + '/ImproveAndSupport'} className="card-services">
                         <img src={card_2} />
                         <span>Improve and Support Your Product</span>
-                    </div>
-                    <div className="card-services">
+                    </a>
+                    <a href={"#!/experties" + '/UiUxEngeniring'} className="card-services">
                         <img src={card_3} />
                         <span>UI/UX Engeniring</span>
-                    </div>
-                    <div className="card-services">
+                    </a>
+                    <a href={"#!/experties" + '/UiUxEngeniring'} className="card-services">
                         <img src={card_3} />
                         <span>UX</span>
-                    </div>
+                    </a>
                 </div>
             </section>
         )
