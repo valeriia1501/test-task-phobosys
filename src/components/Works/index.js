@@ -78,8 +78,7 @@ export default class Works extends React.PureComponent {
             <div className={classnames('blue-block', {'hide-blue-block': this.state.isHideBlueBlock})} style={{'display': this.state.displayNone}} ></div>
                 <div className="works-container">
                     <div className='content' >
-                        <video autoPlay loop muted preload='true' >
-                            <source src={videoNeuralNetwork} type="video/webm" />
+                        <video autoPlay loop muted >
                             <source src={videoNeuralNetwork} type="video/mp4" />
                         </video>
                     </div>

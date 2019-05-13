@@ -585,6 +585,36 @@
         }
     }
 }
+@media only screen and (max-width: 1024px) {
+    .neural {
+        .reviews,
+        .all-reviews{
+            .container {
+                .first-review,
+                .second-review,
+                .third-review{
+                    .feedback-text {
+                        blockquote { font-size: 17px; }
+
+                        .name-position {
+                            .name { font-size: 14px; }
+                            .position { font-size: 10px; }
+                        }
+
+                        .show-testimonials {
+                            width: 190px;
+                            height: 36px;
+
+                            span {
+                                font-size: 12px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
 
 @media only screen and (max-width: 1000px) {
     .neural {

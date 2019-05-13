@@ -3,6 +3,8 @@ import classnames from 'classnames'
 
 import Neural from '@components/Neural'
 
+import rootStore from '@/store/RootStore.js'
+
 import router from 'react-page-router'
 
 import {
@@ -25,12 +27,12 @@ export default class ExpertiesCarousel extends React.PureComponent {
       zoomStyle: {
         'zoom' : 1
       },
-      zoomStyleFireFox:{
+      zoomStyleFireFox: {
         'transform': `scale(1)`
       }
     }
   }
-  
+
   componentDidMount() {
     this.html.addEventListener('wheel', this.wheelHandler)
     this.html.addEventListener('scroll', this.scrollHandler)
@@ -59,6 +61,7 @@ export default class ExpertiesCarousel extends React.PureComponent {
 
   scrollBottom = el => el.scrollHeight - el.clientHeight - window.pageYOffset
   scrollLeft = el => el.scrollWidth - el.clientWidth - el.scrollLeft
+  
   wheelHandler = (e) => {
     if(this.clientWidth <= 800) return
 
@@ -84,7 +87,7 @@ export default class ExpertiesCarousel extends React.PureComponent {
       (e.deltaY > 0)
     ) {
       this.html.classList.add('scroll-hidden')
-      this.setState({ verticalScrollLock: true }) 
+      this.setState({ verticalScrollLock: true })       
     }
 
     if (this.state.verticalScrollLock && !this.state.circlZooming) {
@@ -119,7 +122,10 @@ export default class ExpertiesCarousel extends React.PureComponent {
           }
         })
       }
-      this.props.hideWebGlElement()
+
+      const hide = true
+      rootStore.toggleWebGlVisibility(hide)
+      this.html.classList.add('scroll-hidden')
     }
     
     this.setState({
@@ -144,6 +150,7 @@ export default class ExpertiesCarousel extends React.PureComponent {
     } // normalize speed scroll macOS
   }
 
+
   scrollHandler = (e) => {
     if(this.clientWidth <= 800) return
 
@@ -164,7 +171,9 @@ export default class ExpertiesCarousel extends React.PureComponent {
     if (!this.state.circlZooming && circlZooming) {
       this.setState({ circlZooming })
     }
-    this.props.showWebGlElement()    
+      
+    rootStore.toggleWebGlVisibility(false)
+    this.html.classList.add('scroll-hidden')
   }
     render() {
     return (

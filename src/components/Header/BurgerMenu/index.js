@@ -9,8 +9,7 @@ import rootStore from '@/store/RootStore.js'
 
 export default class MobileBurgerMenu extends React.PureComponent {
     constructor(props){
-        super(props)        
-        rootStore.on(this.customTogglePopUp)
+        super(props)
         this.state = {
             tabs: [
                 {
@@ -34,40 +33,35 @@ export default class MobileBurgerMenu extends React.PureComponent {
                     link: '#!/neural'
                 }
             ],
-            currentUrl: currentRoute.context.canonicalPath
+            currentUrl: currentRoute.context.canonicalPath,
+            ...rootStore.getState()
         }
         currentRoute.on(this.handleCustomEvent)
+        rootStore.on(this.customTogglePopUp)
     }
 
-    handleCustomEvent = () => {
-
-    }
-
-    componentWillUnmount () { 
+    componentWillUnmount () {
+        rootStore.off(this.customTogglePopUp)
         currentRoute.off(this.handleCustomEvent)
     }
 
-    handleCustomEvent = (context) => this.setState({ currentUrl: context.canonicalPath  })
+    handleCustomEvent = (context) =>
+      this.setState({ currentUrl: context.canonicalPath })
 
     isCurrentTab = (tabUrl) => this.state.currentUrl.includes(tabUrl)
 
     createTabs() {
-        return <ul>
-          {
-            this.state.tabs.map((tab, idx) => {
-              const { link, name } = tab
-              return <li key={idx}>
-                <a href={link} className={classnames({'current-link': this.isCurrentTab(link) })} >
-                  {name}
-                </a>
-              </li>
-            })
-          }
-        </ul>
-      }
-
-    componentWillUnmount () {
-        rootStore.off(this.customTogglePopUp)
+      return <ul>
+        { this.state.tabs.map((tab, idx) => {
+            const { link, name } = tab
+            return <li key={idx}>
+              <a href={link} className={classnames({'current-link': this.isCurrentTab(link) })} >
+                {name}
+              </a>
+            </li>
+          })
+        }
+      </ul>
     }
 
     close = () => {
@@ -79,17 +73,24 @@ export default class MobileBurgerMenu extends React.PureComponent {
         rootStore.togglePopUp(isOpen)
     }
 
-    customTogglePopUp = ({isShowMobMenu}) => this.setState({ isShowMobMenu: rootStore._state.isShowMobMenu })
+    customTogglePopUp = ({ isShowMobileMenu }) =>
+      this.setState({ isShowMobileMenu })
 
     render() {
         return (
-            <nav className={classnames('mobile', { 
-                'show-menu': rootStore._state.isShowMobMenu, 
-                'hide-menu': !rootStore._state.isShowMobMenu 
+            <nav className={classnames(
+                'mobile', {
+                  'show-menu': this.state.isShowMobileMenu,
+                  'hide-menu': !this.state.isShowMobileMenu
                 })}>
-                <img className='close' src={closeCross} onClick={this.close} />                
+                <img className='close' src={closeCross} onClick={this.close} />
                 {this.createTabs()}
-                <div onClick={this.showGetInTouch} className='get-in-touch-mobile' >Get in touch</div>
+                <div
+                  onClick={this.showGetInTouch}
+                  className='get-in-touch-mobile'
+                >
+                    Get in touch
+                </div>
             </nav>
         )
     }

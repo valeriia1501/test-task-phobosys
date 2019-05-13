@@ -2,6 +2,8 @@ import React from 'react'
 
 import classnames from 'classnames'
 
+import rootStore from '@/store/RootStore.js'
+
 import Header from '@/components/Header'
 import AI from '@/components/AI'
 
@@ -13,8 +15,16 @@ export default class Home extends React.Component {
     this.html.classList.add('scroll-x-hidden')
     this.state = { 
       AIPhrase: this.getAIPhrase(),
-      opacityZero: false
     }
+    rootStore.on(this.handleCustomEvent)
+  }
+
+  handleCustomEvent = () => {
+   this.setState({ ...rootStore.getState() }) 
+  }
+
+  componentWillUpdate = () => {
+    rootStore.off(this.handleCustomEvent)
   }
 
   getAIPhrase () {
@@ -30,8 +40,9 @@ export default class Home extends React.Component {
     const AIPhrase = this.getAIPhrase()
     if (state.AIPhrase !== AIPhrase) this.setState({ AIPhrase })
   }
-  componentDidMount(){
-   try{
+
+  componentDidMount () {
+   try {
     VANTA.NET({
       el: "#vanta-net",
       color: 0x2979ff,
@@ -40,30 +51,20 @@ export default class Home extends React.Component {
       maxDistance: 21.00,
       spacing: 12.00
     }) 
-   } catch(e){
+   } catch(e) {
      console.log(e)
    }
   }
   
-  hideWebGlElement = () => this.setState({ opacityZero: true })
-  showWebGlElement = () => this.setState({ opacityZero: false }) 
-
   render() {
-    const children = React.cloneElement(
-      this.props.children.props.children, 
-    { 
-      hideWebGlElement: this.hideWebGlElement,
-      showWebGlElement: this.showWebGlElement
-
-    })
     return (
       <div className="home">
         <Header/>
         <section className='web-gl' >
-          <div id='vanta-net' className={classnames({'add-opacity-zero': this.state.opacityZero})}/>
+          <div id='vanta-net' className={classnames({'add-opacity-zero': this.state.isVisibleWebGl})}/>
         </section>
         <AI phrase={this.state.AIPhrase} />
-        {children}
+        {this.props.children}
       </div>
     )
   }

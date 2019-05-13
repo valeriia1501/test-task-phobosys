@@ -227,7 +227,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  display: none;
   overflow-y: auto;
   padding-top: 100px;
   z-index: 999; }
@@ -333,6 +332,7 @@
     transform: scale(0.5);
     top: 10px;
     right: 10px;
+    padding: 20px;
     cursor: pointer; }
 
 @media only screen and (max-width: 940px) {
@@ -377,7 +377,8 @@
     width: 15px;
     top: 25px;
     right: 25px;
-    cursor: pointer; }
+    cursor: pointer;
+    padding: 10px; }
   .mobile ul {
     width: 100%;
     height: 100%;
@@ -586,17 +587,11 @@ footer {
 
 @media only screen and (max-width: 768px) {
   .AI {
-    height: 50vh; } }
+    height: 30vh; } }
 
-@media only screen and (max-width: 500px) {
-  .AI {
-    height: 50vh; }
-    .AI-container p {
-      font-size: 59px; } }
-
-@media only screen and (max-width: 400px) {
-  .AI-container p {
-    font-size: 50px; } }
+@media only screen and (max-width: 525px) {
+  .AI p {
+    font-size: 13vw; } }
 
 .scroll-section {
   display: flex;
@@ -1482,6 +1477,44 @@ footer {
     .neural .all-reviews .container .third-review .feedback-text .name-position {
       align-self: center; } }
 
+@media only screen and (max-width: 1024px) {
+  .neural .reviews .container .first-review .feedback-text blockquote,
+  .neural .reviews .container .second-review .feedback-text blockquote,
+  .neural .reviews .container .third-review .feedback-text blockquote,
+  .neural .all-reviews .container .first-review .feedback-text blockquote,
+  .neural .all-reviews .container .second-review .feedback-text blockquote,
+  .neural .all-reviews .container .third-review .feedback-text blockquote {
+    font-size: 17px; }
+  .neural .reviews .container .first-review .feedback-text .name-position .name,
+  .neural .reviews .container .second-review .feedback-text .name-position .name,
+  .neural .reviews .container .third-review .feedback-text .name-position .name,
+  .neural .all-reviews .container .first-review .feedback-text .name-position .name,
+  .neural .all-reviews .container .second-review .feedback-text .name-position .name,
+  .neural .all-reviews .container .third-review .feedback-text .name-position .name {
+    font-size: 14px; }
+  .neural .reviews .container .first-review .feedback-text .name-position .position,
+  .neural .reviews .container .second-review .feedback-text .name-position .position,
+  .neural .reviews .container .third-review .feedback-text .name-position .position,
+  .neural .all-reviews .container .first-review .feedback-text .name-position .position,
+  .neural .all-reviews .container .second-review .feedback-text .name-position .position,
+  .neural .all-reviews .container .third-review .feedback-text .name-position .position {
+    font-size: 10px; }
+  .neural .reviews .container .first-review .feedback-text .show-testimonials,
+  .neural .reviews .container .second-review .feedback-text .show-testimonials,
+  .neural .reviews .container .third-review .feedback-text .show-testimonials,
+  .neural .all-reviews .container .first-review .feedback-text .show-testimonials,
+  .neural .all-reviews .container .second-review .feedback-text .show-testimonials,
+  .neural .all-reviews .container .third-review .feedback-text .show-testimonials {
+    width: 190px;
+    height: 36px; }
+    .neural .reviews .container .first-review .feedback-text .show-testimonials span,
+    .neural .reviews .container .second-review .feedback-text .show-testimonials span,
+    .neural .reviews .container .third-review .feedback-text .show-testimonials span,
+    .neural .all-reviews .container .first-review .feedback-text .show-testimonials span,
+    .neural .all-reviews .container .second-review .feedback-text .show-testimonials span,
+    .neural .all-reviews .container .third-review .feedback-text .show-testimonials span {
+      font-size: 12px; } }
+
 @media only screen and (max-width: 1000px) {
   .neural .networks .networks-container {
     margin-top: 135px; }
@@ -1739,7 +1772,8 @@ footer {
     display: flex;
     justify-content: center;
     align-items: flex-end;
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), #0d0f1c); }
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), #0d0f1c);
+    z-index: 2; }
     .about-us .bg-photo .text-gradient .text {
       width: 1360px;
       display: flex;
@@ -1758,6 +1792,15 @@ footer {
         display: inline-block;
         font-size: 24px;
         line-height: 1.42; }
+  .about-us .bg-photo .darkened-block {
+    background-color: #0d0f1c;
+    opacity: 0.5;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1; }
 
 .about-us .three-columns {
   display: flex;
@@ -2279,3 +2322,6 @@ footer {
   position: absolute;
   top: 0;
   left: 0; }
+
+.transition-about-us {
+  transition: background-color 0.2s ease 0s; }
