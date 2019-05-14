@@ -15,6 +15,7 @@ export default class Careers extends React.PureComponent {
         this.html.classList.add('scroll-x-hidden')
         document.body.scrollTop = 0 // for safari
         this.html.scrollTop = 0
+        
     }
 
     generateVacations () {

@@ -15,23 +15,14 @@ export default class Footer extends React.PureComponent {
   constructor(props) {
     super(props)
     this.state ={
-        isFixed: [
-            '/neural', 
-            '/experties', 
-            '/about-us', 
-            '/careers', 
-            '/contacts',
-            '/experties/ProfessionalStartupSolution',
-            '/experties/ImproveAndSupport',
-            '/experties/UiUxEngeniring',
-        ].indexOf(currentRoute.context.routepath) === -1 ? false : true
+        isFixed: currentRoute.context.routepath === '/neural',
+        isHome: currentRoute.context.routepath !== '/'
     }
     currentRoute.on(this.handleCustomEvent)
   }
 
-  checkLocation = () => {
-    let href = 
-    href === -1 ? href = false : href = true
+  componentWillUnmount () {
+    currentRoute.off(this.handleCustomEvent)
   }
 
   handleCustomEvent = () => {}
@@ -40,7 +31,7 @@ export default class Footer extends React.PureComponent {
     return (
       <footer>
           <section className='white-theme' > 
-                <div className={classnames({'container-header': this.state.isFixed})} >
+                <div className={classnames({'fixed-footer': this.state.isHome},{'container-header': this.state.isFixed})} >
                     <Header className='bg-neural' />
                 </div>
             </section>

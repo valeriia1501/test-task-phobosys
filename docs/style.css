@@ -79,20 +79,27 @@
     background: white;
     color: #2979ff; }
 
-.white-theme .container-header {
+.white-theme .container-header,
+.white-theme .fixed-footer {
   background: white; }
-  .white-theme .container-header * > svg {
+  .white-theme .container-header * > svg,
+  .white-theme .fixed-footer * > svg {
     fill: black; }
-    .white-theme .container-header * > svg .layer {
+    .white-theme .container-header * > svg .layer,
+    .white-theme .fixed-footer * > svg .layer {
       fill: black; }
-  .white-theme .container-header * > a {
+  .white-theme .container-header * > a,
+  .white-theme .fixed-footer * > a {
     color: black; }
 
-.black-theme .container-header {
+.black-theme .container-header,
+.black-theme .fixed-footer {
   background: #0d0f1c; }
-  .black-theme .container-header svg {
+  .black-theme .container-header svg,
+  .black-theme .fixed-footer svg {
     fill: white; }
-  .black-theme .container-header a {
+  .black-theme .container-header a,
+  .black-theme .fixed-footer a {
     color: white; }
 
 .z-index {
@@ -174,14 +181,6 @@
       outline: none;
       border: none;
       cursor: pointer; }
-  .header .line {
-    width: 250vw;
-    height: 1px;
-    opacity: 0.08;
-    background-color: #f5f5f5;
-    position: absolute;
-    top: 75px;
-    z-index: 5; }
 
 .bg-neural a {
   color: white; }
@@ -515,7 +514,7 @@ footer {
   height: calc(50vh - 60px);
   display: flex;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   transform: translateY(100px);
   position: relative;
   pointer-events: none;
@@ -729,7 +728,6 @@ footer {
 
 .works {
   height: 100vh;
-  overflow: hidden;
   display: flex;
   justify-content: center;
   background: #0d0f1c;
@@ -752,14 +750,13 @@ footer {
     line-height: 1;
     position: relative; }
     .works .works-container .content {
-      overflow: hidden;
       padding-left: 50px;
       padding-right: 50px; }
       .works .works-container .content video {
         width: 90%;
         border-radius: 10px;
         opacity: 0.15;
-        margin-bottom: -5px; }
+        transform: translateY(50px); }
     .works .works-container .bg-gradient {
       height: 100vh;
       display: flex;
@@ -1630,7 +1627,8 @@ footer {
       color: white;
       text-decoration: none; }
       .section-services .cards-services .card-services > img {
-        width: 100%; }
+        width: 320px;
+        height: 180px; }
       .section-services .cards-services .card-services > span {
         margin-top: 50px;
         margin-bottom: 50px; }
@@ -1664,8 +1662,8 @@ footer {
     color: white;
     padding-top: 95px;
     padding-bottom: 65px;
-    padding-left: 30px;
-    padding-right: 30px;
+    padding-left: 45px;
+    padding-right: 45px;
     position: relative; }
     .services-provided .application-container {
       width: 1360px;
@@ -1676,9 +1674,12 @@ footer {
         font-family: 'Montserrat Bold';
         font-size: 75px; }
       .services-provided .application-container div p {
+        max-width: 680px;
+        line-height: 1.4;
         font-family: 'Proxima Nova';
         font-size: 18px;
-        margin-top: 35px; }
+        margin-top: 35px;
+        opacity: .5; }
   .services-provided .about-applications {
     display: flex;
     justify-content: center;
@@ -1699,13 +1700,14 @@ footer {
           display: flex;
           flex-direction: row-reverse; }
         .services-provided .about-applications .container .content img {
+          width: 90%;
           padding: 20px; }
         .services-provided .about-applications .container .content .text-block .text-up {
           margin-bottom: 40px; }
           .services-provided .about-applications .container .content .text-block .text-up h1 {
             max-width: 525px;
             font-family: 'Montserrat Bold';
-            font-size: 40px;
+            font-size: 35px;
             margin-bottom: 30px; }
           .services-provided .about-applications .container .content .text-block .text-up p {
             max-width: 640px;
@@ -1717,11 +1719,21 @@ footer {
           font-size: 24px;
           margin-bottom: 25px; }
         .services-provided .about-applications .container .content .text-block .text-down ul {
+          width: fit-content;
           display: flex;
           flex-direction: column;
-          flex-wrap: wrap;
-          height: 71px;
-          color: #757575; }
+          color: #757575;
+          margin-left: 35px; }
+          .services-provided .about-applications .container .content .text-block .text-down ul li {
+            position: relative; }
+          .services-provided .about-applications .container .content .text-block .text-down ul li::before {
+            content: '';
+            width: 24px;
+            height: 1px;
+            background-color: #2962ff;
+            position: absolute;
+            left: -35px;
+            margin-top: 7px; }
           .services-provided .about-applications .container .content .text-block .text-down ul li + li {
             margin-top: 10px; }
 
@@ -1750,11 +1762,15 @@ footer {
 @media only screen and (max-width: 900px) {
   .services-provided .about-applications .container .content {
     flex-wrap: wrap;
-    justify-content: center; } }
+    justify-content: center; }
+    .services-provided .about-applications .container .content img {
+      display: none; } }
 
 @media only screen and (max-width: 600px) {
-  .services-provided .about-applications .container .content img {
-    width: calc(100%); } }
+  .services-provided .about-applications .container .content .text-block .text-up h1 {
+    font-size: 7vw; }
+  .services-provided .about-applications .container .content .text-block .text-up p {
+    font-size: 4vw; } }
 
 .about-us .bg-photo {
   color: white;
@@ -1949,7 +1965,6 @@ footer {
   position: relative; }
   .contacts .map-bg {
     width: 100%;
-    height: 760px;
     background-color: #0d0f1c;
     display: flex;
     justify-content: center;
@@ -1965,7 +1980,8 @@ footer {
       justify-content: space-between;
       padding-left: 50px;
       padding-right: 50px;
-      padding-top: 50px; }
+      padding-top: 170px;
+      padding-bottom: 100px; }
       .contacts .map-bg .container h1 {
         font-size: 64px;
         font-family: 'Montserrat SemiBold'; }
@@ -2325,3 +2341,16 @@ footer {
 
 .transition-about-us {
   transition: background-color 0.2s ease 0s; }
+
+.fixed-footer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 0;
+  z-index: 99;
+  pointer-events: all;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  will-change: transform;
+  perspective: 1000; }

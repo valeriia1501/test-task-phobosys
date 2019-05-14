@@ -183,36 +183,36 @@ export default class ExpertiesCarousel extends React.PureComponent {
       <section className="scroll-section safari_only" ref={el => this.scrollSection = el}>
         <div className="cards">
           <div className='card-home' >
-            <a href={"#!/experties" + '/ProfessionalStartupSolution'} >
+            <a href={"#!/experties" + '/ApplicationDevelopment'} >
               <img src={card_1} />
             </a>
             <div>
               <span>01</span>
-              <p>Professional Startup Solution</p>
+              <p>Application Development</p>
               <small>Service <span>- Sturupe solution</span></small>
-              <a className="arrow" href={"#!/experties" + '/ProfessionalStartupSolution'} ><img src={rigthArrow} /></a>
+              <a className="arrow" href={"#!/experties" + '/ApplicationDevelopment'} ><img src={rigthArrow} /></a>
             </div>
           </div>
           <div className='card-home'>
-            <a href={"#!/experties" + '/ImproveAndSupport'} >
+            <a href={"#!/experties" + '/ResearchDevelopment'} >
               <img src={card_2} />
             </a>
             <div>
               <span>02</span>
-              <p>Improve and Support Your Product</p>
+              <p>Research & Development</p>
               <small>Service <span>- Sturupe solution</span></small>
-              <a className="arrow" href={"#!/experties" + '/ImproveAndSupport'} ><img src={rigthArrow} /></a>
+              <a className="arrow" href={"#!/experties" + '/ResearchDevelopment'} ><img src={rigthArrow} /></a>
             </div>
           </div>
           <div className='card-home' style={{ 'transform' : 'translateX'+'('+ -this.state.moveLeft+'vh'+')' }} >
-            <a href={"#!/experties" + '/UiUxEngeniring'} >
+            <a href={"#!/experties" + '/BigDataAnalytics'} >
               <img src={card_3} />
             </a>
             <div>
               <span>03</span>
-              <p>UI/UX Engeniring</p>
+              <p>Big Data & Analytics</p>
               <small>Service <span>- Sturupe solution</span></small>
-              <a className="arrow" href={"#!/experties" + '/UiUxEngeniring'} ><img src={rigthArrow} /></a>
+              <a className="arrow" href={"#!/experties" + '/BigDataAnalytics'} ><img src={rigthArrow} /></a>
             </div>
           </div>
           <div className="borvo" ref={domel => this.borvo = domel}  >

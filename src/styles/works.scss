@@ -1,6 +1,5 @@
 .works {
     height: 100vh;
-    overflow: hidden;
     display: flex;
     justify-content: center;
     background: $bgColor;
@@ -29,14 +28,13 @@
         position: relative;
         
         .content {
-            overflow: hidden;
             @include padding-both;
 
             video {
                 width: 90%;
                 border-radius: 10px;
                 opacity: 0.15;
-                margin-bottom: -5px;
+                transform: translateY(50px);
             }
         }
 
