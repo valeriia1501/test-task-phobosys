@@ -7,9 +7,10 @@ import Contacts from '@components/Contacts'
 import Careers from '@components/CareersVacancies/Careers'
 import Vacancy from '@components/CareersVacancies/Vacancy'
 import Experties from '@components/Experties'
-import ProfessionalStartupSolution from '@components/Experties/ProfessionalStartupSolution'
-import ImproveAndSupport  from '@components/Experties/ImproveAndSupport'
-import UiUxEngeniring  from '@components/Experties/UiUxEngeniring'
+import ApplicationDevelopment from '@components/Experties/ApplicationDevelopment'
+import ResearchDevelopment  from '@components/Experties/ResearchDevelopment'
+import BigDataAnalytics  from '@components/Experties/BigDataAnalytics'
+import SoftwareTesting  from '@components/Experties/SoftwareTesting'
 
 import ExpertiesCarousel from '@components/ExpertiesCarousel'
 
@@ -72,24 +73,31 @@ export default [
       //   component: Experties,
       // },
       {
-        path: '/experties/ImproveAndSupport',
-        name: 'Improve and Support ',
+        path: '/experties/ResearchDevelopment',
+        name: 'Research Development ',
         title: '',
-        component: ImproveAndSupport,
+        component: ResearchDevelopment,
       },
 
       {
-        path: '/experties/ProfessionalStartupSolution',
-        name: 'Professional Startup Solution',
+        path: '/experties/ApplicationDevelopment',
+        name: 'Application Development',
         title: '',
-        component: ProfessionalStartupSolution,
+        component: ApplicationDevelopment,
       },
 
       {
-        path: '/experties/UiUxEngeniring',
-        name: 'UiUxEngeniring',
+        path: '/experties/BigDataAnalytics',
+        name: 'Big Data & Analytics',
         title: '',
-        component: UiUxEngeniring,
+        component: BigDataAnalytics,
+      },
+
+      {
+        path: '/experties/SoftwareTesting',
+        name: 'QA & Software Testing',
+        title: '',
+        component: SoftwareTesting,
       },
 
       {

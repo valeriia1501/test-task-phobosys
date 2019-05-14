@@ -14,14 +14,16 @@ export default class VacancyDescription extends React.PureComponent {
     }
 
     componentDidMount () {
-        if(!vacations[this.state.vacationId]) router.page('#!/careers')
+        // if(!vacations[this.state.vacationId]) router.page('#!/careers')
     }
 
     componentDidUpdate () {
-        if(!vacations[this.state.vacationId]) router.page('#!/careers')
+        // if(!vacations[this.state.vacationId]) router.page('#!/careers')
     }
 
-    componentWillUnmount () { currentRoute.off(this.handleCustomEvent) }
+    componentWillUnmount () { 
+        currentRoute.off(this.handleCustomEvent) 
+    }
 
     handleCustomEvent = (context) => {
         this.setState({ vacationId: context.params.id })

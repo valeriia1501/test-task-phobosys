@@ -39,3 +39,17 @@
 .transition-about-us {
     transition: background-color 0.2s ease 0s;
 }
+
+.fixed-footer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 0;
+    z-index: 99;
+    pointer-events: all;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    will-change: transform;
+    perspective: 1000;
+}
