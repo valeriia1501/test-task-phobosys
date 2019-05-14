@@ -52,21 +52,21 @@ export default class Services extends React.PureComponent {
         return (
             <section className="section-services" >
                 <div className="cards-services">
-                    <a href={"#!/experties" + '/ProfessionalStartupSolution'} className="card-services" ref={el => this.card = el}>
-                        <img src={card_1} />
-                        <span>Professional Startup Solution</span>
+                    <a href={"#!/experties" + '/ApplicationDevelopment'} className="card-services" ref={el => this.card = el}>
+                        <img src={'https://cdn-prod.azureedge.net/uploads/2018/07/service-9.jpg'} />
+                        <span>Application development</span>
                     </a>
-                    <a href={"#!/experties" + '/ImproveAndSupport'} className="card-services">
-                        <img src={card_2} />
-                        <span>Improve and Support Your Product</span>
+                    <a href={"#!/experties" + '/ResearchDevelopment'} className="card-services">
+                        <img src={'https://cdn-prod.azureedge.net/uploads/2018/07/r-n-d.jpg'} />
+                        <span>Research & Development</span>
                     </a>
-                    <a href={"#!/experties" + '/UiUxEngeniring'} className="card-services">
-                        <img src={card_3} />
-                        <span>UI/UX Engeniring</span>
+                    <a href={"#!/experties" + '/BigDataAnalytics'} className="card-services">
+                        <img src={'https://cdn-prod.azureedge.net/uploads/2018/07/service-7.jpg'} />
+                        <span>Big Data & Analytics</span>
                     </a>
-                    <a href={"#!/experties" + '/UiUxEngeniring'} className="card-services">
-                        <img src={card_3} />
-                        <span>UX</span>
+                    <a href={"#!/experties" + '/SoftwareTesting'} className="card-services">
+                        <img src={'https://cdn-prod.azureedge.net/uploads/2018/07/service-11.jpg'} />
+                        <span>QA & Software Testing</span>
                     </a>
                 </div>
             </section>

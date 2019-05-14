@@ -26,7 +26,7 @@
 }
 
 .blue-theme {
-    .container-header {
+    .container-header, {
         background: #2159f4;
 
         * > a {
@@ -41,7 +41,8 @@
 }
 
 .white-theme {
-    .container-header {
+    .container-header,
+    .fixed-footer {
         background: white;
 
         * > svg {
@@ -59,7 +60,8 @@
 }
 
 .black-theme {
-    .container-header {
+    .container-header,
+    .fixed-footer {
         background: $bgColor;
 
         svg {
@@ -74,11 +76,6 @@
     }
 }
 
-.half-transparent-theme {
-    .container-header {
-        
-    }
-}
 
 .z-index {
     z-index: 99;
