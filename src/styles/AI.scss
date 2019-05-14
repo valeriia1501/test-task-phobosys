@@ -10,10 +10,10 @@
     z-index: 3;
     position: relative;
 
-   &-container{
+   &-container {
        width: 1360px;
 
-        .pulsatingCircle{
+        .pulsatingCircle {
             width:0px;
             height:0px;
             display:block;
@@ -22,7 +22,7 @@
 
         .firstCircle,
         .secondCircle,
-        .thirdCircle{
+        .thirdCircle {
             top:50%;
             left:50%;
             display:block;
@@ -31,14 +31,14 @@
             vertical-align:middle;
         }
 
-        .firstCircle{
+        .firstCircle {
             width:8px;
             height:8px;
             margin:-5px 0 0 -5px;
             background-color: $lightblue;
         }
         
-        .secondCircle{
+        .secondCircle {
             width:12px;
             height:12px;
             margin:-10px 0 0 -10px;
@@ -46,22 +46,22 @@
             animation:2000ms pulseIn ease-in-out infinite;					
         }
         
-        @keyframes pulseIn{
-            0%{
+        @keyframes pulseIn {
+            0% {
                 opacity:0;
                 transform:scale(0.2,0.2);
             }
-            50%{
+            50% {
                 opacity:1;
                 transform:scale(0.7,0.7);
             }
-            100%{
+            100% {
                 opacity:0;
                 transform:scale(0.2,0.2);
             }
         }
                     
-        .thirdCircle{
+        .thirdCircle {
             width:16px;
             height:16px;
             border: 4px solid rgba(41, 120, 255, 0.54);
@@ -69,7 +69,7 @@
             animation:2000ms pulseIn 350ms ease-in-out infinite;
         }  
         
-        >p{
+        > p {
             width: 760px;
             font-size: 80px;
             font-weight: bold;
@@ -77,8 +77,8 @@
         }
    }
 }
-@media only screen and (max-width: 1500px){
-    .AI{
+@media only screen and (max-width: 1500px) {
+    .AI {
         &-container {
             .pulsatingCircle {
                 display: none;
@@ -86,39 +86,27 @@
         }
     }
 }
-@media only screen and (max-width: 855px){
+@media only screen and (max-width: 855px) {
     .AI{
         @include padding-both;
         padding-bottom: 200px;
         height: 100%;
-        p{
+        p {
             width: auto;
         }
     }
 }
 
-@media only screen and (max-width: 768px){
+@media only screen and (max-width: 768px) {
     .AI {
-        height: 50vh;
+        height: 30vh;
     }
 }
 
-@media only screen and (max-width: 500px){
+@media only screen and (max-width: 525px) {
     .AI {
-        height: 50vh;
-        &-container {
-            p {
-                font-size: 59px;
-            }
-        }
-    }
-}
-@media only screen and (max-width: 400px) {
-    .AI {
-        &-container {
-            p {
-                font-size: 50px;
-            }
+        p {
+            font-size: 13vw;
         }
     }
 }

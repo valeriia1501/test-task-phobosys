@@ -2,13 +2,15 @@ import EventEmitter from 'events'
 
 const STATE_CHANGED = 'STATE_CHANGED'
 
+let  _state = {
+    isOpen: false,
+    isShowMobMenu: false,
+    isHideWebGl: false,
+}
+
 export class RootStore extends EventEmitter {
     constructor(args) {
         super(args)
-        this._state = {
-            isOpen: false,
-            isShowMobMenu: false
-        }
         this.setMaxListeners(100)
     }
 
@@ -20,15 +22,27 @@ export class RootStore extends EventEmitter {
         this.removeListener(STATE_CHANGED, func)
     }
 
-    togglePopUp = (isOpen = !this._state.isOpen) => {
-        this._state.isOpen = isOpen
-        this.emit(STATE_CHANGED, { ...this._state })
+    getState = () => {
+        return { ..._state }
     }
 
-    toggleMobMenu = (isShowMobMenu = !this._state.isShowMobMenu) => {
-        this._state.isShowMobMenu = isShowMobMenu
-        this.emit(STATE_CHANGED, {...this._state })
+    _setState = (update) => {
+        _state = { ..._state, ...update }
+        this.emit(STATE_CHANGED, { ..._state })
     }
+
+    togglePopUp = (isPopUpOpen = !_state.PopUpOpen) => {
+        this._setState({ isPopUpOpen })
+    }
+
+    toggleMobMenu = (isShowMobileMenu = !_state.isShowMobileMenu) => {
+        this._setState({ isShowMobileMenu })
+    }
+
+    toggleWebGlVisibility = (isHideWebGl) => {
+        this._setState({ isHideWebGl })
+    }
+
 }
 
 const instance = new RootStore()

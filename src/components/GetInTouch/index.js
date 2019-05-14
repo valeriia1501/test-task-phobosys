@@ -9,9 +9,7 @@ export default class GetInTouch extends React.PureComponent {
   constructor(props) {
     super(props)
     this.html = document.getElementsByTagName('html')[0]
-    this.state = {
-      isShowPopUp: rootStore.isOpen
-    }
+    this.state = rootStore.getState()
     rootStore.on(this.customTogglePopUp)
   }
 
@@ -20,15 +18,14 @@ export default class GetInTouch extends React.PureComponent {
   }
 
   componentDidUpdate() {
-    if(rootStore._state.isOpen){ 
-      this.html.classList.add('scroll-hidden') 
-  }
-    else {
-      this.html.classList.remove('scroll-hidden') 
+    if(this.state.isPopUpOpen){
+      this.html.classList.add('scroll-hidden')
+    } else {
+      this.html.classList.remove('scroll-hidden')
     }
   }
 
-  customTogglePopUp = ({ isOpen }) => this.setState({ isShowPopUp: isOpen })
+  customTogglePopUp = ({ isPopUpOpen }) => this.setState({ isPopUpOpen })
 
   close = () => {
     const isOpen = false
@@ -41,10 +38,11 @@ export default class GetInTouch extends React.PureComponent {
         classnames(
           'pop-up',
           {
-            'show': this.state.isShowPopUp,
-            'hide': !this.state.isShowPopUp
+            'show': this.state.isPopUpOpen,
+            'hide': !this.state.isPopUpOpen
           }
-        )} ref={el => this.refSecttion = el}>
+        )}
+      >
         <div className='pop-up-container' >
           <h1>Let's talk</h1>
           <div className='form-container' >

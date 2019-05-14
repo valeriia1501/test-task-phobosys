@@ -17,14 +17,50 @@ export default class AboutUs extends React.PureComponent {
     this.html.classList.add('scroll-x-hidden')
     this.html.scrollTop = 0
     document.body.scrollTop = 0 // for safari
+    this.clientWidth = document.body.clientWidth;
+    this.state = {
+        opacity: 0
+    }
   }
+  
+  normalizeDelta (e) {
+    const FireFoxWheelMod = 3
+    const ChromeOperaWheelMod = 53
+
+    let normDeltaY = 0
+    if (!(e.deltaY % FireFoxWheelMod)) {
+      normDeltaY = e.deltaY / FireFoxWheelMod * 2
+    } else if (!(e.deltaY % ChromeOperaWheelMod)) {
+      normDeltaY = e.deltaY / ChromeOperaWheelMod * 2
+    }
+    const direction = e.deltaY / Math.abs(e.deltaY);
+    return (Math.min(3, Math.max(Math.abs(normDeltaY), 1)) * direction) || e.deltaY
+  }
+
+    componentDidMount () {
+        this.html.addEventListener('wheel', this.dynamicOpacity)
+        if(this.clientWidth <= 800) this.setState({ opacity: 1 })
+    }
+
+    componentWillUnmount () {
+        this.html.removeEventListener('wheel', this.dynamicOpacity)
+    }
+
+    dynamicOpacity = (e) => {
+        if(this.clientWidth <= 800) return
+
+        if(this.normalizeDelta(e) > 0) {
+            this.setState({opacity: this.state.opacity + 0.18 }) 
+        }
+    }
+
   render() {
     return (
-      <div className='about-us' >
+      <div className='about-us'>
           <section className='bg-photo' >
-            <section className='black-theme' > 
-                <div className='container-header' >
-                    <Header className='bg-neural' />
+            <section className='black-theme z-index' > 
+                <div className='container-header transition-about-us' style={{'backgroundColor': 'rgba(13, 15, 28,' + this.state.opacity}} >
+                    <Header  />
                 </div>
             </section>
             <div className='text-gradient'>
@@ -33,11 +69,12 @@ export default class AboutUs extends React.PureComponent {
                     <small>We provide expert software engineering and consultancy services to help businesses adopt technology transformations.</small>
                 </div>
             </div>
+            <div className='darkened-block'></div>
           </section>
           <section className='three-columns' >
                 <section className='black-theme' > 
                     <div className='container-header' >
-                        <Header className='bg-neural' />
+                        <Header/>
                     </div>
                 </section>
                 <div className='container-columns' >
@@ -73,7 +110,7 @@ export default class AboutUs extends React.PureComponent {
           <section className='white-text-section'>
                 <section className='white-theme' > 
                     <div className='container-header' >
-                        <Header className='bg-neural' />
+                        <Header/>
                     </div>
                 </section>
                 <div className='container'>
