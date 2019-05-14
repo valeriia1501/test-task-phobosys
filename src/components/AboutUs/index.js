@@ -22,7 +22,7 @@ export default class AboutUs extends React.PureComponent {
         opacity: 0
     }
   }
-
+  
   normalizeDelta (e) {
     const FireFoxWheelMod = 3
     const ChromeOperaWheelMod = 53
@@ -37,22 +37,22 @@ export default class AboutUs extends React.PureComponent {
     return (Math.min(3, Math.max(Math.abs(normDeltaY), 1)) * direction) || e.deltaY
   }
 
-  componentDidMount () {
-      this.html.addEventListener('wheel', this.dynamicOpacity)
-      if(this.clientWidth <= 800) this.setState({ opacity: 1 })
+    componentDidMount () {
+        this.html.addEventListener('wheel', this.dynamicOpacity)
+        if(this.clientWidth <= 800) this.setState({ opacity: 1 })
     }
 
-  dynamicOpacity = (e) => {
-    if(this.clientWidth <= 800) return
-
-    // this.state.opacity = Math.min(1, Math.max(this.state.opacity, 0))
-    if(this.normalizeDelta(e) > 0) {
-        this.setState({opacity: this.state.opacity + 0.18 }) 
+    componentWillUnmount () {
+        this.html.removeEventListener('wheel', this.dynamicOpacity)
     }
-    // else {
-        // this.setState({opacity: this.state.opacity - 0.1 })
-    // } 
-}
+
+    dynamicOpacity = (e) => {
+        if(this.clientWidth <= 800) return
+
+        if(this.normalizeDelta(e) > 0) {
+            this.setState({opacity: this.state.opacity + 0.18 }) 
+        }
+    }
 
   render() {
     return (

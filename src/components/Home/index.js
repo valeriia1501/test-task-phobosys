@@ -15,7 +15,9 @@ export default class Home extends React.Component {
     this.html.classList.add('scroll-x-hidden')
     this.state = { 
       AIPhrase: this.getAIPhrase(),
+      ...rootStore.getState()
     }
+  
     rootStore.on(this.handleCustomEvent)
   }
 
@@ -23,7 +25,7 @@ export default class Home extends React.Component {
    this.setState({ ...rootStore.getState() }) 
   }
 
-  componentWillUpdate = () => {
+  componentWillUnmount = () => {
     rootStore.off(this.handleCustomEvent)
   }
 
@@ -61,7 +63,7 @@ export default class Home extends React.Component {
       <div className="home">
         <Header/>
         <section className='web-gl' >
-          <div id='vanta-net' className={classnames({'add-opacity-zero': this.state.isVisibleWebGl})}/>
+          <div id='vanta-net' className={classnames({'add-opacity-zero': this.state.isHideWebGl})}/>
         </section>
         <AI phrase={this.state.AIPhrase} />
         {this.props.children}

@@ -43,6 +43,7 @@ export default class ExpertiesCarousel extends React.PureComponent {
     this.html.removeEventListener('wheel', this.wheelHandler)
     this.html.removeEventListener('scroll', this.scrollHandler)
     this.scrollSection.removeEventListener('scroll', this.horizontalScrollHandler)
+    rootStore.toggleWebGlVisibility(false)
   }
 
   normalizeDelta (e) {
@@ -78,6 +79,8 @@ export default class ExpertiesCarousel extends React.PureComponent {
     ) {
       this.html.classList.remove('scroll-hidden')
       this.setState({ verticalScrollLock: false })
+  
+      // rootStore.toggleWebGlVisibility(false)
     } 
 
     if (
@@ -125,7 +128,7 @@ export default class ExpertiesCarousel extends React.PureComponent {
 
       const hide = true
       rootStore.toggleWebGlVisibility(hide)
-      this.html.classList.add('scroll-hidden')
+      this.html.classList.add('scroll-hidden') // 
     }
     
     this.setState({
@@ -171,11 +174,11 @@ export default class ExpertiesCarousel extends React.PureComponent {
     if (!this.state.circlZooming && circlZooming) {
       this.setState({ circlZooming })
     }
-      
+    
     rootStore.toggleWebGlVisibility(false)
     this.html.classList.add('scroll-hidden')
   }
-    render() {
+  render() {
     return (
       <section className="scroll-section safari_only" ref={el => this.scrollSection = el}>
         <div className="cards">

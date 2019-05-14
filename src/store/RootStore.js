@@ -5,8 +5,7 @@ const STATE_CHANGED = 'STATE_CHANGED'
 let  _state = {
     isOpen: false,
     isShowMobMenu: false,
-    isVisibleWebGl: false,
-    showWebGl: false
+    isHideWebGl: false,
 }
 
 export class RootStore extends EventEmitter {
@@ -40,8 +39,8 @@ export class RootStore extends EventEmitter {
         this._setState({ isShowMobileMenu })
     }
 
-    toggleWebGlVisibility = (isVisibleWebGl) => {
-        this._setState({ isVisibleWebGl: isVisibleWebGl })
+    toggleWebGlVisibility = (isHideWebGl) => {
+        this._setState({ isHideWebGl })
     }
 
 }
