@@ -8,8 +8,8 @@
         color: white;
         padding-top: 95px;
         padding-bottom: 65px;
-        padding-left: 30px;
-        padding-right: 30px;
+        padding-left: 45px;
+        padding-right: 45px;
         position: relative;
 
         &-container {
@@ -176,6 +176,10 @@
                 .content {
                     flex-wrap: wrap;
                     justify-content: center;
+
+                    img {
+                        display: none;
+                    }
                 }                
             }
         }

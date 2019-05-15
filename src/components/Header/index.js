@@ -94,7 +94,6 @@ export default class Header extends React.PureComponent {
           </div>
           <button onClick={this.showGetInTouch}>Get in touch</button>
         </div>
-        <div className='line'></div>
       </header>
     )
   }
