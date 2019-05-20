@@ -9,6 +9,8 @@
     padding-left: 50px;
     z-index: 3;
     position: relative;
+    opacity: 1;
+    transition: opacity .3s;
 
    &-container {
        width: 1360px;

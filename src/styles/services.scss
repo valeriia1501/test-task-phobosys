@@ -38,8 +38,9 @@
 @media only screen and (max-width: 800px) {
     .section-services {
         .cards-services {
+            justify-content: center;
             .card-services {
-                flex: 1 1 320px;
+                // flex: 1 1 320px;
             }
         }
     }

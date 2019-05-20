@@ -182,7 +182,11 @@
 @media not all and (min-resolution:.001dpcm) // safari browser
 { @supports (-webkit-appearance:none) {
 
-    .safari_only { 
+    .safari_only {
+      .content-gl {
+        display: none;
+      }
+      
       .cards {
         .borvo {
           

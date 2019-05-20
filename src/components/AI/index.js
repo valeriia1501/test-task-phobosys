@@ -1,9 +1,23 @@
 import React from 'react'
 
+import classnames from 'classnames'
+import rootStore from '@/store/RootStore.js'
+
 export default class AI extends React.PureComponent {
   constructor (props) {
     super(props)
-    this.state = { phrase: props.phrase || 'Hi', typeSpeed: 50, deleteSpeed: 10 }
+    this.startPhrase = 'Inspiring businesses to bring innovative ideas to life'
+    this.state = { 
+      phrase: props.phrase || this.startPhrase,
+      typeSpeed: 50, deleteSpeed: 10,
+
+    }
+    rootStore.on(this.handleCustomEvent)
+
+  }
+
+  handleCustomEvent = () => {
+    this.setState({ ...rootStore.getState() }) 
   }
 
   componentWillUnmount () {
@@ -46,8 +60,8 @@ export default class AI extends React.PureComponent {
 
   render() {
     return (
-    <section className='AI'>
-      <div className='AI-container'>
+    <section className={classnames('AI', {'fade-up-ai': this.state.isHideAi})}>
+      <div className='AI-container' >
         <div className="pulsatingCircle">    
           <span className="firstCircle"></span>
           <span className="secondCircle"></span>

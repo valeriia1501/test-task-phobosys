@@ -228,12 +228,16 @@
   align-items: center;
   overflow-y: auto;
   padding-top: 100px;
+  opacity: 0;
+  transition: opacity .25s;
   z-index: 999; }
   .pop-up .pop-up-container {
     width: 1360px;
     padding-left: 30px;
     padding-right: 30px;
-    padding-bottom: 100px; }
+    padding-bottom: 100px;
+    opacity: 0;
+    transition: opacity .5s; }
     .pop-up .pop-up-container h1 {
       font-size: 88px;
       font-weight: bold;
@@ -520,7 +524,9 @@ footer {
   pointer-events: none;
   padding-left: 50px;
   z-index: 3;
-  position: relative; }
+  position: relative;
+  opacity: 1;
+  transition: opacity .3s; }
   .AI-container {
     width: 1360px; }
     .AI-container .pulsatingCircle {
@@ -719,6 +725,8 @@ footer {
 
 @media not all and (min-resolution: 0.001dpcm) {
   @supports (-webkit-appearance: none) {
+    .safari_only .content-gl {
+      display: none; }
     .safari_only .cards .borvo .svg-container {
       outline: 150vh solid #0d0f1c; }
       .safari_only .cards .borvo .svg-container svg {
@@ -1634,8 +1642,8 @@ footer {
         margin-bottom: 50px; }
 
 @media only screen and (max-width: 800px) {
-  .section-services .cards-services .card-services {
-    flex: 1 1 320px; } }
+  .section-services .cards-services {
+    justify-content: center; } }
 
 @media only screen and (max-width: 768px) {
   .section-services .cards-services {
@@ -2323,7 +2331,7 @@ footer {
 
 .add-opacity-zero {
   opacity: 0 !important;
-  transition: opacity .5s !important; }
+  transition: opacity .25s !important; }
 
 .open-pop-up {
   position: absolute;
@@ -2354,3 +2362,23 @@ footer {
   backface-visibility: hidden;
   will-change: transform;
   perspective: 1000; }
+
+.fade-up-ai {
+  transform: translateY(-200px);
+  opacity: 0;
+  transition: opacity .5s, transform .4s; }
+
+.content-canvas {
+  opacity: 1;
+  transition: opacity .25s;
+  position: static !important; }
+
+.scene {
+  position: absolute;
+  transform: rotate(90deg) translateY(-25%) translateX(-80%);
+  z-index: 1;
+  right: 50%; }
+
+@media only screen and (max-width: 800px) {
+  .scene {
+    transform: rotate(90deg) translateY(-13%) translateX(-80%); } }

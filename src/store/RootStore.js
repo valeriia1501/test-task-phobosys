@@ -6,6 +6,7 @@ let  _state = {
     isOpen: false,
     isShowMobMenu: false,
     isHideWebGl: false,
+    isHideAi: false
 }
 
 export class RootStore extends EventEmitter {
@@ -41,6 +42,10 @@ export class RootStore extends EventEmitter {
 
     toggleWebGlVisibility = (isHideWebGl) => {
         this._setState({ isHideWebGl })
+    }
+
+    toggleAiVisibility = (isHideAi) => {
+        this._setState({ isHideAi })
     }
 
 }

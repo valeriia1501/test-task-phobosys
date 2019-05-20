@@ -18,6 +18,8 @@
     align-items: center;
     overflow-y: auto;
     padding-top: 100px;
+    opacity: 0;
+    transition: opacity .25s;
     z-index: 999;
 
     .pop-up-container {
@@ -25,6 +27,8 @@
         padding-left: 30px;
         padding-right: 30px;
         padding-bottom: 100px;
+        opacity: 0;
+        transition: opacity .5s;
 
         h1 {
             font-size: 88px;

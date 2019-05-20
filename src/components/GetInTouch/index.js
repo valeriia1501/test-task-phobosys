@@ -9,7 +9,11 @@ export default class GetInTouch extends React.PureComponent {
   constructor(props) {
     super(props)
     this.html = document.getElementsByTagName('html')[0]
-    this.state = rootStore.getState()
+    this.state = {
+      displayNone: 'none',
+      opacityGetInTouch: '' ,
+      ...rootStore.getState()
+    }
     rootStore.on(this.customTogglePopUp)
   }
 
@@ -18,10 +22,20 @@ export default class GetInTouch extends React.PureComponent {
   }
 
   componentDidUpdate() {
-    if(this.state.isPopUpOpen){
+    if(this.state.isPopUpOpen) {
+      setTimeout(() => this.setState({ opacityGetInTouch: 1 }))
+      this.setState({ displayNone: '' })
       this.html.classList.add('scroll-hidden')
-    } else {
+    }
+    else {
+      setTimeout(() => this.setState({displayNone: 'none'}), 200)
+      this.setState({ opacityGetInTouch: 0 })
       this.html.classList.remove('scroll-hidden')
+    }
+    if(this.state.opacityGetInTouch) {
+      setTimeout(() => this.setState({ showText: 1 }), 150)
+    } else {
+      this.setState({ showText: 0 })
     }
   }
 
@@ -35,15 +49,15 @@ export default class GetInTouch extends React.PureComponent {
   render() {
     return (
       <section className={
-        classnames(
-          'pop-up',
-          {
-            'show': this.state.isPopUpOpen,
-            'hide': !this.state.isPopUpOpen
-          }
-        )}
-      >
-        <div className='pop-up-container' >
+        classnames('pop-up', {'show': this.state.isPopUpOpen })}
+        style={{ 
+          'opacity': this.state.opacityGetInTouch,
+          'display': this.state.displayNone
+        }} >
+        <div 
+          className={classnames('pop-up-container', {'show-width-transition': this.state.isPopUpOpen})}
+          style={{ 'opacity': this.state.showText }}
+         >
           <h1>Let's talk</h1>
           <div className='form-container' >
             <form >
@@ -86,7 +100,7 @@ export default class GetInTouch extends React.PureComponent {
             <div className='btn-send'> Send message </div>
           </div>
         </div>
-        <img className='close' src={closeCross} onClick={this.close} />
+        <img src={closeCross} onClick={this.close} className={classnames('close', {'show-width-transition': false})} />
       </section>
     )
   }

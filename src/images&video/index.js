@@ -28,6 +28,7 @@ import person_4  from '@assets/img/person-4.png'
 import vacanciesArrowSvg  from '@assets/img/arrow-icon.svg'
 import vacanciesMarker  from '@assets/img/location-icon.svg'
 import reviewImage from '@assets/img/review-image.png'
+import dotTextureT from '@assets/img/dotTexture.png'
 
 export {
   blackArrow,
@@ -59,5 +60,6 @@ export {
   person_4,
   vacanciesArrowSvg,
   vacanciesMarker,
-  reviewImage
+  reviewImage,
+  dotTextureT
 }
