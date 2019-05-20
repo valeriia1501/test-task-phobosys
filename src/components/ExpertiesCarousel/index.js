@@ -77,10 +77,13 @@ export default class ExpertiesCarousel extends React.PureComponent {
       this.scrollSection.scrollLeft === 0 &&
       (e.deltaY < 0)
     ) {
+
+      rootStore.toggleWebGlVisibility(false)
+      rootStore.toggleAiVisibility(false)
+
       this.html.classList.remove('scroll-hidden')
       this.setState({ verticalScrollLock: false })
   
-      // rootStore.toggleWebGlVisibility(false)
     } 
 
     if (
@@ -103,11 +106,11 @@ export default class ExpertiesCarousel extends React.PureComponent {
         this.setState({ circlZooming: false })
       }
       
-      let cs = this.state.circlSize * (this.normalizeDelta(e) / 5 + 1) 
+      let cs = this.state.circlSize * (this.normalizeDelta(e) / 4 + 1) 
       let mv = this.state.circlSize + this.normalizeDelta(e) 
       
       const circlSize = Math.min(50, Math.max(cs, 1))
-      const moveLeft = Math.min(40, Math.max(mv, 0)) * 6.3
+      const moveLeft = Math.min(40, Math.max(mv, 0)) * 6.5
       
       this.setState({
         circlSize: circlSize,
@@ -125,10 +128,6 @@ export default class ExpertiesCarousel extends React.PureComponent {
           }
         })
       }
-
-      const hide = true
-      rootStore.toggleWebGlVisibility(hide)
-      this.html.classList.add('scroll-hidden') // 
     }
     
     this.setState({
@@ -151,6 +150,7 @@ export default class ExpertiesCarousel extends React.PureComponent {
       const scrollingStepMac = (this.html.scrollHeight - this.html.clientHeight) / 20
       this.html.scrollTop += this.normalizeDelta(e) * scrollingStepMac
     } // normalize speed scroll macOS
+
   }
 
 
@@ -174,8 +174,9 @@ export default class ExpertiesCarousel extends React.PureComponent {
     if (!this.state.circlZooming && circlZooming) {
       this.setState({ circlZooming })
     }
-    
-    rootStore.toggleWebGlVisibility(false)
+    const hide = true
+    rootStore.toggleWebGlVisibility(hide)
+    rootStore.toggleAiVisibility(hide)
     this.html.classList.add('scroll-hidden')
   }
   render() {

@@ -2,6 +2,9 @@ import React from 'react'
 
 import classnames from 'classnames'
 
+import pulsatingCircle from '@/components/WebGlAnimation/pulsatingCircle'
+import swirl from '@/components/WebGlAnimation/swirl.js'
+
 import rootStore from '@/store/RootStore.js'
 
 import Header from '@/components/Header'
@@ -15,7 +18,6 @@ export default class Home extends React.Component {
     this.html.classList.add('scroll-x-hidden')
     this.state = { 
       AIPhrase: this.getAIPhrase(),
-      ...rootStore.getState()
     }
   
     rootStore.on(this.handleCustomEvent)
@@ -44,27 +46,35 @@ export default class Home extends React.Component {
   }
 
   componentDidMount () {
-   try {
-    VANTA.NET({
-      el: "#vanta-net",
-      color: 0x2979ff,
-      backgroundColor: 0x0d0f1c,
-      points: 6.00,
-      maxDistance: 21.00,
-      spacing: 12.00
-    }) 
-   } catch(e) {
-     console.log(e)
-   }
+      // pulsatingCircle(this.divForCanvas)
+      swirl('.content-canvas')
   }
-  
+
   render() {
     return (
-      <div className="home">
+      <div className="home safari_only">
         <Header/>
-        <section className='web-gl' >
-          <div id='vanta-net' className={classnames({'add-opacity-zero': this.state.isHideWebGl})}/>
-        </section>
+        <div ref={el => this.divForCanvas = el} className={classnames('content-canvas',{'add-opacity-zero': this.state.isHideWebGl})}>
+          {/* <script type="x-shader/x-vertex" id="wrapVertexShader">
+            {`#define PI 3.1415926535897932384626433832795
+            attribute float size;
+            void main() {
+              vec4 mvPosition = modelViewMatrix * vec4( position, 3.0 );
+              gl_PointSize = 2.0;
+              gl_Position = projectionMatrix * mvPosition;
+            }`}
+          </script>
+          <script type="x-shader/x-fragment" id="wrapFragmentShader">
+            {`uniform sampler2D texture;
+            void main(){
+              vec4 textureColor = texture2D( texture, gl_PointCoord );
+              if ( textureColor.a < 0.3 ) discard;
+              vec4 dotColor = vec4(255, 255, 255, 0.4);
+              vec4 color = dotColor * textureColor;
+              gl_FragColor = color;
+            }`}
+          </script> */}
+        </div>
         <AI phrase={this.state.AIPhrase} />
         {this.props.children}
       </div>
