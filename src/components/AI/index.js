@@ -13,7 +13,6 @@ export default class AI extends React.PureComponent {
 
     }
     rootStore.on(this.handleCustomEvent)
-
   }
 
   handleCustomEvent = () => {
@@ -21,7 +20,7 @@ export default class AI extends React.PureComponent {
   }
 
   componentWillUnmount () {
-    clearInterval(this.state.interval)
+    rootStore.off(this.handleCustomEvent)
   }
 
   typing = (phrase) => {

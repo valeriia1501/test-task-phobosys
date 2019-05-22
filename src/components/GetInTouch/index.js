@@ -33,9 +33,9 @@ export default class GetInTouch extends React.PureComponent {
       this.html.classList.remove('scroll-hidden')
     }
     if(this.state.opacityGetInTouch) {
-      setTimeout(() => this.setState({ showText: 1 }), 150)
+      setTimeout(() => this.setState({ opacityShowText: 1 }), 150)
     } else {
-      this.setState({ showText: 0 })
+      this.setState({ opacityShowText: 0 })
     }
   }
 
@@ -53,10 +53,11 @@ export default class GetInTouch extends React.PureComponent {
         style={{ 
           'opacity': this.state.opacityGetInTouch,
           'display': this.state.displayNone
-        }} >
+        }}
+        >
         <div 
           className={classnames('pop-up-container', {'show-width-transition': this.state.isPopUpOpen})}
-          style={{ 'opacity': this.state.showText }}
+          style={{ 'opacity': this.state.opacityShowText }}
          >
           <h1>Let's talk</h1>
           <div className='form-container' >
@@ -100,7 +101,7 @@ export default class GetInTouch extends React.PureComponent {
             <div className='btn-send'> Send message </div>
           </div>
         </div>
-        <img src={closeCross} onClick={this.close} className={classnames('close', {'show-width-transition': false})} />
+        <img src={closeCross} onClick={this.close} className='close' />
       </section>
     )
   }
