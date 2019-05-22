@@ -185,7 +185,7 @@ export default class ExpertiesCarousel extends React.PureComponent {
         <div className="cards">
           <div className='card-home' >
             <a href={"#!/experties" + '/ApplicationDevelopment'} >
-              <img src={card_1} />
+              <img className='img-home' src={'https://cdn-prod.azureedge.net/uploads/2018/07/service-9.jpg'} />
             </a>
             <div>
               <span>01</span>
@@ -196,7 +196,7 @@ export default class ExpertiesCarousel extends React.PureComponent {
           </div>
           <div className='card-home'>
             <a href={"#!/experties" + '/ResearchDevelopment'} >
-              <img src={card_2} />
+              <img className='img-home' src={'https://cdn-prod.azureedge.net/uploads/2018/07/r-n-d.jpg'} />
             </a>
             <div>
               <span>02</span>
@@ -207,7 +207,7 @@ export default class ExpertiesCarousel extends React.PureComponent {
           </div>
           <div className='card-home' style={{ 'transform' : 'translateX'+'('+ -this.state.moveLeft+'vh'+')' }} >
             <a href={"#!/experties" + '/BigDataAnalytics'} >
-              <img src={card_3} />
+              <img className='img-home' src={'https://cdn-prod.azureedge.net/uploads/2018/07/service-7.jpg'} />
             </a>
             <div>
               <span>03</span>

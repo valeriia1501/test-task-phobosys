@@ -60,6 +60,10 @@
     transition: opacity .5s, transform .4s;
 }
 
+.opacity-swirl {
+    opacity: 0 !important;
+}
+
 .content-canvas {
     opacity: 1;
     transition: opacity .25s;

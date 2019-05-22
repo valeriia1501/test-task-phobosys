@@ -1,5 +1,4 @@
-
-const particleCount = 100; // 700
+const particleCount = 200; // 700
 const particlePropCount = 9;
 const particlePropsLength = particleCount * particlePropCount;
 const rangeY = 100;
@@ -31,7 +30,9 @@ export default function setup(className) {
 	  createCanvas(className)
     resize()
     initParticles()
-	  draw()
+    draw()
+    ctx.a.clearRect(1000, 1000, canvas.a.width, canvas.a.height)
+    ctx.b.clearRect(1000, 1000, canvas.b.width, canvas.b.height)
 }
 
 // util //
@@ -44,7 +45,7 @@ const fadeInOut = (t, m) => {
 	let hm = 0.5 * m;
 	return abs((t + hm) % m - hm) / (hm);
 };
-//      // 
+//     // 
 
 
 function initParticles() {
@@ -162,17 +163,17 @@ function resize() {
 	const { innerWidth, innerHeight } = window
 	
 	canvas.a.width = innerWidth
-    canvas.a.height = innerHeight
+  canvas.a.height = innerHeight
 
-    ctx.a.drawImage(canvas.b, 0, 0)
+  ctx.a.drawImage(canvas.b, 0, 0)
 
-        canvas.b.width = innerWidth
-    canvas.b.height = innerHeight
-    
-    ctx.b.drawImage(canvas.a, 0, 0)
+  canvas.b.width = innerWidth
+  canvas.b.height = innerHeight
+  
+  ctx.b.drawImage(canvas.a, 0, 0)
 
-    center[0] = 0.5 * canvas.a.width
-    center[1] = 0.5 * canvas.a.height
+  center[0] = 0.5 * canvas.a.width
+  center[1] = 0.5 * canvas.a.height
 }
 
 function renderGlow() {
@@ -211,4 +212,9 @@ function draw() {
 	window.requestAnimationFrame(draw)
 }
 
+function clearCanvas() {
+  // context.clearRect(0, 0, canvas.width, canvas.height);
+}
+
+// window.addEventListener('hashchange', clearCanvas)
 window.addEventListener('resize', resize)

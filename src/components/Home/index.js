@@ -2,7 +2,6 @@ import React from 'react'
 
 import classnames from 'classnames'
 
-import pulsatingCircle from '@/components/WebGlAnimation/pulsatingCircle'
 import swirl from '@/components/WebGlAnimation/swirl.js'
 
 import rootStore from '@/store/RootStore.js'
@@ -46,15 +45,14 @@ export default class Home extends React.Component {
   }
 
   componentDidMount () {
-      // pulsatingCircle(this.divForCanvas)
-      swirl('.content-canvas')
+      // swirl('.content-canvas')
   }
 
   render() {
     return (
       <div className="home safari_only">
         <Header/>
-        <div ref={el => this.divForCanvas = el} className={classnames('content-canvas',{'add-opacity-zero': this.state.isHideWebGl})}>
+        {/* <div ref={el => this.divForCanvas = el} className={classnames('content-canvas',{'add-opacity-zero': this.state.isHideWebGl})}> */}
           {/* <script type="x-shader/x-vertex" id="wrapVertexShader">
             {`#define PI 3.1415926535897932384626433832795
             attribute float size;
@@ -74,7 +72,7 @@ export default class Home extends React.Component {
               gl_FragColor = color;
             }`}
           </script> */}
-        </div>
+        {/* </div> */}
         <AI phrase={this.state.AIPhrase} />
         {this.props.children}
       </div>
