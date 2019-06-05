@@ -17,7 +17,7 @@ export default class Master extends React.PureComponent {
   constructor(props) {
     super(props)
     this.state = {
-      opacitySwirl: true
+      opacitySwirl: true,
     }
     currentRoute.on(this.handleRouteChange)
     rootStore.on(this.handleCustomEvent)
@@ -26,6 +26,7 @@ export default class Master extends React.PureComponent {
   componentDidMount () {
     swirl('.content-canvas')
     this.setState({ opacitySwirl: false })
+    this.handleRouteChange()
   }
 
   componentWillUnmount () {
@@ -41,8 +42,10 @@ export default class Master extends React.PureComponent {
     const isSwirlAnimationShow = ['/', '/services'].indexOf(currentRoute.context.routepath) !== -1 
     if(isSwirlAnimationShow) {
       this.setState({ opacitySwirl: false })
+      setTimeout(() => { this.setState({ toggleDisplay: ''  }) }, 200)
     } else {
       this.setState({ opacitySwirl: true })
+      setTimeout(() => { this.setState({ toggleDisplay: 'none'  }) }, 200)
     }
   }
 
@@ -56,8 +59,8 @@ export default class Master extends React.PureComponent {
             'content-canvas', 
             {'opacity-swirl': this.state.opacitySwirl},
             {'add-opacity-zero' : this.state.isHideWebGl}
-
-          )} ></div>
+            )} 
+            style={{ "display": this.state.toggleDisplay }}></div>
         {this.props.children}
       </>
     )

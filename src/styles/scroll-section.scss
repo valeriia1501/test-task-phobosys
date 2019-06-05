@@ -2,7 +2,7 @@
   display: flex;
   overflow: hidden;
   height: 100vh;
-  .bottom-page{
+  .bottom-page {
     width: 1px;
     height: 1px;
     background: red;
@@ -15,7 +15,7 @@
     padding-left: calc(50% - 700px);
     margin-bottom: -15px;
 
-    & > .card-home:not(:last-child){
+    & > .card-home:not(:last-child) {
       z-index: 10;
     }
 
@@ -189,8 +189,8 @@
   }
 }
 
-@media not all and (min-resolution:.001dpcm) // safari browser
-{ @supports (-webkit-appearance:none) {
+@media not all and (min-resolution:.001dpcm) {  // safari browser 
+@supports (-webkit-appearance:none) {
 
     .safari_only {
       .content-gl {
