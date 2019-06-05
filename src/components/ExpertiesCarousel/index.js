@@ -92,6 +92,10 @@ export default class ExpertiesCarousel extends React.PureComponent {
       this.scrollSection.scrollLeft === 0 &&
       (e.deltaY > 0)
     ) {
+      const hide = true
+      rootStore.toggleWebGlVisibility(hide)    
+      rootStore.toggleAiVisibility(hide)
+
       this.html.classList.add('scroll-hidden')
       this.setState({ verticalScrollLock: true })       
     }
@@ -174,10 +178,6 @@ export default class ExpertiesCarousel extends React.PureComponent {
     if (!this.state.circlZooming && circlZooming) {
       this.setState({ circlZooming })
     }
-    const hide = true
-    rootStore.toggleWebGlVisibility(hide)
-    rootStore.toggleAiVisibility(hide)
-    this.html.classList.add('scroll-hidden')
   }
   render() {
     return (
