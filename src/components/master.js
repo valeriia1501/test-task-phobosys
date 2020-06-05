@@ -24,7 +24,7 @@ export default class Master extends React.PureComponent {
   }
 
   componentDidMount () {
-    swirl('.content-canvas')
+    // swirl('.content-canvas')
     this.setState({ opacitySwirl: false })
     this.handleRouteChange()
   }

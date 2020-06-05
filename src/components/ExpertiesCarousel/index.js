@@ -183,7 +183,7 @@ export default class ExpertiesCarousel extends React.PureComponent {
     return (
       <section className="scroll-section safari_only" ref={el => this.scrollSection = el}>
         <div className="cards">
-          <div className='card-home' >
+          <div className='card-home card-home--left' >
             <a href={"#!/experties" + '/ApplicationDevelopment'} >
               <img className='img-home' src={'https://cdn-prod.azureedge.net/uploads/2018/07/service-9.jpg'} />
             </a>
@@ -194,7 +194,7 @@ export default class ExpertiesCarousel extends React.PureComponent {
               <a className="arrow" href={"#!/experties" + '/ApplicationDevelopment'} ><img src={rigthArrow} /></a>
             </div>
           </div>
-          <div className='card-home'>
+          <div className='card-home card-home--center'>
             <a href={"#!/experties" + '/ResearchDevelopment'} >
               <img className='img-home' src={'https://cdn-prod.azureedge.net/uploads/2018/07/r-n-d.jpg'} />
             </a>
@@ -205,7 +205,8 @@ export default class ExpertiesCarousel extends React.PureComponent {
               <a className="arrow" href={"#!/experties" + '/ResearchDevelopment'} ><img src={rigthArrow} /></a>
             </div>
           </div>
-          <div className='card-home' style={{ 'transform' : 'translateX'+'('+ -this.state.moveLeft+'vh'+')' }} >
+          <div className='card-home card-home--right'> 
+           {/* style={{ 'transform' : 'translateX'+'('+ -this.state.moveLeft+'vh'+')' }}  */}
             <a href={"#!/experties" + '/BigDataAnalytics'} >
               <img className='img-home' src={'https://cdn-prod.azureedge.net/uploads/2018/07/service-7.jpg'} />
             </a>
@@ -216,7 +217,7 @@ export default class ExpertiesCarousel extends React.PureComponent {
               <a className="arrow" href={"#!/experties" + '/BigDataAnalytics'} ><img src={rigthArrow} /></a>
             </div>
           </div>
-          <div className="borvo" ref={domel => this.borvo = domel}  >
+          {/* <div className="borvo" ref={domel => this.borvo = domel}  >
             <Neural className={classnames({'scroll-hidden': !this.state.innerPageLock})} />
            <div className='svg-container'  >
               <svg width="775.8px" height="366.2px" style={ this.state.dynamicStyle }>
@@ -236,7 +237,7 @@ export default class ExpertiesCarousel extends React.PureComponent {
                 </g>
               </svg>
            </div>
-          </div>
+          </div> */}
         </div>
       </section>
     )

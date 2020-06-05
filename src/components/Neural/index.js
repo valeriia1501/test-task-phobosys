@@ -102,7 +102,7 @@ export default class Neural extends React.PureComponent {
     render() {
         return <div className={classnames(this.props.className, 'neural')}>
             {/* <Header className={classnames('bg-neural',{'fixed-header': this.state.isFixed})} /> */}
-            <Works />
+            {/* <Works /> */}
             <section className='description-borvo'>
                 <section className='black-theme' > 
                     <div className={classnames({'container-header': this.state.isFixed})} >

@@ -3,6 +3,8 @@ import React from 'react'
 import classnames from 'classnames'
 import rootStore from '@/store/RootStore.js'
 
+import { videoNeuralNetwork } from '@/images&video'
+
 export default class AI extends React.PureComponent {
   constructor (props) {
     super(props)
@@ -60,15 +62,18 @@ export default class AI extends React.PureComponent {
   render() {
     return (
     <section className={classnames('AI', {'fade-up-ai': this.state.isHideAi})}>
+      <video autoPlay loop muted width="1000" height="600" >
+        <source src={videoNeuralNetwork} type="video/mp4" />
+      </video>
       <div className='AI-container' >
         <div className="pulsatingCircle">    
           <span className="firstCircle"></span>
           <span className="secondCircle"></span>
           <span className="thirdCircle"></span>
         </div>
-          <p>
-            {this.state.phrase}
-          </p>
+        <p>
+          {this.state.phrase}
+        </p>
       </div>
       </section>
     )
