@@ -31,9 +31,9 @@ export default class Footer extends React.PureComponent {
     return (
       <footer>
           <section className='white-theme' > 
-                <div className={classnames({'fixed-footer': this.state.isHome},{'container-header': this.state.isFixed})} >
+                {/* <div className={classnames({'fixed-footer': this.state.isHome},{'container-header': this.state.isFixed})} >
                     <Header className='bg-neural' />
-                </div>
+                </div> */}
             </section>
           <div className='footer' >
             <div className='container'>

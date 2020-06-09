@@ -4,6 +4,7 @@ import rootStore from '@/store/RootStore.js'
 
 import Header from '@/components/Header'
 import AI from '@/components/AI'
+import Neural from '@/components/Neural'
 
 export default class Home extends React.Component {
   constructor (props) {

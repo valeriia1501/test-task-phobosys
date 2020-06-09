@@ -1,6 +1,6 @@
 .section-services {
-    padding-bottom: 145px;
-    padding-top: 15vh;
+    // padding-top: 15vh;
+    padding: 400px 20px 145px;
     display: flex;
     justify-content: center;
     position: relative;
@@ -61,6 +61,7 @@
 
 @media only screen and (max-width: 500px) {
     .section-services {
+        padding-top: 250px;
         .cards-services {
             padding-left: 30px;
             padding-right: 30px;
@@ -68,6 +69,9 @@
                 width: auto;
                 padding-left: 0;
                 padding-right: 0;
+                span {
+                    padding: 0 20px;
+                }
             }
         }
     }

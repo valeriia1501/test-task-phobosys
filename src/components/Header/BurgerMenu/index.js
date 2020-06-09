@@ -27,11 +27,11 @@ export default class MobileBurgerMenu extends React.PureComponent {
                 {
                     name: 'Contacts',
                     link: '#!/contacts'
-                },
-                {
-                    name: 'Neural',
-                    link: '#!/neural'
                 }
+                // {
+                //     name: 'Neural',
+                //     link: '#!/neural'
+                // }
             ],
             currentUrl: currentRoute.context.canonicalPath,
             ...rootStore.getState()
