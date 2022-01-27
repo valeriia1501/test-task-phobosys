@@ -40,6 +40,6 @@
     "rand": "0.0.4",
     "react-page-router": "^1.11.11",
     "simplex-noise": "^2.4.0",
-    "three": "^0.104.0"
+    "three": "^0.137.0"
   }
 }
